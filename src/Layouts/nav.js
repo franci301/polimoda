@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../css/nav.css';
+import '../Assets/css/nav.css';
 import {Link} from 'react-router-dom';
 
 function nav() {

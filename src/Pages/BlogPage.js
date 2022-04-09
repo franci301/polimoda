@@ -1,5 +1,5 @@
-import Nav from './nav.js';
-import Footer from './footer.js';
+import Nav from '../Layouts/nav.js';
+import Footer from '../Layouts/footer.js';
 
 function BlogPage(){
     return(

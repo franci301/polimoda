@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../css/nav.css';
+import '../Assets/css/nav.css';
 
 function HomeNav() {
     return (

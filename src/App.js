@@ -4,8 +4,8 @@ import {
   Routes,
   Route
 } from 'react-router-dom';
-import BlogPage from './Components/BlogPage.js';
-import HomePage from './Components/HomePage.js';
+import BlogPage from './Pages/BlogPage.js';
+import HomePage from './Pages/HomePage.js';
 
 function App() {
   return (

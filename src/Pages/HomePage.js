@@ -1,7 +1,7 @@
-import '../css/home.css';
+import '../Assets/css/home.css';
 import { useNavigate } from 'react-router-dom';
-import HomeNav from './HomeNav';
-import Footer from './footer';
+import HomeNav from '../Layouts/HomeNav';
+import Footer from '../Layouts/footer';
 
 
 function HomePage() {
