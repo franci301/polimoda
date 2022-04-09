@@ -1,8 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/nav.css';
-import {Link} from 'react-router-dom';
 
-function nav() {
+function HomeNav() {
     return (
         <nav className="navbar navbar-expand-md navbar bg-warning sticky-top py-3">
             <div className="container-fluid">
@@ -11,15 +10,10 @@ function nav() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarResponsive">
                     <ul className="navbar-nav mx-auto">
-                        <li className='nav-item' id='center-nav'><Link to='/*'>Home</Link></li>
-                        <li className='nav-item' id='center-nav'><Link to='/Blog/*'>Blog</Link></li>
+                    <li className='nav-item' id='left-nav'> <h3>XXXXX</h3> </li>
                     </ul>
-                    <ul className="position-absolute navbar-nav start-10">
-                        <li className='nav-item' id='left-nav'>XXXXX</li>
-                    </ul>
-                    <ul id='right-nav-div' className="navbar-nav mx-right">
-                        <li className='nav-item' id='right-nav'>Profile</li>
-                        <li className='nav-item' id='right-nav'>Cart (0)</li>
+                    <ul className="navbar-nav mx-right">
+                        <li className='nav-item' id='right-nav'>My Profile</li>
                     </ul>
                 </div>
             </div>
@@ -27,4 +21,4 @@ function nav() {
     );
 }
 
-export default nav;
+export default HomeNav;

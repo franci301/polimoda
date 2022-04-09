@@ -4,6 +4,7 @@ import {
   Routes,
   Route
 } from 'react-router-dom';
+import BlogPage from './Components/BlogPage.js';
 import HomePage from './Components/HomePage.js';
 
 function App() {
@@ -11,8 +12,8 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route exact path='/*' element={<HomePage/>}>
-          </Route>
+          <Route path="/*" element={<HomePage />} />
+          <Route path='/Blog/*' element={<BlogPage />} />
         </Routes>
       </Router>
     </div>

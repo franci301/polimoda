@@ -1,3 +1,7 @@
+nav {
+    height: 100%;
+}
+
 #right-nav {
     padding-right: 10%;
 }
@@ -8,4 +12,12 @@
 
 #left-nav {
     padding-left: 20%;
+}
+
+li {
+    white-space: nowrap;
+}
+
+#right-nav-div {
+    padding-right: 1%;
 }
