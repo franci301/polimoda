@@ -1,7 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../Assets/css/nav.css';
+import { Link } from 'react-router-dom';
 
 function HomeNav() {
+    const linkStyle = {
+        textDecoration: "none",
+        color: 'black'
+      };
     return (
         <nav className="navbar navbar-expand-md navbar bg-warning sticky-top py-3">
             <div className="container-fluid">
@@ -10,10 +15,10 @@ function HomeNav() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarResponsive">
                     <ul className="navbar-nav mx-auto">
-                    <li className='nav-item' id='left-nav'> <h3>XXXXX</h3> </li>
+                        <li className='nav-item' id='left-nav'> <h3>XXXXX</h3> </li>
                     </ul>
                     <ul className="navbar-nav mx-right">
-                        <li className='nav-item' id='right-nav'>My Profile</li>
+                        <li className='nav-item' id='right-nav'><Link style={linkStyle} to='/MyProfile/*'>My Profile</Link></li>
                     </ul>
                 </div>
             </div>

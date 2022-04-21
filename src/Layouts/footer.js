@@ -2,7 +2,7 @@ import '../Assets/css/footer.css';
 
 function footer() {
     return (
-        <footer className="navbar fixed-bottom py-3 bg-warning">
+        <footer className="navbar bottom py-3 bg-warning">
             <div className="container-fluid">
                 <div id='footerLogo'>
                     <h3>XXXXX</h3>
