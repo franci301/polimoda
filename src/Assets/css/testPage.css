@@ -1,0 +1,13 @@
+#test {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 20px;
+}
+
+#footerTest {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}

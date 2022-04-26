@@ -3,10 +3,17 @@ import '../Assets/css/nav.css';
 import { Link } from 'react-router-dom';
 
 function HomeNav() {
+    var loggedIn;
+    var userLogged = localStorage.getItem('userLogin');
+    if(userLogged){
+        loggedIn = true;
+    }else{
+        loggedIn = false;
+    }
     const linkStyle = {
         textDecoration: "none",
         color: 'black'
-      };
+    };
     return (
         <nav className="navbar navbar-expand-md navbar bg-warning sticky-top py-3">
             <div className="container-fluid">
@@ -15,10 +22,14 @@ function HomeNav() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarResponsive">
                     <ul className="navbar-nav mx-auto">
-                        <li className='nav-item' id='left-nav'> <h3>XXXXX</h3> </li>
+                        <li className='nav-item' id='left-nav'> <h3><Link style={linkStyle} to='/HomePage/*'>XXXXX</Link></h3> </li>
                     </ul>
                     <ul className="navbar-nav mx-right">
+                        {loggedIn === false ? (
+                            <li className='nav-item' id='right-nav'><Link style={linkStyle} to='/LoginPage/*'>Login</Link></li>
+                        ) : (
                         <li className='nav-item' id='right-nav'><Link style={linkStyle} to='/MyProfile/*'>My Profile</Link></li>
+                        )}
                     </ul>
                 </div>
             </div>

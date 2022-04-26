@@ -10,19 +10,18 @@ function ShopPage() {
     function changeCols(){
         var doc = document.getElementById('cols');
         doc.className = 'row row-cols-3 align-items-start'
-
     }
     return (
         <div>
             <Nav />
             <h2>SHOP YOUR PERSONALIZED SELECTION</h2>
             <br />
-            <div className='d-flex flex-row px-5 justify-content-center'>
+            <div className='d-flex flex-row px-5 justify-content-end'>
                 <div className='end'>
                     <h4>FILTERS</h4>
                     <button onClick={changeCols}></button>
                 </div>
-                <div className='container '>
+                <div className='container sticky-right'>
                     <div id='cols' className='row row-cols-4 align-items-start'>
 
                         {itemsArr === null ? (

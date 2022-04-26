@@ -74,20 +74,19 @@ function BlogPage() {
                     </div>
                 </div>
             </div>
-
             <div className='d-flex flex-row justify-content-center pb-2'>
                 <div>
                     <img src={duck} alt="" />
-                    <p>Description</p>
                     <div>
+                        <p>Description</p>
                         Written by
                         <p>Name</p>
                     </div>
                 </div>
                 <div>
                     <img src={duck} alt="" />
-                    <p>Description</p>
                     <div id='custom'>
+                        <p>Description</p>
                         Written by
                         <p>Name</p>
                     </div>
