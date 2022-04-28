@@ -34,7 +34,7 @@ function nav() {
                         <li className='nav-item' id='center-nav'><Link style={linkStyle} to='/Blog/*'>Blog</Link></li>
                     </ul>
                     <ul className="position-absolute navbar-nav start-10">
-                        <li className='nav-item' id='left-nav'>XXXXX</li>
+                        <li className='nav-item' id='left-nav'><Link style={linkStyle} to='/*'>XXXXX</Link></li>
                     </ul>
                     <ul id='right-nav-div' className="navbar-nav mx-right">
                         {loggedIn === true ? (

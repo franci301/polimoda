@@ -28,9 +28,9 @@ function HomePage() {
                     </div>
                 </div>
             </div>
-            <div id='footerTest'>
+            {/* <div id='footerTest'> */}
                 <Footer />
-            </div>
+            {/* </div> */}
         </div>
     );
 

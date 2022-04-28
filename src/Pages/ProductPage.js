@@ -1,7 +1,7 @@
 import Nav from '../Layouts/nav.js';
 import Footer from '../Layouts/footer.js';
 import TestAd from '../Layouts/testAd.js';
-import duck from '../Assets/Images/duck.jpg';
+import duck from '../Assets/images/duck.jpg';
 import '../Assets/css/Product.css';
 
 function ProductPage() {
