@@ -16,7 +16,8 @@ function HomePage() {
     return (
         <div>
             <HomeNav />
-            <div className="container">
+            <div className="container min-vh-100 d-flex flex-column 
+                justify-content-between" id='homeContainer'>
                 <div className="row justify-content-center">
                     <div className="col" id="leftImg">
                         <img id="left-home-img" src="https://images.unsplash.com/photo-1454923634634-bd1614719a7b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGVvcGxlJTIwd2Fsa2luZ3xlbnwwfHwwfHw%3D&w=1000&q=80" alt="" />
@@ -33,7 +34,6 @@ function HomePage() {
             {/* </div> */}
         </div>
     );
-
 }
 
 export default HomePage;
