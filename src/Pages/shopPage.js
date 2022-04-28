@@ -1,6 +1,6 @@
 import Nav from '../Layouts/nav.js';
 import Footer from '../Layouts/footer.js';
-import duck from '../Assets/images/duck.jpg';
+import duck from '../Assets/Images/duck.jpg';
 import '../Assets/css/shopPage.css';
 
 function ShopPage() {
