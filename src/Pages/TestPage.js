@@ -1,7 +1,10 @@
 import Nav from '../Layouts/nav.js';
 import Footer from '../Layouts/footer.js';
+import util from '../Assets/maths/logistics.js';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { db } from "../firebase/firebase-config";
+import { updateDoc, doc, setDoc } from 'firebase/firestore';
 import '../Assets/css/testPage.css';
 
 var answerArr = []; // remember to remove first value
@@ -48,22 +51,40 @@ function Test() {
     const [counter, setCounter] = useState(0);
     const [room, setRoomId] = useState(1);
     const [question, setQuestion] = useState('Are you ready to discover your personality?');
+    const archetypes = [
+        "Cargiver", "Ruler", "Creator", "Sage",
+        "Magician", "Explorer", "Everyman",
+        "Jester", "Lover", "Hero", "Outlaw", "Innocent"
+    ];
+    let archetypesToPush = [];
     const navigate = useNavigate();
 
-    function resultsPage(){
+    async function resultsPage(){
         if(!localStorage.getItem('userLogin')){
             navigate('/RegisterPage/*')
         }else{
+            answerArr.shift();
+            const archetypesValues = util.showPercentages(answerArr);
+            for (let index = 0; index < archetypesValues.length; index++) {
+                archetypesToPush.push(archetypes[archetypesValues[index][0]]);
+            }
+            const obj = localStorage.getItem('userLogin');
+            const user = JSON.parse(obj);
+            const userCollectionRef = doc(db, "users", user.user.uid);
+            await updateDoc(userCollectionRef, {
+                archetypesValue: archetypesToPush
+            });
+            answerArr = [];
             navigate('/MyProfile/*')
+            // ,{state:{answerArr}}
         }
     }
     // once the page loads, check to see if the user is logged in.
     // if they have then alert them that re doing the test will overwrite their previous results
-
     function increment() {
         if (value !== -1) {
             answerArr.push(value);
-            // setValue(-1); // comment out to test quiz without answers
+            setValue(-1); // comment out to test quiz without answers
             setQuestion(questions[counter]);
             setCounter(counter + 1);
             var radios = document.getElementsByName('choice');

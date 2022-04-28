@@ -19,7 +19,6 @@ function RegisterPage() {
                 try{
                     const user = await createUserWithEmailAndPassword(auth, email, password);
                     const userCollectionRef = doc(db, 'users', user.user.uid);
-                    console.log('userCollectionRef', userCollectionRef);
                     await setDoc(userCollectionRef, {
                         name: name, email: email
                     });

@@ -2,7 +2,7 @@ import Nav from '../Layouts/nav.js';
 import Footer from '../Layouts/footer.js';
 import TestAd from '../Layouts/testAd.js';
 import '../Assets/css/blogcss.css'
-import duck from '../Assets/images/duck.jpg';
+import duck from '../Assets/Images/duck.jpg';
 import { Link } from 'react-router-dom';
 
 

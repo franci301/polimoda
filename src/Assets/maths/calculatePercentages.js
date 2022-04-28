@@ -176,11 +176,9 @@ var allGroups = [group1, group2, group3, group4, group5, group6, group7, group8,
     group13, group14, group15, group16, group17, group18, group19, group20, group21, group22, group23, group24
 ]
 
-
-
 function calc(percentages, groupId) {
     // group id are the groups the percentages correspond to
-    var arr = []
+    var arr = [];
     for (let index = 0; index < allGroups.length; index++) {
         var sum = 0;
         for (let x = 0; x < groupId.length; x++) {
@@ -191,6 +189,6 @@ function calc(percentages, groupId) {
     }
     return arr;
 }
-// calc([0.08, 0.08, 0.08, 0.12, 0.10, 0.09, 0.10, 0.09, 0.05, 0.07, 0.03, 0.11], [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
+// calc([0.3, 0, 0.1, 0, 0.05, 0, 0.05, 0.05, 0.1, 0.05, 0.2, 0.1], [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
 // module.exports = calc;
 export default calc;

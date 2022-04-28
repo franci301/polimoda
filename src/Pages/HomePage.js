@@ -2,18 +2,16 @@ import { useNavigate } from 'react-router-dom';
 import HomeNav from '../Layouts/HomeNav';
 import Footer from '../Layouts/footer';
 import '../Assets/css/home.css';
+// import '../Assets/css/footer.css';
 
 
 function HomePage() {
     const navigate = useNavigate();
-    function routeTest(){
+    function routeTest() {
         navigate('/Test/*');
     }
     function routeBlog() {
         navigate('/Blog/*')
-    }
-    function tempRouteProfile() {
-        navigate('/MyProfile/*')
     }
     return (
         <div>
@@ -29,10 +27,9 @@ function HomePage() {
                         <button className='btn btn-dark' onClick={routeBlog}>Explore XXX</button>
                     </div>
                 </div>
-                <button className='btn btn-dark' onClick={tempRouteProfile}>Profile</button>
             </div>
-            <div id='footer'>
-            <Footer />
+            <div id='footerTest'>
+                <Footer />
             </div>
         </div>
     );
