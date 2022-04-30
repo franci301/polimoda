@@ -44,7 +44,7 @@ function BlogPage() {
                 </div>
             </div>
             <br />
-            <div className='d-flex flex-row justify-content-center py-5'>
+            <div className='d-flex flex-row justify-content-center'>
                 <div className=''>
                     <h2>FEATURED</h2>
                     <p>Shop products from our editorials if you haven't taken the test yet!</p>
@@ -90,6 +90,7 @@ function BlogPage() {
                     </div>
                 </div>
             </div>
+            <br />
             <TestAd />
             <br />
             <Footer />
