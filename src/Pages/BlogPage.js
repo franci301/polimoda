@@ -13,7 +13,7 @@ function BlogPage() {
             <br />
             <h4>EXPLORE THE WORLD OF POWER AND PERSONALIZATION</h4>
             <br />
-            <img src="https://media.istockphoto.com/videos/crowd-of-people-commuters-walking-at-shibuya-crossing-video-id1167927700?b=1&k=20&m=1167927700&s=640x640&h=Zx7VE1nSoF3Rle4J6tJpsLrNZVexJKf7i9vucwgZjKY=" alt="" />
+            <img id="topBlogPage" src="https://media.istockphoto.com/videos/crowd-of-people-commuters-walking-at-shibuya-crossing-video-id1167927700?b=1&k=20&m=1167927700&s=640x640&h=Zx7VE1nSoF3Rle4J6tJpsLrNZVexJKf7i9vucwgZjKY=" alt="" />
             <br />
             <h4>MEET THE ARCHETYPES</h4>
             <br />
@@ -74,25 +74,22 @@ function BlogPage() {
                     </div>
                 </div>
             </div>
-            <div className='d-flex flex-row justify-content-center pb-2'>
-                <div>
-                    <img src={duck} alt="" />
-                    <div>
+            <div className='d-flex flex-row justify-content-center pb-2' id="descriptionsContainer">
+                <div id="bottomContainer">
+                    <img src={duck} alt="" id="bottomContainerImg"/>
+                    <div id="bottomContainerText">
                         <p>Description</p>
-                        Written by
-                        <p>Name</p>
+                        <p> Written by Name</p>
                     </div>
                 </div>
-                <div>
-                    <img src={duck} alt="" />
-                    <div id='custom'>
+                <div id="bottomContainer">
+                    <img src={duck} alt="" id="bottomContainerImg" />
+                    <div id='bottomContainerText'>
                         <p>Description</p>
-                        Written by
-                        <p>Name</p>
+                        <p>Written by Name</p>
                     </div>
                 </div>
             </div>
-            <br />
             <TestAd />
             <br />
             <Footer />

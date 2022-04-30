@@ -11,13 +11,25 @@
     position: relative;
 }
 
-#tag {
+#rightImg {
+    position: relative;
+}
+
+#testButton {
     position: absolute;
     left: 40%;
     top: 40%;
     z-index: 1000;
     padding: 5px;
     color: #FFFFFF;
+    font-weight: bold;
+}
+
+#exploreButton {
+    position: absolute;
+    left: 40%;
+    top: 40%;
+    padding: 5px;
     font-weight: bold;
 }
 

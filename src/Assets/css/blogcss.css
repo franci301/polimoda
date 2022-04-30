@@ -2,7 +2,25 @@
     height: 50%;
 }
 
-#custom {
+#topBlogPage {
+    width: 64%;
+}
+
+#descriptionsContainer {
+    gap: 10%;
+}
+
+#bottomContainer {
+    position: relative;
+    left: -5%;
+}
+
+#bottomContainerImg {
+    width: 150%;
+}
+
+#bottomContainerText {
     position: absolute;
-    left: 69%;
+    right: -42%;
+    bottom: 1%;
 }

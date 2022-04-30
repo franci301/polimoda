@@ -21,13 +21,15 @@ function HomePage() {
                 <div className="row justify-content-center">
                     <div className="col" id="leftImg">
                         <img id="left-home-img" src="https://images.unsplash.com/photo-1454923634634-bd1614719a7b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGVvcGxlJTIwd2Fsa2luZ3xlbnwwfHwwfHw%3D&w=1000&q=80" alt="" />
-                        <div id='tag'>
+                        <div id='testButton'>
                             <button className='btn btn-dark' onClick={routeTest}>Start The Test</button>
                         </div>
                     </div>
                     <div className="col" id="rightImg">
-                        <p>Sample text goes here</p>
-                        <button className='btn btn-dark' onClick={routeBlog}>Explore XXX</button>
+                        <div id="exploreButton">
+                            <p>Sample text goes here</p>
+                            <button className='btn btn-dark' onClick={routeBlog}>Explore XXX</button>
+                        </div>
                     </div>
                 </div>
             </div>
