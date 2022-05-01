@@ -1,16 +1,42 @@
-#productPicSide {
-    width: 50%;
-    height: 50%;
+* {
+    box-sizing: border-box;
+    /* This is a good habit to get into */
 }
 
-#sideContainer {
-    margin: 0;
+.outer {
+    display: flex;
+    /* the main rule we're focusing on */
 }
 
-#sideDiv {
+.flex-child {
+    flex-grow: 1;
+    /* tells the 2 children to fill as much space as they can equally */
+}
+
+
+/* for visual aid, not necessarily relevant to question */
+
+#bigContainer {
+    /* width: 20%; */
+    width: 40%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.div {
+    padding: 5px;
+    margin: 1px;
+}
+
+#div-r {
     width: 70%;
 }
 
-#sidePic {
-    width: 50%;
+img {
+    width: 100%;
+}
+
+#main {
+    height: 100%;
+    width: 100%;
 }

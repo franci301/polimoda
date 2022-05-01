@@ -9,41 +9,23 @@ function ProductPage() {
         <div>
             <Nav />
             <br />
-            <div className='d-flex flex-row' >
-                <div className='d-flex flex-row'> 
-                    <div className='d-flex flex-column'>
-                        <div id='sideDiv'>
-                            <img id='sidePic' src={duck} alt="" />
+            <div className='d-flex flex-row justify-content-center'>
+                <div class="outer container" id='bigContainer'>
+                    <div class="container flex-child" id='bigContainer'>
+                        <div class="div">
+                            <img src='https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cmFuZG9tfGVufDB8fDB8fA%3D%3D&w=1000&q=80' />
                         </div>
-                        <div id='sideDiv'>
-                            <img id='sidePic' src={duck} alt="" />
+                        <div class="div">
+                            <img src='https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cmFuZG9tfGVufDB8fDB8fA%3D%3D&w=1000&q=80' />
                         </div>
-                        <div id='sideDiv'>
-                            <img id='sidePic' src={duck} alt="" />
+                        <div class="div">
+                            <img src='https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cmFuZG9tfGVufDB8fDB8fA%3D%3D&w=1000&q=80' />
                         </div>
                     </div>
-                    <div className='d-flex flex-column'>
-                        <img src={duck} alt="" /> 
-                    </div>
-                </div>
-                {/* <div className='' id='sideContainer'>
-                    <div className='d-flex flex-column' >
-                        <img id='productPicSide'
-                            src={duck}
-                            alt="" />
-                        <img id='productPicSide'
-                            src={duck}
-                            alt="" />
-                        <img id='productPicSide'
-                            src={duck}
-                            alt="" />
+                    <div class="container div flex-child" id='div-r'>
+                        <img id='main' src='https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cmFuZG9tfGVufDB8fDB8fA%3D%3D&w=1000&q=80' />
                     </div>
                 </div>
-                <div>
-                    <img id='ProductPicMain'
-                        src={duck}
-                        alt="" />
-                </div> */}
                 <div > { /* sold out? */}
                     <div id='ProductAvailability' >
                         SOLD OUT
@@ -51,8 +33,8 @@ function ProductPage() {
                     <div >
                         <div id='productTitle' >
                             < h5 > MS MIN </h5>
-                            <div className='d-flex' >
-                                <h6 > Bomber </h6>
+                            <div className='d-flex flex-column' >
+                                <h6 > Product Name </h6>
                                 <p > Price </p>
                             </div>
                             <p > Product description </p>
@@ -71,6 +53,7 @@ function ProductPage() {
                             <option value="A">XL</option>
                         </select>
                     </div>
+                    <br />
                     <button className='btn btn-dark'>ADD TO CART</button>
                 </div>
             </div>
