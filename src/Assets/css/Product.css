@@ -42,6 +42,7 @@ img {
 }
 
 #productAd {
+    /* padding for the test ad */
     padding-top: 4%;
     padding-bottom: 4%;
 }
