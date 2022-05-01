@@ -51,6 +51,7 @@ function Test() {
     const [counter, setCounter] = useState(0);
     const [room, setRoomId] = useState(1);
     const [question, setQuestion] = useState('Are you ready to discover your personality?');
+    const [text,setText] = useState('');
     const archetypes = [
         "Cargiver", "Ruler", "Creator", "Sage",
         "Magician", "Explorer", "Everyman",
@@ -84,6 +85,7 @@ function Test() {
     function increment() {
         if (value !== -1) {
             answerArr.push(value);
+            setText('')
             setValue(-1); // comment out to test quiz without answers
             setQuestion(questions[counter]);
             setCounter(counter + 1);
@@ -95,7 +97,7 @@ function Test() {
                 setRoomId(room + 1)
             }
         } else {
-            alert("Please select an option");
+            setText("Please select an option");
         }
     }
 
@@ -157,6 +159,7 @@ function Test() {
                                     <button className='btn btn-dark' onClick={resultsPage}>Get Results</button>
                                 ) : (
                                     <div>
+                                        <p>{text}</p>
                                         <button type="submit" className='btn btn-dark' onClick={increment}>Next Question</button>
                                     </div>
                                 )}
