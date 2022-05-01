@@ -12,8 +12,11 @@ function RegisterPage() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [text,setText] = useState('');
+
     const navigate = useNavigate();
     async function register() {
+        setText('');
         if (name != '' && email != '' && password != '' && confirmPassword != '') {
             if (password === confirmPassword) {
                 try{
@@ -22,32 +25,33 @@ function RegisterPage() {
                     await setDoc(userCollectionRef, {
                         name: name, email: email
                     });
+                    setText('Account created successfully!');
                     navigate('/LoginPage/*')
                 }catch(error){
                     switch(error.code){
                         case 'auth/email-already-in-use':
-                            alert(`${email} is already in use`);
+                            setText(`${email} is already in use`);
                             break;
                         case 'auth/invalid-email':
-                            alert(`${email} is not a valid email`);
+                            setText(`${email} is not a valid email`);
                             break;
                         case 'auth/weak-password':
-                            alert(`Password is too weak`);
+                            setText(`Password is too weak`);
                             break;
-                            case 'auth/operation-not-allowed':
-                            alert(`Operation not allowed`);
+                        case 'auth/operation-not-allowed':
+                            setText(`Operation not allowed`);
                             break;
                         default:
-                            alert(`${error.code}`);
+                            setText(`${error.code}`);
                             console.log(error.message);
                             break;
                     }
                 }
             } else {
-                alert('Password not match');
+                setText('Password not match');
             }
         } else {
-            alert('Please fill all the fields');
+            setText('Please fill all the fields');
         }
     }
     return (
@@ -77,6 +81,13 @@ function RegisterPage() {
                             setConfirmPassword(event.target.value)
                         }} />
                     </div>
+                    {text!= '' ?(
+                        <div className="text-danger">
+                            <p>{text}</p>
+                        </div>
+                    ):
+                        null
+                    }
                     <div>
                         <button className="btn btn-dark" onClick={register}>Register</button>
                     </div>

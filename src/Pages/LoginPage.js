@@ -13,30 +13,31 @@ function LoginPage() {
     };
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [text,setText] = useState('');
     const navigate = useNavigate();
 
     async function login() {
-        try {
             signInWithEmailAndPassword(auth, email, password).then((user) => {
+                setText('Login Successful');
                 const localAuth = auth;
                 localStorage.setItem('userLogin', JSON.stringify(user));
                 navigate('/HomePage/*')
+            }).catch((error) => {
+                switch (error.code) {
+                    case 'auth/invalid-email':
+                        setText(`That is not a valid email`);
+                        break;
+                    case 'auth/user-not-found':
+                        setText(`${email} is not registered`);
+                        break;
+                    case 'auth/wrong-password':
+                        setText(`Incorrect password`);
+                        break;
+                    default:
+                        setText(`${error.code}`);
+                        console.log(error.message);
+                }
             })
-        } catch (error) {
-            switch (error.code) {
-                case 'auth/invalid-email':
-                    alert(`${email} is not a valid email`);
-                    break;
-                case 'auth/user-not-found':
-                    alert(`${email} is not registered`);
-                    break;
-                case 'auth/wrong-password':
-                    alert(`Wrong password`);
-                    break;
-                default:
-                    alert(`${error.code}`);
-            }
-        }
     }
     return (
         <div>
@@ -50,6 +51,7 @@ function LoginPage() {
                         <div>
                             Password<input type="password" onChange={(event) => { setPassword(event.target.value) }} />
                         </div>
+                        {text != '' ? (<div>{text}</div>) : <div></div>}
                         <div>
                             <button className='btn btn-dark' onClick={login}>Login</button>
                         </div>
