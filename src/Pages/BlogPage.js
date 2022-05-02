@@ -12,9 +12,16 @@ import bottomImg1 from '../Assets/Images/BE A MAGICIAN JUST LIKE VITELLI.jpeg'
 import Zankov from '../Assets/Images/Zankov (ZEKE).jpeg'
 import lowClassic from '../Assets/Images/Low Classic (UNBALANCE DRESS - LIGHT BEIGE).jpeg'
 import Minjukim from '../Assets/Images/Minjukim.png'
+import {useNavigate} from 'react-router-dom';
 import '../Assets/css/blogcss.css'
 
 function BlogPage() {
+    const navigate = useNavigate();
+
+    function route(props){
+        navigate('/ProductPage/*',{state:{img:props}});
+    }
+
     return (
         <div className="homePage">
             <Nav />
@@ -60,21 +67,21 @@ function BlogPage() {
                 </div>
                 <div id='featuredImgContainer' className='d-flex flex-row justify-content-center'>
                     <div>
-                        <img id='featuredImg' src={Zankov} alt="" />
+                        <img id='featuredImg' src={Zankov} alt="" onClick={()=>route(Zankov)}/>
                         <div>
                             <h4>Description</h4>
                             <p>price</p>
                         </div>
                     </div>
                     <div>
-                        <img id='featuredImg' src={lowClassic} alt="" />
+                        <img id='featuredImg' src={lowClassic} alt="" onClick={()=>route(lowClassic)}/>
                         <div>
                             <h4>Description</h4>
                             <p>price</p>
                         </div>
                     </div>
                     <div>
-                        <img id='featuredImg' src={Minjukim} alt="" />
+                        <img id='featuredImg' src={Minjukim} alt="" onClick={()=>route(Minjukim)}/>
                         <div>
                             <h4>Description</h4>
                             <p>price</p>
