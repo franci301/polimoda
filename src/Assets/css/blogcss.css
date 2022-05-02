@@ -3,11 +3,11 @@
 }
 
 #featuredImgContainer {
-    width: 30%;
+    width: 46%;
 }
 
 #featuredImgContainer h4,
-p {
+#featuredImgContainer p {
     font-size: medium;
 }
 
@@ -54,9 +54,9 @@ p {
     }
     #bottomContainer {
         position: relative;
-        left: -5%;
+        left: -8%;
     }
     #bottomContainerImg {
-        width: 150%;
+        width: 155%;
     }
 }

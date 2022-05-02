@@ -125,7 +125,7 @@ function Test() {
                     {counter === questions.length + 1 ? (
                         <div>End Of Quiz</div>
                     ) : (
-                        <h5>{question}</h5>
+                        <h6>{question}</h6>
                     )}
                 </div>
                 <div>
@@ -165,7 +165,7 @@ function Test() {
                             </div>
                         )}
                         {question === 'Archetypes of Power Discovery' ? (
-                            <div>
+                            <div className='px-5'>
                                 <p>Archetypes of Power is a Jungian Archetypes based personality test, designed to help you better understand yourself and your identity, as well as your source of power to achieve stylistic power personalization. By spending approximately 7 minutes to complete Power Discovery/Archetypes of Power, you will become aware of your 3 dominant archetypes and a personalized product offering based on all the twelve archetypes, suitable for your personality.</p>
                                 <button type="submit" className='btn btn-dark' onClick={increment}>Explore your inner world</button>
                             </div>
@@ -175,7 +175,6 @@ function Test() {
                                     <button className='btn btn-dark' onClick={resultsPage}>Get Results</button>
                                 ) : (
                                     <div>
-                                        <p>{text}</p>
                                         <button type="submit" className='btn btn-dark' id='incrementButton' onClick={increment}>Next Question</button>
                                     </div>
                                 )}

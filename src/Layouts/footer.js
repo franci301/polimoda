@@ -9,29 +9,36 @@ function footer() {
                 </div>
                 <div className="d-inline-flex" id='middle-container'>
                     <div className="column" id='padding'>
-                        <p id='footerTitle'>Connect</p>
-                        <div id='footerContent'>
-                            <p>Instagram</p>
-                            <p>Facebook</p>
-                            <p>Pintrest</p>
-                            <p>YouTube</p>
+                        <p id='footerTitle'>Customer Service</p>
+                        <div className='d-flex flex-row'>
+                            <div id='footerContent'>
+                                <p>Help and Contacts</p>
+                                <p>Orders and Shipments</p>
+                                <p>Tracking Orders</p>
+                                <p>Returns and Refunds</p>
+                            </div>
+                            <div id='footerContent'>
+                                <p>Terms and Conditions</p>
+                                <p>Privacy Policy</p>
+                                <p>Cookie Preferences</p>
+                                <p>Accessibility</p>
+                            </div>
                         </div>
                     </div>
                     <div className="column" id='padding'>
-                        <p id='footerTitle'>Resources</p>
+                        <p id='footerTitle'>About ARKX</p>
                         <div id='footerContent'>
-                            <p>Return Policy</p>
-                            <p>Track An Order</p>
-                            <p>FAQs</p>
-                            <p>Privacy Policy</p>
+                            <p>Our Story</p>
+                            <p>Loyalty Building Program</p>
+                            <p>Discount Invite a Friend</p>
                         </div>
                     </div>
                     <div className="column">
-                        <p id='footerTitle'>About</p>
+                        <p id='footerTitle'>Connect With Us</p>
                         <div id='footerContent'>
-                            <p>Our Story</p>
-                            <p>Careers</p>
-                            <p>Press</p>
+                            <p>Instagram</p>
+                            <p>TikTok</p>
+                            <p>Facebook</p>
                         </div>
                     </div>
                 </div>
