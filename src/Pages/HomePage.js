@@ -22,6 +22,7 @@ function HomePage() {
                     <div className="col" id="leftImg">
                         <img id="left-home-img" src="https://images.unsplash.com/photo-1454923634634-bd1614719a7b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGVvcGxlJTIwd2Fsa2luZ3xlbnwwfHwwfHw%3D&w=1000&q=80" alt="" />
                         <div id='testButton'>
+                            <p className="text-muted">Get your personalized product offering upon completing a Jungian Archetypes inspired personality test.</p>
                             <button className='btn btn-dark' onClick={routeTest}>Start The Test</button>
                         </div>
                     </div>
