@@ -47,7 +47,6 @@ function MyArchetypes() {
         <div>
             <Nav />
             <h2>MY ARCHETYPES</h2>
-            How do i get to the shop page
             {showLogout ? (
                 <button className="btn btn-danger" onClick={logout}>Logout</button>
 
