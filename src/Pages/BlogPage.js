@@ -52,25 +52,27 @@ function BlogPage() {
                         See all editorial products
                     </div>
                 </div>
-                <div>
-                    <img id='featuredImg' src={duck} alt="" />
+                <div id='featuredImgContainer' className='d-flex flex-row justify-content-center'>
                     <div>
-                        <h4>Description</h4>
-                        <p>price</p>
+                        <img id='featuredImg' src={duck} alt="" />
+                        <div>
+                            <h4>Description</h4>
+                            <p>price</p>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <img id='featuredImg' src={duck} alt="" />
                     <div>
-                        <h4>Description</h4>
-                        <p>price</p>
+                        <img id='featuredImg' src={duck} alt="" />
+                        <div>
+                            <h4>Description</h4>
+                            <p>price</p>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <img id='featuredImg' src={duck} alt="" />
                     <div>
-                        <h4>Description</h4>
-                        <p>price</p>
+                        <img id='featuredImg' src={duck} alt="" />
+                        <div>
+                            <h4>Description</h4>
+                            <p>price</p>
+                        </div>
                     </div>
                 </div>
             </div>

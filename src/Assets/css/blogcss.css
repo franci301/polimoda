@@ -2,6 +2,15 @@
     padding-top: 5%;
 }
 
+#featuredImgContainer {
+    width: 30%;
+}
+
+#featuredImgContainer h4,
+p {
+    font-size: medium;
+}
+
 #featuredText {
     padding-right: 2%;
 }
