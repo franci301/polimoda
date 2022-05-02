@@ -57,7 +57,9 @@ function ProductPage() {
                     <button className='btn btn-dark'>ADD TO CART</button>
                 </div>
             </div>
-            <TestAd />
+            <div id='productAd'>
+                <TestAd />
+            </div>
             <br />
             <Footer />
         </div>

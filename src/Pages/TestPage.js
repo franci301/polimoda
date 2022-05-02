@@ -51,7 +51,7 @@ function Test() {
     const [counter, setCounter] = useState(0);
     const [room, setRoomId] = useState(1);
     const [question, setQuestion] = useState('Are you ready to discover your personality?');
-    const [text, setText] = useState('');
+    const [text,setText] = useState('');
     const archetypes = [
         "Cargiver", "Ruler", "Creator", "Sage",
         "Magician", "Explorer", "Everyman",
@@ -91,8 +91,8 @@ function Test() {
     // if they have then alert them that re doing the test will overwrite their previous results
     function increment() {
         if (value !== -1) {
-            setText('');
             answerArr.push(value);
+            setText('');
             setValue(-1); // comment out to test quiz without answers
             setQuestion(questions[counter]);
             setCounter(counter + 1);
@@ -166,6 +166,7 @@ function Test() {
                                     <button className='btn btn-dark' onClick={resultsPage}>Get Results</button>
                                 ) : (
                                     <div>
+                                        <p>{text}</p>
                                         <button type="submit" className='btn btn-dark' onClick={increment}>Next Question</button>
                                     </div>
                                 )}
