@@ -1,5 +1,13 @@
+#featuredContainer {
+    padding-top: 5%;
+}
+
+#featuredText {
+    padding-right: 2%;
+}
+
 #featuredImg {
-    height: 50%;
+    height: 70%;
 }
 
 @media screen and (max-width: 1366px) {

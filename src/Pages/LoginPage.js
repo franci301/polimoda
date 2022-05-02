@@ -2,8 +2,9 @@ import HomeNav from '../Layouts/HomeNav';
 import Footer from '../Layouts/footer';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { auth } from '../firebase/firebase-config';
+import { auth,db } from '../firebase/firebase-config';
 import { signInWithEmailAndPassword, sendPasswordResetEmail, onAuthStateChanged } from 'firebase/auth';
+import {updateDoc, doc} from 'firebase/firestore';
 import '../Assets/css/login.css';
 
 function LoginPage() {
@@ -13,31 +14,45 @@ function LoginPage() {
     };
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [text,setText] = useState('');
+    const [text, setText] = useState('');
     const navigate = useNavigate();
 
+    async function updateFirebase(answers) {
+       let user =  JSON.parse(localStorage.getItem('userLogin'))
+        const userCollectionRef = doc(db, "users", user.user.uid);
+                await updateDoc(userCollectionRef, {
+                    archetypesValue: answers
+                });
+    }
     async function login() {
-            signInWithEmailAndPassword(auth, email, password).then((user) => {
-                setText('Login Successful');
-                const localAuth = auth;
-                localStorage.setItem('userLogin', JSON.stringify(user));
-                navigate('/HomePage/*')
-            }).catch((error) => {
-                switch (error.code) {
-                    case 'auth/invalid-email':
-                        setText(`That is not a valid email`);
-                        break;
-                    case 'auth/user-not-found':
-                        setText(`${email} is not registered`);
-                        break;
-                    case 'auth/wrong-password':
-                        setText(`Incorrect password`);
-                        break;
-                    default:
-                        setText(`${error.code}`);
-                        console.log(error.message);
-                }
-            })
+        signInWithEmailAndPassword(auth, email, password).then((user) => {
+            setText('Login Successful');
+            const localAuth = auth;
+            localStorage.setItem('userLogin', JSON.stringify(user));
+            let storedAnswers = JSON.parse(localStorage.getItem('testResults'))
+            console.log(storedAnswers);
+            if (storedAnswers) {
+                // push answers to firebase
+                updateFirebase(storedAnswers);
+                localStorage.removeItem('testResults');
+            }
+            navigate('/HomePage/*')
+        }).catch((error) => {
+            switch (error.code) {
+                case 'auth/invalid-email':
+                    setText(`That is not a valid email`);
+                    break;
+                case 'auth/user-not-found':
+                    setText(`${email} is not registered`);
+                    break;
+                case 'auth/wrong-password':
+                    setText(`Incorrect password`);
+                    break;
+                default:
+                    setText(`${error.code}`);
+                    console.log(error.message);
+            }
+        })
     }
     return (
         <div>
@@ -51,7 +66,7 @@ function LoginPage() {
                         <div>
                             Password<input type="password" onChange={(event) => { setPassword(event.target.value) }} />
                         </div>
-                        {text != '' ? (<div>{text}</div>) : <div></div>}
+                        {text != '' ? (<div className='text-danger'>{text}</div>) : <div></div>}
                         <div>
                             <button className='btn btn-dark' onClick={login}>Login</button>
                         </div>

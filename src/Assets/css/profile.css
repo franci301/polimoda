@@ -8,3 +8,9 @@
     left: 0;
     width: 100%;
 }
+
+#shopProfile {
+    position: absolute;
+    bottom: 35%;
+    left: 38%;
+}

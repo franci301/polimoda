@@ -4,7 +4,7 @@ import duck from '../Assets/Images/duck.jpg';
 import getDetails from '../firebase/getDetails.js';
 import { signOut } from 'firebase/auth';
 import { auth } from '../firebase/firebase-config';
-import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useState,useEffect } from 'react'
 import '../Assets/css/profile.css';
 
@@ -12,6 +12,7 @@ function MyArchetypes() {
     // const getProps = useLocation();
     // console.log(getProps.state.answerArr);
     const [listArch, setList] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         getDetails().then((res) => {
@@ -31,7 +32,9 @@ function MyArchetypes() {
 
     // listArch.map((arch) => {console.log(arch.stringValue)})
     // console.log(listArch)
-
+    function shopRoute(){
+        navigate('/ShopPage/*');
+    }
 
     function logout() {
         signOut(auth).then(() => {
@@ -65,6 +68,10 @@ function MyArchetypes() {
                         Complete the test to see which archetype you belong to
                     </div>
                 )}
+            </div>
+            <div id='shopProfile'>
+                <h5>View products based on your selected archetypes</h5>
+                <button className="btn btn-dark" onClick={shopRoute}>Shop Now!</button>
             </div>
             <div id='a'>
                 <Footer />

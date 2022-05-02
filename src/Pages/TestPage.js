@@ -51,6 +51,7 @@ function Test() {
     const [counter, setCounter] = useState(0);
     const [room, setRoomId] = useState(1);
     const [question, setQuestion] = useState('Are you ready to discover your personality?');
+    const [text, setText] = useState('');
     const archetypes = [
         "Cargiver", "Ruler", "Creator", "Sage",
         "Magician", "Explorer", "Everyman",
@@ -61,6 +62,12 @@ function Test() {
 
     async function resultsPage(){
         if(!localStorage.getItem('userLogin')){
+            answerArr.shift();
+            const archetypesValues = util.showPercentages(answerArr);
+            for (let index = 0; index < archetypesValues.length; index++) {
+                archetypesToPush.push(archetypes[archetypesValues[index][0]]);
+            }
+            localStorage.setItem('testResults',JSON.stringify(archetypesToPush));
             navigate('/RegisterPage/*')
         }else{
             answerArr.shift();
@@ -68,6 +75,7 @@ function Test() {
             for (let index = 0; index < archetypesValues.length; index++) {
                 archetypesToPush.push(archetypes[archetypesValues[index][0]]);
             }
+            console.log(archetypesToPush);
             const obj = localStorage.getItem('userLogin');
             const user = JSON.parse(obj);
             const userCollectionRef = doc(db, "users", user.user.uid);
@@ -83,6 +91,7 @@ function Test() {
     // if they have then alert them that re doing the test will overwrite their previous results
     function increment() {
         if (value !== -1) {
+            setText('');
             answerArr.push(value);
             setValue(-1); // comment out to test quiz without answers
             setQuestion(questions[counter]);
@@ -95,7 +104,7 @@ function Test() {
                 setRoomId(room + 1)
             }
         } else {
-            alert("Please select an option");
+            setText("Please select an option");
         }
     }
 
@@ -163,6 +172,7 @@ function Test() {
                             </div>
                         )}
                     </div>
+                    <p className="text-danger">{text}</p>
                 </div>
             </div>
             <div id="footerTest">

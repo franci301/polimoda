@@ -44,8 +44,8 @@ function BlogPage() {
                 </div>
             </div>
             <br />
-            <div className='d-flex flex-row justify-content-center'>
-                <div className=''>
+            <div className='d-flex flex-row justify-content-center' id='featuredContainer'>
+                <div id='featuredText'>
                     <h2>FEATURED</h2>
                     <p>Shop products from our editorials if you haven't taken the test yet!</p>
                     <div>
@@ -60,14 +60,14 @@ function BlogPage() {
                     </div>
                 </div>
                 <div>
-                    <Link to='/ShopPage/*'> <img id='featuredImg' src={duck} alt="" /></Link>
+                    <img id='featuredImg' src={duck} alt="" />
                     <div>
                         <h4>Description</h4>
                         <p>price</p>
                     </div>
                 </div>
                 <div>
-                    <Link to='/ProductPage/*'> <img id='featuredImg' src={duck} alt="" /></Link>
+                    <img id='featuredImg' src={duck} alt="" />
                     <div>
                         <h4>Description</h4>
                         <p>price</p>
@@ -76,7 +76,7 @@ function BlogPage() {
             </div>
             <div className='d-flex flex-row justify-content-center pb-2' id="descriptionsContainer">
                 <div id="bottomContainer">
-                    <img src={duck} alt="" id="bottomContainerImg"/>
+                    <img src={duck} alt="" id="bottomContainerImg" />
                     <div id="bottomContainerText">
                         <p>Description</p>
                         <p> Written by Name</p>

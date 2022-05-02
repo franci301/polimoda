@@ -1,13 +1,14 @@
 import Nav from '../Layouts/nav.js';
 import Footer from '../Layouts/footer.js';
 import duck from '../Assets/Images/duck.jpg';
+import { Link } from 'react-router-dom'
 import '../Assets/css/shopPage.css';
 
 function ShopPage() {
 
     var itemsArr = ['1', '2', '3', '4', '5', '6', '7', '8']
 
-    function changeCols(){
+    function changeCols() {
         var doc = document.getElementById('cols');
         doc.className = 'row row-cols-3 align-items-start'
     }
@@ -31,7 +32,7 @@ function ShopPage() {
                         ) : (
                             itemsArr.map((dict) => (
                                 <div key={dict} className='col py-3'>
-                                    <img id='shopPic' src={duck} alt="" />
+                                    <Link to='/ProductPage/*'><img id='shopPic' src={duck} alt="" /></Link>
                                     <div>
                                         <div>
                                             Product Name
