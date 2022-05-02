@@ -1,10 +1,18 @@
 import Nav from '../Layouts/nav.js';
 import Footer from '../Layouts/footer.js';
 import TestAd from '../Layouts/testAd.js';
+import Creator from '../Assets/Images/Meet the Archetypes - Creator.jpg';
+import Explorer from '../Assets/Images/Meet the Archetypes - Explorer.jpg';
+import Hero from '../Assets/Images/Meet the Archetypes - Hero.jpg';
+import Innocent from '../Assets/Images/Meet the Archetypes - Innocent.jpg';
+import Outlaw from '../Assets/Images/Meet the Archetypes - Outlaw.jpeg';
+import Ruler from '../Assets/Images/Meet the Archetypes - Ruler.jpg';
+import bottomImg2 from '../Assets/Images/Meet Palomo Spain.png';
+import bottomImg1 from '../Assets/Images/BE A MAGICIAN JUST LIKE VITELLI.jpeg'
+import Zankov from '../Assets/Images/Zankov (ZEKE).jpeg'
+import lowClassic from '../Assets/Images/Low Classic (UNBALANCE DRESS - LIGHT BEIGE).jpeg'
+import Minjukim from '../Assets/Images/Minjukim.png'
 import '../Assets/css/blogcss.css'
-import duck from '../Assets/Images/duck.jpg';
-import { Link } from 'react-router-dom';
-
 
 function BlogPage() {
     return (
@@ -17,29 +25,27 @@ function BlogPage() {
             <br />
             <h4>MEET THE ARCHETYPES</h4>
             <br />
-            <div id='archetypes-grid' className='d-flex flex-row justify-content-center'>
-                <div>
-                    <div>
-                        <img src={duck} alt="" />
+            <div id='archetypes-grid' className='container '>
+                <div className='row gx-0 gy-0'>
+                    <div id='archetype1' className='col'>
+                        <img src={Creator} alt="" />
                     </div>
-                    <div>
-                        <img src={duck} alt="" />
+                    <div className='col'>
+                        <img src={Hero} alt="" />
                     </div>
-                </div>
-                <div>
-                    <div>
-                        <img src={duck} alt="" />
-                    </div>
-                    <div>
-                        <img src={duck} alt="" />
+                    <div id='archetypes2' className='col'>
+                        <img src={Explorer} alt="" />
                     </div>
                 </div>
-                <div>
-                    <div>
-                        <img src={duck} alt="" />
+                <div className='row gx-0 gy-0'>
+                    <div className='col'>
+                        <img src={Innocent} alt="" />
                     </div>
-                    <div>
-                        <img src={duck} alt="" />
+                    <div id='archetypes3' className='col'>
+                        <img src={Outlaw} alt="" />
+                    </div>
+                    <div className='col'>
+                        <img src={Ruler} alt="" />
                     </div>
                 </div>
             </div>
@@ -54,21 +60,21 @@ function BlogPage() {
                 </div>
                 <div id='featuredImgContainer' className='d-flex flex-row justify-content-center'>
                     <div>
-                        <img id='featuredImg' src={duck} alt="" />
+                        <img id='featuredImg' src={Zankov} alt="" />
                         <div>
                             <h4>Description</h4>
                             <p>price</p>
                         </div>
                     </div>
                     <div>
-                        <img id='featuredImg' src={duck} alt="" />
+                        <img id='featuredImg' src={lowClassic} alt="" />
                         <div>
                             <h4>Description</h4>
                             <p>price</p>
                         </div>
                     </div>
                     <div>
-                        <img id='featuredImg' src={duck} alt="" />
+                        <img id='featuredImg' src={Minjukim} alt="" />
                         <div>
                             <h4>Description</h4>
                             <p>price</p>
@@ -76,19 +82,21 @@ function BlogPage() {
                     </div>
                 </div>
             </div>
-            <div className='d-flex flex-row justify-content-center pb-2' id="descriptionsContainer">
-                <div id="bottomContainer">
-                    <img src={duck} alt="" id="bottomContainerImg" />
-                    <div id="bottomContainerText">
-                        <p>Description</p>
-                        <p> Written by Name</p>
+            <div className='container' id="descriptionsContainer">
+                <div id="bottomContainer" className='row '>
+                    <div className='col px-0 py-0'>
+                        <img src={bottomImg1} alt="" id="bottomContainerImg" />
+                        <div id="bottomContainerText1">
+                            <p>Description</p>
+                            <p> Written by Name</p>
+                        </div>
                     </div>
-                </div>
-                <div id="bottomContainer">
-                    <img src={duck} alt="" id="bottomContainerImg" />
-                    <div id='bottomContainerText'>
-                        <p>Description</p>
-                        <p>Written by Name</p>
+                    <div className='col px-0 py-0'>
+                        <img src={bottomImg2} alt="" id="bottomContainerImg" />
+                        <div id="bottomContainerText2">
+                            <p>Description</p>
+                            <p> Written by Name</p>
+                        </div>
                     </div>
                 </div>
             </div>

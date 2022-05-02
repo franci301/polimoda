@@ -11,12 +11,16 @@
     font-size: medium;
 }
 
+#archetypes-grid img {
+    height: 100%;
+}
+
 #featuredText {
     padding-right: 2%;
 }
 
 #featuredImg {
-    height: 70%;
+    height: 40%;
 }
 
 @media screen and (max-width: 1366px) {
@@ -44,19 +48,27 @@
     #topBlogPage {
         width: 79%;
     }
-    #bottomContainerText {
+    #bottomContainerText1 {
         position: absolute;
-        right: -38%;
+        right: 55%;
         bottom: 1%;
     }
-    #descriptionsContainer {
-        gap: 13%;
+    #bottomContainerText2 {
+        position: absolute;
+        right: 6%;
+        bottom: 1%;
     }
+    /* #descriptionsContainer { */
+    /* gap: -15%; */
+    /* } */
     #bottomContainer {
         position: relative;
         left: -8%;
     }
     #bottomContainerImg {
-        width: 155%;
+        width: 100%;
+    }
+    #bottomContainer p {
+        color: white
     }
 }
