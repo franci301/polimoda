@@ -18,6 +18,13 @@ function MyArchetypes() {
         getDetails().then((res) => {
             const list = res._document.data.value.mapValue.fields.archetypesValue.arrayValue.values
             setList(list)
+        }).catch((error) => {
+            switch(error.code) {
+                case 'resource-exhausted':
+                    alert(`Internal server error. Contant system administrator`);
+                default:
+                    console.log(error.code);
+            }
         });
     })
     let arr = [];
@@ -30,8 +37,6 @@ function MyArchetypes() {
         showLogout = false;
     }
 
-    // listArch.map((arch) => {console.log(arch.stringValue)})
-    // console.log(listArch)
     function shopRoute(){
         navigate('/ShopPage/*');
     }

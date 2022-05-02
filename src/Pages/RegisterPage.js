@@ -41,6 +41,8 @@ function RegisterPage() {
                         case 'auth/operation-not-allowed':
                             setText(`Operation not allowed`);
                             break;
+                        case 'resource-exhausted':
+                            setText(`Internal server error. Contant system administrator`);
                         default:
                             setText(`${error.code}`);
                             console.log(error.message);

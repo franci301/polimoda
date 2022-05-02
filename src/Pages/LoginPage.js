@@ -2,9 +2,9 @@ import HomeNav from '../Layouts/HomeNav';
 import Footer from '../Layouts/footer';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { auth,db } from '../firebase/firebase-config';
+import { auth, db } from '../firebase/firebase-config';
 import { signInWithEmailAndPassword, sendPasswordResetEmail, onAuthStateChanged } from 'firebase/auth';
-import {updateDoc, doc} from 'firebase/firestore';
+import { updateDoc, doc } from 'firebase/firestore';
 import '../Assets/css/login.css';
 
 function LoginPage() {
@@ -18,11 +18,11 @@ function LoginPage() {
     const navigate = useNavigate();
 
     async function updateFirebase(answers) {
-       let user =  JSON.parse(localStorage.getItem('userLogin'))
+        let user = JSON.parse(localStorage.getItem('userLogin'))
         const userCollectionRef = doc(db, "users", user.user.uid);
-                await updateDoc(userCollectionRef, {
-                    archetypesValue: answers
-                });
+        await updateDoc(userCollectionRef, {
+            archetypesValue: answers
+        });
     }
     async function login() {
         signInWithEmailAndPassword(auth, email, password).then((user) => {
@@ -48,6 +48,8 @@ function LoginPage() {
                 case 'auth/wrong-password':
                     setText(`Incorrect password`);
                     break;
+                case 'resource-exhausted':
+                    setText(`Internal server error. Contant system administrator`);
                 default:
                     setText(`${error.code}`);
                     console.log(error.message);
