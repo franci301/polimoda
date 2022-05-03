@@ -21,6 +21,7 @@
 
 #featuredImg {
     height: 40%;
+    object-fit: cover;
 }
 
 @media screen and (max-width: 1366px) {
@@ -58,15 +59,17 @@
         right: 6%;
         bottom: 1%;
     }
-    /* #descriptionsContainer { */
-    /* gap: -15%; */
-    /* } */
+    #descriptionsContainer {
+        gap: -15%;
+    }
     #bottomContainer {
         position: relative;
-        left: -8%;
     }
     #bottomContainerImg {
-        width: 100%;
+        /* width: 80%; */
+        /* height: 70%; */
+        object-fit: contain;
+        object-position: center;
     }
     #bottomContainer p {
         color: white

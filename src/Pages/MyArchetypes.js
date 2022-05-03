@@ -77,9 +77,9 @@ function MyArchetypes() {
                 <h5>View products based on your selected archetypes</h5>
                 <button className="btn btn-dark" onClick={shopRoute}>Shop Now!</button>
             </div>
-            <div id='a'>
+            {/* <div id='a'> */}
                 <Footer />
-            </div>
+            {/* </div> */}
         </div>
     );
 }

@@ -10,7 +10,9 @@
 }
 
 #shopProfile {
-    position: absolute;
+    padding-bottom: 5%;
+    padding-top: 5%;
+    /* position: absolute;
     bottom: 35%;
-    left: 35%;
+    left: 35%; */
 }
