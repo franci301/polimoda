@@ -12,14 +12,14 @@ import bottomImg1 from '../Assets/Images/BE A MAGICIAN JUST LIKE VITELLI.jpeg'
 import Zankov from '../Assets/Images/Zankov (ZEKE).jpeg'
 import lowClassic from '../Assets/Images/Low Classic (UNBALANCE DRESS - LIGHT BEIGE).jpeg'
 import Minjukim from '../Assets/Images/Minjukim.png'
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import '../Assets/css/blogcss.css'
 
 function BlogPage() {
     const navigate = useNavigate();
 
-    function route(props){
-        navigate('/ProductPage/*',{state:{img:props}});
+    function route(props) {
+        navigate('/ProductPage/*', { state: { img: props } });
     }
 
     return (
@@ -34,25 +34,31 @@ function BlogPage() {
             <br />
             <div id='archetypes-grid' className='container '>
                 <div className='row gx-0 gy-0'>
-                    <div id='archetype1' className='col'>
+                    <div className='col'>
                         <img src={Creator} alt="" />
+                        <h5>The Creator</h5>
                     </div>
                     <div className='col'>
                         <img src={Hero} alt="" />
+                        <h5>The Hero</h5>
                     </div>
-                    <div id='archetypes2' className='col'>
+                    <div className='col'>
                         <img src={Explorer} alt="" />
+                        <h5>The Explorer</h5>
                     </div>
                 </div>
-                <div className='row gx-0 gy-0'>
+                <div className='row gx-0 gy-0' id='bottomArch'>
                     <div className='col'>
                         <img src={Innocent} alt="" />
+                        <h5>The Innocent</h5>
                     </div>
-                    <div id='archetypes3' className='col'>
+                    <div className='col'>
                         <img src={Outlaw} alt="" />
+                        <h5>The Outlaw</h5>
                     </div>
                     <div className='col'>
                         <img src={Ruler} alt="" />
+                        <h5>The Ruler</h5>
                     </div>
                 </div>
             </div>
@@ -67,21 +73,21 @@ function BlogPage() {
                 </div>
                 <div id='featuredImgContainer' className='d-flex flex-row justify-content-center'>
                     <div>
-                        <img id='featuredImg' src={Zankov} alt="" onClick={()=>route(Zankov)}/>
+                        <img id='featuredImg' src={Zankov} alt="" onClick={() => route(Zankov)} />
                         <div>
                             <h4>Description</h4>
                             <p>price</p>
                         </div>
                     </div>
                     <div>
-                        <img id='featuredImg' src={lowClassic} alt="" onClick={()=>route(lowClassic)}/>
+                        <img id='featuredImg' src={lowClassic} alt="" onClick={() => route(lowClassic)} />
                         <div>
                             <h4>Description</h4>
                             <p>price</p>
                         </div>
                     </div>
                     <div>
-                        <img id='featuredImg' src={Minjukim} alt="" onClick={()=>route(Minjukim)}/>
+                        <img id='featuredImg' src={Minjukim} alt="" onClick={() => route(Minjukim)} />
                         <div>
                             <h4>Description</h4>
                             <p>price</p>

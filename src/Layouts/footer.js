@@ -13,16 +13,19 @@ function footer() {
                         <div className='d-flex flex-row'>
                             <div id='footerContent'>
                                 <p>Help and Contacts</p>
-                                <p>Orders and Shipments</p>
-                                <p>Tracking Orders</p>
-                                <p>Returns and Refunds</p>
-                            </div>
-                            <div id='footerContent'>
                                 <p>Terms and Conditions</p>
                                 <p>Privacy Policy</p>
                                 <p>Cookie Preferences</p>
-                                <p>Accessibility</p>
                             </div>
+                        </div>
+                    </div>
+                    <div className='column' id='padding'>
+                        <p>Shipping and Returns</p>
+                        <div id='footerContent'>
+                            <p>Orders and Shipments</p>
+                            <p>Tracking Orders</p>
+                            <p>Returns and Refunds</p>
+                            <p>FAQ's</p>
                         </div>
                     </div>
                     <div className="column" id='padding'>

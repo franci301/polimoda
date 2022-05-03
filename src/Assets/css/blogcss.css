@@ -3,7 +3,7 @@
 }
 
 #featuredImgContainer {
-    width: 46%;
+    width: 55%;
 }
 
 #featuredImgContainer h4,
@@ -16,12 +16,26 @@
 }
 
 #featuredText {
-    padding-right: 2%;
+    padding-right: 5%;
+    width: 25%;
 }
 
 #featuredImg {
     height: 40%;
     object-fit: cover;
+}
+
+.container h5 {
+    position: relative;
+    color: white;
+    z-index: 1000;
+    bottom: 8%;
+    left: -32%;
+    display: inline-block;
+}
+
+#bottomArch h5 {
+    bottom: 6%;
 }
 
 @media screen and (max-width: 1366px) {
