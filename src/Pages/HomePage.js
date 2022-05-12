@@ -19,7 +19,7 @@ function HomePage() {
             <HomeNav />
             {/* d-flex flex-column 
                 justify-content-between */}
-            <div className="container min-vh-100 gx-0" id='homeContainer'>
+            <div className="container vh-100 gx-0" id='homeContainer'>
                 <div className="container">
                     <div className="row">
                         <div className="col" id="leftImg">

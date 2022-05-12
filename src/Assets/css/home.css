@@ -11,7 +11,7 @@
 
 #left-home-img {
     width: 120%;
-    height: 188%;
+    height: 100vh;
 }
 
 #homeContainer {
@@ -46,22 +46,22 @@
     position: absolute;
     width: 100%;
     left: 10%;
-    bottom: -35%;
+    bottom: 1%;
     z-index: 1000;
     color: var(--brown);
     font-weight: bold;
-    font-size: 130%;
+    font-size: 150%;
 }
 
 #rightImgContainer {
-    width: 120%;
-    height: 120%;
+    width: 65%;
+    height: 80vh;
 }
 
 #exploreButton {
     position: absolute;
-    left: 35%;
-    top: 65%;
+    left: 42%;
+    top: 45%;
     width: 50%;
     padding: 5px;
     font-weight: bold;
@@ -75,7 +75,7 @@
     color: var(--red);
     font-weight: bold;
     font-size: 150%;
-    left: 10%;
+    left: 15%;
 }
 
 
