@@ -1,3 +1,14 @@
+:root {
+    --yellow: #f6c240;
+    --purple: #3f285c;
+    --red: #8a181c;
+    --brown: #453127;
+}
+
+* {
+    font-family: "Acumin Variable Concept";
+}
+
 #left-home-img {
     width: 120%;
     height: 188%;
@@ -5,34 +16,66 @@
 
 #homeContainer {
     height: 125%;
-    margin: 0%;
 }
 
 #leftImg {
     position: relative;
     padding: 0%;
+    left: -21%;
 }
 
 #rightImg {
     position: relative;
+    padding-top: 5%;
 }
 
 #testButton {
     position: absolute;
     left: 40%;
     top: 48%;
+    width: 25%;
     z-index: 1000;
     padding: 5px;
-    color: #FFFFFF;
     font-weight: bold;
+    background-color: var(--purple);
+    color: white;
+    border: none;
+}
+
+#testTxt {
+    position: absolute;
+    width: 100%;
+    left: 10%;
+    bottom: -35%;
+    z-index: 1000;
+    color: var(--brown);
+    font-weight: bold;
+    font-size: 130%;
+}
+
+#rightImgContainer {
+    width: 120%;
+    height: 120%;
 }
 
 #exploreButton {
     position: absolute;
-    left: 60%;
-    top: 57%;
+    left: 35%;
+    top: 65%;
+    width: 50%;
     padding: 5px;
     font-weight: bold;
+    background-color: var(--red);
+    color: white;
+    border: none;
+}
+
+#archStories {
+    position: relative;
+    color: var(--red);
+    font-weight: bold;
+    font-size: 150%;
+    left: 10%;
 }
 
 

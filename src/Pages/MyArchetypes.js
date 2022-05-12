@@ -13,26 +13,26 @@ function MyArchetypes() {
     // console.log(getProps.state.answerArr);
     const [listArch, setList] = useState(null);
     const navigate = useNavigate();
+    var showLogout = false;
+    var location = window.location.href;
 
     useEffect(() => {
         getDetails().then((res) => {
             const list = res._document.data.value.mapValue.fields.archetypesValue.arrayValue.values
+            console.log(list);
             setList(list)
         }).catch((error) => {
-            switch(error.code) {
-                case 'resource-exhausted':
-                    alert(`Internal server error. Contant system administrator`);
-                default:
-                    console.log(error.code);
-            }
+            // switch(error.code) {
+            //     case 'resource-exhausted':
+            //         alert(`Internal server error. Contant system administrator`);
+            //         break;
+            //     default:
+            //         console.log(error.code);
+            // }
         });
-    })
-    let arr = [];
-    let archetype = "";
-    var showLogout = false;
-    var location = window.location.href;
+    },[]);
     if (location.includes('/MyProfile/*')) {
-        var showLogout = true;
+        showLogout = true;
     } else {
         showLogout = false;
     }
@@ -54,7 +54,6 @@ function MyArchetypes() {
             <h2>MY ARCHETYPES</h2>
             {showLogout ? (
                 <button className="btn btn-danger" onClick={logout}>Logout</button>
-
             ) : (
                 <div></div>
             )}

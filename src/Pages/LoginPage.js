@@ -17,25 +17,13 @@ function LoginPage() {
     const [text, setText] = useState('');
     const navigate = useNavigate();
 
-    async function updateFirebase(answers) {
-        let user = JSON.parse(localStorage.getItem('userLogin'))
-        const userCollectionRef = doc(db, "users", user.user.uid);
-        await updateDoc(userCollectionRef, {
-            archetypesValue: answers
-        });
-    }
+    
     async function login() {
         signInWithEmailAndPassword(auth, email, password).then((user) => {
             setText('Login Successful');
             const localAuth = auth;
             localStorage.setItem('userLogin', JSON.stringify(user));
-            let storedAnswers = JSON.parse(localStorage.getItem('testResults'))
-            console.log(storedAnswers);
-            if (storedAnswers) {
-                // push answers to firebase
-                updateFirebase(storedAnswers);
-                localStorage.removeItem('testResults');
-            }
+            
             navigate('/HomePage/*')
         }).catch((error) => {
             switch (error.code) {

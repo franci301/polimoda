@@ -32,7 +32,7 @@ function BlogPage() {
             <br />
             <h4>MEET THE ARCHETYPES</h4>
             <br />
-            <div id='archetypes-grid' className='container '>
+            <div id='archetypes-grid' className='container'>
                 <div className='row gx-0 gy-0'>
                     <div className='col'>
                         <img src={Creator} alt="" />

@@ -1,10 +1,17 @@
 import Nav from '../Layouts/nav.js';
 import Footer from '../Layouts/footer.js';
 import util from '../Assets/maths/logistics.js';
+import Duck from '../Assets/Images/duck.jpg';
+import Creator from '../Assets/Images/Meet the Archetypes - Creator.jpg';
+import Explorer from '../Assets/Images/Meet the Archetypes - Explorer.jpg';
+import Hero from '../Assets/Images/Meet the Archetypes - Hero.jpg';
+import Innocent from '../Assets/Images/Meet the Archetypes - Innocent.jpg';
+import Outlaw from '../Assets/Images/Meet the Archetypes - Outlaw.jpeg';
+import Ruler from '../Assets/Images/Meet the Archetypes - Ruler.jpg';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { db } from "../firebase/firebase-config";
-import { updateDoc, doc, setDoc } from 'firebase/firestore';
+import { updateDoc, doc } from 'firebase/firestore';
 import '../Assets/css/testPage.css';
 
 var answerArr = []; // remember to remove first value
@@ -59,42 +66,44 @@ function Test() {
         "Magician", "Explorer", "Everyman",
         "Jester", "Lover", "Hero", "Outlaw", "Innocent"
     ];
+    const images = {
+        Creator, Explorer, Hero, Innocent , Outlaw, Ruler
+    }
     let archetypesToPush = [];
+    let archetypesImages = [];
 
     async function resultsPage() {
+        answerArr.shift();
+        const archetypesValues = util.showPercentages(answerArr);
+        for (let index = 0; index < archetypesValues.length; index++) {
+            let img = images[archetypes[archetypesValues[index][0]]]
+            let archetype = archetypes[archetypesValues[index][0]];
+            if (img === undefined){
+                img = Duck;
+            }
+            archetypesToPush.push(archetype);
+            archetypesImages.push(img);
+        }
         if (!localStorage.getItem('userLogin')) {
-            answerArr.shift();
-            const archetypesValues = util.showPercentages(answerArr);
-            for (let index = 0; index < archetypesValues.length; index++) {
-                archetypesToPush.push(archetypes[archetypesValues[index][0]]);
-            }
-            localStorage.setItem('testResults', JSON.stringify(archetypesToPush));
+            localStorage.setItem('testResults', JSON.stringify([archetypesToPush, archetypesImages]));
             navigate('/RegisterPage/*')
-        } else {
-            answerArr.shift();
-            const archetypesValues = util.showPercentages(answerArr);
-            for (let index = 0; index < archetypesValues.length; index++) {
-                archetypesToPush.push(archetypes[archetypesValues[index][0]]);
-            }
-            console.log(archetypesToPush);
+        }else{
             const obj = localStorage.getItem('userLogin');
             const user = JSON.parse(obj);
             const userCollectionRef = doc(db, "users", user.user.uid);
             await updateDoc(userCollectionRef, {
-                archetypesValue: archetypesToPush
+                archetypesValue: archetypesToPush,
+                archetypesImage: archetypesImages
             });
             answerArr = [];
             navigate('/MyProfile/*')
             // ,{state:{answerArr}}
         }
-    }
-    function testDescription() {
 
     }
     // once the page loads, check to see if the user is logged in.
-    // if they have then alert them that re doing the test will overwrite their previous results
+    // if they are then alert them that re doing the test will overwrite their previous results
     function increment() {
-
         if (value !== -1) {
             answerArr.push(value);
             setText('');
@@ -119,7 +128,7 @@ function Test() {
             <Nav />
             <div>
                 <div>
-                   <h5>Room {room}</h5> 
+                    <h5>Room {room}</h5>
                 </div>
                 <div>
                     {counter === questions.length + 1 ? (
