@@ -14,8 +14,12 @@ function HomeNav() {
         textDecoration: "none",
         color: 'black'
     };
+    const linkStyleLogin ={
+        textDecoration: "none",
+        color:'#453127'
+    }
     return (
-        <nav className="navbar navbar-expand-md navbar bg-warning sticky-top py-3">
+        <nav className="navbar navbar-expand-md navbar sticky-top py-3">
             <div className="container-fluid">
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
                     <span className="navbar-toggler-icon"></span>
@@ -26,7 +30,7 @@ function HomeNav() {
                     </ul>
                     <ul className="navbar-nav mx-right">
                         {loggedIn === false ? (
-                            <li className='nav-item' id='right-nav'><Link style={linkStyle} to='/LoginPage/*'>Login</Link></li>
+                            <li className='nav-item' id='right-nav'><Link style={linkStyleLogin} to='/LoginPage/*'>Login</Link></li>
                         ) : (
                         <li className='nav-item' id='right-nav'><Link style={linkStyle} to='/MyProfile/*'>My Profile</Link></li>
                         )}

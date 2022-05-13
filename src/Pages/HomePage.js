@@ -29,7 +29,7 @@ function HomePage() {
                         </div>
                         <div className="col" id="rightImg">
                             <h6 id='archStories'>Arcehtypal Stories</h6>
-                            <button id="exploreButton" onClick={routeBlog}>Explore XXX</button>
+                            <button id="exploreButton" onClick={routeBlog}>Be your own source of inspiration</button>
                             <div className="d-flex flex-row gap-3 py-3" id='rightImgContainer'>
                                 <img src={duck} alt="" />
                                 <img src={duck} alt="" />

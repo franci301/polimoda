@@ -10,7 +10,7 @@
 }
 
 #left-home-img {
-    width: 120%;
+    width: 140%;
     height: 100vh;
 }
 
@@ -26,14 +26,14 @@
 
 #rightImg {
     position: relative;
-    padding-top: 5%;
+    padding-top: 2%;
 }
 
 #testButton {
     position: absolute;
-    left: 40%;
-    top: 48%;
-    width: 25%;
+    left: 70%;
+    top: 35%;
+    width: 30%;
     z-index: 1000;
     padding: 5px;
     font-weight: bold;
@@ -45,8 +45,8 @@
 #testTxt {
     position: absolute;
     width: 100%;
-    left: 10%;
-    bottom: 1%;
+    left: 35%;
+    bottom: 11%;
     z-index: 1000;
     color: var(--brown);
     font-weight: bold;
@@ -54,15 +54,15 @@
 }
 
 #rightImgContainer {
-    width: 65%;
-    height: 80vh;
+    width: 55%;
+    height: 70vh;
 }
 
 #exploreButton {
     position: absolute;
-    left: 42%;
-    top: 45%;
-    width: 50%;
+    left: 38%;
+    top: 37%;
+    width: 39%;
     padding: 5px;
     font-weight: bold;
     background-color: var(--red);
@@ -75,7 +75,7 @@
     color: var(--red);
     font-weight: bold;
     font-size: 150%;
-    left: 15%;
+    left: 6%;
 }
 
 

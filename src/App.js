@@ -12,7 +12,6 @@ import ShopPage from './Pages/shopPage.js';
 import TestPage from './Pages/TestPage.js';
 import LoginPage from './Pages/LoginPage.js';
 import RegisterPage from './Pages/RegisterPage.js';
-
 function App() {
   return (
     <div className="App">

@@ -23,7 +23,7 @@ function nav() {
         color: 'black'
     };
     return (
-        <nav className="navbar navbar-expand-md navbar bg-warning sticky-top py-3">
+        <nav className="navbar navbar-expand-md navbar sticky-top py-3">
             <div className="container-fluid">
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
                     <span className="navbar-toggler-icon"></span>

@@ -13,7 +13,12 @@ import Zankov from '../Assets/Images/Zankov (ZEKE).jpeg'
 import lowClassic from '../Assets/Images/Low Classic (UNBALANCE DRESS - LIGHT BEIGE).jpeg'
 import Minjukim from '../Assets/Images/Minjukim.png'
 import { useNavigate } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Autoplay } from 'swiper';
 import '../Assets/css/blogcss.css'
+// import 'swiper/css';
+// import 'swiper/css/navigation';
+// import 'swiper/css/autoplay';
 
 function BlogPage() {
     const navigate = useNavigate();
@@ -26,42 +31,87 @@ function BlogPage() {
         <div className="homePage">
             <Nav />
             <br />
-            <h4>EXPLORE THE WORLD OF POWER AND PERSONALIZATION</h4>
+            <h4>EXPLORE THE WORLD OF POWER PERSONALIZATION</h4>
             <br />
             <img id="topBlogPage" src="https://media.istockphoto.com/videos/crowd-of-people-commuters-walking-at-shibuya-crossing-video-id1167927700?b=1&k=20&m=1167927700&s=640x640&h=Zx7VE1nSoF3Rle4J6tJpsLrNZVexJKf7i9vucwgZjKY=" alt="" />
             <br />
             <h4>MEET THE ARCHETYPES</h4>
             <br />
-            <div id='archetypes-grid' className='container'>
-                <div className='row gx-0 gy-0'>
-                    <div className='col'>
-                        <img src={Creator} alt="" />
-                        <h5>The Creator</h5>
+            <Swiper
+                // install Swiper modules
+                modules={[Navigation, Autoplay]}
+                spaceBetween={50}
+                slidesPerView={1}
+                navigation={{ clickable: true }}
+                onSwiper={(swiper) => console.log(swiper)}
+                onSlideChange={() => console.log('slide change')}
+                // autoplay={{ delay: 5000 }}
+            >
+                <SwiperSlide>
+                    <div id='archetypes-grid' className='container '>
+                        <div className='row gx-0 gy-0'>
+                            <div className='col'>
+                                <img src={Creator} alt="" />
+                                <h5>The Creator</h5>
+                            </div>
+                            <div className='col'>
+                                <img src={Hero} alt="" />
+                                <h5>The Hero</h5>
+                            </div>
+                            <div className='col'>
+                                <img src={Explorer} alt="" />
+                                <h5>The Explorer</h5>
+                            </div>
+                        </div>
+                        <div className='row gx-0 gy-0' id='bottomArch'>
+                            <div className='col'>
+                                <img src={Innocent} alt="" />
+                                <h5>The Innocent</h5>
+                            </div>
+                            <div className='col'>
+                                <img src={Outlaw} alt="" />
+                                <h5>The Outlaw</h5>
+                            </div>
+                            <div className='col'>
+                                <img src={Ruler} alt="" />
+                                <h5>The Ruler</h5>
+                            </div>
+                        </div>
                     </div>
-                    <div className='col'>
-                        <img src={Hero} alt="" />
-                        <h5>The Hero</h5>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div id='archetypes-grid' className='container '>
+                        <div className='row gx-0 gy-0'>
+                            <div className='col'>
+                                <img src={Creator} alt="" />
+                                <h5>The Creator</h5>
+                            </div>
+                            <div className='col'>
+                                <img src={Hero} alt="" />
+                                <h5>The Hero</h5>
+                            </div>
+                            <div className='col'>
+                                <img src={Explorer} alt="" />
+                                <h5>The Explorer</h5>
+                            </div>
+                        </div>
+                        <div className='row gx-0 gy-0' id='bottomArch'>
+                            <div className='col'>
+                                <img src={Innocent} alt="" />
+                                <h5>The Innocent</h5>
+                            </div>
+                            <div className='col'>
+                                <img src={Outlaw} alt="" />
+                                <h5>The Outlaw</h5>
+                            </div>
+                            <div className='col'>
+                                <img src={Ruler} alt="" />
+                                <h5>The Ruler</h5>
+                            </div>
+                        </div>
                     </div>
-                    <div className='col'>
-                        <img src={Explorer} alt="" />
-                        <h5>The Explorer</h5>
-                    </div>
-                </div>
-                <div className='row gx-0 gy-0' id='bottomArch'>
-                    <div className='col'>
-                        <img src={Innocent} alt="" />
-                        <h5>The Innocent</h5>
-                    </div>
-                    <div className='col'>
-                        <img src={Outlaw} alt="" />
-                        <h5>The Outlaw</h5>
-                    </div>
-                    <div className='col'>
-                        <img src={Ruler} alt="" />
-                        <h5>The Ruler</h5>
-                    </div>
-                </div>
-            </div>
+                </SwiperSlide>
+            </Swiper>
             <br />
             <div className='d-flex flex-row justify-content-center' id='featuredContainer'>
                 <div id='featuredText'>
@@ -114,7 +164,9 @@ function BlogPage() {
                 </div>
             </div>
             <br />
-            <TestAd />
+            <div id='paddingAd'>
+                <TestAd />
+            </div>
             <br />
             <Footer />
         </div>

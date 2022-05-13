@@ -38,6 +38,10 @@
     bottom: 6%;
 }
 
+.swiper-button-next {
+    color: red;
+}
+
 @media screen and (max-width: 1366px) {
     #topBlogPage {
         width: 88%;
@@ -88,4 +92,9 @@
     #bottomContainer p {
         color: white
     }
+}
+
+#paddingAd {
+    padding-top: 3%;
+    padding-bottom: 3%;
 }

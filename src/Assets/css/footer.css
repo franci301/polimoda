@@ -1,15 +1,28 @@
-#footerContent {
-    font-size: x-small;
-}
-
-#padding {
-    padding-right: 85%;
-}
-
 #middle-container {
-    padding-right: 56%;
+    padding-right: 5%;
+    gap: 3%;
+}
+
+#middle-container p {
+    margin: 0;
+    width: 150px;
+}
+
+#middle-container div {
+    margin: 0;
+    text-align: left;
+}
+
+#middle-container h5 {
+    color: var(--red);
+    font-weight: bold;
+    font-size: medium;
 }
 
 #footerLogo {
     padding-left: 3%;
+}
+
+footer {
+    background-color: var(--yellow);
 }

@@ -1,5 +1,6 @@
 nav {
     height: 100%;
+    background-color: var(--yellow);
 }
 
 #right-nav {
@@ -20,4 +21,8 @@ li {
 
 #right-nav-div {
     padding-right: 1%;
+}
+
+#right-nav-login {
+    color: red;
 }

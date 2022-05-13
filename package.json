@@ -19,6 +19,7 @@
         "react-scripts": "5.0.0",
         "read-excel-file": "^5.2.28",
         "save-dev": "^0.0.1-security",
+        "swiper": "^8.1.4",
         "web-vitals": "^2.1.4",
         "xlsx": "^0.18.5",
         "xtoolset": "^0.0.1"
