@@ -8,8 +8,8 @@ function TestAd() {
     }
     return (
         <div>
-            <h5>Take our Personality Test to get personalized product selection!</h5>
-            <button className="btn btn-dark" onClick={routeTest}>Do the test</button>
+            <h5>Take our Archetypes of Power Discovery to get personalized product selection!</h5>
+            <button className="btn btn-dark" onClick={routeTest}>Start Archetypes of Power Discovery</button>
         </div>
     );
 }

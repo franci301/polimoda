@@ -2,12 +2,13 @@
     width: 40%;
 }
 
-#a {
+
+/* #a {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-}
+} */
 
 #shopProfile {
     padding-bottom: 5%;
@@ -15,4 +16,48 @@
     /* position: absolute;
     bottom: 35%;
     left: 35%; */
+}
+
+#orderImg {
+    width: 50%;
+    height: 80%;
+}
+
+#menuTop {
+    gap: 2%;
+}
+
+a {
+    color: grey;
+    text-decoration: none;
+}
+
+a:hover {
+    color: black;
+}
+
+#OrderContainer {
+    padding-right: 15%;
+}
+
+#ordersContainer h4 {
+    font-weight: bold;
+}
+
+#OrderTxt {
+    padding-left: 5%;
+}
+
+#OrderTxt p {
+    margin: 0;
+}
+
+#orderOne,
+#orderTwo {
+    gap: 2%;
+}
+
+#orderOne p,
+#orderTwo p {
+    width: 100%;
 }

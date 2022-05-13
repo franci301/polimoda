@@ -1,14 +1,16 @@
 import Nav from '../Layouts/nav.js';
 import Footer from '../Layouts/footer.js';
+import ProfileNav from '../Layouts/ProfileNav.js';
+import TestAd from '../Layouts/testAd.js';
 import duck from '../Assets/Images/duck.jpg';
 import getDetails from '../firebase/getDetails.js';
 import { signOut } from 'firebase/auth';
 import { auth } from '../firebase/firebase-config';
 import { useNavigate } from 'react-router-dom';
-import { useState,useEffect } from 'react'
+import { useState, useEffect } from 'react';
 import '../Assets/css/profile.css';
 
-function MyArchetypes() {
+function MyProfile() {
     // const getProps = useLocation();
     // console.log(getProps.state.answerArr);
     const [listArch, setList] = useState(null);
@@ -30,14 +32,14 @@ function MyArchetypes() {
             //         console.log(error.code);
             // }
         });
-    },[]);
+    }, []);
     if (location.includes('/MyProfile/*')) {
         showLogout = true;
     } else {
         showLogout = false;
     }
 
-    function shopRoute(){
+    function shopRoute() {
         navigate('/ShopPage/*');
     }
 
@@ -51,7 +53,7 @@ function MyArchetypes() {
     return (
         <div>
             <Nav />
-            <h2>MY ARCHETYPES</h2>
+            <ProfileNav current={'MyProfile'}/>
             {showLogout ? (
                 <button className="btn btn-danger" onClick={logout}>Logout</button>
             ) : (
@@ -59,12 +61,12 @@ function MyArchetypes() {
             )}
             <div className='d-flex flex-row justify-content-center'>
                 {listArch != null ? (
-                    listArch.map((archetype,index)=>(
-                    <div key={index}>
-                        <img id='archetypesDuck' src={duck} alt="" />
-                        <p>{archetype.stringValue}</p>
-                        <p>Sample text</p>
-                    </div>
+                    listArch.map((archetype, index) => (
+                        <div key={index}>
+                            <img id='archetypesDuck' src={duck} alt="" />
+                            <p>{archetype.stringValue}</p>
+                            <p>Sample text</p>
+                        </div>
                     ))
                 ) : (
                     <div>
@@ -72,14 +74,11 @@ function MyArchetypes() {
                     </div>
                 )}
             </div>
-            <div id='shopProfile'>
-                <h5>View products based on your selected archetypes</h5>
-                <button className="btn btn-dark" onClick={shopRoute}>Shop Now!</button>
-            </div>
+            <TestAd/>
             {/* <div id='a'> */}
-                <Footer />
+            <Footer />
             {/* </div> */}
         </div>
     );
 }
-export default MyArchetypes;
+export default MyProfile;

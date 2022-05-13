@@ -16,9 +16,9 @@ import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper';
 import '../Assets/css/blogcss.css'
-// import 'swiper/css';
-// import 'swiper/css/navigation';
-// import 'swiper/css/autoplay';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/autoplay';
 
 function BlogPage() {
     const navigate = useNavigate();
@@ -37,6 +37,7 @@ function BlogPage() {
             <br />
             <h4>MEET THE ARCHETYPES</h4>
             <br />
+            {/* Make this a seperate component */}
             <Swiper
                 // install Swiper modules
                 modules={[Navigation, Autoplay]}
@@ -45,7 +46,7 @@ function BlogPage() {
                 navigation={{ clickable: true }}
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log('slide change')}
-                // autoplay={{ delay: 5000 }}
+                autoplay={{ delay: 5000 }}
             >
                 <SwiperSlide>
                     <div id='archetypes-grid' className='container '>
@@ -113,38 +114,91 @@ function BlogPage() {
                 </SwiperSlide>
             </Swiper>
             <br />
-            <div className='d-flex flex-row justify-content-center' id='featuredContainer'>
-                <div id='featuredText'>
-                    <h2>FEATURED</h2>
-                    <p>Shop products from our editorials if you haven't taken the test yet!</p>
-                    <div>
-                        See all editorial products
-                    </div>
-                </div>
-                <div id='featuredImgContainer' className='d-flex flex-row justify-content-center'>
-                    <div>
-                        <img id='featuredImg' src={Zankov} alt="" onClick={() => route(Zankov)} />
-                        <div>
-                            <h4>Description</h4>
-                            <p>price</p>
+            <Swiper
+                modules={[Navigation, Autoplay]}
+                spaceBetween={50}
+                slidesPerView={1}
+                navigation={{ clickable: true }}
+                onSwiper={(swiper) => console.log(swiper)}
+                onSlideChange={() => console.log('slide change')}
+                autoplay={{ delay: 5000 }}
+            >
+                <SwiperSlide>
+                    <div className='d-flex flex-row justify-content-center' id='featuredContainer'>
+                        <div id='featuredText'>
+                            <h2>FEATURED</h2>
+                            <p>Shop products from our editorials if you haven't taken the test yet!</p>
+                            <div>
+                                See all editorial products
+                            </div>
+                        </div>
+                        <div id='featuredImgContainer' className='d-flex flex-row justify-content-center'>
+                            <div>
+                                <img id='featuredImg' src={Zankov} alt="" onClick={() => route(Zankov)} />
+                                <div>
+                                    <h4>Brand Name</h4>
+                                    <p>Description</p>
+                                    <p>Price</p>
+                                </div>
+                            </div>
+                            <div>
+                                <img id='featuredImg' src={lowClassic} alt="" onClick={() => route(lowClassic)} />
+                                <div>
+                                    <h4>Brand Name</h4>
+                                    <p>Description</p>
+                                    <p>Price</p>
+                                </div>
+                            </div>
+                            <div>
+                                <img id='featuredImg' src={Minjukim} alt="" onClick={() => route(Minjukim)} />
+                                <div>
+                                    <h4>Brand Name</h4>
+                                    <p>Description</p>
+                                    <p>Price</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div>
-                        <img id='featuredImg' src={lowClassic} alt="" onClick={() => route(lowClassic)} />
-                        <div>
-                            <h4>Description</h4>
-                            <p>price</p>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className='d-flex flex-row justify-content-center' id='featuredContainer'>
+                        <div id='featuredImgContainer' className='d-flex flex-row justify-content-center'>
+                            <div>
+                                <img id='featuredImg' src={Zankov} alt="" onClick={() => route(Zankov)} />
+                                <div>
+                                    <h4>Brand Name</h4>
+                                    <p>Description</p>
+                                    <p>Price</p>
+                                </div>
+                            </div>
+                            <div>
+                                <img id='featuredImg' src={Zankov} alt="" onClick={() => route(Zankov)} />
+                                <div>
+                                    <h4>Brand Name</h4>
+                                    <p>Description</p>
+                                    <p>Price</p>
+                                </div>
+                            </div>
+                            <div>
+                                <img id='featuredImg' src={lowClassic} alt="" onClick={() => route(lowClassic)} />
+                                <div>
+                                    <h4>Brand Name</h4>
+                                    <p>Description</p>
+                                    <p>Price</p>
+                                </div>
+                            </div>
+                            <div>
+                                <img id='featuredImg' src={Minjukim} alt="" onClick={() => route(Minjukim)} />
+                                <div>
+                                    <h4>Brand Name</h4>
+                                    <p>Description</p>
+                                    <p>Price</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div>
-                        <img id='featuredImg' src={Minjukim} alt="" onClick={() => route(Minjukim)} />
-                        <div>
-                            <h4>Description</h4>
-                            <p>price</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                </SwiperSlide>
+            </Swiper>
             <div className='container' id="descriptionsContainer">
                 <div id="bottomContainer" className='row '>
                     <div className='col px-0 py-0'>
