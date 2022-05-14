@@ -38,11 +38,6 @@ function MyProfile() {
     } else {
         showLogout = false;
     }
-
-    function shopRoute() {
-        navigate('/ShopPage/*');
-    }
-
     function logout() {
         signOut(auth).then(() => {
             localStorage.removeItem('userLogin');
@@ -53,28 +48,30 @@ function MyProfile() {
     return (
         <div>
             <Nav />
-            <ProfileNav current={'MyProfile'}/>
-            {showLogout ? (
-                <button className="btn btn-danger" onClick={logout}>Logout</button>
-            ) : (
-                <div></div>
-            )}
-            <div className='d-flex flex-row justify-content-center'>
-                {listArch != null ? (
-                    listArch.map((archetype, index) => (
-                        <div key={index}>
-                            <img id='archetypesDuck' src={duck} alt="" />
-                            <p>{archetype.stringValue}</p>
-                            <p>Sample text</p>
-                        </div>
-                    ))
+            <ProfileNav current={'MyProfile'} />
+            <div id='archetypesContainer'>
+                {showLogout ? (
+                    <button className="btn btn-danger" onClick={logout}>Logout</button>
                 ) : (
-                    <div>
-                        Complete the test to see which archetype you belong to
-                    </div>
+                    <div></div>
                 )}
+                <div className='d-flex flex-row justify-content-center'>
+                    {listArch != null ? (
+                        listArch.map((archetype, index) => (
+                            <div key={index}>
+                                <img id='archetypesDuck' src={duck} alt="" />
+                                <p>{archetype.stringValue}</p>
+                                <p>Sample text</p>
+                            </div>
+                        ))
+                    ) : (
+                        <div>
+                            Complete the test to see which archetype you belong to
+                        </div>
+                    )}
+                </div>
+                <TestAd />
             </div>
-            <TestAd/>
             {/* <div id='a'> */}
             <Footer />
             {/* </div> */}

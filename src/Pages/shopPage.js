@@ -1,7 +1,6 @@
 import Nav from '../Layouts/nav.js';
 import Footer from '../Layouts/footer.js';
-import duck from '../Assets/Images/duck.jpg';
-import { Link } from 'react-router-dom'
+import ShopProducts from '../Layouts/ShopProducts.js';
 import '../Assets/css/shopPage.css';
 
 function ShopPage() {
@@ -31,20 +30,7 @@ function ShopPage() {
                             </div>
                         ) : (
                             itemsArr.map((dict) => (
-                                <div key={dict} className='col py-3'>
-                                    <Link to='/ProductPage/*'><img id='shopPic' src={duck} alt="" /></Link>
-                                    <div>
-                                        <div>
-                                            Product Name
-                                        </div>
-                                        <div>
-                                            Type
-                                        </div>
-                                        <div>
-                                            Price
-                                        </div>
-                                    </div>
-                                </div>
+                                <ShopProducts key={dict}/>
                             ))
                         )}
                     </div>

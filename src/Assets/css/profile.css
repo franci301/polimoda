@@ -27,6 +27,10 @@
     gap: 2%;
 }
 
+#menuTop h4 {
+    font-weight: bold;
+}
+
 a {
     color: grey;
     text-decoration: none;
@@ -34,6 +38,30 @@ a {
 
 a:hover {
     color: black;
+}
+
+#archetypesContainer {
+    height: 78vh;
+}
+
+#orderDescriptionContainer {
+    text-align: left;
+}
+
+#ordersContainer {
+    padding-left: 2%;
+    padding-top: 3%;
+}
+
+#ordersContainer h4 {
+    padding-top: 2%;
+}
+
+#ordersContainer h3 {
+    padding-top: 1%;
+    /* padding-bottom: 1%; */
+    font-size: large;
+    font-weight: bold;
 }
 
 #OrderContainer {
@@ -58,6 +86,50 @@ a:hover {
 }
 
 #orderOne p,
+h5 {
+    margin: 0;
+}
+
+#orderOne {
+    gap: 8%;
+}
+
+#orderOne p,
 #orderTwo p {
     width: 100%;
+}
+
+#orderOne h5 {
+    font-weight: bold;
+}
+
+#wishlistContainer {
+    height: 78vh;
+}
+
+#wishlistItems img {
+    width: 50%;
+    height: 80%;
+}
+
+#myInformationContainer {
+    padding-left: 2%;
+    height: 78vh;
+}
+
+#myInformationContainer h4 {
+    font-weight: bold;
+}
+
+#myInformationContainer h5 {
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+#namesContainer {
+    gap: 10%;
+}
+
+#name {
+    padding-left: 5%;
 }

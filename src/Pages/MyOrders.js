@@ -10,12 +10,20 @@ function MyOrders() {
             <ProfileNav current={'MyOrders'} />
             <div className="d-flex flex-column align-items-start" id='ordersContainer'>
                 <h4>ACTIVE ORDERS</h4>
-                <OrderDescription/>
+                <OrderDescription status={'SHIPPED'}/>
                 <div className="d-flex flex-row">
                     <OrderDetails />
                     <OrderDetails />
                 </div>
                 <h4>PREVIOUS ORDERS</h4>
+                <h3>April 2022</h3>
+                <OrderDescription status={'COMPLETED'}/>
+                <div className="d-flex flex-row">
+                    <OrderDetails />
+                    <OrderDetails />
+                </div>
+                <h3>December 2021</h3>
+                <OrderDescription status={'COMPLETED'}/>
                 <div className="d-flex flex-row">
                     <OrderDetails />
                     <OrderDetails />
