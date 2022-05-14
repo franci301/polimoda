@@ -1,6 +1,7 @@
 import Nav from '../Layouts/nav.js';
 import Footer from '../Layouts/footer.js';
 import TestAd from '../Layouts/testAd.js';
+import ArchComponent from '../Layouts/archComponent.js';
 import Creator from '../Assets/Images/Meet the Archetypes - Creator.jpg';
 import Explorer from '../Assets/Images/Meet the Archetypes - Explorer.jpg';
 import Hero from '../Assets/Images/Meet the Archetypes - Hero.jpg';
@@ -51,64 +52,28 @@ function BlogPage() {
                 <SwiperSlide>
                     <div id='archetypes-grid' className='container '>
                         <div className='row gx-0 gy-0'>
-                            <div className='col'>
-                                <img src={Creator} alt="" />
-                                <h5>The Creator</h5>
-                            </div>
-                            <div className='col'>
-                                <img src={Hero} alt="" />
-                                <h5>The Hero</h5>
-                            </div>
-                            <div className='col'>
-                                <img src={Explorer} alt="" />
-                                <h5>The Explorer</h5>
-                            </div>
+                            <ArchComponent img={Creator} title="The Creator" />
+                            <ArchComponent img={Hero} title="The Hero" />
+                            <ArchComponent img={Explorer} title="The Explorer" />
                         </div>
                         <div className='row gx-0 gy-0' id='bottomArch'>
-                            <div className='col'>
-                                <img src={Innocent} alt="" />
-                                <h5>The Innocent</h5>
-                            </div>
-                            <div className='col'>
-                                <img src={Outlaw} alt="" />
-                                <h5>The Outlaw</h5>
-                            </div>
-                            <div className='col'>
-                                <img src={Ruler} alt="" />
-                                <h5>The Ruler</h5>
-                            </div>
+                            <ArchComponent img={Innocent} title="The Innocent" />
+                            <ArchComponent img={Outlaw} title="The Outlaw" />
+                            <ArchComponent img={Ruler} title="The Ruler" />
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div id='archetypes-grid' className='container '>
-                        <div className='row gx-0 gy-0'>
-                            <div className='col'>
-                                <img src={Creator} alt="" />
-                                <h5>The Creator</h5>
-                            </div>
-                            <div className='col'>
-                                <img src={Hero} alt="" />
-                                <h5>The Hero</h5>
-                            </div>
-                            <div className='col'>
-                                <img src={Explorer} alt="" />
-                                <h5>The Explorer</h5>
-                            </div>
+                    <div className='row gx-0 gy-0'>
+                            <ArchComponent img={Creator} title="The Creator" />
+                            <ArchComponent img={Hero} title="The Hero" />
+                            <ArchComponent img={Explorer} title="The Explorer" />
                         </div>
                         <div className='row gx-0 gy-0' id='bottomArch'>
-                            <div className='col'>
-                                <img src={Innocent} alt="" />
-                                <h5>The Innocent</h5>
-                            </div>
-                            <div className='col'>
-                                <img src={Outlaw} alt="" />
-                                <h5>The Outlaw</h5>
-                            </div>
-                            <div className='col'>
-                                <img src={Ruler} alt="" />
-                                <h5>The Ruler</h5>
-                            </div>
+                            <ArchComponent img={Innocent} title="The Innocent" />
+                            <ArchComponent img={Outlaw} title="The Outlaw" />
+                            <ArchComponent img={Ruler} title="The Ruler" />
                         </div>
                     </div>
                 </SwiperSlide>
@@ -121,7 +86,7 @@ function BlogPage() {
                 navigation={{ clickable: true }}
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log('slide change')}
-                autoplay={{ delay: 5000 }}
+                autoplay={{ delay: 6500 }}
             >
                 <SwiperSlide>
                     <div className='d-flex flex-row justify-content-center' id='featuredContainer'>
