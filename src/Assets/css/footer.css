@@ -1,6 +1,7 @@
 #middle-container {
     padding-right: 5%;
     gap: 3%;
+    font-size: small;
 }
 
 #middle-container p {
