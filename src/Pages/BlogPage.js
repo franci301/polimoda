@@ -2,6 +2,7 @@ import Nav from '../Layouts/nav.js';
 import Footer from '../Layouts/footer.js';
 import TestAd from '../Layouts/testAd.js';
 import ArchComponent from '../Layouts/archComponent.js';
+import FeaturedImages from '../Layouts/featuredImages.js';
 import Creator from '../Assets/Images/Meet the Archetypes - Creator.jpg';
 import Explorer from '../Assets/Images/Meet the Archetypes - Explorer.jpg';
 import Hero from '../Assets/Images/Meet the Archetypes - Hero.jpg';
@@ -13,7 +14,9 @@ import bottomImg1 from '../Assets/Images/BE A MAGICIAN JUST LIKE VITELLI.jpeg'
 import Zankov from '../Assets/Images/Zankov (ZEKE).jpeg'
 import lowClassic from '../Assets/Images/Low Classic (UNBALANCE DRESS - LIGHT BEIGE).jpeg'
 import Minjukim from '../Assets/Images/Minjukim.png'
-import { useNavigate } from 'react-router-dom';
+import vitelliBlog from '../Assets/Images/Vitelli Doomboh Leggings - Blog.jpeg'
+import ANDREJ from '../Assets/Images/ANDREJ GRONAU .jpeg'
+import Charlie from '../Assets/Images/Charlie Costantinou.png'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper';
 import '../Assets/css/blogcss.css'
@@ -22,22 +25,12 @@ import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
 
 function BlogPage() {
-    const navigate = useNavigate();
-
-    function route(props) {
-        navigate('/ProductPage/*', { state: { img: props } });
-    }
-
     return (
         <div className="homePage">
             <Nav />
-            <br />
             <h4>EXPLORE THE WORLD OF POWER PERSONALIZATION</h4>
-            <br />
             <img id="topBlogPage" src="https://media.istockphoto.com/videos/crowd-of-people-commuters-walking-at-shibuya-crossing-video-id1167927700?b=1&k=20&m=1167927700&s=640x640&h=Zx7VE1nSoF3Rle4J6tJpsLrNZVexJKf7i9vucwgZjKY=" alt="" />
-            <br />
             <h4>MEET THE ARCHETYPES</h4>
-            <br />
             {/* Make this a seperate component */}
             <Swiper
                 // install Swiper modules
@@ -65,7 +58,7 @@ function BlogPage() {
                 </SwiperSlide>
                 <SwiperSlide>
                     <div id='archetypes-grid' className='container '>
-                    <div className='row gx-0 gy-0'>
+                        <div className='row gx-0 gy-0'>
                             <ArchComponent img={Creator} title="The Creator" />
                             <ArchComponent img={Hero} title="The Hero" />
                             <ArchComponent img={Explorer} title="The Explorer" />
@@ -98,68 +91,19 @@ function BlogPage() {
                             </div>
                         </div>
                         <div id='featuredImgContainer' className='d-flex flex-row justify-content-center'>
-                            <div>
-                                <img id='featuredImg' src={Zankov} alt="" onClick={() => route(Zankov)} />
-                                <div>
-                                    <h4>Brand Name</h4>
-                                    <p>Description</p>
-                                    <p>Price</p>
-                                </div>
-                            </div>
-                            <div>
-                                <img id='featuredImg' src={lowClassic} alt="" onClick={() => route(lowClassic)} />
-                                <div>
-                                    <h4>Brand Name</h4>
-                                    <p>Description</p>
-                                    <p>Price</p>
-                                </div>
-                            </div>
-                            <div>
-                                <img id='featuredImg' src={Minjukim} alt="" onClick={() => route(Minjukim)} />
-                                <div>
-                                    <h4>Brand Name</h4>
-                                    <p>Description</p>
-                                    <p>Price</p>
-                                </div>
-                            </div>
+                            <FeaturedImages image={vitelliBlog} />
+                            <FeaturedImages image={ANDREJ} />
+                            <FeaturedImages image={Charlie} />
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className='d-flex flex-row justify-content-center' id='featuredContainer'>
                         <div id='featuredImgContainer' className='d-flex flex-row justify-content-center'>
-                            <div>
-                                <img id='featuredImg' src={Zankov} alt="" onClick={() => route(Zankov)} />
-                                <div>
-                                    <h4>Brand Name</h4>
-                                    <p>Description</p>
-                                    <p>Price</p>
-                                </div>
-                            </div>
-                            <div>
-                                <img id='featuredImg' src={Zankov} alt="" onClick={() => route(Zankov)} />
-                                <div>
-                                    <h4>Brand Name</h4>
-                                    <p>Description</p>
-                                    <p>Price</p>
-                                </div>
-                            </div>
-                            <div>
-                                <img id='featuredImg' src={lowClassic} alt="" onClick={() => route(lowClassic)} />
-                                <div>
-                                    <h4>Brand Name</h4>
-                                    <p>Description</p>
-                                    <p>Price</p>
-                                </div>
-                            </div>
-                            <div>
-                                <img id='featuredImg' src={Minjukim} alt="" onClick={() => route(Minjukim)} />
-                                <div>
-                                    <h4>Brand Name</h4>
-                                    <p>Description</p>
-                                    <p>Price</p>
-                                </div>
-                            </div>
+                            <FeaturedImages image={vitelliBlog} />
+                            <FeaturedImages image={ANDREJ} />
+                            <FeaturedImages image={Charlie} />
+                            <FeaturedImages image={Zankov} />
                         </div>
                     </div>
                 </SwiperSlide>

@@ -2,14 +2,13 @@ import HomeNav from '../Layouts/HomeNav';
 import Footer from '../Layouts/footer';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { auth, db } from '../firebase/firebase-config';
-import { signInWithEmailAndPassword, sendPasswordResetEmail, onAuthStateChanged } from 'firebase/auth';
-import { updateDoc, doc } from 'firebase/firestore';
+import { auth } from '../firebase/firebase-config';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import '../Assets/css/login.css';
 
 function LoginPage() {
     const linkStyle = {
-        textDecoration: "none",
+        // textDecoration: "none",
         color: 'black'
     };
     const [email, setEmail] = useState('');
@@ -17,13 +16,13 @@ function LoginPage() {
     const [text, setText] = useState('');
     const navigate = useNavigate();
 
-    
+
     async function login() {
         signInWithEmailAndPassword(auth, email, password).then((user) => {
             setText('Login Successful');
             const localAuth = auth;
             localStorage.setItem('userLogin', JSON.stringify(user));
-            
+
             navigate('/HomePage/*')
         }).catch((error) => {
             switch (error.code) {
@@ -49,20 +48,29 @@ function LoginPage() {
             <HomeNav />
             <div>
                 <div className='d-flex flex-col justify-content-center'>
-                    <div>
-                        <div>
-                            Email<input type="text" onChange={(event) => { setEmail(event.target.value) }} />
+                    <div id='loginContainer'>
+                        <h3>LOGIN</h3>
+                        <div id='input1'>
+                            <input type="text" placeholder='Email          ' onChange={(event) => { setEmail(event.target.value) }} />
                         </div>
-                        <div>
-                            Password<input type="password" onChange={(event) => { setPassword(event.target.value) }} />
+                        <div id='input2'>
+                            <input type="password" placeholder='Password       ' onChange={(event) => { setPassword(event.target.value) }} />
                         </div>
-                        {text != '' ? (<div className='text-danger'>{text}</div>) : <div></div>}
-                        <div>
-                            <button className='btn btn-dark' onClick={login}>Login</button>
+                        <div id='buttonDiv'>
+                            <button onClick={login}>LOG IN</button>
+                        </div>
+                        <div id='register'>
+                            <Link style={linkStyle} to='/RegisterPage/*'>REGISTER</Link>
                         </div>
                     </div>
-                    <Link style={linkStyle} to='/RegisterPage/*'>Register</Link>
                 </div>
+            </div>
+            <div id='errorLogin'>
+                {text != '' ? (
+                    <div className='text-danger'>
+                       <h5>{text}</h5> 
+                    </div>
+                ) : null}
             </div>
             <div id='bottomFooter'>
                 <Footer />

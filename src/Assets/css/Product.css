@@ -46,3 +46,33 @@ img {
     padding-top: 4%;
     padding-bottom: 4%;
 }
+
+#textContainerProduct {
+    text-align: left;
+}
+
+button {
+    color: white;
+    background-color: var(--brown);
+    border: none;
+    height: 50px;
+}
+
+#productButtonContainer {
+    gap: 3%;
+}
+
+#select h5 {
+    padding-bottom: 5%;
+    font-weight: bold;
+}
+
+#productSelect {
+    text-align: center;
+    width: 80%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    color: var(--brown);
+    border-width: 2px;
+    border-color: var(--brown);
+}

@@ -4,3 +4,54 @@
     left: 0;
     width: 100%;
 }
+
+#loginContainer {
+    top: 15%;
+    text-align: left;
+}
+
+#loginContainer input {
+    border-radius: 18px;
+    border: 1px solid grey;
+    line-height: 200%;
+    padding-left: 8%;
+}
+
+#loginContainer #input1 {
+    padding-top: 5%;
+    padding-bottom: 10%;
+}
+
+#loginContainer #input2 {
+    padding-bottom: 10%;
+}
+
+#loginContainer h3 {
+    padding-left: 30%;
+}
+
+#loginContainer #buttonDiv {
+    padding-left: 10%;
+}
+
+#loginContainer button {
+    border: none;
+    color: white;
+    background-color: var(--brown);
+    width: 100%;
+    height: 35px;
+}
+
+#loginContainer #register {
+    padding-top: 5%;
+    text-align: right;
+}
+
+#loginContainer a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--brown);
+}
+
+#errorLogin {
+    padding-top: 1%;
+}

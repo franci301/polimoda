@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import '../Assets/css/profile.css';
 
+
 function MyProfile() {
     // const getProps = useLocation();
     // console.log(getProps.state.answerArr);
@@ -33,6 +34,7 @@ function MyProfile() {
             // }
         });
     }, []);
+
     if (location.includes('/MyProfile/*')) {
         showLogout = true;
     } else {

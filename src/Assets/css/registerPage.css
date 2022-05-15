@@ -1,0 +1,39 @@
+#registerContainer input {
+    border-radius: 18px;
+    border: 1px solid grey;
+    line-height: 200%;
+    padding-left: 8%;
+}
+
+#registerContainer #input1 {
+    padding-top: 5%;
+    padding-bottom: 10%;
+}
+
+#registerContainer #input2 {
+    padding-bottom: 10%;
+}
+
+#registerContainer #input3 {
+    padding-bottom: 10%;
+}
+
+#registerContainer #input4 {
+    padding-bottom: 10%;
+}
+
+#registerContainer button {
+    border: none;
+    color: white;
+    background-color: var(--brown);
+    width: 70%;
+    height: 35px;
+}
+
+#registerContainer #buttonDiv {
+    padding-bottom: 5%;
+}
+
+#errorDiv {
+    padding-top: 2%;
+}

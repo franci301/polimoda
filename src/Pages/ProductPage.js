@@ -8,11 +8,11 @@ function ProductPage() {
     const location = useLocation();
     let ignore = true
 
-    if(location.state != null){
+    if (location.state != null) {
         ignore = false
     }
-    
-   
+
+
     return (
         <div>
             <Nav />
@@ -33,33 +33,38 @@ function ProductPage() {
                     <div className="container div flex-child" id='div-r'>
                         {ignore ?
                             (
-                                <img id='main'src='https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cmFuZG9tfGVufDB8fDB8fA%3D%3D&w=1000&q=80' />
+                                <img id='main' src='https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cmFuZG9tfGVufDB8fDB8fA%3D%3D&w=1000&q=80' />
                             ) : (
                                 <img id='main' src={location.state.img} />
                             )}
 
                     </div>
                 </div>
-                <div > { /* sold out? */}
-                    <div id='ProductAvailability' >
-                        SOLD OUT
+                <div id='textContainerProduct'>
+                    <div id='productName'>
+                        <h5>White Sleeveless Collarbone Knitted Dress</h5>
                     </div>
-                    <div >
-                        <div id='productTitle' >
-                            < h5 > MS MIN </h5>
-                            <div className='d-flex flex-column' >
-                                <h6 > Product Name </h6>
-                                <p > Price </p>
-                            </div>
-                            <p > Product description </p>
-                        </div>
+                    <div id='designerName' >
+                        <h4>THEBE MAGUGU</h4>
+                    </div>
+                    <div id='productDescription'>
+                        <p > Product description </p>
                     </div>
                     <div id='productDetails'>
                         <p>Product Details</p>
                     </div>
-                    <div>
-                        <h6>Size</h6>
-                        <select name="" id="">
+                    <div >
+                        <div id='productTitle' >
+                            <div className='d-flex flex-column' >
+                                <p > Price </p>
+                                <p>Color</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id='select'>
+                        <h5>XS, S, M, L, XL</h5>
+                        <select name="" id="productSelect">
+                            <option value="A">SELECT A SIZE</option>
                             <option value="A">XS</option>
                             <option value="A">S</option>
                             <option value="A">M</option>
@@ -68,7 +73,11 @@ function ProductPage() {
                         </select>
                     </div>
                     <br />
-                    <button className='btn btn-dark'>ADD TO CART</button>
+                    <div className='d-flex flex-row' id='productButtonContainer'>
+                        <button>ADD TO CART</button>
+                        <button>ADD TO WISHLISH</button>
+                    </div>
+
                 </div>
             </div>
             <div id='productAd'>

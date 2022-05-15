@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { updateDoc, setDoc, doc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
+import '../Assets/css/registerPage.css';
 import '../Assets/css/bottomFooter.css';
 
 function RegisterPage() {
@@ -74,41 +75,45 @@ function RegisterPage() {
     return (
         <div>
             <HomeNav />
-            Register Page
             <br />
             <div>
-                <div className="d-flex flex-column justify-content-center">
-                    <div>
-                        Full Name<input type="text" onChange={(event) => {
-                            setName(event.target.value)
-                        }} />
-                    </div>
-                    <div>
-                        Email <input type="text" onChange={(event) => {
-                            setEmail(event.target.value)
-                        }} />
-                    </div>
-                    <div>
-                        Password <input type="password" onChange={(event) => {
-                            setPassword(event.target.value)
-                        }} />
-                    </div>
-                    <div>
-                        Confirm Password <input type="password" onChange={(event) => {
-                            setConfirmPassword(event.target.value)
-                        }} />
-                    </div>
-                    {text != '' ? (
-                        <div className="text-danger">
-                            <p>{text}</p>
+                <div className="d-flex flex-col justify-content-center align-items-end">
+                    <div id='registerContainer'>
+                        <h3>REGISTER</h3>
+                        <div id='input1'>
+                            <input type="text" onChange={(event) => {
+                                setName(event.target.value)
+                            }} placeholder='Full Name' />
                         </div>
-                    ) :
-                        null
-                    }
-                    <div>
-                        <button className="btn btn-dark" onClick={register}>Register</button>
+                        <div id='input2'>
+                            <input type="text" onChange={(event) => {
+                                setEmail(event.target.value)
+                            }} placeholder='Email' />
+                        </div>
+                        <div id='input3'>
+                            <input type="password" onChange={(event) => {
+                                setPassword(event.target.value)
+                            }} placeholder='Password' />
+                        </div>
+                        <div id='input4'>
+                            <input type="password" onChange={(event) => {
+                                setConfirmPassword(event.target.value)
+                            }} placeholder='Confirm Password' />
+                        </div>
+                        <div id='buttonDiv'>
+                            <button onClick={register}>REGISTER</button>
+                        </div>
                     </div>
                 </div>
+            </div>
+            <div id='errorDiv'>
+                {text != '' ? (
+                    <div className="text-danger">
+                        <h5>{text}</h5>
+                    </div>
+                ) :
+                    null
+                }
             </div>
             <div id='footerTest'>
                 <Footer />

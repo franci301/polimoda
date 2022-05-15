@@ -31,7 +31,7 @@
 
 #testButton {
     position: absolute;
-    left: 70%;
+    left: 50%;
     top: 35%;
     width: 30%;
     z-index: 1000;
@@ -45,7 +45,7 @@
 #testTxt {
     position: absolute;
     width: 100%;
-    left: 35%;
+    left: 20%;
     bottom: 11%;
     z-index: 1000;
     color: var(--brown);
@@ -54,13 +54,21 @@
 }
 
 #rightImgContainer {
-    width: 55%;
+    /* width: 55%; */
     height: 70vh;
+}
+
+#rightImg p {
+    padding-top: 5%;
+}
+
+#rightImg img {
+    width: 140%;
 }
 
 #exploreButton {
     position: absolute;
-    left: 38%;
+    left: 50%;
     top: 37%;
     width: 39%;
     padding: 5px;
@@ -75,7 +83,7 @@
     color: var(--red);
     font-weight: bold;
     font-size: 150%;
-    left: 6%;
+    left: 20%;
 }
 
 
