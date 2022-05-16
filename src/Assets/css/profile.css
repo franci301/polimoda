@@ -2,25 +2,9 @@
     width: 40%;
 }
 
-
-/* #a {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-} */
-
 #shopProfile {
     padding-bottom: 5%;
     padding-top: 5%;
-    /* position: absolute;
-    bottom: 35%;
-    left: 35%; */
-}
-
-#orderImg {
-    width: 50%;
-    height: 80%;
 }
 
 #menuTop {
@@ -44,6 +28,27 @@ a:hover {
     height: 78vh;
 }
 
+@media screen and (max-width: 3024px) {
+    #orderImg {
+        width: 50%;
+        height: 80%;
+    }
+    #myInformationContainer {
+        padding-left: 2%;
+        height: 78vh;
+        padding-top: 5%;
+    }
+    #myInformationContainer h5 {
+        padding-top: 4%;
+        padding-bottom: 4%;
+    }
+}
+
+
+/* #OrderContainer {
+    padding-right: 10%;
+} */
+
 #orderDescriptionContainer {
     text-align: left;
 }
@@ -59,13 +64,8 @@ a:hover {
 
 #ordersContainer h3 {
     padding-top: 1%;
-    /* padding-bottom: 1%; */
     font-size: large;
     font-weight: bold;
-}
-
-#OrderContainer {
-    padding-right: 15%;
 }
 
 #ordersContainer h4 {
@@ -122,10 +122,11 @@ h5 {
     font-weight: bold;
 }
 
-#myInformationContainer h5 {
-    padding-top: 2%;
-    padding-bottom: 2%;
-}
+
+/* #myInformationContainer h5 {
+    padding-top: 4%;
+    padding-bottom: 4%;
+} */
 
 #namesContainer {
     gap: 10%;

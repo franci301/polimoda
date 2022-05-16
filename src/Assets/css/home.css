@@ -29,23 +29,10 @@
     padding-top: 2%;
 }
 
-#testButton {
-    position: absolute;
-    left: 50%;
-    top: 35%;
-    width: 30%;
-    z-index: 1000;
-    padding: 5px;
-    font-weight: bold;
-    background-color: var(--purple);
-    color: white;
-    border: none;
-}
-
 #testTxt {
     position: absolute;
     width: 100%;
-    left: 20%;
+    left: 34%;
     bottom: 11%;
     z-index: 1000;
     color: var(--brown);
@@ -58,17 +45,13 @@
     height: 70vh;
 }
 
-#rightImg p {
-    padding-top: 5%;
-}
-
 #rightImg img {
-    width: 140%;
+    width: 112%;
 }
 
 #exploreButton {
     position: absolute;
-    left: 50%;
+    left: 37%;
     top: 37%;
     width: 39%;
     padding: 5px;
@@ -83,8 +66,30 @@
     color: var(--red);
     font-weight: bold;
     font-size: 150%;
-    left: 20%;
+    left: 5%;
 }
 
 
 /* media queries for mac and windows screens */
+
+@media screen and (max-width:3024px) {
+    /* https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_media_bg */
+    /* the maximum width to apply the css styles below to is 3024 */
+    /* screen size <= 3024 apply these rules */
+    /* Mac screen */
+    #testButton {
+        position: absolute;
+        left: 68%;
+        top: 36%;
+        width: 30%;
+        z-index: 1000;
+        padding: 5px;
+        font-weight: bold;
+        background-color: var(--purple);
+        color: white;
+        border: none;
+    }
+    #rightImg p {
+        padding-top: 1%;
+    }
+}

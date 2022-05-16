@@ -47,7 +47,7 @@ function LoginPage() {
         <div>
             <HomeNav />
             <div>
-                <div className='d-flex flex-col justify-content-center'>
+                <div className='d-flex flex-col justify-content-center' id='loginContainerParent'>
                     <div id='loginContainer'>
                         <h3>LOGIN</h3>
                         <div id='input1'>

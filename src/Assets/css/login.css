@@ -1,3 +1,13 @@
+@media screen and (max-width: 3024px) {
+    #loginContainerParent {
+        padding-top: 4%;
+    }
+    #loginContainer #buttonDiv {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
 #bottomFooter {
     position: fixed;
     bottom: 0;
@@ -6,7 +16,6 @@
 }
 
 #loginContainer {
-    top: 15%;
     text-align: left;
 }
 
@@ -30,9 +39,10 @@
     padding-left: 30%;
 }
 
-#loginContainer #buttonDiv {
+
+/* #loginContainer #buttonDiv {
     padding-left: 10%;
-}
+} */
 
 #loginContainer button {
     border: none;
