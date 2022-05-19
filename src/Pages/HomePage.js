@@ -27,7 +27,7 @@ function HomePage() {
                         <div className="col" id="leftImg">
                             <img id="left-home-img" src={testImg} alt="" />
                             {/* button styling */}
-                            <button id='testButton' onClick={routeTest}>Start Archetypes of Power Discovery ( of power discovery on second line)</button>
+                            <button id='testButton' onClick={routeTest}>Start Archetypes <br /> of Power Discovery</button>
                             <p id='testTxt'>Get your personalized product offering upon completing a Jungian Archetypes inspired personality test</p>
                         </div>
                         <div className="col" id="rightImg">

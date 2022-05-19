@@ -295,7 +295,7 @@
 
  async function UploadImages() {
      const imgCollectionRef = collection(db, 'images');
-     for (let i = 0; i < 3; i++) {
+     for (let i = 0; i < imgArr.length; i++) {
          await addDoc(imgCollectionRef, {
              gender: arr[i].gender,
              groupID: Number(arr[i].key),

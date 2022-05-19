@@ -51,7 +51,7 @@ img {
     text-align: left;
 }
 
-button {
+#productButtonContainer button {
     color: white;
     background-color: var(--brown);
     border: none;

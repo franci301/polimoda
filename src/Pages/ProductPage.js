@@ -56,7 +56,7 @@ function ProductPage() {
                     <div >
                         <div id='productTitle' >
                             <div className='d-flex flex-column' >
-                                <p > Price </p>
+                                <p>Price </p>
                                 <p>Color</p>
                             </div>
                         </div>
