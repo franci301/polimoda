@@ -65,6 +65,7 @@
 }
 
 @media screen and (max-width: 1366px) {
+    /* my monitor screen size */
     #topBlogPage {
         width: 88%;
     }

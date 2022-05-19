@@ -1,13 +1,28 @@
 import Nav from '../Layouts/nav.js';
 import Footer from '../Layouts/footer.js';
 import ShopProducts from '../Layouts/ShopProducts.js';
-import { useState } from 'react';
+import UploadImages from '../Assets/uploadImages.js';
+import { useState, useEffect } from 'react';
+import getImages from '../firebase/getAllItems.js';
 import '../Assets/css/shopPage.css';
 
 function ShopPage() {
-
     const [on, toggle] = useState(false);
-    var itemsArr = ['1', '2', '3', '4', '5', '6', '7', '8'];
+    const [itemArr, setItemArr] = useState([]);
+
+    useEffect(() => {
+        get()
+    }, []);
+
+    async function get() {
+        await getImages().then((res) => {
+            console.log(res);
+            for(const item in res){
+                setItemArr(itemArr => [...itemArr, res[item]]);
+            }
+        })
+        console.log(itemArr)
+    }
 
     function toggleFilter() {
         if (!on) {
@@ -32,13 +47,13 @@ function ShopPage() {
                 </div>
                 <div className='container sticky-right'>
                     <div id='cols' className='row row-cols-4 align-items-start'>
-                        {itemsArr === null ? 
+                        {itemArr === null ? 
                             <div>
                                 list empty
                             </div>
                          :
-                            itemsArr.map((dict) => (
-                                <ShopProducts key={dict} />
+                            itemArr.map((dict) => (
+                                <ShopProducts key={dict.designerName} img={dict.stringLoc} />
                             )
                         )}
                     </div>
@@ -50,4 +65,5 @@ function ShopPage() {
         </div>
     );
 }
+
 export default ShopPage;

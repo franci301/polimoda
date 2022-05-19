@@ -22,11 +22,13 @@
     position: relative;
     padding: 0%;
     left: -21%;
+    object-fit: cover;
 }
 
 #rightImg {
     position: relative;
     padding-top: 2%;
+    object-fit: cover;
 }
 
 #testTxt {
@@ -35,7 +37,7 @@
     left: 34%;
     bottom: 11%;
     z-index: 1000;
-    color: var(--brown);
+    color: var(--purple);
     font-weight: bold;
     font-size: 150%;
 }

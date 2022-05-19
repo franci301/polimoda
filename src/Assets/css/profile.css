@@ -28,6 +28,11 @@ a:hover {
     height: 78vh;
 }
 
+#profileLogout {
+    position: relative;
+    left: 0%;
+}
+
 @media screen and (max-width: 3024px) {
     #orderImg {
         width: 50%;
