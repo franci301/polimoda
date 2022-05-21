@@ -22,9 +22,37 @@ function calculateResults(testAnswers) {
     var percentageArr = [];
     var totSum = sumIt(arr);
     for (let index = 0; index < arr.length; index++) {
-        percentageArr.push(parseFloat((arr[index] / (totSum)).toFixed(3)));
+        percentageArr.push(parseFloat((arr[index] / (totSum)).toFixed(2)));
     }
-    return percentageArr; // sort array 
+    let finalArray = [];
+    for (let index = 0; index < percentageArr.length; index++) {
+        finalArray[index] = (percentageArr[index]);
+    }
+    finalArray[0] = percentageArr[percentageArr.length - 1];
+    // innocent is now first
+    finalArray[1] = percentageArr[5];
+    // explorer is not second
+    finalArray[2] = percentageArr[3];
+    // sage is now third
+    finalArray[3] = percentageArr[9];
+    // hero is 4th
+    finalArray[4] = percentageArr[10];
+    // outlaw if 5th
+    finalArray[5] = percentageArr[4];
+    // magician is 6th
+    finalArray[6] = percentageArr[7];
+    // jester is 7th
+    finalArray[7] = percentageArr[8];
+    // lover is 8th
+    finalArray[8] = percentageArr[6];
+    // everyman is 9th
+    finalArray[9] = percentageArr[0];
+    // caregiver is 10th
+    finalArray[10] = percentageArr[2];
+    // creator is 11th
+    finalArray[11] = percentageArr[1];
+    // ruler is 12th
+    return finalArray; // sort array 
 }
 // const testAnswers = [
 //         [5, 0, 5],
@@ -41,5 +69,5 @@ function calculateResults(testAnswers) {
 //         [6, 0, 1]
 //     ]
 // console.log(calculateResults(testAnswers));
-// module.exports = calculateResults;
-export default calculateResults;
+module.exports = calculateResults;
+// export default calculateResults;

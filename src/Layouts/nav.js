@@ -7,8 +7,9 @@ function nav() {
     var location = window.location.href;
     var loggedIn;
     var userLogged = localStorage.getItem('userLogin');
+    
     if (location.includes('/MyProfile/*')) {
-        var showLogout = true;
+        showLogout = true;
     } else {
         showLogout = false;
     }
@@ -20,7 +21,7 @@ function nav() {
 
     const linkStyle = {
         textDecoration: "none",
-        color: 'black'
+        color: '#453127'
     };
     return (
         <nav className="navbar navbar-expand-md navbar sticky-top py-3">

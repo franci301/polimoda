@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 function ProfileNav({current}) {
     const linkStyle = {
-        color:'black'
+        color:'#453127'
     }
     return (
         <div className="d-flex inline-flex justify-content-center" id='menuTop'>

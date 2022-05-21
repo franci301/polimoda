@@ -21,7 +21,7 @@ function HomePage() {
             <HomeNav />
             {/* d-flex flex-column 
                 justify-content-between vh-100*/}
-            <div className="container  gx-0" id='homeContainer'>
+            <div className="container gx-0" id='homeContainer'>
                 <div className="container">
                     <div className="row">
                         <div className="col" id="leftImg">
@@ -36,7 +36,7 @@ function HomePage() {
                             <div className="d-flex flex-row gap-3 py-3" id='rightImgContainer'>
                                 <img src={homeBlog} alt="" />
                             </div>
-                            <p id='archStories'>Feel pursuaded by the archetypal narrative to reach power personalization.</p>
+                            <p id='archStories'>Feel pursuaded by the archetypal narrative to reach power personalization</p>
                         </div>
                     </div> 
                 </div>

@@ -293,6 +293,21 @@
      }
  ]
 
+ const filterArr = [
+     'Shoes',
+     'Accessories',
+     'Pants',
+     'Jacket',
+     'Shirt',
+     'Skirt',
+     'Dress',
+     'T-Shirt',
+     'Sweater',
+     'Coat'
+ ]
+
+ // need a better way to decide which filters are which groups
+ // thinking of looping through arr.value[1] and filtering them 
  async function UploadImages() {
      const imgCollectionRef = collection(db, 'images');
      for (let i = 0; i < imgArr.length; i++) {
@@ -303,10 +318,19 @@
              designerName: arr[i].value[0],
              productType: makeLower(arr[i].value[1]),
              price: arr[i].value[2],
-             stringLoc: imgArr[i]
+             stringLoc: imgArr[i],
+             productFilter: getFilter(arr[i].value[1])
          })
-
      }
+ }
+
+ function getFilter(productType) {
+     for (let i = 0; i < filterArr.length; i++) {
+         if (productType.includes(filterArr[i])) {
+             return filterArr[i];
+         }
+     }
+     return 'MUST BE ADDED';
  }
 
  function makeLower(text) {
@@ -316,7 +340,6 @@
      let newArr = [];
      for (let i = 0; i < arr.length; i++) {
          newArr.push(arr[i].charAt(0).toUpperCase() + arr[i].slice(1));
-
      }
      return newArr.join(' ');
  }

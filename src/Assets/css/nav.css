@@ -20,10 +20,10 @@ li {
     font-size: large;
 }
 
-#right-nav-div {
-    padding-right: 1%;
+a {
+    color: var(--brown);
 }
 
-#right-nav-login {
-    color: red;
+#right-nav-div {
+    padding-right: 1%;
 }

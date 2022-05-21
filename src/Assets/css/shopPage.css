@@ -7,34 +7,64 @@ ul {
     list-style-type: none;
 }
 
+h2 {
+    color: var(--purple)
+}
+
 #singleProduct {
     text-align: left;
 }
 
 #shopPageContainer {
     padding-bottom: 3%;
+    min-height: 100vh;
 }
 
 #filterButton {
     border: none;
     background-color: transparent;
     padding-left: 0;
+    cursor: pointer;
+}
+
+#innerUl h4:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--brown);
+    cursor: pointer;
+}
+
+#innerUl h4 {
+    z-index: 100;
+}
+
+#genderLi {
+    z-index: 100;
+}
+
+#innerUl label input {
+    display: none;
+}
+
+#innerUl label span {
+    height: 10px;
+    width: 10px;
+    display: inline-block;
+    position: relative;
+    padding-left: 15%;
+}
+
+#innerUl label:hover {
+    cursor: pointer;
+}
+
+[type=checkbox]:checked+span:before {
+    content: '\2714';
 }
 
 .menu {
     display: block;
-    /* margin: 0 auto; */
     position: relative;
     width: 200px;
-}
-
-.menu>li>a {
-    background: blue;
-    color: #fff;
-    display: block;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
 }
 
 .menu ul {
@@ -49,8 +79,8 @@ ul {
     padding-left: 1%;
 }
 
-.menu ul a {
-    color: #000;
+.menu ul li {
+    color: var(--brown);
     display: block;
     padding-bottom: 8%;
 }
@@ -59,24 +89,16 @@ ul {
     text-align: left;
 }
 
-
-/* .menu li:hover ul {
-    height: 200px;
-    opacity: 1;
-    transform: translateY(0);
-} */
-
 input#menu {
     display: none;
 }
 
 .icon {
-    /* background: #FFF; */
     cursor: pointer;
     height: 24px;
-    padding: 16px;
+    padding: 14px;
     width: 24px;
-    color: black;
+    color: var(--brown);
 }
 
 label.icon {
@@ -86,7 +108,7 @@ label.icon {
 .icon .menu,
 .icon .menu::before,
 .icon .menu::after {
-    background: black;
+    background: var(--brown);
     content: '';
     display: block;
     height: 2px;
@@ -98,12 +120,7 @@ label.icon {
 .icon:hover .menu,
 .icon:hover .menu::before,
 .icon:hover .menu::after {
-    background: black;
-}
-
-.icon .menu {
-    /* left: 18px;
-    top: 27px; */
+    background: var(--brown);
 }
 
 .icon .menu::before {

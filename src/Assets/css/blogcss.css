@@ -46,6 +46,11 @@
     object-fit: cover;
 }
 
+h2,
+h4 {
+    color: var(--purple);
+}
+
 .container h5 {
     position: relative;
     color: var(--red);
