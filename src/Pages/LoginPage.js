@@ -4,12 +4,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { auth } from '../firebase/firebase-config';
 import { signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
+import {getDetails} from '../firebase/getDetails.js';
 import '../Assets/css/login.css';
 
 function LoginPage() {
     const linkStyle = {
         // textDecoration: "none",
-        color: 'black'
+        color: '#453127'
     };
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -28,9 +29,7 @@ function LoginPage() {
     async function login() {
         signInWithEmailAndPassword(auth, email, password).then((user) => {
             setText('Login Successful');
-            const localAuth = auth;
             localStorage.setItem('userLogin', JSON.stringify(user));
-
             navigate('/HomePage/*')
         }).catch((error) => {
             switch (error.code) {

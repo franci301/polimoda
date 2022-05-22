@@ -33,14 +33,6 @@ h2 {
     cursor: pointer;
 }
 
-#innerUl h4 {
-    z-index: 100;
-}
-
-#genderLi {
-    z-index: 100;
-}
-
 #innerUl label input {
     display: none;
 }
@@ -57,6 +49,12 @@ h2 {
     cursor: pointer;
 }
 
+#categoryUl,
+#genderUl,
+#innerUl {
+    display: none;
+}
+
 [type=checkbox]:checked+span:before {
     content: '\2714';
 }
@@ -64,7 +62,7 @@ h2 {
 .menu {
     display: block;
     position: relative;
-    width: 200px;
+    width: 15%;
 }
 
 .menu ul {

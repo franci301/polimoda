@@ -126,36 +126,36 @@ function showPercentages(answers) {
     console.log("Cut Off", cutOff);
     return maxValues;
 }
-master([
-    [6, 6, 3],
-    [5, 4, 2],
-    [1, 1, 4],
-    [6, 5, 5],
-    [3, 5, 1],
-    [1, 4, 1],
-    [0, 3, 0],
-    [1, 1, 2],
-    [4, 1, 0],
-    [6, 6, 5],
-    [4, 1, 1],
-    [5, 4, 1]
-])
-console.log('done')
-    // showPercentages([
-    //     5, 4, 1,
-    //     2, 1, 2,
-    //     2, 3, 2,
-    //     3, 6, 6,
-    //     4, 5, 2,
-    //     6, 5, 5,
-    //     1, 2, 5,
-    //     0, 4, 2,
-    //     3, 1, 4,
-    //     4, 1, 2,
-    //     5, 2, 2,
-    //     6, 6, 0
-    // ])
+// master([
+//     [6, 6, 3],
+//     [5, 4, 2],
+//     [1, 1, 4],
+//     [6, 5, 5],
+//     [3, 5, 1],
+//     [1, 4, 1],
+//     [0, 3, 0],
+//     [1, 1, 2],
+//     [4, 1, 0],
+//     [6, 6, 5],
+//     [4, 1, 1],
+//     [5, 4, 1]
+// ])
+// console.log('done')
+// showPercentages([
+//     5, 4, 1,
+//     2, 1, 2,
+//     2, 3, 2,
+//     3, 6, 6,
+//     4, 5, 2,
+//     6, 5, 5,
+//     1, 2, 5,
+//     0, 4, 2,
+//     3, 1, 4,
+//     4, 1, 2,
+//     5, 2, 2,
+//     6, 6, 0
+// ])
 
 // module.exports = master;
 // module.exports = showPercentages;
-// export default { master, showPercentages };
+export default { master, showPercentages };

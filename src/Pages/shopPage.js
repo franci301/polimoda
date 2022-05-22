@@ -4,7 +4,7 @@ import ShopProducts from '../Layouts/ShopProducts.js';
 import UploadImages from '../Assets/uploadImages.js';
 import { useState, useEffect } from 'react';
 import getImages from '../firebase/getAllItems.js';
-// import '../Assets/css/shopPage.css';
+import '../Assets/css/shopPage.css';
 
 function ShopPage() {
     const [on, toggle] = useState(false);
@@ -12,6 +12,7 @@ function ShopPage() {
     const [gender, toggleGender] = useState(false);
     const [itemArr, setItemArr] = useState([]);
     const [filteredItems, setFilteredItems] = useState([]);
+    const numFilters = 6;
 
     useEffect(() => {
         get();
@@ -23,7 +24,7 @@ function ShopPage() {
                 setItemArr(itemArr => [...itemArr, res[item]]);
                 setItemArr(itemArr => itemArr.sort((a, b) => a.groupName.localeCompare(b.groupName)));
             }
-            // sort the item array by group id ascending
+            // sort the item array by group groupName
         });
     }
 
@@ -32,18 +33,19 @@ function ShopPage() {
     }
 
     function updateFilters() {
-        // need to be able to remove filters without clearing everything
         let filters = [];
-        for (let index = 0; index < 10; index++) {
+        for (let index = 0; index < numFilters; index++) {
             let currentInput = document.getElementById(`filter${index}`);
             if (currentInput.checked && !filters.includes(currentInput.className)) {
                 // get the className of the selected checkbox
                 filters.push(currentInput.className);
+            }if(filteredItems.length != 0){
+                
             }
         }
         filterItems(filters);
     }
-
+    
     function filterItems(filters) {
         // sort by filter 
         for (let index = 0; index < itemArr.length; index++) {
@@ -51,18 +53,15 @@ function ShopPage() {
                 setFilteredItems(filteredItems => [...filteredItems, itemArr[index]]);
             }
         }
+        // compare 2 arrays and remove elements that do not match
+        setFilteredItems(filteredItems=>filteredItems.filter(item => filters.includes(item.productFilter)));
         setFilteredItems(filteredItems => filteredItems.sort((a, b) => a.groupName.localeCompare(b.groupName)));
     }
-
     function clearFilters() {
-        for (let index = 0; index < 10; index++) {
+        for (let index = 0; index <numFilters; index++) {
             document.getElementById(`filter${index}`).checked = false;
         }
         setFilteredItems([]);
-    }
-
-    function route() {
-        window.location.href = '/testing/*';
     }
 
     function toggleFilter() {
@@ -72,6 +71,8 @@ function ShopPage() {
             let filters = document.getElementById('innerUl');
             filters.style.height = '200px';
             filters.style.opacity = 1;
+            filters.style.display = 'block';
+            filters.style.zIndex=100;
             filters.style.transform = 'translateY(0)';
         } else {
             var doc = document.getElementById('cols');
@@ -79,7 +80,22 @@ function ShopPage() {
             var filters = document.getElementById('innerUl');
             filters.style.height = 0;
             filters.style.opacity = 0;
+            filters.style.display = 'none';
+            filters.style.zIndex=-1;
             filters.style.transition = 'all 0.5s ease';
+            // this resets the filter drop downs so theyre closed when you open up the filters again
+            let catFilters = document.getElementById('categoryUl');
+            catFilters.style.height = 0;
+            catFilters.style.opacity = 0;
+            catFilters.style.zIndex = -1;
+            catFilters.style.display='none';
+            catFilters.style.transition = 'all 0.5s ease';
+            let genderFilters = document.getElementById('genderUl');
+            genderFilters.style.height = 0;
+            genderFilters.style.opacity = 0;
+            genderFilters.style.display='none';
+            genderFilters.style.transition = 'all 0.5s ease';
+
         }
         toggle(!on);
     }
@@ -90,11 +106,13 @@ function ShopPage() {
             if (!category) {
                 filters.style.height = '200px';
                 filters.style.opacity = 1;
+                filters.style.display='block';
                 filters.style.zIndex = 1;
                 filters.style.transform = 'translateY(0)';
             } else {
                 filters.style.height = 0;
                 filters.style.opacity = 0;
+                filters.style.display='none';
                 filters.style.zIndex = -1;
                 filters.style.transition = 'all 0.5s ease';
             }
@@ -104,10 +122,12 @@ function ShopPage() {
             if (!gender) {
                 filters.style.height = '200px';
                 filters.style.opacity = 1;
+                filters.style.display='block';
                 filters.style.transform = 'translateY(0)';
             } else {
                 filters.style.height = 0;
                 filters.style.opacity = 0;
+                filters.style.display='none';
                 filters.style.transition = 'all 0.5s ease';
             }
             toggleGender(!gender);
@@ -118,7 +138,7 @@ function ShopPage() {
         <div>
             <Nav />
             <h2>SHOP YOUR PERSONALIZED SELECTION</h2>
-            <button onClick={route}>upload</button>
+            <button>upload</button>
             <br />
             <div className='d-flex flex-row px-5 justify-content-end' id='shopPageContainer'>
                 <ul className="menu" id='outerUl'>
@@ -131,7 +151,7 @@ function ShopPage() {
                             </label>
                         </label>
                         <ul id='innerUl'>
-                            <li>
+                            <li id='categoryLi'>
                                 <div onClick={()=>toggleInnerFilters('categoryUl')}>
                                     <h4>
                                         CATEGORY
@@ -150,9 +170,9 @@ function ShopPage() {
                                     </h4>
                                 </div>
                                 <ul id='genderUl'>
-                                    <li><label><input type="checkbox" className='Shoe' id='filter0' />Shoes<span></span></label></li>
-                                    <li><label><input type="checkbox" className='Accessories' id='filter1' />adsasdsads<span></span></label></li>
-                                    <li><label><input type="checkbox" className='Pants' id='filter2' />Pants<span></span></label></li>
+                                    <li><label><input type="checkbox" className='Womenswear' id='filter3' />Womenswear<span></span></label></li>
+                                    <li><label><input type="checkbox" className='Menswear' id='filter4' />Menswear<span></span></label></li>
+                                    <li><label><input type="checkbox" className='Gender-Neutral' id='filter5' />Gender-Neutral<span></span></label></li>
                                 </ul>
                             </li>
                             {/* <li><label><input type="checkbox" className='Shoe' id='filter0' />Shoes<span></span></label></li>
