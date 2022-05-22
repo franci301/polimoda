@@ -7,6 +7,10 @@
     padding-top: 5%;
 }
 
+p {
+    color: var(--brown);
+}
+
 #menuTop {
     gap: 2%;
 }
@@ -26,6 +30,12 @@ a:hover {
 
 #archetypesContainer {
     height: 78vh;
+    min-height: 100vh;
+}
+
+#profileLogout {
+    position: relative;
+    left: 0%;
 }
 
 @media screen and (max-width: 3024px) {
@@ -56,6 +66,7 @@ a:hover {
 #ordersContainer {
     padding-left: 2%;
     padding-top: 3%;
+    min-height: 100vh;
 }
 
 #ordersContainer h4 {
@@ -105,7 +116,8 @@ h5 {
 }
 
 #wishlistContainer {
-    height: 78vh;
+    /* height: 78vh; */
+    min-height: 100vh;
 }
 
 #wishlistItems img {
@@ -115,7 +127,8 @@ h5 {
 
 #myInformationContainer {
     padding-left: 2%;
-    height: 78vh;
+    /* height: 78vh; */
+    min-height: 100vh;
 }
 
 #myInformationContainer h4 {

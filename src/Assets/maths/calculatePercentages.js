@@ -1,8 +1,3 @@
-var archetypes = [
-    "Cargiver", "Ruler", "Creator", "Sage",
-    "Magician", "Explorer", "Everyman",
-    "Jester", "Lover", "Hero", "Outlaw", "Innocent"
-]
 var group1 = [
     0.990632868, -0.378271632,
     1.160752322, 0.752602106, -0.23470236, 0.346829002,
@@ -189,6 +184,6 @@ function calc(percentages, groupId) {
     }
     return arr;
 }
-// calc([0.3, 0, 0.1, 0, 0.05, 0, 0.05, 0.05, 0.1, 0.05, 0.2, 0.1], [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
-// module.exports = calc;
-export default calc;
+// console.log(calc([0.11, 0.05, 0.16, 0.17, 0.05, 0.08, 0.03, 0.04, 0.03, 0.15, 0.05, 0.10], [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]));
+module.exports = calc;
+// export default calc;

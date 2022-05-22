@@ -13,6 +13,7 @@
         "browserify-fs": "^1.0.0",
         "exceljs": "^4.3.0",
         "firebase": "^9.6.11",
+        "fs": "^0.0.1-security",
         "get-all-files": "^4.1.0",
         "gh-pages": "^3.2.3",
         "jest": "^28.0.1",

@@ -3,7 +3,7 @@ import Footer from '../Layouts/footer';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { auth } from '../firebase/firebase-config';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
 import '../Assets/css/login.css';
 
 function LoginPage() {
@@ -16,7 +16,15 @@ function LoginPage() {
     const [text, setText] = useState('');
     const navigate = useNavigate();
 
-
+    async function resetPassword() {
+        if(email!=='') {
+            await sendPasswordResetEmail(auth,email).then((res) => {
+                setText('Password reset email has been sent')
+            }).catch((err)=>{
+                alert(err.message)
+            })
+        }
+    }
     async function login() {
         signInWithEmailAndPassword(auth, email, password).then((user) => {
             setText('Login Successful');
@@ -58,6 +66,9 @@ function LoginPage() {
                         </div>
                         <div id='buttonDiv'>
                             <button onClick={login}>LOG IN</button>
+                        </div>
+                        <div id='forgottenPassword'>
+                            <p onClick={resetPassword}>Forgotten Password?</p>
                         </div>
                         <div id='register'>
                             <Link style={linkStyle} to='/RegisterPage/*'>REGISTER</Link>

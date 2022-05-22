@@ -31,6 +31,7 @@ function RegisterPage() {
                 try {
                     const user = await createUserWithEmailAndPassword(auth, email, password);
                     const userCollectionRef = doc(db, 'users', user.user.uid);
+                    console.log(userCollectionRef);
                     await setDoc(userCollectionRef, {
                         name: name, email: email
                     });
@@ -41,7 +42,6 @@ function RegisterPage() {
                         updateFirebase(storedAnswers);
                         localStorage.removeItem('testResults');
                     }
-                    setText('Account created successfully!');
                     navigate('/LoginPage/*')
                 } catch (error) {
                     switch (error.code) {
@@ -58,11 +58,11 @@ function RegisterPage() {
                             setText(`Operation not allowed`);
                             break;
                         case 'resource-exhausted':
-                            setText(`Internal server error. Contant system administrator`);
-                        default:
-                            setText(`${error.code}`);
-                            console.log(error.message);
-                            break;
+                            setText(`Internal server error. Contact system administrator`);
+                        // default:
+                        //     setText(`${error.message}`);
+                        //     console.log(error.message);
+                        //     break;
                     }
                 }
             } else {

@@ -1,0 +1,133 @@
+#shopPic {
+    width: 80%;
+    height: 70%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#singleProduct {
+    text-align: left;
+}
+
+#shopPageContainer {
+    padding-bottom: 3%;
+}
+
+#filterButton {
+    border: none;
+    background-color: transparent;
+    padding-left: 0;
+}
+
+.menu {
+    display: block;
+    /* margin: 0 auto; */
+    position: relative;
+    width: 200px;
+}
+
+.menu>li>a {
+    background: blue;
+    color: #fff;
+    display: block;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.menu ul {
+    height: 0;
+    left: 0;
+    opacity: 0;
+    transition: all .5s ease;
+    top: 35px;
+    width: 100%;
+    list-style-type: none;
+    text-align: left;
+    padding-left: 1%;
+}
+
+.menu ul a {
+    color: #000;
+    display: block;
+    padding-bottom: 8%;
+}
+
+#firstLi {
+    text-align: left;
+}
+
+
+/* .menu li:hover ul {
+    height: 200px;
+    opacity: 1;
+    transform: translateY(0);
+} */
+
+input#menu {
+    display: none;
+}
+
+.icon {
+    /* background: #FFF; */
+    cursor: pointer;
+    height: 24px;
+    padding: 16px;
+    width: 24px;
+    color: black;
+}
+
+label.icon {
+    z-index: 200;
+}
+
+.icon .menu,
+.icon .menu::before,
+.icon .menu::after {
+    background: black;
+    content: '';
+    display: block;
+    height: 2px;
+    position: absolute;
+    transition: background ease .3s, top ease .3s .3s, transform ease .3s;
+    width: 20px;
+}
+
+.icon:hover .menu,
+.icon:hover .menu::before,
+.icon:hover .menu::after {
+    background: black;
+}
+
+.icon .menu {
+    /* left: 18px;
+    top: 27px; */
+}
+
+.icon .menu::before {
+    top: -6px;
+}
+
+.icon .menu::after {
+    top: 6px;
+}
+
+#menu:checked+.icon .menu {
+    background: transparent;
+}
+
+#menu:checked+.icon .menu::before {
+    transform: rotate(45deg);
+}
+
+#menu:checked+.icon .menu::after {
+    transform: rotate(-45deg);
+}
+
+#menu:checked+.icon .menu::before,
+#menu:checked+.icon .menu::after {
+    top: 0;
+    transition: top ease .3s, transform ease .3s .3s;
+}

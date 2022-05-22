@@ -46,6 +46,11 @@
     object-fit: cover;
 }
 
+h2,
+h4 {
+    color: var(--purple);
+}
+
 .container h5 {
     position: relative;
     color: var(--red);
@@ -65,6 +70,7 @@
 }
 
 @media screen and (max-width: 1366px) {
+    /* my monitor screen size */
     #topBlogPage {
         width: 88%;
     }

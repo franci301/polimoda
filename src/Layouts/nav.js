@@ -7,8 +7,9 @@ function nav() {
     var location = window.location.href;
     var loggedIn;
     var userLogged = localStorage.getItem('userLogin');
+    
     if (location.includes('/MyProfile/*')) {
-        var showLogout = true;
+        showLogout = true;
     } else {
         showLogout = false;
     }
@@ -20,7 +21,7 @@ function nav() {
 
     const linkStyle = {
         textDecoration: "none",
-        color: 'black'
+        color: '#453127'
     };
     return (
         <nav className="navbar navbar-expand-md navbar sticky-top py-3">
@@ -29,9 +30,14 @@ function nav() {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarResponsive">
-                    <ul className="navbar-nav mx-auto">
+                    <ul className="navbar-nav mx-auto" id='centerNav'>
                         <li className='nav-item' id='center-nav'><Link style={linkStyle} to='/*'>Home</Link></li>
                         <li className='nav-item' id='center-nav'><Link style={linkStyle} to='/Blog/*'>Blog</Link></li>
+                        {loggedIn === true ? (
+                        <li className='nav-item' id='center-nav'><Link style={linkStyle} to='/ShopPage/*'>Shop</Link></li>
+                        ):(
+                        <></>
+                        )}
                     </ul>
                     <ul className="position-absolute navbar-nav start-10">
                         <li className='nav-item' id='left-nav'><Link style={linkStyle} to='/*'><h5>XXXXX</h5></Link></li>

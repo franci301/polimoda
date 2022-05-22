@@ -15,6 +15,7 @@ function MyProfile() {
     // const getProps = useLocation();
     // console.log(getProps.state.answerArr);
     const [listArch, setList] = useState(null);
+    const [img,setImg] = useState('');
     const navigate = useNavigate();
     var showLogout = false;
     var location = window.location.href;
@@ -22,19 +23,19 @@ function MyProfile() {
     useEffect(() => {
         getDetails().then((res) => {
             const list = res._document.data.value.mapValue.fields.archetypesValue.arrayValue.values
-            console.log(list);
             setList(list)
         }).catch((error) => {
-            // switch(error.code) {
-            //     case 'resource-exhausted':
-            //         alert(`Internal server error. Contant system administrator`);
-            //         break;
-            //     default:
-            //         console.log(error.code);
-            // }
+            console.log(error)
+            switch(error.code) {
+                case 'resource-exhausted':
+                    alert(`Internal server error. Contant system administrator`);
+                    break;
+                default:
+                    console.log(error.code);
+            }
         });
+       
     }, []);
-
     if (location.includes('/MyProfile/*')) {
         showLogout = true;
     } else {
@@ -47,15 +48,18 @@ function MyProfile() {
         })
             .catch((error) => { console.log(error) });
     }
+    function routeShop() {
+        navigate('/ShopPage/*')
+    }
     return (
         <div>
             <Nav />
             <ProfileNav current={'MyProfile'} />
             <div id='archetypesContainer'>
                 {showLogout ? (
-                    <button className="btn btn-danger" onClick={logout}>Logout</button>
+                    <button className="btn btn-danger" id='profileLogout' onClick={logout}>Logout</button>
                 ) : (
-                    <div></div>
+                    <></>
                 )}
                 <div className='d-flex flex-row justify-content-center'>
                     {listArch != null ? (
@@ -72,6 +76,7 @@ function MyProfile() {
                         </div>
                     )}
                 </div>
+                <button onClick={routeShop}>SHOP</button>
                 <TestAd />
             </div>
             {/* <div id='a'> */}

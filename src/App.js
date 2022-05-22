@@ -1,3 +1,4 @@
+// import './Assets/css/reset.css'
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -15,10 +16,10 @@ import ShopPage from './Pages/shopPage.js';
 import TestPage from './Pages/TestPage.js';
 import LoginPage from './Pages/LoginPage.js';
 import RegisterPage from './Pages/RegisterPage.js';
-
 function App() {
   return (
     <div className="App">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <Router>
         <Routes>
           <Route path="/*" element={<HomePage />} />
