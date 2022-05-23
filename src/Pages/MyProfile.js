@@ -2,10 +2,7 @@ import Nav from '../Layouts/nav.js';
 import Footer from '../Layouts/footer.js';
 import ProfileNav from '../Layouts/ProfileNav.js';
 import TestAd from '../Layouts/testAd.js';
-import duck from '../Assets/Images/duck.jpg';
 import getDetails from '../firebase/getDetails.js';
-import { signOut } from 'firebase/auth';
-import { auth } from '../firebase/firebase-config';
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import '../Assets/css/profile.css';
@@ -15,15 +12,19 @@ function MyProfile() {
     // const getProps = useLocation();
     // console.log(getProps.state.answerArr);
     const [listArch, setList] = useState(null);
-    const [img,setImg] = useState('');
     const navigate = useNavigate();
-    var showLogout = false;
-    var location = window.location.href;
 
     useEffect(() => {
         getDetails().then((res) => {
-            const list = res._document.data.value.mapValue.fields.archetypesValue.arrayValue.values
-            setList(list)
+            let totData = [];
+            for (let index = 0; index < res._document.data.value.mapValue.fields.archetypesValue.arrayValue.values.length; index++) {
+                const list = res._document.data.value.mapValue.fields.archetypesValue.arrayValue.values[index]
+                const description = res._document.data.value.mapValue.fields.archetypeDescription.arrayValue.values[index]
+                const imgs = res._document.data.value.mapValue.fields.archetypesImage.arrayValue.values[index]
+                totData.push([list,description,imgs])
+            }
+            // console.log(totData)
+            setList(totData)
         }).catch((error) => {
             console.log(error)
             switch(error.code) {
@@ -36,18 +37,7 @@ function MyProfile() {
         });
        
     }, []);
-    if (location.includes('/MyProfile/*')) {
-        showLogout = true;
-    } else {
-        showLogout = false;
-    }
-    function logout() {
-        signOut(auth).then(() => {
-            localStorage.removeItem('userLogin');
-            window.location.href = '/HomePage/*'
-        })
-            .catch((error) => { console.log(error) });
-    }
+    
     function routeShop() {
         navigate('/ShopPage/*')
     }
@@ -56,18 +46,13 @@ function MyProfile() {
             <Nav />
             <ProfileNav current={'MyProfile'} />
             <div id='archetypesContainer'>
-                {showLogout ? (
-                    <button className="btn btn-danger" id='profileLogout' onClick={logout}>Logout</button>
-                ) : (
-                    <></>
-                )}
                 <div className='d-flex flex-row justify-content-center'>
                     {listArch != null ? (
                         listArch.map((archetype, index) => (
                             <div key={index}>
-                                <img id='archetypesDuck' src={duck} alt="" />
-                                <p>{archetype.stringValue}</p>
-                                <p>Sample text</p>
+                                <img id='archetypesDuck' src={archetype[2].stringValue} alt="" />
+                                <p>{archetype[0].stringValue}</p>
+                                <p>{archetype[1].stringValue}</p>
                             </div>
                         ))
                     ) : (
@@ -76,7 +61,6 @@ function MyProfile() {
                         </div>
                     )}
                 </div>
-                <button onClick={routeShop}>SHOP</button>
                 <TestAd />
             </div>
             {/* <div id='a'> */}

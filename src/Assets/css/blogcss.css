@@ -14,7 +14,6 @@
 
 #featuredImgContainer div {
     color: var(--brown);
-    font-size: medium;
 }
 
 #featuredImgContainer h4 {
@@ -24,7 +23,7 @@
 
 #featuredImgContainer h4,
 #featuredImgContainer p {
-    font-size: medium;
+    font-size: 1vw;
 }
 
 #archetypes-grid img {

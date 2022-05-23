@@ -12,7 +12,9 @@ function ShopPage() {
     const [gender, toggleGender] = useState(false);
     const [itemArr, setItemArr] = useState([]);
     const [filteredItems, setFilteredItems] = useState([]);
-    const numFilters = 6;
+    const totNumFilters = 14;
+    const numCatFilters = 11;
+    const numGenderFilters = 3;
 
     useEffect(() => {
         get();
@@ -33,32 +35,70 @@ function ShopPage() {
     }
 
     function updateFilters() {
-        let filters = [];
-        for (let index = 0; index < numFilters; index++) {
+        let genderFilters = []
+        for (let index = numCatFilters + 1; index < numCatFilters + numGenderFilters + 1; index++) {
             let currentInput = document.getElementById(`filter${index}`);
-            if (currentInput.checked && !filters.includes(currentInput.className)) {
-                // get the className of the selected checkbox
-                filters.push(currentInput.className);
-            }if(filteredItems.length != 0){
-                
+            if (currentInput.checked && !genderFilters.includes(currentInput.className)) {
+                genderFilters.push(currentInput.className);
             }
         }
-        filterItems(filters);
+
+        if (!document.getElementById(`filter0`).checked) {
+            let filters = [];
+            for (let index = 1; index < numCatFilters; index++) {
+                let currentInput = document.getElementById(`filter${index}`);
+                if (currentInput.checked && !filters.includes(currentInput.className)) {
+                    // get the className of the selected checkbox
+                    filters.push(currentInput.className);
+                }
+            }
+            filterItems(filters, genderFilters);
+        } else {
+            setFilteredItems([]);
+        }
     }
-    
-    function filterItems(filters) {
+
+    function filterItems(filters, genderFilters) {
         // sort by filter 
-        for (let index = 0; index < itemArr.length; index++) {
-            if (filters.includes(itemArr[index].productFilter) && !filteredItems.includes(itemArr[index])) {
-                setFilteredItems(filteredItems => [...filteredItems, itemArr[index]]);
+        // if (genderFilters.length !== 0) {
+            for (let index = 0; index < itemArr.length; index++) {
+                if (filters.includes(itemArr[index].productFilter) && !filteredItems.includes(itemArr[index]) && genderFilters.includes(itemArr[index].gender)) {
+                    console.log('ran with gender filters')
+                    setFilteredItems(filteredItems => [...filteredItems, itemArr[index]]);
+                }else if (filters.includes(itemArr[index].productFilter) && !filteredItems.includes(itemArr[index]) && genderFilters.length === 0) {
+                    console.log('ran without gender filters')
+                    setFilteredItems(filteredItems => [...filteredItems, itemArr[index]]);
+                }
             }
-        }
+        // }
+        // else {
+        //     console.log(genderFilters);
+        //     let temp = [];
+        //     for (let index = 0; index < itemArr.length; index++) {
+        //         if (filters.length == 0) {
+        //             console.log(!filteredItems.includes(itemArr[index]) && genderFilters.includes(itemArr[index].gender))
+        //             if (!filteredItems.includes(itemArr[index]) && genderFilters.includes(itemArr[index].gender)){
+        //                 temp.push(itemArr[index])
+        //                 setFilteredItems(filteredItems => [...filteredItems, itemArr[index]]);
+        //             }
+        //         } else {
+        //             if (filters.includes(itemArr[index].productFilter) && !filteredItems.includes(itemArr[index]) && genderFilters.includes(itemArr[index].gender)) {
+        //                 setFilteredItems(filteredItems => [...filteredItems, itemArr[index]]);
+        //             }
+        //         }
+        //     }
+        //     console.log(temp)
+        // }
         // compare 2 arrays and remove elements that do not match
-        setFilteredItems(filteredItems=>filteredItems.filter(item => filters.includes(item.productFilter)));
+        setFilteredItems(filteredItems => filteredItems.filter(item => filters.includes(item.productFilter)));
+        if(genderFilters.length != 0){
+            setFilteredItems(filteredItems => filteredItems.filter(item => genderFilters.includes(item.gender)));
+        }
         setFilteredItems(filteredItems => filteredItems.sort((a, b) => a.groupName.localeCompare(b.groupName)));
     }
+
     function clearFilters() {
-        for (let index = 0; index <numFilters; index++) {
+        for (let index = 0; index < totNumFilters + 1; index++) {
             document.getElementById(`filter${index}`).checked = false;
         }
         setFilteredItems([]);
@@ -72,7 +112,7 @@ function ShopPage() {
             filters.style.height = '200px';
             filters.style.opacity = 1;
             filters.style.display = 'block';
-            filters.style.zIndex=100;
+            filters.style.zIndex = 100;
             filters.style.transform = 'translateY(0)';
         } else {
             var doc = document.getElementById('cols');
@@ -81,19 +121,19 @@ function ShopPage() {
             filters.style.height = 0;
             filters.style.opacity = 0;
             filters.style.display = 'none';
-            filters.style.zIndex=-1;
+            filters.style.zIndex = -1;
             filters.style.transition = 'all 0.5s ease';
             // this resets the filter drop downs so theyre closed when you open up the filters again
             let catFilters = document.getElementById('categoryUl');
             catFilters.style.height = 0;
             catFilters.style.opacity = 0;
             catFilters.style.zIndex = -1;
-            catFilters.style.display='none';
+            catFilters.style.display = 'none';
             catFilters.style.transition = 'all 0.5s ease';
             let genderFilters = document.getElementById('genderUl');
             genderFilters.style.height = 0;
             genderFilters.style.opacity = 0;
-            genderFilters.style.display='none';
+            genderFilters.style.display = 'none';
             genderFilters.style.transition = 'all 0.5s ease';
 
         }
@@ -104,15 +144,15 @@ function ShopPage() {
         if (id == 'categoryUl') {
             let filters = document.getElementById(id);
             if (!category) {
-                filters.style.height = '200px';
+                filters.style.height = '60vh';
                 filters.style.opacity = 1;
-                filters.style.display='block';
+                filters.style.display = 'block';
                 filters.style.zIndex = 1;
                 filters.style.transform = 'translateY(0)';
             } else {
                 filters.style.height = 0;
                 filters.style.opacity = 0;
-                filters.style.display='none';
+                filters.style.display = 'none';
                 filters.style.zIndex = -1;
                 filters.style.transition = 'all 0.5s ease';
             }
@@ -120,18 +160,22 @@ function ShopPage() {
         } else {
             let filters = document.getElementById(id);
             if (!gender) {
-                filters.style.height = '200px';
+                filters.style.height = '120px';
                 filters.style.opacity = 1;
-                filters.style.display='block';
+                filters.style.display = 'block';
                 filters.style.transform = 'translateY(0)';
             } else {
                 filters.style.height = 0;
                 filters.style.opacity = 0;
-                filters.style.display='none';
+                filters.style.display = 'none';
                 filters.style.transition = 'all 0.5s ease';
             }
             toggleGender(!gender);
         }
+    }
+
+    function test() {
+        console.log('Unbalance Dress - Light Beige'.includes('Dress'))
     }
 
     return (
@@ -152,39 +196,38 @@ function ShopPage() {
                         </label>
                         <ul id='innerUl'>
                             <li id='categoryLi'>
-                                <div onClick={()=>toggleInnerFilters('categoryUl')}>
+                                <div onClick={() => toggleInnerFilters('categoryUl')}>
                                     <h4>
                                         CATEGORY
                                     </h4>
                                 </div>
                                 <ul id='categoryUl'>
-                                    <li><label><input type="checkbox" className='Shoe' id='filter0' />Shoes<span></span></label></li>
-                                    <li><label><input type="checkbox" className='Accessories' id='filter1' />Accessories<span></span></label></li>
-                                    <li><label><input type="checkbox" className='Pants' id='filter2' />Pants<span></span></label></li>
+                                    <li><label><input type="checkbox" className='All' id='filter0' />All<span></span></label></li>
+                                    <li><label><input type="checkbox" className='Coat' id='filter1' />Coats<span></span></label></li>
+                                    <li><label><input type="checkbox" className='Jacket' id='filter2' />Jackets<span></span></label></li>
+                                    <li><label><input type="checkbox" className='Sweater' id='filter3' />Sweaters<span></span></label></li>
+                                    <li><label><input type="checkbox" className='T-shirt' id='filter4' />T-shirts<span></span></label></li>
+                                    <li><label><input type="checkbox" className='Shirt & Blouse' id='filter5' />Shirts & Blouses<span></span></label></li>
+                                    <li><label><input type="checkbox" className='Pants' id='filter6' />Pants<span></span></label></li>
+                                    <li><label><input type="checkbox" className='Skirt' id='filter7' />Skirts<span></span></label></li>
+                                    <li><label><input type="checkbox" className='Dress' id='filter8' />Dresses<span></span></label></li>
+                                    <li><label><input type="checkbox" className='Shoes' id='filter9' />Shoes<span></span></label></li>
+                                    <li><label><input type="checkbox" className='Bag' id='filter10' />Bags<span></span></label></li>
+                                    <li><label><input type="checkbox" className='Jewelry' id='filter11' />Jewelry<span></span></label></li>
                                 </ul>
                             </li>
                             <li id='genderLi'>
-                                <div onClick={()=>toggleInnerFilters('genderUl')}>
+                                <div onClick={() => toggleInnerFilters('genderUl')}>
                                     <h4>
                                         GENDER
                                     </h4>
                                 </div>
                                 <ul id='genderUl'>
-                                    <li><label><input type="checkbox" className='Womenswear' id='filter3' />Womenswear<span></span></label></li>
-                                    <li><label><input type="checkbox" className='Menswear' id='filter4' />Menswear<span></span></label></li>
-                                    <li><label><input type="checkbox" className='Gender-Neutral' id='filter5' />Gender-Neutral<span></span></label></li>
+                                    <li><label><input type="checkbox" className='Womenswear' id='filter12' />Womenswear<span></span></label></li>
+                                    <li><label><input type="checkbox" className='Menswear' id='filter13' />Menswear<span></span></label></li>
+                                    <li><label><input type="checkbox" className='Gender-Neutral' id='filter14' />Gender-Neutral<span></span></label></li>
                                 </ul>
                             </li>
-                            {/* <li><label><input type="checkbox" className='Shoe' id='filter0' />Shoes<span></span></label></li>
-                            <li><label><input type="checkbox" className='Accessories' id='filter1' />Accessories<span></span></label></li>
-                            <li><label><input type="checkbox" className='Pants' id='filter2' />Pants<span></span></label></li>
-                            <li><label><input type="checkbox" className='Jacket' id='filter3' />Jacket<span></span></label></li>
-                            <li><label><input type="checkbox" className='Shirt' id='filter4' />Shirts<span></span></label></li>
-                            <li><label><input type="checkbox" className='Skirt' id='filter5' />Skirts<span></span></label></li>
-                            <li><label><input type="checkbox" className='Dress' id='filter6' />Dresses<span></span></label></li>
-                            <li><label><input type="checkbox" className='T-Shirt' id='filter7' />T-Shirts<span></span></label></li>
-                            <li><label><input type="checkbox" className='Sweater' id='filter8' />Sweaters<span></span></label></li>
-                            <li><label><input type="checkbox" className='Coat' id='filter9' />Coats<span></span></label></li> */}
                             <li><h4 onClick={updateFilters}>SAVE</h4></li>
                             <li><h4 onClick={clearFilters}>CLEAR</h4></li>
                         </ul>
@@ -193,13 +236,13 @@ function ShopPage() {
                 <div className='container sticky-right'>
                     <div id='cols' className='row row-cols-5 align-items-start'>
                         {filteredItems.length === 0 ?
-                            itemArr.map((dict) => (
-                                <ShopProducts key={dict.productType} img={dict.stringLoc} name={dict.groupName} type={dict.productType} price={dict.price} />
+                            itemArr.map((dict,index) => (
+                                <ShopProducts key={index} img={dict.stringLoc} name={dict.designerName} type={dict.productType} price={dict.price} />
                             )
                             )
                             :
-                            filteredItems.map((dict) => (
-                                <ShopProducts key={dict.productType} img={dict.stringLoc} name={dict.groupName} type={dict.productType} price={dict.price} />
+                            filteredItems.map((dict,index) => (
+                                <ShopProducts key={index} img={dict.stringLoc} name={dict.designerName} type={dict.productType} price={dict.price} />
                             ))
                         }
                     </div>

@@ -295,15 +295,17 @@
 
  const filterArr = [
      'Shoes',
-     'Accessories',
-     'Pants',
+     'Coat',
      'Jacket',
+     'Sweater',
      'Shirt',
+     'Blouse',
      'Skirt',
      'Dress',
      'T-Shirt',
-     'Sweater',
-     'Coat'
+     'Pants',
+     'Bag',
+     'Jewelry'
  ]
 
  // need a better way to decide which filters are which groups
@@ -319,7 +321,7 @@
              productType: makeLower(arr[i].value[1]),
              price: arr[i].value[2],
              stringLoc: imgArr[i],
-             productFilter: getFilter(arr[i].value[1])
+             productFilter: getFilter(makeLower(arr[i].value[1]))
          })
      }
  }
@@ -327,7 +329,18 @@
  function getFilter(productType) {
      for (let i = 0; i < filterArr.length; i++) {
          if (productType.includes(filterArr[i])) {
+             if (productType.includes('Shirt') || productType.includes('Blouse')) {
+                 return 'Shirt & Blouse';
+             }
              return filterArr[i];
+         } else {
+             if (productType.includes('Shorts') || productType.includes('trousers') || productType.includes('shorts') || productType.includes('Trousers')) {
+                 return 'Pants'
+             } else if (productType.includes('sandals') || productType.includes('Sandals') || productType.includes('Sneakers') || productType.includes('sneakers')) {
+                 return 'Shoes'
+             } else if (productType.includes('Sweatshirt') || productType.includes('sweatshirt')) {
+                 return 'Sweater';
+             }
          }
      }
      return 'MUST BE ADDED';

@@ -82,9 +82,7 @@ function LoginPage() {
                     </div>
                 ) : null}
             </div>
-            <div id='bottomFooter'>
                 <Footer />
-            </div>
         </div>
     );
 }

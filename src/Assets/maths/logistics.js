@@ -23,6 +23,7 @@ function getMaxValues(allPercentages) {
     for (let index = 0; index < allPercentages.length; index++) {
         values.push([index, allPercentages[index]]);
     }
+    // console.log("Values", values);
     values.sort((a, b) => b[1] - a[1]);
     const a = values.slice(0, 3);
     return a;
@@ -32,7 +33,7 @@ function getMaxValues(allPercentages) {
     //         duplicateArr.push(index);
     //     }
     // }
-    // console.log("Duplicate Array", duplicateArr)
+    // // console.log("Duplicate Array", duplicateArr)
 }
 
 function makeNestedArr(answers) {
@@ -93,54 +94,49 @@ function getRefinedGroups(groups) {
 }
 
 function master(answers) {
-    // returns all groups the user will be shown
-    // const testAnswers = makeNestedArr(answers);
-    // console.log("testAnswers", testAnswers); 
-    const percentageArr = calculateResults(answers);
-    // console.log("Percentages Array", percentageArr)
+    const testAnswers = makeNestedArr(answers);
+    // console.log("testAnswers", testAnswers);
+    const percentageArr = calculateResults(testAnswers);
+    // console.log("Percentages Array", percentageArr);
     const maxValues = getMaxValues(percentageArr);
-    // console.log("Max Values", maxValues)
+    // console.log("Max Values", maxValues);
     const productValues = calculatePercentages(percentageArr, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
     // console.log("Products Array", productValues);
     const cutOff = findCutOff(productValues);
-    // console.log(cutOff.sort((a, b) => a[0] - b[0]))
-    console.log("Cutoffs Array", cutOff);
+    // console.log("Cut Off", cutOff);
+    // console.log("Cutoffs Array", cutOff);
     const groups = getGroupOrder(cutOff);
-    console.log(groups)
+    // console.log(groups)
     const refinedGroups = getRefinedGroups(groups);
-    console.log(refinedGroups) // this will display products from highest to lowest cutoffs
-    return cutOff;
+    // console.log(refinedGroups) // this will display products from highest to lowest cutoffs
+    return refinedGroups;
 }
 
 function showPercentages(answers) {
     // returns the percentage of the top 3 archetypes
     const testAnswers = makeNestedArr(answers);
-    console.log("testAnswers", testAnswers);
+    // console.log("testAnswers", testAnswers);
     const percentageArr = calculateResults(testAnswers);
-    console.log("Percentages Array", percentageArr);
+    // console.log("Percentages Array", percentageArr);
     const maxValues = getMaxValues(percentageArr);
-    console.log("Max Values", maxValues);
-    const productValues = calculatePercentages(percentageArr, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
-    console.log("Products Array", productValues);
-    const cutOff = findCutOff(productValues);
-    console.log("Cut Off", cutOff);
+    // console.log("Max Values", maxValues);
     return maxValues;
 }
 // master([
-//     [6, 6, 3],
-//     [5, 4, 2],
-//     [1, 1, 4],
-//     [6, 5, 5],
-//     [3, 5, 1],
-//     [1, 4, 1],
-//     [0, 3, 0],
-//     [1, 1, 2],
-//     [4, 1, 0],
-//     [6, 6, 5],
-//     [4, 1, 1],
-//     [5, 4, 1]
-// ])
-// console.log('done')
+//         [6, 6, 3],
+//         [5, 4, 2],
+//         [1, 1, 4],
+//         [6, 5, 5],
+//         [3, 5, 1],
+//         [1, 4, 1],
+//         [0, 3, 0],
+//         [1, 1, 2],
+//         [4, 1, 0],
+//         [6, 6, 5],
+//         [4, 1, 1],
+//         [5, 4, 1]
+//     ])
+// // console.log('done')
 // showPercentages([
 //     5, 4, 1,
 //     2, 1, 2,

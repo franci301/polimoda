@@ -29,7 +29,7 @@ a:hover {
 }
 
 #archetypesContainer {
-    height: 78vh;
+    /* height: 78vh; */
     min-height: 100vh;
 }
 

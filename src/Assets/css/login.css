@@ -17,6 +17,7 @@
 
 #loginContainer {
     text-align: left;
+    min-height: 100vh;
 }
 
 #loginContainer input {

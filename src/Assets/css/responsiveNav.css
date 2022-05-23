@@ -1,0 +1,8 @@
+#basic-navbar-nav {
+    justify-content: center;
+}
+
+nav {
+    height: 100%;
+    background-color: var(--yellow);
+}

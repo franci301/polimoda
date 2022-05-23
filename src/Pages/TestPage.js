@@ -12,9 +12,21 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { db } from "../firebase/firebase-config";
 import { updateDoc, doc } from 'firebase/firestore';
+import getArchetypes from '../firebase/getArchetypes.js';
 import '../Assets/css/testPage.css';
 
-var answerArr = []; // remember to remove first value
+var answerArr = [6, 6, 3,
+    5, 4, 2,
+    1, 1, 4,
+    6, 5, 5,
+    3, 5, 1,
+    1, 4, 1,
+    0, 3, 0,
+    1, 1, 2,
+    4, 1, 0,
+    6, 6, 5,
+    4, 1, 1,
+    5, 4, 1]; 
 
 function Test() {
     const questions = [
@@ -62,9 +74,9 @@ function Test() {
     const [text, setText] = useState('');
     const navigate = useNavigate();
     const archetypes = [
-        "Cargiver", "Ruler", "Creator", "Sage",
-        "Magician", "Explorer", "Everyman",
-        "Jester", "Lover", "Hero", "Outlaw", "Innocent"
+        "Innocent", "Explorer", "Sage", "Hero",
+        "Outlaw", "Magician", "Jester",
+        "Lover", "Everyman", "Caregiver", "Creator", "Ruler"
     ];
     const images = {
         Creator, Explorer, Hero, Innocent , Outlaw, Ruler
@@ -73,7 +85,7 @@ function Test() {
     let archetypesImages = [];
 
     async function resultsPage() {
-        answerArr.shift();
+        // answerArr.shift();
         const archetypesValues = util.showPercentages(answerArr);
         for (let index = 0; index < archetypesValues.length; index++) {
             let img = images[archetypes[archetypesValues[index][0]]]
@@ -84,8 +96,14 @@ function Test() {
             archetypesToPush.push(archetype);
             archetypesImages.push(img);
         }
+        let descriptionArr = [];
+        for(let i = 0; i < archetypesToPush.length; i++){
+           let description = await getArchetypes(archetypesToPush[i]);
+           descriptionArr.push(description);
+        }
+        const archetypeOrder = util.master(answerArr);
         if (!localStorage.getItem('userLogin')) {
-            localStorage.setItem('testResults', JSON.stringify([archetypesToPush, archetypesImages]));
+            localStorage.setItem('testResults', JSON.stringify([archetypesToPush, descriptionArr,archetypesImages,archetypeOrder]));
             navigate('/RegisterPage/*')
         }else{
             const obj = localStorage.getItem('userLogin');
@@ -93,7 +111,9 @@ function Test() {
             const userCollectionRef = doc(db, "users", user.user.uid);
             await updateDoc(userCollectionRef, {
                 archetypesValue: archetypesToPush,
-                archetypesImage: archetypesImages
+                archetypesImage: archetypesImages,
+                archetypeDescription: descriptionArr,
+                archetypeOrder: archetypeOrder
             });
             answerArr = [];
             navigate('/MyProfile/*')
@@ -176,7 +196,7 @@ function Test() {
                         {question === 'Archetypes of Power Discovery' ? (
                             <div className='px-5'>
                                 <p>Archetypes of Power Discovery is a Jungian Archetypes based personality test, designed to help you better understand yourself and your identity, as well as your source of power to achieve stylistic power personalization. By spending approximately 7 minutes to complete Archetypes of Power Discovery, you will become aware of your 3 dominant archetypes and a personalized product offering based on all the twelve archetypes, suitable for your personality.</p>
-                                <button type="submit" className='btn btn-dark' onClick={increment}>Explore your inner world</button>
+                                <button type="submit" className='btn btn-dark' onClick={resultsPage}>Explore your inner world</button>
                             </div>
                         ) : (
                             <div>
