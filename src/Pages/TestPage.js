@@ -1,4 +1,4 @@
-import Nav from '../Layouts/nav.js';
+import ResponsiveNav from '../Layouts/responsiveNav.js';
 import Footer from '../Layouts/footer.js';
 import util from '../Assets/maths/logistics.js';
 import Duck from '../Assets/Images/duck.jpg';
@@ -15,18 +15,7 @@ import { updateDoc, doc } from 'firebase/firestore';
 import getArchetypes from '../firebase/getArchetypes.js';
 import '../Assets/css/testPage.css';
 
-var answerArr = [6, 6, 3,
-    5, 4, 2,
-    1, 1, 4,
-    6, 5, 5,
-    3, 5, 1,
-    1, 4, 1,
-    0, 3, 0,
-    1, 1, 2,
-    4, 1, 0,
-    6, 6, 5,
-    4, 1, 1,
-    5, 4, 1]; 
+var answerArr = []; 
 
 function Test() {
     const questions = [
@@ -145,7 +134,7 @@ function Test() {
 
     return (
         <div>
-            <Nav />
+            <ResponsiveNav />
             <div>
                 <div>
                     <h5>Room {room}</h5>

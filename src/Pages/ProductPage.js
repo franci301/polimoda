@@ -1,4 +1,4 @@
-import Nav from '../Layouts/nav.js';
+import ResponsiveNav from '../Layouts/responsiveNav.js';
 import Footer from '../Layouts/footer.js';
 import TestAd from '../Layouts/testAd.js';
 import { useLocation } from 'react-router-dom';
@@ -15,7 +15,7 @@ function ProductPage() {
 
     return (
         <div>
-            <Nav />
+            <ResponsiveNav />
             <br />
             <div className='d-flex flex-row justify-content-center'>
                 <div className="outer container" id='bigContainer'>

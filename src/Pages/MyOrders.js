@@ -1,4 +1,4 @@
-import Nav from '../Layouts/nav.js';
+import ResponsiveNav from '../Layouts/responsiveNav.js';
 import Footer from '../Layouts/footer.js'
 import ProfileNav from '../Layouts/ProfileNav.js';
 import OrderDetails from '../Layouts/OrderDetails.js';
@@ -6,7 +6,7 @@ import OrderDescription from '../Layouts/OrderDescription.js';
 function MyOrders() {
     return (
         <div>
-            <Nav />
+            <ResponsiveNav />
             <ProfileNav current={'MyOrders'} />
             <div className="d-flex flex-column align-items-start" id='ordersContainer'>
                 <h4>ACTIVE ORDERS</h4>

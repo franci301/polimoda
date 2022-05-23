@@ -1,3 +1,30 @@
+/* Normal nav css here */
+
+@media (min-width:771px) {
+    /* screen sizes 1024 to 1366 */
+    #center-nav-main {
+        padding-right: 8%;
+    }
+    #right-nav-main {
+        position: absolute;
+        right: 0%;
+    }
+    #center-nav-home {
+        padding-right: 0%;
+    }
+    #center-home-nav a {
+        font-size: 200%;
+    }
+    #right-nav-home {
+        position: absolute;
+        right: 0%;
+    }
+}
+
+#center-nav-item {
+    width: 100%;
+}
+
 #basic-navbar-nav {
     justify-content: center;
 }
@@ -6,3 +33,10 @@ nav {
     height: 100%;
     background-color: var(--yellow);
 }
+
+#navContainer {
+    max-width: 100%;
+}
+
+
+/* Home nav css below */

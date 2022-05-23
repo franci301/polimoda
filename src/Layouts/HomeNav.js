@@ -19,11 +19,8 @@ function HomeNav() {
         color:'#453127'
     }
     return (
-        <nav className="navbar navbar-expand-md navbar sticky-top py-3">
+        <nav className="navbar navbar-expand navbar sticky-top py-3">
             <div className="container-fluid">
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
                 <div className="collapse navbar-collapse" id="navbarResponsive">
                     <ul className="navbar-nav mx-auto">
                         <li className='nav-item' id='left-nav'> <h3><Link style={linkStyle} to='/HomePage/*'>XXXXX</Link></h3> </li>

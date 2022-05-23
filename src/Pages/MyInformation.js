@@ -1,4 +1,4 @@
-import Nav from '../Layouts/nav.js';
+import ResponsiveNav from '../Layouts/responsiveNav.js';
 import Footer from '../Layouts/footer.js';
 import ProfileNav from "../Layouts/ProfileNav";
 import getDetails from "../firebase/getDetails.js";
@@ -22,7 +22,7 @@ function MyInformation() {
 
     return (
         <div>
-            <Nav />
+            <ResponsiveNav />
             <ProfileNav current={'MyInformation'} />
             <div className="d-flex flex-column align-items-start" id='myInformationContainer'>
                 <h4>ACCOUNT</h4>

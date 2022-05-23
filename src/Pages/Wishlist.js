@@ -1,4 +1,4 @@
-import Nav from '../Layouts/nav.js';
+import ResponsiveNav from '../Layouts/responsiveNav.js';
 import Footer from '../Layouts/footer.js';
 import ProfileNav from "../Layouts/ProfileNav";
 import ShopProducts from '../Layouts/ShopProducts.js';
@@ -6,7 +6,7 @@ var itemsArr = []
 function Wishlist() {
     return (
         <div>
-            <Nav />
+            <ResponsiveNav />
             <ProfileNav current={'Wishlist'} />
             <div className='container' id='wishlistContainer'>
                 <div id='wishlistItems' className='row row-cols-4 align-items-start'>

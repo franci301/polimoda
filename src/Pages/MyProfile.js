@@ -1,4 +1,4 @@
-import Nav from '../Layouts/nav.js';
+import ResponsiveNav from '../Layouts/responsiveNav.js';
 import Footer from '../Layouts/footer.js';
 import ProfileNav from '../Layouts/ProfileNav.js';
 import TestAd from '../Layouts/testAd.js';
@@ -43,7 +43,7 @@ function MyProfile() {
     }
     return (
         <div>
-            <Nav />
+            <ResponsiveNav />
             <ProfileNav current={'MyProfile'} />
             <div id='archetypesContainer'>
                 <div className='d-flex flex-row justify-content-center'>

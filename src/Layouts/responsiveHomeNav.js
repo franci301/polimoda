@@ -2,7 +2,7 @@ import { Navbar, Nav, Container } from 'react-bootstrap';
 // import components used in the file below from react-bootstrap and react-router-dom
 import '../Assets/css/responsiveNav.css'
 
-function responsiveNav() {
+function responsiveHomeNav() {
     var showLogout = false;
     var location = window.location.href;
     var loggedIn;
@@ -21,39 +21,35 @@ function responsiveNav() {
 
     const linkStyle = {
         textDecoration: "none",
-        color: '#453127',
-        width:'100%'
+        color: '#453127'
     };
 
+    const linkStyleBrand={
+        textDecoration: "none",
+        color: '#453127',
+        fontSize: '1.5em'
+    }
+
     return (
-        <Navbar bg="#453127" expand="md">
+        <Navbar expand="md">
             <Container id='navContainer'>
-                <Navbar.Brand>
-                    <Nav.Link style={linkStyle} href='/*'>
-                        XXXXX
-                    </Nav.Link>
-                </Navbar.Brand>
+                <div></div>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav id='center-nav-main'>
-                        <ul className="navbar-nav mx-auto" id='center-ul'>
-                            <li className='center-nav-item' ><Nav.Link style={linkStyle} href="/*">Home</Nav.Link></li>
-                            <li className='center-nav-item' > <Nav.Link style={linkStyle} href="/Blog/*">Archetypal Stories</Nav.Link></li>
-                            {loggedIn === true ? (
-                                <li className='center-nav-item' > <Nav.Link style={linkStyle} href='/ShopPage/*'>Shop</Nav.Link></li>
-                            ) : (
-                                <></>
-                            )}
-                        </ul>
+                    <Nav id='center-nav-home'>
+                        <Navbar.Brand>
+                            <Nav.Link style={linkStyleBrand} href='/*'>
+                                XXXXX
+                            </Nav.Link>
+                        </Navbar.Brand>
                     </Nav>
-                    <Nav id='right-nav-main'>
-                    <ul className="navbar-nav" id='right-ul'>
+                    <Nav id='right-nav-home'>
+                        <ul className="navbar-nav" id='right-ul'>
                             {loggedIn === true ? (
                                 <li className='nav-item'> <Nav.Link style={linkStyle} href='/MyProfile/*'>Profile</Nav.Link></li>
                             ) : (
                                 <li className='nav-item'> <Nav.Link style={linkStyle} href='/LoginPage/*'>Login</Nav.Link></li>
                             )}
-                            <Nav.Link>Cart (0)</Nav.Link>
                         </ul>
                     </Nav>
                 </Navbar.Collapse>
@@ -62,4 +58,4 @@ function responsiveNav() {
     );
 }
 
-export default responsiveNav;
+export default responsiveHomeNav;

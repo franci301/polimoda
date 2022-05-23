@@ -1,4 +1,4 @@
-import Nav from '../Layouts/nav.js';
+import ResponsiveNav from '../Layouts/responsiveNav.js';
 import Footer from '../Layouts/footer.js';
 import ShopProducts from '../Layouts/ShopProducts.js';
 import UploadImages from '../Assets/uploadImages.js';
@@ -180,7 +180,7 @@ function ShopPage() {
 
     return (
         <div>
-            <Nav />
+            <ResponsiveNav />
             <h2>SHOP YOUR PERSONALIZED SELECTION</h2>
             <button>upload</button>
             <br />

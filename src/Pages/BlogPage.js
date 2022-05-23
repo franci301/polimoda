@@ -1,4 +1,3 @@
-import Nav from '../Layouts/nav.js';
 import Footer from '../Layouts/footer.js';
 import TestAd from '../Layouts/testAd.js';
 import ArchComponent from '../Layouts/archComponent.js';
