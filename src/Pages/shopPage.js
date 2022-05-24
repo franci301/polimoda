@@ -68,6 +68,8 @@ function ShopPage() {
                 }else if (filters.includes(itemArr[index].productFilter) && !filteredItems.includes(itemArr[index]) && genderFilters.length === 0) {
                     console.log('ran without gender filters')
                     setFilteredItems(filteredItems => [...filteredItems, itemArr[index]]);
+                }else if(filters.length === 0 && genderFilters.includes(itemArr[index].gender)){
+                    setFilteredItems(filteredItems => [...filteredItems, itemArr[index]]);
                 }
             }
         // }
@@ -90,9 +92,10 @@ function ShopPage() {
         //     console.log(temp)
         // }
         // compare 2 arrays and remove elements that do not match
-        setFilteredItems(filteredItems => filteredItems.filter(item => filters.includes(item.productFilter)));
         if(genderFilters.length != 0){
             setFilteredItems(filteredItems => filteredItems.filter(item => genderFilters.includes(item.gender)));
+        }else{
+            setFilteredItems(filteredItems => filteredItems.filter(item => filters.includes(item.productFilter)));
         }
         setFilteredItems(filteredItems => filteredItems.sort((a, b) => a.groupName.localeCompare(b.groupName)));
     }
@@ -144,7 +147,7 @@ function ShopPage() {
         if (id == 'categoryUl') {
             let filters = document.getElementById(id);
             if (!category) {
-                filters.style.height = '60vh';
+                filters.style.height = '100%';
                 filters.style.opacity = 1;
                 filters.style.display = 'block';
                 filters.style.zIndex = 1;
@@ -160,7 +163,7 @@ function ShopPage() {
         } else {
             let filters = document.getElementById(id);
             if (!gender) {
-                filters.style.height = '120px';
+                filters.style.height = '50%';
                 filters.style.opacity = 1;
                 filters.style.display = 'block';
                 filters.style.transform = 'translateY(0)';

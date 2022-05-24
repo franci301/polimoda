@@ -15,7 +15,6 @@ function RegisterPage() {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [text, setText] = useState('');
-    const [usera,setUser] = useState();
     const navigate = useNavigate();
 
     async function updateFirebase(answers) {
@@ -41,11 +40,11 @@ function RegisterPage() {
                     localStorage.setItem('userLoginTemp', JSON.stringify(user));
                     const userCollectionRef = doc(db, 'users', user.user.uid);
                     console.log(userCollectionRef);
+                    console.log(userCollectionRef);
                     await setDoc(userCollectionRef, {
                         name: name, email: email
                     });
                     let storedAnswers = JSON.parse(localStorage.getItem('testResults'))
-                    console.log(storedAnswers[0]);
                     if (storedAnswers) {
                         // push answers to firebase
                         updateFirebase(storedAnswers);
@@ -68,10 +67,12 @@ function RegisterPage() {
                             break;
                         case 'resource-exhausted':
                             setText(`Internal server error. Contact system administrator`);
-                        // default:
-                        //     setText(`${error.message}`);
-                        //     console.log(error.message);
-                        //     break;
+                        default:
+                            setText(`${error.message}`);
+                            console.log(error)
+                            console.log(error.message,error.code);
+                            console.log(name,email,password,confirmPassword);
+                            break;
                     }
                 }
             } else {

@@ -55,6 +55,11 @@ h2 {
     display: none;
 }
 
+#genderUl li label,
+#categoryUl li label {
+    width: 100%;
+}
+
 [type=checkbox]:checked+span:before {
     content: '\2714';
 }
