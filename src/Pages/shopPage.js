@@ -60,7 +60,7 @@ function ShopPage() {
 
     function filterItems(filters, genderFilters) {
         // sort by filter 
-        // if (genderFilters.length !== 0) {
+        // one issue is when i click menswear and then save and then add a filter nothing changes
             for (let index = 0; index < itemArr.length; index++) {
                 if (filters.includes(itemArr[index].productFilter) && !filteredItems.includes(itemArr[index]) && genderFilters.includes(itemArr[index].gender)) {
                     console.log('ran with gender filters')
@@ -72,25 +72,6 @@ function ShopPage() {
                     setFilteredItems(filteredItems => [...filteredItems, itemArr[index]]);
                 }
             }
-        // }
-        // else {
-        //     console.log(genderFilters);
-        //     let temp = [];
-        //     for (let index = 0; index < itemArr.length; index++) {
-        //         if (filters.length == 0) {
-        //             console.log(!filteredItems.includes(itemArr[index]) && genderFilters.includes(itemArr[index].gender))
-        //             if (!filteredItems.includes(itemArr[index]) && genderFilters.includes(itemArr[index].gender)){
-        //                 temp.push(itemArr[index])
-        //                 setFilteredItems(filteredItems => [...filteredItems, itemArr[index]]);
-        //             }
-        //         } else {
-        //             if (filters.includes(itemArr[index].productFilter) && !filteredItems.includes(itemArr[index]) && genderFilters.includes(itemArr[index].gender)) {
-        //                 setFilteredItems(filteredItems => [...filteredItems, itemArr[index]]);
-        //             }
-        //         }
-        //     }
-        //     console.log(temp)
-        // }
         // compare 2 arrays and remove elements that do not match
         if(genderFilters.length != 0){
             setFilteredItems(filteredItems => filteredItems.filter(item => genderFilters.includes(item.gender)));

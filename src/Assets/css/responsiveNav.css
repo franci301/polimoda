@@ -3,7 +3,7 @@
 @media (min-width:771px) {
     /* screen sizes 1024 to 1366 */
     #center-nav-main {
-        padding-right: 8%;
+        padding-right: 13%;
     }
     #right-nav-main {
         position: absolute;
@@ -19,10 +19,20 @@
         position: absolute;
         right: 0%;
     }
+    #center-ul .center-nav-item {
+        padding-left: 10%;
+    }
+    #right-ul {
+        align-items: center;
+    }
 }
 
-#center-nav-item {
+.center-nav-item {
     width: 100%;
+}
+
+.center-nav-item a {
+    white-space: nowrap;
 }
 
 #basic-navbar-nav {
