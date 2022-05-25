@@ -1,3 +1,32 @@
+/* #homeNavLogo {
+    width: 10%;
+} */
+
+
+/* @media screen and (max-width: 768px) {
+    #homeNavLogo {
+        width: 35%;
+    }
+} */
+
+@media screen and (max-width: 1000px) {
+    #homeNavLogo {
+        width: 30%;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    #homeNavLogo {
+        width: 20%;
+    }
+}
+
+
+/* #left-nav {
+    width: 10%;
+} */
+
+
 /* nav {
     height: 100%;
     background-color: var(--yellow);

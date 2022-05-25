@@ -51,7 +51,7 @@ function MyProfile() {
                         listArch.map((archetype, index) => (
                             <div key={index}>
                                 <img id='archetypesDuck' src={archetype[2].stringValue} alt="" />
-                                <p>{archetype[0].stringValue}</p>
+                                <p id='archName'>{archetype[0].stringValue.toUpperCase()}</p>
                                 <p>{archetype[1].stringValue}</p>
                             </div>
                         ))

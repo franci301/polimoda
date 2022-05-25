@@ -14,8 +14,10 @@ import { db } from "../firebase/firebase-config";
 import { updateDoc, doc } from 'firebase/firestore';
 import getArchetypes from '../firebase/getArchetypes.js';
 import '../Assets/css/testPage.css';
+import backgroundImg from '../Assets/Images/caregiver render.jpg';
+import lover from '../Assets/Images/lover render.jpg';
 
-var answerArr = []; 
+var answerArr = [];
 
 function Test() {
     const questions = [
@@ -68,7 +70,7 @@ function Test() {
         "Lover", "Everyman", "Caregiver", "Creator", "Ruler"
     ];
     const images = {
-        Creator, Explorer, Hero, Innocent , Outlaw, Ruler
+        Creator, Explorer, Hero, Innocent, Outlaw, Ruler
     }
     let archetypesToPush = [];
     let archetypesImages = [];
@@ -79,22 +81,22 @@ function Test() {
         for (let index = 0; index < archetypesValues.length; index++) {
             let img = images[archetypes[archetypesValues[index][0]]]
             let archetype = archetypes[archetypesValues[index][0]];
-            if (img === undefined){
+            if (img === undefined) {
                 img = Duck;
             }
             archetypesToPush.push(archetype);
             archetypesImages.push(img);
         }
         let descriptionArr = [];
-        for(let i = 0; i < archetypesToPush.length; i++){
-           let description = await getArchetypes(archetypesToPush[i]);
-           descriptionArr.push(description);
+        for (let i = 0; i < archetypesToPush.length; i++) {
+            let description = await getArchetypes(archetypesToPush[i]);
+            descriptionArr.push(description);
         }
         const archetypeOrder = util.master(answerArr);
         if (!localStorage.getItem('userLogin')) {
-            localStorage.setItem('testResults', JSON.stringify([archetypesToPush, descriptionArr,archetypesImages,archetypeOrder]));
+            localStorage.setItem('testResults', JSON.stringify([archetypesToPush, descriptionArr, archetypesImages, archetypeOrder]));
             navigate('/RegisterPage/*')
-        }else{
+        } else {
             const obj = localStorage.getItem('userLogin');
             const user = JSON.parse(obj);
             const userCollectionRef = doc(db, "users", user.user.uid);
@@ -131,15 +133,15 @@ function Test() {
         }
 
     }
-
     return (
-        <div>
+        <div >
             <ResponsiveNav />
-            <div>
+            <div id='testContainer'>
+                <img src={lover} alt="" />
                 <div>
                     <h5>Room {room}</h5>
                 </div>
-                <div>
+                <div id='testCenterDiv'>
                     {counter === questions.length + 1 ? (
                         <div>End Of Quiz</div>
                     ) : (
@@ -147,7 +149,7 @@ function Test() {
                     )}
                 </div>
                 <div>
-                    <div className='d-flex flex-col justify-content-center'>
+                    <div className='d-flex flex-col justify-content-center' id='choiceDiv'>
                         {question === 'Archetypes of Power Discovery' || counter > questions.length ? (
                             <div></div>
                         ) : (
@@ -185,7 +187,7 @@ function Test() {
                         {question === 'Archetypes of Power Discovery' ? (
                             <div className='px-5'>
                                 <p>Archetypes of Power Discovery is a Jungian Archetypes based personality test, designed to help you better understand yourself and your identity, as well as your source of power to achieve stylistic power personalization. By spending approximately 7 minutes to complete Archetypes of Power Discovery, you will become aware of your 3 dominant archetypes and a personalized product offering based on all the twelve archetypes, suitable for your personality.</p>
-                                <button type="submit" className='btn btn-dark' onClick={resultsPage}>Explore your inner world</button>
+                                <button type="submit" className='btn btn-dark' onClick={increment}>Explore your inner world</button>
                             </div>
                         ) : (
                             <div>
@@ -193,7 +195,7 @@ function Test() {
                                     <button className='btn btn-dark' onClick={resultsPage}>Get Results</button>
                                 ) : (
                                     <div>
-                                        <button type="submit" className='btn btn-dark' id='incrementButton' onClick={increment}>Next Question</button>
+                                        {/* <button type="submit" className='btn btn-dark' id='incrementButton' onClick={increment}>Next Question</button> */}
                                     </div>
                                 )}
                             </div>
@@ -202,9 +204,7 @@ function Test() {
                     <p className="text-danger">{text}</p>
                 </div>
             </div>
-            <div id="footerTest">
-                <Footer />
-            </div>
+            <Footer />
         </div>
     );
 }

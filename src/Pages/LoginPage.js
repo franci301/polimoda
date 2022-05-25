@@ -27,6 +27,7 @@ function LoginPage() {
         }
     }
     async function login() {
+        if(email != '' && password != '') {
         signInWithEmailAndPassword(auth, email, password).then((user) => {
             setText('Login Successful');
             localStorage.setItem('userLogin', JSON.stringify(user));
@@ -49,6 +50,9 @@ function LoginPage() {
                     console.log(error.message);
             }
         })
+    }else{
+        setText('Please fill in all fields')
+    }
     }
     return (
         <div>

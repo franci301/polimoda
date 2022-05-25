@@ -7,7 +7,7 @@ ul {
     list-style-type: none;
 }
 
-h2 {
+#shopContainer h2 {
     color: var(--purple)
 }
 

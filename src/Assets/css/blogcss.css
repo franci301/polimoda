@@ -1,6 +1,11 @@
 .homePage h4 {
     padding-top: 1%;
     padding-bottom: 1%;
+    color: var(--red);
+}
+
+.homePage #testAdContainer button {
+    background-color: var(--red);
 }
 
 #featuredContainer {
@@ -42,10 +47,10 @@
 
 #featuredImg {
     height: 40%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
-h2,
+#homePage h2,
 h4 {
     color: var(--purple);
 }

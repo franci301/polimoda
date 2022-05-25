@@ -5,6 +5,49 @@
     padding-right: 20px;
 }
 
+#testContainer {
+    min-height: 100vh;
+}
+
+
+/*  below styles are temporary */
+
+#testContainer img {
+    height: 100vh;
+    object-fit: cover;
+}
+
+#testContainer #testCenterDiv {
+    position: absolute;
+    left: 28%;
+    top: 45%;
+    width: 40%;
+    color: white;
+}
+
+#testContainer #testCenterDiv h6 {
+    font-size: 80%;
+}
+
+#testContainer #choiceDiv {
+    position: absolute;
+    left: 0%;
+    top: 75%;
+    z-index: 1000;
+    width: 100%;
+    color: white;
+    font-size: 50%;
+}
+
+
+/* style= {
+    {
+        // set a background image
+        backgroundImage: `url(${backgroundImg})`,
+        backgroundSize: 'cover', backgroundRepeat: 'no-repeat',
+    }
+} */
+
 
 /* #footerTest {
     position: fixed;

@@ -25,6 +25,22 @@
     #right-ul {
         align-items: center;
     }
+    #profileContainer {
+        display: flex;
+        padding-right: 8%;
+    }
+    #profileContainer #profile-li {
+        padding-left: 15%;
+    }
+    #logout-li {
+        /* change cursor */
+        cursor: pointer;
+    }
+}
+
+#navLogo {
+    width: 30%;
+    /* this shit is pissing me off */
 }
 
 .center-nav-item {
@@ -51,4 +67,15 @@ nav {
 .navbar {
     width: 100vw;
 }
-/* Home nav css below */
+
+.navbar-brand {
+    /* width: 10%; */
+    left: 0%;
+}
+
+
+/* profile nav css below */
+
+#menuTop h2:hover {
+    color: var(--purple);
+}

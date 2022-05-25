@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../Assets/css/nav.css';
 import { Link } from 'react-router-dom';
+import logo from '../Assets/Images/logo.png';
 
 function HomeNav() {
     var loggedIn;
@@ -23,7 +24,7 @@ function HomeNav() {
             <div className="container-fluid">
                 <div className="collapse navbar-collapse" id="navbarResponsive">
                     <ul className="navbar-nav mx-auto">
-                        <li className='nav-item' id='left-nav'> <h3><Link style={linkStyle} to='/HomePage/*'>XXXXX</Link></h3> </li>
+                        <li className='nav-item' id='left-nav'> <h3><img id='homeNavLogo' src={logo} alt="Logo" /></h3> </li>
                     </ul>
                     <ul className="navbar-nav mx-right">
                         {loggedIn === false ? (

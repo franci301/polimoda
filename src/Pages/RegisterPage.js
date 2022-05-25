@@ -79,7 +79,7 @@ function RegisterPage() {
                 setText('Password not match');
             }
         } else {
-            setText('Please fill all the fields');
+            setText('Please fill in all the fields');
         }
     }
     return (

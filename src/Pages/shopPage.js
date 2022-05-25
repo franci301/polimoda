@@ -35,6 +35,7 @@ function ShopPage() {
     }
 
     function updateFilters() {
+        
         let genderFilters = []
         for (let index = numCatFilters + 1; index < numCatFilters + numGenderFilters + 1; index++) {
             let currentInput = document.getElementById(`filter${index}`);
@@ -42,7 +43,6 @@ function ShopPage() {
                 genderFilters.push(currentInput.className);
             }
         }
-
         if (!document.getElementById(`filter0`).checked) {
             let filters = [];
             for (let index = 1; index < numCatFilters; index++) {
@@ -59,23 +59,23 @@ function ShopPage() {
     }
 
     function filterItems(filters, genderFilters) {
-        // sort by filter 
+        // sort by filter and gender
         // one issue is when i click menswear and then save and then add a filter nothing changes
             for (let index = 0; index < itemArr.length; index++) {
                 if (filters.includes(itemArr[index].productFilter) && !filteredItems.includes(itemArr[index]) && genderFilters.includes(itemArr[index].gender)) {
-                    console.log('ran with gender filters')
                     setFilteredItems(filteredItems => [...filteredItems, itemArr[index]]);
                 }else if (filters.includes(itemArr[index].productFilter) && !filteredItems.includes(itemArr[index]) && genderFilters.length === 0) {
-                    console.log('ran without gender filters')
                     setFilteredItems(filteredItems => [...filteredItems, itemArr[index]]);
-                }else if(filters.length === 0 && genderFilters.includes(itemArr[index].gender)){
+                }else if(filters.length === 0 && genderFilters.includes(itemArr[index].gender) && !filteredItems.includes(itemArr[index])){
                     setFilteredItems(filteredItems => [...filteredItems, itemArr[index]]);
                 }
             }
         // compare 2 arrays and remove elements that do not match
         if(genderFilters.length != 0){
+            console.log('gender filters len != 0')
             setFilteredItems(filteredItems => filteredItems.filter(item => genderFilters.includes(item.gender)));
         }else{
+            console.log('gender filters len == 0')
             setFilteredItems(filteredItems => filteredItems.filter(item => filters.includes(item.productFilter)));
         }
         setFilteredItems(filteredItems => filteredItems.sort((a, b) => a.groupName.localeCompare(b.groupName)));
@@ -163,10 +163,10 @@ function ShopPage() {
     }
 
     return (
-        <div>
+        <div id='shopContainer'>
             <ResponsiveNav />
             <h2>SHOP YOUR PERSONALIZED SELECTION</h2>
-            <button>upload</button>
+            {/* <button onClick={upload}>upload</button> */}
             <br />
             <div className='d-flex flex-row px-5 justify-content-end' id='shopPageContainer'>
                 <ul className="menu" id='outerUl'>
@@ -209,7 +209,7 @@ function ShopPage() {
                                 <ul id='genderUl'>
                                     <li><label><input type="checkbox" className='Womenswear' id='filter12' />Womenswear<span></span></label></li>
                                     <li><label><input type="checkbox" className='Menswear' id='filter13' />Menswear<span></span></label></li>
-                                    <li><label><input type="checkbox" className='Gender-Neutral' id='filter14' />Gender-Neutral<span></span></label></li>
+                                    <li><label><input type="checkbox" className='Gender-neutral' id='filter14' />Gender-Neutral<span></span></label></li>
                                 </ul>
                             </li>
                             <li><h4 onClick={updateFilters}>SAVE</h4></li>
