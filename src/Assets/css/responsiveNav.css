@@ -48,5 +48,7 @@ nav {
     max-width: 100%;
 }
 
-
+.navbar {
+    width: 100vw;
+}
 /* Home nav css below */
