@@ -1,17 +1,9 @@
 import { Link } from 'react-router-dom';
-import { signOut } from 'firebase/auth';
-import { auth } from '../firebase/firebase-config';
-function logout() {
-    signOut(auth).then(() => {
-        localStorage.removeItem('userLogin');
-        window.location.href = '/HomePage/*'
-    })
-        .catch((error) => { console.log(error) });
-}
-
+import '../Assets/css/responsiveNav.css'
+// '#8a181c'
 function ProfileNav({ current }) {
     const linkStyle = {
-        color: '#453127'
+        color: '#3f285c'
     }
     return (
         <div className="d-flex inline-flex justify-content-center" id='menuTop'>
@@ -35,8 +27,6 @@ function ProfileNav({ current }) {
             ) : (
                 <Link to='/MyInformation/*'><h2>MY INFORMATION</h2></Link>
             )}
-            <button className="btn btn-danger" id='profileLogout' onClick={logout}>Logout</button>
-
         </div>
     );
 }

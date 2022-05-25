@@ -2,6 +2,11 @@
     width: 40%;
 }
 
+#archName {
+    color: var(--purple);
+    font-weight: bold;
+}
+
 #shopProfile {
     padding-bottom: 5%;
     padding-top: 5%;
