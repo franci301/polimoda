@@ -55,7 +55,7 @@ h4 {
     color: var(--purple);
 }
 
-.container h5 {
+#archetypes-grid h5 {
     position: relative;
     color: var(--red);
     z-index: 1000;

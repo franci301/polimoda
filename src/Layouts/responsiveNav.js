@@ -7,16 +7,8 @@ import logo from '../Assets/Images/logo.png';
 import '../Assets/css/responsiveNav.css'
 
 function responsiveNav() {
-    var showLogout = false;
-    var location = window.location.href;
     var loggedIn;
     var userLogged = localStorage.getItem('userLogin');
-
-    if (location.includes('/MyProfile/*')) {
-        showLogout = true;
-    } else {
-        showLogout = false;
-    }
     if (userLogged) {
         loggedIn = true;
     } else {
@@ -47,7 +39,6 @@ function logout() {
                             XXXX
                         </Link>
                     </Navbar.Brand>
-
                 </div>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">

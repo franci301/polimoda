@@ -125,7 +125,7 @@ function Test() {
             for (let index = 0; index < radios.length; index++) {
                 radios[index].checked = false;
             }
-            if (counter % 3 == 0 && counter != 0) {
+            if (counter % 3 === 0 && counter !== 0) {
                 setRoomId(room + 1)
             }
         } else {
@@ -195,7 +195,7 @@ function Test() {
                                     <button className='btn btn-dark' onClick={resultsPage}>Get Results</button>
                                 ) : (
                                     <div>
-                                        {/* <button type="submit" className='btn btn-dark' id='incrementButton' onClick={increment}>Next Question</button> */}
+                                        <button type="submit" className='btn btn-dark' id='incrementButton' onClick={increment}>Next Question</button>
                                     </div>
                                 )}
                             </div>
