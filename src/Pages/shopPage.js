@@ -4,6 +4,8 @@ import ShopProducts from '../Layouts/ShopProducts.js';
 import UploadImages from '../Assets/uploadImages.js';
 import { useState, useEffect } from 'react';
 import getImages from '../firebase/getAllItems.js';
+import getDetails from '../firebase/getDetails.js';
+import TestAd from '../Layouts/testAd.js';
 import '../Assets/css/shopPage.css';
 
 function ShopPage() {
@@ -12,6 +14,8 @@ function ShopPage() {
     const [gender, toggleGender] = useState(false);
     const [itemArr, setItemArr] = useState([]);
     const [filteredItems, setFilteredItems] = useState([]);
+    const [archetypeOrder, setArchOrder] = useState([]);
+    const [bool, setBool] = useState(true);
     const totNumFilters = 14;
     const numCatFilters = 11;
     const numGenderFilters = 3;
@@ -21,6 +25,23 @@ function ShopPage() {
     }, []);
 
     async function get() {
+        await getDetails().then((res) => {
+            const access = res._document.data.value.mapValue.fields;
+            console.log(access)
+            if (access.archetypeOrder.arrayValue !== null) {
+                console.log('here')
+
+                getImagesHere();
+                setArchOrder(access.archetypeOrder.arrayValue);
+            } else {
+                setBool(false);
+            }
+        }).catch((err) => {
+            setBool(false);
+        });
+    }
+
+    async function getImagesHere(){
         await getImages().then((res) => {
             for (const item in res) {
                 setItemArr(itemArr => [...itemArr, res[item]]);
@@ -35,7 +56,7 @@ function ShopPage() {
     }
 
     function updateFilters() {
-        
+
         let genderFilters = []
         for (let index = numCatFilters + 1; index < numCatFilters + numGenderFilters + 1; index++) {
             let currentInput = document.getElementById(`filter${index}`);
@@ -61,20 +82,20 @@ function ShopPage() {
     function filterItems(filters, genderFilters) {
         // sort by filter and gender
         // one issue is when i click menswear and then save and then add a filter nothing changes
-            for (let index = 0; index < itemArr.length; index++) {
-                if (filters.includes(itemArr[index].productFilter) && !filteredItems.includes(itemArr[index]) && genderFilters.includes(itemArr[index].gender)) {
-                    setFilteredItems(filteredItems => [...filteredItems, itemArr[index]]);
-                }else if (filters.includes(itemArr[index].productFilter) && !filteredItems.includes(itemArr[index]) && genderFilters.length === 0) {
-                    setFilteredItems(filteredItems => [...filteredItems, itemArr[index]]);
-                }else if(filters.length === 0 && genderFilters.includes(itemArr[index].gender) && !filteredItems.includes(itemArr[index])){
-                    setFilteredItems(filteredItems => [...filteredItems, itemArr[index]]);
-                }
+        for (let index = 0; index < itemArr.length; index++) {
+            if (filters.includes(itemArr[index].productFilter) && !filteredItems.includes(itemArr[index]) && genderFilters.includes(itemArr[index].gender)) {
+                setFilteredItems(filteredItems => [...filteredItems, itemArr[index]]);
+            } else if (filters.includes(itemArr[index].productFilter) && !filteredItems.includes(itemArr[index]) && genderFilters.length === 0) {
+                setFilteredItems(filteredItems => [...filteredItems, itemArr[index]]);
+            } else if (filters.length === 0 && genderFilters.includes(itemArr[index].gender) && !filteredItems.includes(itemArr[index])) {
+                setFilteredItems(filteredItems => [...filteredItems, itemArr[index]]);
             }
+        }
         // compare 2 arrays and remove elements that do not match
-        if(genderFilters.length != 0){
+        if (genderFilters.length !== 0) {
             console.log('gender filters len != 0')
             setFilteredItems(filteredItems => filteredItems.filter(item => genderFilters.includes(item.gender)));
-        }else{
+        } else {
             console.log('gender filters len == 0')
             setFilteredItems(filteredItems => filteredItems.filter(item => filters.includes(item.productFilter)));
         }
@@ -125,7 +146,7 @@ function ShopPage() {
     }
 
     function toggleInnerFilters(id) {
-        if (id == 'categoryUl') {
+        if (id === 'categoryUl') {
             let filters = document.getElementById(id);
             if (!category) {
                 filters.style.height = '100%';
@@ -219,16 +240,24 @@ function ShopPage() {
                 </ul>
                 <div className='container sticky-right'>
                     <div id='cols' className='row row-cols-5 align-items-start'>
-                        {filteredItems.length === 0 ?
-                            itemArr.map((dict,index) => (
-                                <ShopProducts key={index} img={dict.stringLoc} name={dict.designerName} type={dict.productType} price={dict.price} />
-                            )
-                            )
-                            :
-                            filteredItems.map((dict,index) => (
-                                <ShopProducts key={index} img={dict.stringLoc} name={dict.designerName} type={dict.productType} price={dict.price} />
-                            ))
-                        }
+                        {bool === false ? (
+                            <div id='testContainerShop'>
+                                <TestAd />
+                            </div>
+                        ) : (
+                            <>
+                                {filteredItems.length === 0 ?
+                                    itemArr.map((dict, index) => (
+                                        <ShopProducts key={index} img={dict.stringLoc} name={dict.designerName} type={dict.productType} price={dict.price} />
+                                    )
+                                    )
+                                    :
+                                    filteredItems.map((dict, index) => (
+                                        <ShopProducts key={index} img={dict.stringLoc} name={dict.designerName} type={dict.productType} price={dict.price} />
+                                    ))
+                                }
+                            </>
+                        )}
                     </div>
                 </div>
             </div>

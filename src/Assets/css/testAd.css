@@ -6,4 +6,5 @@
 
 #testAdContainer button {
     color: white;
+    background-color: var(--brown);
 }

@@ -11,6 +11,11 @@ ul {
     color: var(--purple)
 }
 
+#testContainerShop {
+    padding-left: 30%;
+    width: 50%;
+}
+
 #singleProduct {
     text-align: left;
 }
