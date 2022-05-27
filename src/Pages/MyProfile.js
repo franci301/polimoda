@@ -1,10 +1,11 @@
 import ResponsiveNav from '../Layouts/responsiveNav.js';
 import Footer from '../Layouts/footer.js';
-import ProfileNav from '../Layouts/ProfileNav.js';
 import TestAd from '../Layouts/testAd.js';
 import getDetails from '../firebase/getDetails.js';
 import { useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect,useLayoutEffect } from 'react';
+import ProfileNav from '../Layouts/ProfileNav.js';
+
 import '../Assets/css/profile.css';
 
 
@@ -12,6 +13,7 @@ function MyProfile() {
     // const getProps = useLocation();
     // console.log(getProps.state.answerArr);
     const [listArch, setList] = useState(null);
+    const [size,setSize] = useState(0);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -38,13 +40,22 @@ function MyProfile() {
        
     }, []);
     
+    useLayoutEffect(() => {
+        function updateSize() {
+            setSize(window.innerWidth);
+        }
+        window.addEventListener('resize', updateSize);
+        updateSize();
+        return () => window.removeEventListener('resize', updateSize);
+    }, []);
+
     function routeShop() {
         navigate('/ShopPage/*')
     }
     return (
         <div>
             <ResponsiveNav />
-            <ProfileNav current={'MyProfile'} />
+            {size > 768 ? <ProfileNav /> : null}
             <div id='archetypesContainer'>
                 <div className='d-flex flex-row justify-content-center'>
                     {listArch != null ? (
