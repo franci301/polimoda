@@ -69,4 +69,10 @@
 
 #forgottenPassword {
     padding-top: 5%;
+    cursor: pointer;
+}
+
+#forgottenPassword:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--brown);
 }

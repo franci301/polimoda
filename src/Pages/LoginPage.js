@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { auth } from '../firebase/firebase-config';
 import { signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
-import {getDetails} from '../firebase/getDetails.js';
+import { getDetails } from '../firebase/getDetails.js';
 import '../Assets/css/login.css';
 
 function LoginPage() {
@@ -18,41 +18,41 @@ function LoginPage() {
     const navigate = useNavigate();
 
     async function resetPassword() {
-        if(email!=='') {
-            await sendPasswordResetEmail(auth,email).then((res) => {
+        if (email !== '') {
+            await sendPasswordResetEmail(auth, email).then((res) => {
                 setText('Password reset email has been sent')
-            }).catch((err)=>{
+            }).catch((err) => {
                 alert(err.message)
             })
         }
     }
     async function login() {
-        if(email != '' && password != '') {
-        signInWithEmailAndPassword(auth, email, password).then((user) => {
-            setText('Login Successful');
-            localStorage.setItem('userLogin', JSON.stringify(user));
-            navigate('/HomePage/*')
-        }).catch((error) => {
-            switch (error.code) {
-                case 'auth/invalid-email':
-                    setText(`That is not a valid email`);
-                    break;
-                case 'auth/user-not-found':
-                    setText(`${email} is not registered`);
-                    break;
-                case 'auth/wrong-password':
-                    setText(`Incorrect password`);
-                    break;
-                case 'resource-exhausted':
-                    setText(`Internal server error. Contant system administrator`);
-                default:
-                    setText(`${error.code}`);
-                    console.log(error.message);
-            }
-        })
-    }else{
-        setText('Please fill in all fields')
-    }
+        if (email != '' && password != '') {
+            signInWithEmailAndPassword(auth, email, password).then((user) => {
+                setText('Login Successful');
+                localStorage.setItem('userLogin', JSON.stringify(user));
+                navigate('/HomePage/*')
+            }).catch((error) => {
+                switch (error.code) {
+                    case 'auth/invalid-email':
+                        setText(`That is not a valid email`);
+                        break;
+                    case 'auth/user-not-found':
+                        setText(`${email} is not registered`);
+                        break;
+                    case 'auth/wrong-password':
+                        setText(`Incorrect password`);
+                        break;
+                    case 'resource-exhausted':
+                        setText(`Internal server error. Contant system administrator`);
+                    default:
+                        setText(`${error.code}`);
+                        console.log(error.message);
+                }
+            })
+        } else {
+            setText('Please fill in all fields')
+        }
     }
     return (
         <div>
@@ -76,17 +76,17 @@ function LoginPage() {
                         <div id='register'>
                             <Link style={linkStyle} to='/RegisterPage/*'>REGISTER</Link>
                         </div>
+                        <div id='errorDiv'>
+                            {text != '' ? (
+                                <div className='text-danger'>
+                                    <h5>{text}</h5>
+                                </div>
+                            ) : null}
+                        </div>
                     </div>
                 </div>
             </div>
-            <div id='errorLogin'>
-                {text != '' ? (
-                    <div className='text-danger'>
-                       <h5>{text}</h5> 
-                    </div>
-                ) : null}
-            </div>
-                <Footer />
+            <Footer />
         </div>
     );
 }

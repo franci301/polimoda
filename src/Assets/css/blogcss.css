@@ -35,6 +35,10 @@
     height: 100%;
 }
 
+#archetypes-grid img:hover {
+    cursor: pointer;
+}
+
 #featuredText {
     padding-right: 5%;
     width: 25%;

@@ -2,12 +2,18 @@ import Footer from '../Layouts/footer.js';
 import TestAd from '../Layouts/testAd.js';
 import ArchComponent from '../Layouts/archComponent.js';
 import FeaturedImages from '../Layouts/featuredImages.js';
-import Creator from '../Assets/Images/Meet the Archetypes - Creator.jpg';
-import Explorer from '../Assets/Images/Meet the Archetypes - Explorer.jpg';
-import Hero from '../Assets/Images/Meet the Archetypes - Hero.jpg';
-import Innocent from '../Assets/Images/Meet the Archetypes - Innocent.jpg';
-import Outlaw from '../Assets/Images/Meet the Archetypes - Outlaw.jpeg';
-import Ruler from '../Assets/Images/Meet the Archetypes - Ruler.jpg';
+import Creator from '../Assets/Images/The Creator.jpg';
+import Explorer from '../Assets/Images/The Explorer.jpg';
+import Hero from '../Assets/Images/The Hero.jpg';
+import Innocent from '../Assets/Images/The Innocent.jpg';
+import Outlaw from '../Assets/Images/The Outlaw.jpg';
+import Ruler from '../Assets/Images/The Ruler.jpg';
+import Caregiver from '../Assets/Images/The Caregiver.jpg';
+import Everyman from '../Assets/Images/The Everyman.jpg';
+import Jester from '../Assets/Images/The Jester.jpg';
+import Magician from '../Assets/Images/The Magician.jpg';
+import Sage from '../Assets/Images/The Sage.jpg';
+import Lover from '../Assets/Images/The Lover.jpg';
 import bottomImg2 from '../Assets/Images/Meet Palomo Spain.png';
 import bottomImg1 from '../Assets/Images/BE A MAGICIAN JUST LIKE VITELLI.jpeg'
 import Zankov from '../Assets/Images/Zankov (ZEKE).jpeg'
@@ -24,6 +30,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
 import ResponsiveNav from '../Layouts/responsiveNav.js';
 function BlogPage() {
+    
     return (
         <div className="homePage">
             {/* <Nav /> */}
@@ -45,7 +52,7 @@ function BlogPage() {
                 <SwiperSlide>
                     <div id='archetypes-grid' className='container '>
                         <div className='row gx-0 gy-0'>
-                            <ArchComponent img={Creator} title="The Creator" />
+                            <ArchComponent img={Creator} title="The Creator"/>
                             <ArchComponent img={Hero} title="The Hero" />
                             <ArchComponent img={Explorer} title="The Explorer" />
                         </div>
@@ -59,14 +66,14 @@ function BlogPage() {
                 <SwiperSlide>
                     <div id='archetypes-grid' className='container '>
                         <div className='row gx-0 gy-0'>
-                            <ArchComponent img={Creator} title="The Creator" />
-                            <ArchComponent img={Hero} title="The Hero" />
-                            <ArchComponent img={Explorer} title="The Explorer" />
+                            <ArchComponent img={Lover} title="The Lover" />
+                            <ArchComponent img={Jester} title="The Jester" />
+                            <ArchComponent img={Magician} title="The Magician" />
                         </div>
                         <div className='row gx-0 gy-0' id='bottomArch'>
-                            <ArchComponent img={Innocent} title="The Innocent" />
-                            <ArchComponent img={Outlaw} title="The Outlaw" />
-                            <ArchComponent img={Ruler} title="The Ruler" />
+                            <ArchComponent img={Sage} title="The Sage" />
+                            <ArchComponent img={Caregiver} title="The Caregiver" />
+                            <ArchComponent img={Everyman} title="The Everyman" />
                         </div>
                     </div>
                 </SwiperSlide>

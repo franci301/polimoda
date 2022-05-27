@@ -6,7 +6,7 @@ function footer() {
             <div className="container-fluid">
                 <div id='footerLogo'>
                     <h3>XXXXX</h3>
-                    <h5>SUBSCRIBE TO OUR NEWSLETTER</h5>
+                    <h6>SUBSCRIBE TO OUR NEWSLETTER</h6>
                     <input type="text" placeholder='Email'/>
                 </div>
                 <div className="d-inline-flex" id='middle-container'>

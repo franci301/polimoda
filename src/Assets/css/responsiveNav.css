@@ -9,9 +9,9 @@
         position: absolute;
         right: 3%;
     }
-    #cartPadding {
+    /* #cartPadding {
         padding-left: 13%;
-    }
+    } */
     #right-nav-main li {
         clear: both;
         display: inline-block;

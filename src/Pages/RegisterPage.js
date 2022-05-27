@@ -6,7 +6,6 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { updateDoc, setDoc, doc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import '../Assets/css/registerPage.css';
-import '../Assets/css/bottomFooter.css';
 import { setUserId } from "firebase/analytics";
 
 function RegisterPage() {
@@ -25,7 +24,7 @@ function RegisterPage() {
             archetypesValue: answers[0],
             archetypeDescription: answers[1],
             archetypesImage: answers[2],
-            archetypeOrder:answers[3]
+            archetypeOrder: answers[3]
         });
         // clear local storage
         localStorage.removeItem('userLoginTemp');
@@ -70,8 +69,8 @@ function RegisterPage() {
                         default:
                             setText(`${error.message}`);
                             console.log(error)
-                            console.log(error.message,error.code);
-                            console.log(name,email,password,confirmPassword);
+                            console.log(error.message, error.code);
+                            console.log(name, email, password, confirmPassword);
                             break;
                     }
                 }
@@ -113,21 +112,19 @@ function RegisterPage() {
                         <div id='buttonDiv'>
                             <button onClick={register}>REGISTER</button>
                         </div>
+                        <div id='errorDiv'>
+                            {text != '' ? (
+                                <div className="text-danger">
+                                    <h5>{text}</h5>
+                                </div>
+                            ) :
+                                null
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
-            <div id='errorDiv'>
-                {text != '' ? (
-                    <div className="text-danger">
-                        <h5>{text}</h5>
-                    </div>
-                ) :
-                    null
-                }
-            </div>
-            <div id='footerTest'>
-                <Footer />
-            </div>
+            <Footer />
         </div>
     );
 }

@@ -16,6 +16,7 @@ import ShopPage from './Pages/shopPage.js';
 import TestPage from './Pages/TestPage.js';
 import LoginPage from './Pages/LoginPage.js';
 import RegisterPage from './Pages/RegisterPage.js';
+import ArchPage from './Layouts/archPage';
 function App() {
   return (
     <div className="App">
@@ -33,6 +34,7 @@ function App() {
           <Route path='/Test/*' element={<TestPage/>}/>
           <Route path='/LoginPage/*' element={<LoginPage/>}/>
           <Route path='/RegisterPage/*' element={<RegisterPage/>}/>
+          <Route path='/ArchetypePage/*' element={<ArchPage/>}/>
         </Routes>
       </Router>
     </div>

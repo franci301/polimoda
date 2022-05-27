@@ -31,7 +31,7 @@ footer input {
     text-align: left;
 }
 
-#footerLogo h5 {
+#footerLogo h6 {
     color: var(--brown);
     overflow: hidden;
     white-space: nowrap;
