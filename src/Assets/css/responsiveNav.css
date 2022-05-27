@@ -7,7 +7,19 @@
     }
     #right-nav-main {
         position: absolute;
-        right: 0%;
+        right: 3%;
+    }
+    #cartPadding {
+        padding-left: 13%;
+    }
+    #right-nav-main li {
+        clear: both;
+        display: inline-block;
+        /* overflow: hidden; */
+        white-space: nowrap;
+    }
+    #profileContainer {
+        padding-right: 5%;
     }
     #center-nav-home {
         padding-right: 0%;
@@ -36,6 +48,15 @@
         /* change cursor */
         cursor: pointer;
     }
+    .center-nav-item {
+        width: 100%;
+    }
+}
+
+@media (max-width:1100px) and (min-width:768px) {
+    #center-nav-main {
+        padding-right: 30%;
+    }
 }
 
 #navLogo {
@@ -43,8 +64,34 @@
     /* this shit is pissing me off */
 }
 
-.center-nav-item {
-    width: 100%;
+@media (max-width:767px) {
+    #center-nav-main {
+        float: left;
+        align-content: flex-start;
+        align-items: flex-start;
+    }
+    #right-nav-main #profileContainer li,
+    #right-nav-main #profileContainer li a {
+        margin-top: 10%;
+        margin-bottom: 10%;
+    }
+    #center-ul li {
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+    #menuTop {
+        flex-direction: column;
+        float: right;
+        align-items: flex-end;
+    }
+}
+
+#right-nav-main #logout-li {
+    cursor: pointer;
+}
+
+#center-ul {
+    align-items: flex-start;
 }
 
 .center-nav-item a {

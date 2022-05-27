@@ -28,9 +28,9 @@ function HomeNav() {
                     </ul>
                     <ul className="navbar-nav mx-right">
                         {loggedIn === false ? (
-                            <li className='nav-item' id='right-nav'><Link style={linkStyleLogin} to='/LoginPage/*'>Login</Link></li>
+                            <li className='nav-item' id='right-nav'><Link style={linkStyleLogin} to='/LoginPage/*'>LOGIN</Link></li>
                         ) : (
-                        <li className='nav-item' id='right-nav'><Link style={linkStyle} to='/MyProfile/*'>Profile</Link></li>
+                        <li className='nav-item' id='right-nav'><Link style={linkStyle} to='/MyProfile/*'>PROFILE</Link></li>
                         )}
                     </ul>
                 </div>

@@ -27,10 +27,7 @@ function ShopPage() {
     async function get() {
         await getDetails().then((res) => {
             const access = res._document.data.value.mapValue.fields;
-            console.log(access)
             if (access.archetypeOrder.arrayValue !== null) {
-                console.log('here')
-
                 getImagesHere();
                 setArchOrder(access.archetypeOrder.arrayValue);
             } else {
@@ -177,10 +174,6 @@ function ShopPage() {
             }
             toggleGender(!gender);
         }
-    }
-
-    function test() {
-        console.log('Unbalance Dress - Light Beige'.includes('Dress'))
     }
 
     return (

@@ -2,32 +2,54 @@ import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 import { signOut } from 'firebase/auth';
 import { auth } from '../firebase/firebase-config';
+import {useEffect, useState,useLayoutEffect} from 'react';
 import logo from '../Assets/Images/logo.png';
-// import components used in the file below from react-bootstrap and react-router-dom
+import ProfileNav from '../Layouts/ProfileNav.js';
+import WindowSize from '../Layouts/windowSize.js';
 import '../Assets/css/responsiveNav.css'
 
-function responsiveNav() {
+function ResponsiveNav() {
     var loggedIn;
+    var removeFromNav = false;
+    var showProfileNav = false;
     var userLogged = localStorage.getItem('userLogin');
+    const locationsArray = ['/MyInformation/*','/MyProfile/*','/Wishlist/*','/MyOrders/*']
+    // const [windowSize, setWindowSize] = useState(window.innerWidth);
+    const [size, setSize] = useState(window.innerWidth);
+    
+    if(locationsArray.includes(window.location.pathname)){
+        showProfileNav = true;
+    }
     if (userLogged) {
         loggedIn = true;
     } else {
         loggedIn = false;
     }
-
+    
     const linkStyle = {
         textDecoration: "none",
         color: '#453127',
         width: '100%'
     };
+    
 
-function logout() {
-    signOut(auth).then(() => {
-        localStorage.removeItem('userLogin');
-        window.location.href = '/HomePage/*'
+    useLayoutEffect(() => {
+        function updateSize() {
+            setSize(window.innerWidth);
+        }
+        window.addEventListener('resize', updateSize);
+        updateSize();
+        return () => window.removeEventListener('resize', updateSize);
+    }, []);
+    useEffect(() => {
     })
-        .catch((error) => { console.log(error) });
-}
+    function logout() {
+        signOut(auth).then(() => {
+            localStorage.removeItem('userLogin');
+            window.location.href = '/HomePage/*'
+        })
+            .catch((error) => { console.log(error) });
+    }
 
     return (
         <Navbar bg="#453127" expand="md">
@@ -44,33 +66,38 @@ function logout() {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav id='center-nav-main'>
                         <ul className="navbar-nav mx-auto" id='center-ul'>
-                            <li className='center-nav-item' ><Link style={linkStyle} to="/*">Home</Link></li>
-                            <li className='center-nav-item' > <Link style={linkStyle} to="/Blog/*">Archetypal Stories</Link></li>
+                            <li className='center-nav-item' ><Link style={linkStyle} to="/*">HOME</Link></li>
+                            <li className='center-nav-item' > <Link style={linkStyle} to="/Blog/*">ARCHETYPAL STORIES</Link></li>
                             {loggedIn === true ? (
-                                <li className='center-nav-item' > <Link style={linkStyle} to='/ShopPage/*'>Shop</Link></li>
+                                <li className='center-nav-item' > <Link style={linkStyle} to='/ShopPage/*'>SHOP</Link></li>
                             ) : (
                                 <></>
                             )}
                         </ul>
-                    </Nav>
-                    <Nav id='right-nav-main'>
-                        <ul className="navbar-nav" id='right-ul'>
+                        {/* </Nav>
+                    <Nav id='right-nav-main'> */}
+                        <ul className="navbar-nav" id='right-nav-main'>
                             {loggedIn === true ? (
                                 <div id='profileContainer'>
-                                    <li className='nav-item' onClick={logout} id='logout-li'>Logout</li>
+                                    <li className='nav-item' onClick={logout} id='logout-li'>LOGOUT</li>
 
-                                    <li className='nav-item' id='profile-li'> <Link style={linkStyle} to='/MyProfile/*'>Profile</Link></li>
+                                    <li className='nav-item' id='profile-li'> <Link style={linkStyle} to='/MyProfile/*'>PROFILE</Link></li>
                                 </div>
                             ) : (
                                 <li className='nav-item'> <Link style={linkStyle} to='/LoginPage/*'>Login</Link></li>
                             )}
-                            Cart (0)
+                            <li id='cartPadding'>CART (0)</li>
                         </ul>
                     </Nav>
+                    {size < 768 && showProfileNav ? (
+                        <ProfileNav/>
+                    ):(
+                        <></>
+                    )}
                 </Navbar.Collapse>
             </Container>
         </Navbar>
     );
 }
 
-export default responsiveNav;
+export default ResponsiveNav;

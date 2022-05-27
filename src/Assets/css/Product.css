@@ -53,7 +53,7 @@ img {
 
 #productButtonContainer button {
     color: white;
-    background-color: var(--brown);
+    background-color: var(--red);
     border: none;
     height: 50px;
 }

@@ -1,8 +1,4 @@
-THINGS TO DO
-Replace logo
-Move error login to top
-Check filters properly
-Look at Zara on massive screens 
+REPLACE LOGO FOR PROFILE NAVS
 make pages for large screen sizes too
 - [ ] Filters make headings smaller and then save and clear button smaller and flex row reduce padding top and bottom
 - [ ] Make news letter text smaller
@@ -14,15 +10,17 @@ make pages for large screen sizes too
 - [ ] Move arrows on blog page — make them red
 - [ ] Center text on smaller viewports for blog page
 - [ ] First pic on blog page use link in whatsapp
+- [ ] Shop page reduce number of columns for mobile view
 - [ ] Product page styling for mobile view —> slides to see each picture scroll down to see product descriptions
 - [ ] Responsive footer
 - [ ] Navbar collapsable 
-- [ ] Button on product and blog page red
-- [ ] Other purple
+- [ ] Button on product and blog page red every other button is purple
+- [ ] Completely style the test page
 - [ ] Make the articles blog page
 - [ ] Featured zoom out of pics more
 - [ ] Remind when I push the new version of the website
 MOBILE VERSION:
 Profile page styling—> 
 Archetypes on slider
+make a dropdow for the mobile styling instead of the headings
 Drop down menu like nav bar containing archetypes, orders, Wishlist and my information.
