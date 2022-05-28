@@ -69,6 +69,7 @@ function ResponsiveNav() {
                             <li className='center-nav-item' ><Link style={linkStyle} to="/*">HOME</Link></li>
                             <li className='center-nav-item' > <Link style={linkStyle} to="/Blog/*">ARCHETYPAL STORIES</Link></li>
                             {loggedIn === true ? (
+                                // && user==='giorgia'
                                 <li className='center-nav-item' > <Link style={linkStyle} to='/ShopPage/*'>SHOP</Link></li>
                             ) : (
                                 <></>
@@ -84,7 +85,7 @@ function ResponsiveNav() {
                                     <li className='nav-item' id='profile-li'> <Link style={linkStyle} to='/MyProfile/*'>PROFILE</Link></li>
                                 </div>
                             ) : (
-                                <li className='nav-item'> <Link style={linkStyle} to='/LoginPage/*'>Login</Link></li>
+                                <li className='nav-item'> <Link style={linkStyle} to='/LoginPage/*'>LOGIN</Link></li>
                             )}
                             <li id='cartPadding'>CART (0)</li>
                         </ul>

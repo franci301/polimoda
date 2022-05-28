@@ -86,6 +86,33 @@
     }
 }
 
+@media screen and (max-width:414px) {
+    /* #menuTop {
+        padding-top: 2%;
+    } */
+    #menuTop h2 {
+        font-size: 130%;
+    }
+}
+
+@media screen and (max-width:378px) {
+    #menuTop h2 {
+        font-size: 100%;
+    }
+    #menuTop {
+        padding-top: 3%;
+    }
+}
+
+@media screen and (max-width:336px) {
+    #menuTop h2 {
+        font-size: 80%;
+    }
+    #menuTop {
+        padding-top: 3%;
+    }
+}
+
 #right-nav-main #logout-li {
     cursor: pointer;
 }

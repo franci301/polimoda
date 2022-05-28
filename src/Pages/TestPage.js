@@ -1,13 +1,18 @@
 import ResponsiveNav from '../Layouts/responsiveNav.js';
 import Footer from '../Layouts/footer.js';
 import util from '../Assets/maths/logistics.js';
-import Duck from '../Assets/Images/duck.jpg';
-import Creator from '../Assets/Images/Meet the Archetypes - Creator.jpg';
-import Explorer from '../Assets/Images/Meet the Archetypes - Explorer.jpg';
-import Hero from '../Assets/Images/Meet the Archetypes - Hero.jpg';
-import Innocent from '../Assets/Images/Meet the Archetypes - Innocent.jpg';
-import Outlaw from '../Assets/Images/Meet the Archetypes - Outlaw.jpeg';
-import Ruler from '../Assets/Images/Meet the Archetypes - Ruler.jpg';
+import Creator from '../Assets/Images/The Creator.jpg';
+import Explorer from '../Assets/Images/The Explorer.jpg';
+import Hero from '../Assets/Images/The Hero.jpg';
+import Innocent from '../Assets/Images/The Innocent.jpg';
+import Outlaw from '../Assets/Images/The Outlaw.jpg';
+import Ruler from '../Assets/Images/The Ruler.jpg';
+import Caregiver from '../Assets/Images/The Caregiver.jpg';
+import Everyman from '../Assets/Images/The Everyman.jpg';
+import Jester from '../Assets/Images/The Jester.jpg';
+import Magician from '../Assets/Images/The Magician.jpg';
+import Sage from '../Assets/Images/The Sage.jpg';
+import Lover from '../Assets/Images/The Lover.jpg';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { db } from "../firebase/firebase-config";
@@ -17,7 +22,22 @@ import '../Assets/css/testPage.css';
 import backgroundImg from '../Assets/Images/caregiver render.jpg';
 import lover from '../Assets/Images/lover render.jpg';
 
-var answerArr = [];
+var answerArr = [
+];
+
+// sample results they want
+// 6, 6, 3,
+//             5, 4, 2,
+//             1, 1, 4,
+//             6, 5, 5,
+//             3, 5, 1,
+//             1, 4, 1,
+//             0, 3, 0,
+//             1, 1, 2,
+//             4, 1, 0,
+//             6, 6, 5,
+//             4, 1, 1,
+//             5, 4, 1
 
 function Test() {
     const questions = [
@@ -70,20 +90,18 @@ function Test() {
         "Lover", "Everyman", "Caregiver", "Creator", "Ruler"
     ];
     const images = {
-        Creator, Explorer, Hero, Innocent, Outlaw, Ruler
+        Creator, Explorer, Hero, Innocent, Outlaw, Ruler,Caregiver,Everyman,Jester,Magician,Sage,Lover
     }
     let archetypesToPush = [];
     let archetypesImages = [];
 
     async function resultsPage() {
-        // answerArr.shift();
+        answerArr.shift();
         const archetypesValues = util.showPercentages(answerArr);
+        console.log(archetypesValues)
         for (let index = 0; index < archetypesValues.length; index++) {
             let img = images[archetypes[archetypesValues[index][0]]]
             let archetype = archetypes[archetypesValues[index][0]];
-            if (img === undefined) {
-                img = Duck;
-            }
             archetypesToPush.push(archetype);
             archetypesImages.push(img);
         }
@@ -187,7 +205,7 @@ function Test() {
                         {question === 'Archetypes of Power Discovery' ? (
                             <div className='px-5'>
                                 <p>Archetypes of Power Discovery is a Jungian Archetypes based personality test, designed to help you better understand yourself and your identity, as well as your source of power to achieve stylistic power personalization. By spending approximately 7 minutes to complete Archetypes of Power Discovery, you will become aware of your 3 dominant archetypes and a personalized product offering based on all the twelve archetypes, suitable for your personality.</p>
-                                <button type="submit" className='btn btn-dark' onClick={increment}>Explore your inner world</button>
+                                <button type="submit" className='btn btn-dark' onClick={resultsPage}>Explore your inner world</button>
                             </div>
                         ) : (
                             <div>

@@ -4,21 +4,36 @@
     margin-right: 5%;
 }
 
-#arch-page-container img {
-    width: 35%;
-    object-fit: cover;
+@media screen and (max-width:991px) {
+    #arch-page-container img {
+        width: 50%;
+        margin-left: 27%;
+        object-fit: cover;
+    }
+    #arch-page-container p {
+        margin: 8% 5% 15% 5%;
+        font-weight: bold;
+        text-align: justify;
+        text-align-last: left;
+    }
+    #main-div h4 {
+        color: var(--red);
+        font-size: 1.8vw;
+        font-weight: bold;
+        display: inline-block;
+        margin-left: 5%;
+    }
+    #arch-page-container #title-container h2 {
+        text-align: left;
+        color: var(--purple);
+        font-weight: bold;
+        margin-left: 5%;
+    }
 }
 
 #main-div {
     gap: 8%;
     text-align: left;
-}
-
-#main-div h4 {
-    color: var(--red);
-    font-size: 1.3vw;
-    font-weight: bold;
-    display: inline-block;
 }
 
 #arch-page-container #title-container h2 {
@@ -27,9 +42,26 @@
     font-weight: bold;
 }
 
-#arch-page-container p {
-    margin: 15% 5% 15% 5%;
-    font-weight: bold;
-    text-align: justify;
-    text-align-last: center;
+@media screen and (min-width:991px) {
+    #arch-page-container #title-container h2 {
+        text-align: left;
+        color: var(--purple);
+        font-weight: bold;
+    }
+    #main-div h4 {
+        color: var(--red);
+        font-size: 1.3vw;
+        font-weight: bold;
+        display: inline-block;
+    }
+    #arch-page-container img {
+        width: 35%;
+        object-fit: cover;
+    }
+    #arch-page-container p {
+        margin: 15% 5% 15% 5%;
+        font-weight: bold;
+        text-align: justify;
+        text-align-last: left;
+    }
 }

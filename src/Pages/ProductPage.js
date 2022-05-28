@@ -17,7 +17,7 @@ function ProductPage() {
         <div>
             <ResponsiveNav />
             <br />
-            <div className='d-flex flex-row justify-content-center'>
+            <div className='d-flex flex-row justify-content-center' id='product-container'>
                 <div className="outer container" id='bigContainer'>
                     <div className="container flex-child" id='bigContainer'>
                         <div className="div">

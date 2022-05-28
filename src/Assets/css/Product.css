@@ -16,6 +16,10 @@
 
 /* for visual aid, not necessarily relevant to question */
 
+#product-container #productAd button {
+    color: var(--red);
+}
+
 #bigContainer {
     /* width: 20%; */
     width: 40%;

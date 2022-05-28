@@ -38,7 +38,7 @@ function ShopPage() {
         });
     }
 
-    async function getImagesHere(){
+    async function getImagesHere() {
         await getImages().then((res) => {
             for (const item in res) {
                 setItemArr(itemArr => [...itemArr, res[item]]);
@@ -195,9 +195,9 @@ function ShopPage() {
                         <ul id='innerUl'>
                             <li id='categoryLi'>
                                 <div onClick={() => toggleInnerFilters('categoryUl')}>
-                                    <h4>
+                                    <h5>
                                         CATEGORY
-                                    </h4>
+                                    </h5>
                                 </div>
                                 <ul id='categoryUl'>
                                     <li><label><input type="checkbox" className='All' id='filter0' />All<span></span></label></li>
@@ -216,9 +216,9 @@ function ShopPage() {
                             </li>
                             <li id='genderLi'>
                                 <div onClick={() => toggleInnerFilters('genderUl')}>
-                                    <h4>
+                                    <h5>
                                         GENDER
-                                    </h4>
+                                    </h5>
                                 </div>
                                 <ul id='genderUl'>
                                     <li><label><input type="checkbox" className='Womenswear' id='filter12' />Womenswear<span></span></label></li>
@@ -226,8 +226,10 @@ function ShopPage() {
                                     <li><label><input type="checkbox" className='Gender-neutral' id='filter14' />Gender-Neutral<span></span></label></li>
                                 </ul>
                             </li>
-                            <li><h4 onClick={updateFilters}>SAVE</h4></li>
-                            <li><h4 onClick={clearFilters}>CLEAR</h4></li>
+                            <div className='d-flex flex-row justify-content-start' id='filters-div'>
+                                <li><h5 onClick={updateFilters}>SAVE</h5></li>
+                                <li><h5 onClick={clearFilters}>CLEAR</h5></li>
+                            </div>
                         </ul>
                     </li>
                 </ul>

@@ -36,18 +36,17 @@ function BlogPage() {
             {/* <Nav /> */}
             <ResponsiveNav/>
             <h4>EXPLORE THE WORLD OF POWER PERSONALIZATION</h4>
-            <img id="topBlogPage" src="https://media.istockphoto.com/videos/crowd-of-people-commuters-walking-at-shibuya-crossing-video-id1167927700?b=1&k=20&m=1167927700&s=640x640&h=Zx7VE1nSoF3Rle4J6tJpsLrNZVexJKf7i9vucwgZjKY=" alt="" />
+            <iframe id='topBlogPage' width="560" height="315" src="https://www.youtube.com/embed/uEMfQZjswu4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            {/* <img id="topBlogPage" src="https://media.istockphoto.com/videos/crowd-of-people-commuters-walking-at-shibuya-crossing-video-id1167927700?b=1&k=20&m=1167927700&s=640x640&h=Zx7VE1nSoF3Rle4J6tJpsLrNZVexJKf7i9vucwgZjKY=" alt="" /> */}
             <h4>MEET THE ARCHETYPES</h4>
             {/* Make this a seperate component */}
-            <Swiper
+            <Swiper id='arch-swiper'
                 // install Swiper modules
                 modules={[Navigation, Autoplay]}
                 spaceBetween={50}
                 slidesPerView={1}
                 navigation={{ clickable: true }}
-                onSwiper={(swiper) => console.log(swiper)}
-                onSlideChange={() => console.log('slide change')}
-                autoplay={{ delay: 5000 }}
+                // autoplay={{ delay: 5000 }}
             >
                 <SwiperSlide>
                     <div id='archetypes-grid' className='container '>
@@ -80,12 +79,11 @@ function BlogPage() {
             </Swiper>
             <br />
             <Swiper
+            id='featured-swiper'
                 modules={[Navigation, Autoplay]}
                 spaceBetween={50}
                 slidesPerView={1}
                 navigation={{ clickable: true }}
-                onSwiper={(swiper) => console.log(swiper)}
-                onSlideChange={() => console.log('slide change')}
                 autoplay={{ delay: 6500 }}
             >
                 <SwiperSlide>

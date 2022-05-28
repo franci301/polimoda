@@ -17,6 +17,17 @@
     gap: 2%;
 }
 
+#arch-swiper .swiper-button-next,
+#arch-swiper .swiper-button-prev {
+    color: var(--red);
+}
+
+#featured-swiper .swiper-button-next,
+#featured-swiper .swiper-button-prev {
+    color: var(--red);
+    top: 25%;
+}
+
 #featuredImgContainer div {
     color: var(--brown);
 }
@@ -73,8 +84,43 @@ h4 {
     bottom: 6%;
 }
 
-.swiper-button-next {
-    color: red;
+@media screen and (max-width:1230px) {
+    #archetypes-grid h5 {
+        bottom: 8%;
+        left: -25%;
+    }
+}
+
+@media screen and (max-width:1020px) {
+    #archetypes-grid h5 {
+        bottom: 8%;
+        left: -28%;
+        font-size: 100%;
+    }
+}
+
+@media screen and (max-width:770px) {
+    #archetypes-grid h5 {
+        bottom: 8%;
+        left: -24%;
+        font-size: 90%;
+    }
+}
+
+@media screen and (max-width:580px) {
+    #archetypes-grid h5 {
+        bottom: 12%;
+        left: -19%;
+        font-size: 90%;
+    }
+}
+
+@media screen and (max-width:376px) {
+    #archetypes-grid h5 {
+        bottom: 14%;
+        left: -20%;
+        font-size: 70%;
+    }
 }
 
 @media screen and (max-width: 1366px) {
@@ -102,6 +148,7 @@ h4 {
 @media screen and (min-width: 1366px) {
     #topBlogPage {
         width: 79%;
+        height: 90vh;
     }
     #bottomContainerText1 {
         position: absolute;

@@ -32,10 +32,15 @@ ul {
     cursor: pointer;
 }
 
-#innerUl h4:hover {
+#innerUl h5:hover {
     text-decoration: underline;
     text-decoration-color: var(--brown);
     cursor: pointer;
+}
+
+#innerUl h5 {
+    margin-top: 5%;
+    color: var(--purple);
 }
 
 #innerUl label input {
@@ -52,6 +57,11 @@ ul {
 
 #innerUl label:hover {
     cursor: pointer;
+}
+
+#filters-div {
+    gap: 5%;
+    align-items: center;
 }
 
 #categoryUl,
@@ -90,7 +100,7 @@ ul {
 .menu ul li {
     color: var(--brown);
     display: block;
-    padding-bottom: 8%;
+    padding-bottom: 3%;
 }
 
 #firstLi {
