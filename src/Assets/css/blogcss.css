@@ -126,7 +126,7 @@ h4 {
 @media screen and (max-width: 1366px) {
     /* my monitor screen size */
     #topBlogPage {
-        width: 88%;
+        width: 86%;
     }
     #bottomContainerText {
         position: absolute;
@@ -147,7 +147,7 @@ h4 {
 
 @media screen and (min-width: 1366px) {
     #topBlogPage {
-        width: 79%;
+        width: 86%;
         height: 90vh;
     }
     #bottomContainerText1 {
