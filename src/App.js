@@ -1,7 +1,7 @@
 // import './Assets/css/reset.css'
 import './App.css';
 import {
-  HashRouter,
+  BrowserRouter as Router,
   Routes,
   Route
 } from 'react-router-dom';
@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="App">
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <HashRouter>
+      <Router>
         <Routes>
           <Route path="/*" element={<HomePage />} />
           <Route path='/Blog/*' element={<BlogPage />} />
@@ -36,7 +36,7 @@ function App() {
           <Route path='/RegisterPage/*' element={<RegisterPage/>}/>
           <Route path='/ArchetypePage/*' element={<ArchPage/>}/>
         </Routes>
-      </HashRouter>
+      </Router>
     </div>
   );
 }

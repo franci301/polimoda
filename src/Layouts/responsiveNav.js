@@ -2,15 +2,13 @@ import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 import { signOut } from 'firebase/auth';
 import { auth } from '../firebase/firebase-config';
-import {useEffect, useState,useLayoutEffect} from 'react';
+import {useState,useLayoutEffect} from 'react';
 import logo from '../Assets/Images/logo.png';
 import ProfileNav from '../Layouts/ProfileNav.js';
-import WindowSize from '../Layouts/windowSize.js';
 import '../Assets/css/responsiveNav.css'
 
 function ResponsiveNav() {
     var loggedIn;
-    var removeFromNav = false;
     var showProfileNav = false;
     var userLogged = localStorage.getItem('userLogin');
     const locationsArray = ['/MyInformation/*','/MyProfile/*','/Wishlist/*','/MyOrders/*']
@@ -41,8 +39,8 @@ function ResponsiveNav() {
         updateSize();
         return () => window.removeEventListener('resize', updateSize);
     }, []);
-    useEffect(() => {
-    })
+
+    console.log(size)
     function logout() {
         signOut(auth).then(() => {
             localStorage.removeItem('userLogin');
