@@ -2,14 +2,14 @@
 let arr = [];
 // console.log(fileImport)
 let imgArr = []
-let fileCounter = 34;
+let fileCounter = 0;
 async function UploadImg() {
     const fs = require('fs');
-    const dir = './productImages/';
+    const dir = './productImages/1st half/';
     const subDirs = fs.readdirSync(dir);
     for (const sub of subDirs) {
         if (sub.localeCompare('.DS_Store') !== 0) {
-            const innerDir = './productImages/' + sub + '/';
+            const innerDir = './productImages/1st half/' + sub + '/';
             const gender = fs.readdirSync(innerDir);
             for (const genders of gender) {
                 if (genders.localeCompare('.DS_Store') !== 0) {
@@ -28,7 +28,7 @@ async function UploadImg() {
             }
         }
     }
-    // console.log(arr);
+    console.log(arr);
 }
 
 UploadImg();
@@ -44,13 +44,13 @@ function addToArr(file, group, gender, filepath, fileCounter) {
     const groupID = group.split(' ')[1].split(' ')[0];
     const groupName = group.split('-')[1].split(' ')[1]
     const path = filepath;
-    console.log('import img' + fileCounter + ' from "' + path + '"');
+    // console.log('import img' + fileCounter + ' from "' + path + '"');
     // console.log(brandName, productType, price, ' split file name');
     const item = [brandName, productType, price];
     const obj = { key: groupID, groupName: groupName, value: item, gender: gender, completePath: path }
         // console.log(obj)
-        // arr.push(obj);
-        // console.log(group, gender)
+    arr.push(obj);
+    // console.log(group, gender)
 }
 
 // export default UploadImg;

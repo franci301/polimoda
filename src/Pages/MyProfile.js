@@ -28,7 +28,6 @@ function MyProfile() {
                 const description = res._document.data.value.mapValue.fields.archetypeDescription.arrayValue.values[index]
                 const imgs = res._document.data.value.mapValue.fields.archetypesImage.arrayValue.values[index]
                 totData.push([list, description, imgs])
-                console.log(imgs)
             }
             // console.log(totData)
             setList(totData)
@@ -52,6 +51,7 @@ function MyProfile() {
         updateSize();
         return () => window.removeEventListener('resize', updateSize);
     }, []);
+
     return (
         <div>
             <ResponsiveNav />
@@ -85,7 +85,7 @@ function MyProfile() {
                         {listArch != null ? (
                             listArch.map((archetype, index) => (
                                 <div key={index} className='test-results'>
-                                    <img id='archetypesDuck' src={archetype[2].stringValue} alt="" />
+                                    <img id='archetypesDuck' src={archetype[2].stringValue} alt={archetype[0].stringValue.toUpperCase()} />
                                     <p id='archName'>{archetype[0].stringValue.toUpperCase()}</p>
                                     <p>{archetype[1].mapValue.fields.description.stringValue}</p>
                                 </div>

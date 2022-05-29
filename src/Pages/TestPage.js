@@ -23,21 +23,21 @@ import backgroundImg from '../Assets/Images/caregiver render.jpg';
 import lover from '../Assets/Images/lover render.jpg';
 
 var answerArr = [
+    6, 6, 3,
+    5, 4, 2,
+    1, 1, 4,
+    6, 5, 5,
+    3, 5, 1,
+    1, 4, 1,
+    0, 3, 0,
+    1, 1, 2,
+    4, 1, 0,
+    6, 6, 5,
+    4, 1, 1,
+    5, 4, 1
 ];
 
 // sample results they want
-// 6, 6, 3,
-//             5, 4, 2,
-//             1, 1, 4,
-//             6, 5, 5,
-//             3, 5, 1,
-//             1, 4, 1,
-//             0, 3, 0,
-//             1, 1, 2,
-//             4, 1, 0,
-//             6, 6, 5,
-//             4, 1, 1,
-//             5, 4, 1
 
 function Test() {
     const questions = [
@@ -90,7 +90,7 @@ function Test() {
         "Lover", "Everyman", "Caregiver", "Creator", "Ruler"
     ];
     const images = {
-        Creator, Explorer, Hero, Innocent, Outlaw, Ruler,Caregiver,Everyman,Jester,Magician,Sage,Lover
+        Creator, Explorer, Hero, Innocent, Outlaw, Ruler, Caregiver, Everyman, Jester, Magician, Sage, Lover
     }
     let archetypesToPush = [];
     let archetypesImages = [];
