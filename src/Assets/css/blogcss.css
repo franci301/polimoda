@@ -12,10 +12,11 @@
     padding-top: 5%;
 }
 
-#featuredImgContainer {
+
+/* #featuredImgContainer {
     width: 55%;
     gap: 2%;
-}
+} */
 
 #arch-swiper .swiper-button-next,
 #arch-swiper .swiper-button-prev {
@@ -30,6 +31,11 @@
 
 #featuredImgContainer div {
     color: var(--brown);
+}
+
+#featuredImgContainer {
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 #featuredImgContainer h4 {
@@ -97,6 +103,10 @@ h4 {
         left: -28%;
         font-size: 100%;
     }
+    #featuredImgContainer h4,
+    #featuredImgContainer p {
+        font-size: 2vw;
+    }
 }
 
 @media screen and (max-width:770px) {
@@ -107,19 +117,72 @@ h4 {
     }
 }
 
+@media screen and (max-width:700px) {
+    #archetypes-grid h5 {
+        bottom: 8%;
+        left: -24%;
+        font-size: 90%;
+    }
+    #featured-img {
+        width: 50%;
+    }
+}
+
 @media screen and (max-width:580px) {
     #archetypes-grid h5 {
         bottom: 12%;
         left: -19%;
         font-size: 90%;
     }
+    #featuredImgContainer h4,
+    #featuredImgContainer p {
+        font-size: 3vw;
+    }
+    #featuredText {
+        width: 100%;
+    }
+    .featured-component-div {
+        width: 50%;
+    }
 }
 
-@media screen and (max-width:376px) {
+@media screen and (max-width:414px) {
+    #featuredText {
+        margin-top: 40%;
+        width: 80%;
+        margin-left: 5%;
+    }
+    #featuredImgContainer h4,
+    #featuredImgContainer p {
+        font-size: 4vw;
+    }
+    #featuredImg {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width:375px) {
+    #featuredText {
+        margin-top: 40%;
+        width: 80%;
+        margin-left: 3%;
+    }
+}
+
+@media screen and (max-width:320px) {
+    #featuredText {
+        margin-top: 40%;
+        width: 80%;
+        margin-left: 5%;
+    }
     #archetypes-grid h5 {
-        bottom: 14%;
-        left: -20%;
+        bottom: 12%;
+        left: -17%;
         font-size: 70%;
+    }
+    #featured-text {
+        color: red;
     }
 }
 

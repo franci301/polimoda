@@ -51,6 +51,7 @@ function MyProfile() {
         updateSize();
         return () => window.removeEventListener('resize', updateSize);
     }, []);
+    
 
     return (
         <div>
@@ -64,7 +65,6 @@ function MyProfile() {
                         spaceBetween={50}
                         slidesPerView={1}
                         navigation={{ clickable: true }}>
-
                         {listArch != null ? (
                             listArch.map((archetype, index) => (
                                 <SwiperSlide>

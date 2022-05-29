@@ -71,8 +71,6 @@ function ResponsiveNav() {
                                 <></>
                             )}
                         </ul>
-                        {/* </Nav>
-                    <Nav id='right-nav-main'> */}
                         <ul className="navbar-nav" id='right-nav-main'>
                             {loggedIn === true ? (
                                 <div id='profileContainer'>
