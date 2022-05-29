@@ -46,7 +46,7 @@ function BlogPage() {
                 spaceBetween={50}
                 slidesPerView={1}
                 navigation={{ clickable: true }}
-                // autoplay={{ delay: 5000 }}
+                autoplay={{ delay: 5000 }}
             >
                 <SwiperSlide>
                     <div id='archetypes-grid' className='container '>
@@ -56,8 +56,8 @@ function BlogPage() {
                             <ArchComponent img={Explorer} title="The Explorer" />
                         </div>
                         <div className='row gx-0 gy-0' id='bottomArch'>
-                            <ArchComponent img={Innocent} title="The Innocent" />
-                            <ArchComponent img={Outlaw} title="The Outlaw" />
+                            <ArchComponent img={Lover} title="The Lover" />
+                            <ArchComponent img={Magician} title="The Magician" />
                             <ArchComponent img={Ruler} title="The Ruler" />
                         </div>
                     </div>
@@ -65,13 +65,13 @@ function BlogPage() {
                 <SwiperSlide>
                     <div id='archetypes-grid' className='container '>
                         <div className='row gx-0 gy-0'>
-                            <ArchComponent img={Lover} title="The Lover" />
-                            <ArchComponent img={Jester} title="The Jester" />
-                            <ArchComponent img={Magician} title="The Magician" />
+                            <ArchComponent img={Innocent} title="The Innocent" />
+                            <ArchComponent img={Caregiver} title="The Caregiver" />
+                            <ArchComponent img={Outlaw} title="The Outlaw" />
                         </div>
                         <div className='row gx-0 gy-0' id='bottomArch'>
                             <ArchComponent img={Sage} title="The Sage" />
-                            <ArchComponent img={Caregiver} title="The Caregiver" />
+                            <ArchComponent img={Jester} title="The Jester" />
                             <ArchComponent img={Everyman} title="The Everyman" />
                         </div>
                     </div>

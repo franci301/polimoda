@@ -4,7 +4,6 @@ function ArchComponent({img,title}) {
     const navigate = useNavigate();
 
     function route(obj){
-        console.log(obj);
         navigate('/ArchetypePage/*',{state:{data:obj}})
     }
     return (

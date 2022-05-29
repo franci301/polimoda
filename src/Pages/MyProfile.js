@@ -28,6 +28,7 @@ function MyProfile() {
                 const description = res._document.data.value.mapValue.fields.archetypeDescription.arrayValue.values[index]
                 const imgs = res._document.data.value.mapValue.fields.archetypesImage.arrayValue.values[index]
                 totData.push([list, description, imgs])
+                console.log(imgs)
             }
             // console.log(totData)
             setList(totData)
@@ -51,10 +52,6 @@ function MyProfile() {
         updateSize();
         return () => window.removeEventListener('resize', updateSize);
     }, []);
-    console.log(size);
-    function routeShop() {
-        navigate('/ShopPage/*')
-    }
     return (
         <div>
             <ResponsiveNav />

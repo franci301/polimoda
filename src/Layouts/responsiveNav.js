@@ -39,8 +39,6 @@ function ResponsiveNav() {
         updateSize();
         return () => window.removeEventListener('resize', updateSize);
     }, []);
-
-    console.log(size)
     function logout() {
         signOut(auth).then(() => {
             localStorage.removeItem('userLogin');
