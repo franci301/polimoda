@@ -42,7 +42,7 @@
         padding-right: 8%;
     }
     #profileContainer #profile-li {
-        padding-left: 15%;
+        padding-left: 9%;
     }
     #logout-li {
         /* change cursor */
@@ -60,8 +60,19 @@
 }
 
 #navLogo {
-    width: 30%;
+    max-height: 150px;
+    width: 16%;
+    float: left;
     /* this shit is pissing me off */
+}
+@media (max-width:767px){
+    #navLogo {
+        max-height: 150px;
+        width: 30%;
+        float: left;
+        /* this shit is pissing me off */
+    }
+    
 }
 
 @media (max-width:767px) {
@@ -140,6 +151,10 @@ nav {
 
 .navbar {
     width: 100vw;
+}
+
+.nav-item{
+    padding-left: 7px;
 }
 
 .navbar-brand {
