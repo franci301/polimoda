@@ -22,15 +22,15 @@ function HomePage() {
             {/* d-flex flex-column 
                 justify-content-between vh-100*/}
             <div className="container gx-0" id='homeContainer'>
-                <div className="container">
+                <div className="container-fluid">
                     <div className="row">
-                        <div className="col" id="leftImg">
+                        <div className="col-12 col-lg" id="leftImg">
                             <img id="left-home-img" src={testImg} alt="" />
                             {/* button styling */}
                             <button id='testButton' onClick={routeTest}>Start Archetypes <br /> of Power Discovery</button>
                             <p id='testTxt'>Get your personalized product offering upon completing a Jungian Archetypes inspired personality test</p>
                         </div>
-                        <div className="col" id="rightImg">
+                        <div className="col-12 col-lg" id="rightImg">
                             <h6 id='archStories'>Archetypal Stories</h6>
                             <button id="exploreButton" onClick={routeBlog}>Be your own source of inspiration</button>
                             <div className="d-flex flex-row gap-3 py-3" id='rightImgContainer'>

@@ -7,9 +7,9 @@ function TestAd() {
         navigate('/Test/*');
     }
     return (
-        <div id='testContainer'>
+        <div id='testAdContainer'>
             <h5>Take our Archetypes of Power Discovery to get personalized product selection!</h5>
-            <button className="btn btn-dark" onClick={routeTest}>Start Archetypes of Power Discovery</button>
+            <button className="btn" onClick={routeTest}>Start Archetypes of Power Discovery</button>
         </div>
     );
 }

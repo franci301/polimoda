@@ -2,7 +2,6 @@
     "name": "polimoda",
     "version": "0.1.0",
     "private": true,
-    "homepage": "https://franci301.github.io/polimoda",
     "dependencies": {
         "-": "^0.0.1",
         "@testing-library/jest-dom": "^5.16.4",
@@ -20,7 +19,9 @@
         "list-files": "^1.1.4",
         "list-react-files": "^0.2.0",
         "react": "^18.0.0",
+        "react-bootstrap": "^2.4.0",
         "react-dom": "^18.0.0",
+        "react-helmet": "^6.1.0",
         "react-router-dom": "^6.3.0",
         "react-scripts": "5.0.0",
         "read-excel-file": "^5.2.28",
@@ -60,5 +61,8 @@
         "fs": false,
         "path": false,
         "os": false
+    },
+    "devDependencies": {
+        "firebase-tools": "^11.0.1"
     }
 }

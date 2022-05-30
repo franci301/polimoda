@@ -1,20 +1,43 @@
-import Nav from '../Layouts/nav.js';
+import ResponsiveNav from '../Layouts/responsiveNav.js';
 import Footer from '../Layouts/footer.js';
 import util from '../Assets/maths/logistics.js';
-import Duck from '../Assets/Images/duck.jpg';
-import Creator from '../Assets/Images/Meet the Archetypes - Creator.jpg';
-import Explorer from '../Assets/Images/Meet the Archetypes - Explorer.jpg';
-import Hero from '../Assets/Images/Meet the Archetypes - Hero.jpg';
-import Innocent from '../Assets/Images/Meet the Archetypes - Innocent.jpg';
-import Outlaw from '../Assets/Images/Meet the Archetypes - Outlaw.jpeg';
-import Ruler from '../Assets/Images/Meet the Archetypes - Ruler.jpg';
+import Creator from '../Assets/Images/The Creator.jpg';
+import Explorer from '../Assets/Images/The Explorer.jpg';
+import Hero from '../Assets/Images/The Hero.jpg';
+import Innocent from '../Assets/Images/The Innocent.jpg';
+import Outlaw from '../Assets/Images/The Outlaw.jpg';
+import Ruler from '../Assets/Images/The Ruler.jpg';
+import Caregiver from '../Assets/Images/The Caregiver.jpg';
+import Everyman from '../Assets/Images/The Everyman.jpg';
+import Jester from '../Assets/Images/The Jester.jpg';
+import Magician from '../Assets/Images/The Magician.jpg';
+import Sage from '../Assets/Images/The Sage.jpg';
+import Lover from '../Assets/Images/The Lover.jpg';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { db } from "../firebase/firebase-config";
 import { updateDoc, doc } from 'firebase/firestore';
+import getArchetypes from '../firebase/getArchetypes.js';
 import '../Assets/css/testPage.css';
+import backgroundImg from '../Assets/Images/caregiver render.jpg';
+import lover from '../Assets/Images/lover render.jpg';
 
-var answerArr = []; // remember to remove first value
+var answerArr = [
+    // 6, 6, 3,
+    // 5, 4, 2,
+    // 1, 1, 4,
+    // 6, 5, 5,
+    // 3, 5, 1,
+    // 1, 4, 1,
+    // 0, 3, 0,
+    // 1, 1, 2,
+    // 4, 1, 0,
+    // 6, 6, 5,
+    // 4, 1, 1,
+    // 5, 4, 1
+];
+
+// sample results they want
 
 function Test() {
     const questions = [
@@ -62,12 +85,12 @@ function Test() {
     const [text, setText] = useState('');
     const navigate = useNavigate();
     const archetypes = [
-        "Cargiver", "Ruler", "Creator", "Sage",
-        "Magician", "Explorer", "Everyman",
-        "Jester", "Lover", "Hero", "Outlaw", "Innocent"
+        "Innocent", "Explorer", "Sage", "Hero",
+        "Outlaw", "Magician", "Jester",
+        "Lover", "Everyman", "Caregiver", "Creator", "Ruler"
     ];
     const images = {
-        Creator, Explorer, Hero, Innocent , Outlaw, Ruler
+        Creator, Explorer, Hero, Innocent, Outlaw, Ruler, Caregiver, Everyman, Jester, Magician, Sage, Lover
     }
     let archetypesToPush = [];
     let archetypesImages = [];
@@ -75,25 +98,31 @@ function Test() {
     async function resultsPage() {
         answerArr.shift();
         const archetypesValues = util.showPercentages(answerArr);
+        console.log(archetypesValues)
         for (let index = 0; index < archetypesValues.length; index++) {
             let img = images[archetypes[archetypesValues[index][0]]]
             let archetype = archetypes[archetypesValues[index][0]];
-            if (img === undefined){
-                img = Duck;
-            }
             archetypesToPush.push(archetype);
             archetypesImages.push(img);
         }
+        let descriptionArr = [];
+        for (let i = 0; i < archetypesToPush.length; i++) {
+            let description = await getArchetypes(archetypesToPush[i]);
+            descriptionArr.push(description);
+        }
+        const archetypeOrder = util.master(answerArr);
         if (!localStorage.getItem('userLogin')) {
-            localStorage.setItem('testResults', JSON.stringify([archetypesToPush, archetypesImages]));
+            localStorage.setItem('testResults', JSON.stringify([archetypesToPush, descriptionArr, archetypesImages, archetypeOrder]));
             navigate('/RegisterPage/*')
-        }else{
+        } else {
             const obj = localStorage.getItem('userLogin');
             const user = JSON.parse(obj);
             const userCollectionRef = doc(db, "users", user.user.uid);
             await updateDoc(userCollectionRef, {
                 archetypesValue: archetypesToPush,
-                archetypesImage: archetypesImages
+                archetypesImage: archetypesImages,
+                archetypeDescription: descriptionArr,
+                archetypeOrder: archetypeOrder
             });
             answerArr = [];
             navigate('/MyProfile/*')
@@ -114,7 +143,7 @@ function Test() {
             for (let index = 0; index < radios.length; index++) {
                 radios[index].checked = false;
             }
-            if (counter % 3 == 0 && counter != 0) {
+            if (counter % 3 === 0 && counter !== 0) {
                 setRoomId(room + 1)
             }
         } else {
@@ -122,15 +151,15 @@ function Test() {
         }
 
     }
-
     return (
-        <div>
-            <Nav />
-            <div>
+        <div >
+            <ResponsiveNav />
+            <div id='testContainer'>
+                <img src={lover} alt="" />
                 <div>
                     <h5>Room {room}</h5>
                 </div>
-                <div>
+                <div id='testCenterDiv'>
                     {counter === questions.length + 1 ? (
                         <div>End Of Quiz</div>
                     ) : (
@@ -138,7 +167,7 @@ function Test() {
                     )}
                 </div>
                 <div>
-                    <div className='d-flex flex-col justify-content-center'>
+                    <div className='d-flex flex-col justify-content-center' id='choiceDiv'>
                         {question === 'Archetypes of Power Discovery' || counter > questions.length ? (
                             <div></div>
                         ) : (
@@ -193,9 +222,7 @@ function Test() {
                     <p className="text-danger">{text}</p>
                 </div>
             </div>
-            <div id="footerTest">
-                <Footer />
-            </div>
+            <Footer />
         </div>
     );
 }

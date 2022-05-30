@@ -96,3 +96,21 @@
         padding-top: 1%;
     }
 }
+
+@media screen and (max-width:576px) {
+    #testButton {
+        position: absolute;
+        left: 56%;
+        top: 36%;
+        width: 30%;
+        z-index: 1000;
+        padding: 5px;
+        font-weight: bold;
+        background-color: var(--purple);
+        color: white;
+        border: none;
+    }
+    #rightImg p {
+        padding-top: 1%;
+    }
+}

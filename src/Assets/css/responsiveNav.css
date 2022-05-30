@@ -1,0 +1,155 @@
+/* Normal nav css here */
+
+@media (min-width:771px) {
+    /* screen sizes 1024 to 1366 */
+    #center-nav-main {
+        padding-right: 13%;
+    }
+    #right-nav-main {
+        position: absolute;
+        right: 3%;
+    }
+    /* #cartPadding {
+        padding-left: 13%;
+    } */
+    #right-nav-main li {
+        clear: both;
+        display: inline-block;
+        /* overflow: hidden; */
+        white-space: nowrap;
+    }
+    #profileContainer {
+        padding-right: 5%;
+    }
+    #center-nav-home {
+        padding-right: 0%;
+    }
+    #center-home-nav a {
+        font-size: 200%;
+    }
+    #right-nav-home {
+        position: absolute;
+        right: 0%;
+    }
+    #center-ul .center-nav-item {
+        padding-left: 10%;
+    }
+    #right-ul {
+        align-items: center;
+    }
+    #profileContainer {
+        display: flex;
+        padding-right: 8%;
+    }
+    #profileContainer #profile-li {
+        padding-left: 15%;
+    }
+    #logout-li {
+        /* change cursor */
+        cursor: pointer;
+    }
+    .center-nav-item {
+        width: 100%;
+    }
+}
+
+@media (max-width:1100px) and (min-width:768px) {
+    #center-nav-main {
+        padding-right: 30%;
+    }
+}
+
+#navLogo {
+    width: 30%;
+    /* this shit is pissing me off */
+}
+
+@media (max-width:767px) {
+    #center-nav-main {
+        float: left;
+        align-content: flex-start;
+        align-items: flex-start;
+    }
+    #right-nav-main #profileContainer li,
+    #right-nav-main #profileContainer li a {
+        margin-top: 10%;
+        margin-bottom: 10%;
+    }
+    #center-ul li {
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+    #menuTop {
+        flex-direction: column;
+        float: right;
+        align-items: flex-end;
+    }
+}
+
+@media screen and (max-width:414px) {
+    /* #menuTop {
+        padding-top: 2%;
+    } */
+    #menuTop h2 {
+        font-size: 130%;
+    }
+}
+
+@media screen and (max-width:378px) {
+    #menuTop h2 {
+        font-size: 100%;
+    }
+    #menuTop {
+        padding-top: 3%;
+    }
+}
+
+@media screen and (max-width:336px) {
+    #menuTop h2 {
+        font-size: 80%;
+    }
+    #menuTop {
+        padding-top: 3%;
+    }
+}
+
+#right-nav-main #logout-li {
+    cursor: pointer;
+}
+
+#center-ul {
+    align-items: flex-start;
+}
+
+.center-nav-item a {
+    white-space: nowrap;
+}
+
+#basic-navbar-nav {
+    justify-content: center;
+}
+
+nav {
+    height: 100%;
+    background-color: var(--yellow);
+}
+
+#navContainer {
+    max-width: 100%;
+}
+
+.navbar {
+    width: 100vw;
+}
+
+.navbar-brand {
+    /* width: 10%; */
+    left: 0%;
+}
+
+
+/* profile nav css below */
+
+#menuTop h2:hover {
+    color: var(--purple);
+}

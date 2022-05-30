@@ -2,39 +2,40 @@
 let arr = [];
 // console.log(fileImport)
 let imgArr = []
-for (let index = 1; index < 35; index++) {
-    imgArr.push('img' + index)
-
-}
-console.log(imgArr)
+let fileCounter = 0;
 async function UploadImg() {
     const fs = require('fs');
-    const dir = './tempImages/';
+    const dir = './productImages/';
     const subDirs = fs.readdirSync(dir);
-    for (const sub of subDirs) {
-        // console.log(sub);
-        const innerDir = './tempImages/' + sub + '/';
-        const gender = fs.readdirSync(innerDir);
-        for (const genders of gender) {
-            const filePath = innerDir + genders + '/'
-            const files = fs.readdirSync(filePath);
-            // console.log('START OF FILE PATH' + filePath);
-            for (const file of files) {
-                // console.log(filePath + file)
-
-                // console.log(fileImport.constructor.name)
-                // addToArr(file, sub, genders, filePath + file)
+    // for (const sub of subDirs) {
+    // if (sub.localeCompare('.DS_Store') !== 0) {
+    const innerDir = './productImages/' + '1st half';
+    const half = fs.readdirSync(innerDir);
+    for (const group of half) {
+        if (group.localeCompare('.DS_Store') !== 0) {
+            const gendersPath = innerDir + '/' + group;
+            const genders = fs.readdirSync(gendersPath);
+            for (const gender of genders) {
+                if (gender.localeCompare('.DS_Store') !== 0) {
+                    const filePath = gendersPath + '/' + gender;
+                    const files = fs.readdirSync(filePath);
+                    for (const file of files) {
+                        if (file.localeCompare('.DS_Store') !== 0) {
+                            addToArr(file, group, gender, filePath);
+                        }
+                    }
+                }
             }
-            // console.log('END OF FILE PATH' + filePath);
-            // console.log('');
         }
     }
+    // }
+    // }
     console.log(arr);
 }
 
 UploadImg();
 
-function addToArr(file, group, gender, filepath) {
+function addToArr(file, group, gender, filepath, fileCounter) {
     // this function will split the name of the file before and after the brackets
     // it will then add each file to an array as long as they are in the same group
     const fileName = file.split('(');
@@ -44,7 +45,8 @@ function addToArr(file, group, gender, filepath) {
     const price = fileName2[1].split('.')[0];
     const groupID = group.split(' ')[1].split(' ')[0];
     const groupName = group.split('-')[1].split(' ')[1]
-    const path = filepath.split('.')[1];
+    const path = filepath;
+    // console.log('import img' + fileCounter + ' from "' + path + '"');
     // console.log(brandName, productType, price, ' split file name');
     const item = [brandName, productType, price];
     const obj = { key: groupID, groupName: groupName, value: item, gender: gender, completePath: path }
@@ -54,3 +56,7 @@ function addToArr(file, group, gender, filepath) {
 }
 
 // export default UploadImg;
+for (let index = 1; index < fileCounter + 1; index++) {
+    imgArr.push('img' + index)
+}
+// console.log(imgArr)

@@ -5,6 +5,10 @@
     padding-left: 8%;
 }
 
+#registerContainer {
+    min-height: 100vh;
+}
+
 #registerContainer #input1 {
     padding-top: 5%;
     padding-bottom: 10%;

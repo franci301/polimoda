@@ -1,13 +1,14 @@
-import Nav from '../Layouts/nav.js';
+import ResponsiveNav from '../Layouts/responsiveNav.js';
 import Footer from '../Layouts/footer.js';
 import ProfileNav from "../Layouts/ProfileNav";
 import getDetails from "../firebase/getDetails.js";
-import { useEffect, useState } from 'react';
+import { useEffect, useState,useLayoutEffect } from 'react';
 
 function MyInformation() {
     const [name, setName] = useState('');
     const [surname, setSurname] = useState('');
     const [email, setEmail] = useState('');
+    const [size,setSize] = useState(0);
 
     useEffect(() => {
         getDetails().then((res) => {
@@ -20,10 +21,19 @@ function MyInformation() {
         })
     });
 
+    useLayoutEffect(() => {
+        function updateSize() {
+            setSize(window.innerWidth);
+        }
+        window.addEventListener('resize', updateSize);
+        updateSize();
+        return () => window.removeEventListener('resize', updateSize);
+    }, []);
+
     return (
         <div>
-            <Nav />
-            <ProfileNav current={'MyInformation'} />
+            <ResponsiveNav />
+            {size > 768 ? <ProfileNav /> : null}
             <div className="d-flex flex-column align-items-start" id='myInformationContainer'>
                 <h4>ACCOUNT</h4>
                 <div className="d-flex flex-row" id='namesContainer'>

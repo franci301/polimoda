@@ -1,17 +1,12 @@
-import {useNavigate} from 'react-router-dom';
 
-function FeaturedImages({ image }) {
-    const navigate = useNavigate();
-    function route(image) {
-        navigate('/ProductPage/*', { state: { img: image } });
-    }
+function FeaturedImages({ image, brand, description, price}) {
     return (
-        <div>
-            <img id='featuredImg' src={image} alt="" onClick={() => route(image)} />
-            <div>
-                <h4>Brand Name</h4>
-                <p>Description</p>
-                <p>Price</p>
+        <div className="featured-component-div">
+            <img id='featuredImg' src={image} alt="" />
+            <div id='featured-text'>
+                <h4>{brand}</h4>
+                <p>{description}</p>
+                <p>{price}</p>
             </div>
         </div>
     );

@@ -10,6 +10,11 @@
     color: var(--brown);
 }
 
+footer input {
+    color: var(--brown);
+    width: 99%;
+}
+
 #middle-container div {
     margin: 0;
     text-align: left;
@@ -23,6 +28,15 @@
 
 #footerLogo {
     padding-left: 3%;
+    padding-bottom: 2%;
+    text-align: left;
+}
+
+#footerLogo h6 {
+    color: var(--brown);
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
 }
 
 footer {

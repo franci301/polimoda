@@ -1,4 +1,4 @@
-import Nav from '../Layouts/nav.js';
+import ResponsiveNav from '../Layouts/responsiveNav.js';
 import Footer from '../Layouts/footer.js';
 import TestAd from '../Layouts/testAd.js';
 import { useLocation } from 'react-router-dom';
@@ -12,12 +12,11 @@ function ProductPage() {
         ignore = false
     }
 
-
     return (
         <div>
-            <Nav />
+            <ResponsiveNav />
             <br />
-            <div className='d-flex flex-row justify-content-center'>
+            <div className='d-flex flex-row justify-content-center' id='product-container'>
                 <div className="outer container" id='bigContainer'>
                     <div className="container flex-child" id='bigContainer'>
                         <div className="div">
@@ -35,7 +34,7 @@ function ProductPage() {
                             (
                                 <img id='main' src='https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cmFuZG9tfGVufDB8fDB8fA%3D%3D&w=1000&q=80' />
                             ) : (
-                                <img id='main' src={location.state.img} />
+                                <img id='main' src={location.state.imgs.Vitelli} />
                             )}
 
                     </div>

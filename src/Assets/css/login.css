@@ -17,6 +17,7 @@
 
 #loginContainer {
     text-align: left;
+    min-height: 100vh;
 }
 
 #loginContainer input {
@@ -64,4 +65,14 @@
 
 #errorLogin {
     padding-top: 1%;
+}
+
+#forgottenPassword {
+    padding-top: 5%;
+    cursor: pointer;
+}
+
+#forgottenPassword:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--brown);
 }

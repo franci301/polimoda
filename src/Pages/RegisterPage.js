@@ -6,7 +6,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { updateDoc, setDoc, doc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import '../Assets/css/registerPage.css';
-import '../Assets/css/bottomFooter.css';
+import { setUserId } from "firebase/analytics";
 
 function RegisterPage() {
     const [name, setName] = useState('');
@@ -17,12 +17,17 @@ function RegisterPage() {
     const navigate = useNavigate();
 
     async function updateFirebase(answers) {
-        let user = JSON.parse(localStorage.getItem('userLogin'))
+        console.log(answers[0]);
+        let user = JSON.parse(localStorage.getItem('userLoginTemp'))
         const userCollectionRef = doc(db, "users", user.user.uid);
         await updateDoc(userCollectionRef, {
             archetypesValue: answers[0],
-            archetypesImage: answers[1]
+            archetypeDescription: answers[1],
+            archetypesImage: answers[2],
+            archetypeOrder: answers[3]
         });
+        // clear local storage
+        localStorage.removeItem('userLoginTemp');
     }
     async function register() {
         setText('');
@@ -30,13 +35,15 @@ function RegisterPage() {
             if (password === confirmPassword) {
                 try {
                     const user = await createUserWithEmailAndPassword(auth, email, password);
+                    // add user to local storage
+                    localStorage.setItem('userLoginTemp', JSON.stringify(user));
                     const userCollectionRef = doc(db, 'users', user.user.uid);
+                    console.log(userCollectionRef);
                     console.log(userCollectionRef);
                     await setDoc(userCollectionRef, {
                         name: name, email: email
                     });
                     let storedAnswers = JSON.parse(localStorage.getItem('testResults'))
-                    console.log(storedAnswers[0]);
                     if (storedAnswers) {
                         // push answers to firebase
                         updateFirebase(storedAnswers);
@@ -59,17 +66,19 @@ function RegisterPage() {
                             break;
                         case 'resource-exhausted':
                             setText(`Internal server error. Contact system administrator`);
-                        // default:
-                        //     setText(`${error.message}`);
-                        //     console.log(error.message);
-                        //     break;
+                        default:
+                            setText(`${error.message}`);
+                            console.log(error)
+                            console.log(error.message, error.code);
+                            console.log(name, email, password, confirmPassword);
+                            break;
                     }
                 }
             } else {
                 setText('Password not match');
             }
         } else {
-            setText('Please fill all the fields');
+            setText('Please fill in all the fields');
         }
     }
     return (
@@ -103,21 +112,19 @@ function RegisterPage() {
                         <div id='buttonDiv'>
                             <button onClick={register}>REGISTER</button>
                         </div>
+                        <div id='errorDiv'>
+                            {text != '' ? (
+                                <div className="text-danger">
+                                    <h5>{text}</h5>
+                                </div>
+                            ) :
+                                null
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
-            <div id='errorDiv'>
-                {text != '' ? (
-                    <div className="text-danger">
-                        <h5>{text}</h5>
-                    </div>
-                ) :
-                    null
-                }
-            </div>
-            <div id='footerTest'>
-                <Footer />
-            </div>
+            <Footer />
         </div>
     );
 }
