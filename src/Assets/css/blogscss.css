@@ -4,11 +4,169 @@
     margin-right: 5%;
 }
 
-#main-img-top {
+#vitelli-container h1 {
+    text-align: left;
+}
+
+#vitelli-container #main-img-top {
+    width: 40%;
+}
+
+#vitelli-container .side-img-top {
     width: 50%;
 }
 
-.side-img-top {
+#vitelli-container #main-img {
+    width: 40%;
+}
+
+#vitelli-container #bottom-p {
+    margin: 5% 5% 5% 0%;
+    font-size: 1vw;
+    padding-right: 5%;
+    text-align: justify;
+}
+
+#vitelli-blog-shop img {
+    width: 80%;
+}
+
+#vitelli-blog-shop .featured-component-div {
     width: 50%;
-    height: 50%;
+    float: left;
+}
+
+#shop-vitelli {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-weight: bold;
+}
+
+@media screen and (min-width:1401px) {
+    #vitelli-container #top-p {
+        margin: 5% 5% 5% 5%;
+        font-size: 1vw;
+        width: 80%;
+        padding-left: 19%;
+        text-align: justify;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    #vitelli-container p {
+        font-size: 1.5vw;
+    }
+    #vitelli-container img {
+        object-fit: cover;
+    }
+    #vitelli-container #top-p {
+        margin: 5% 5% 5% 5%;
+        font-size: 1.5vw;
+        width: 80%;
+        padding-left: 19%;
+        text-align: justify;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #vitelli-container p {
+        font-size: 2.5vw;
+    }
+    #vitelli-container #top-p,
+    #vitelli-container #bottom-p {
+        margin: 5% 5% 5% 5%;
+        font-size: 2.5vw;
+        width: 90%;
+        padding-left: 0%;
+        text-align: justify;
+    }
+    #vitelli-container #main-img-top,
+    #vitelli-container #main-img {
+        width: 100%;
+    }
+}
+
+
+/* START OF PAMOLO PAGE CSS */
+
+#pamolo-container {
+    min-height: 100vh;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#pamolo-container h6,
+#pamolo-container p {
+    text-align: justify;
+}
+
+#pamolo-container h6 {
+    font-weight: bold;
+    margin-bottom: 3%;
+}
+
+#pamolo-container #title-div {
+    text-align: left;
+}
+
+#pamolo-container #title-div #blog-title {
+    color: var(--red);
+    font-weight: bold;
+}
+
+#pamolo-container #author-container {
+    margin-top: 2%;
+}
+
+#pamolo-container #top-p-container {
+    margin-top: 1%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+}
+
+#pamolo-container #top-img {
+    width: 40%;
+    object-fit: cover;
+}
+
+#pamolo-container #middle-p {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#pamolo-container #double-imgs img {
+    width: 50%;
+    object-fit: cover;
+}
+
+#pamolo-container #double-imgs {
+    gap: 5%;
+    margin-bottom: 5%;
+    margin-right: 5%;
+}
+
+#pamolo-container #specific-div {
+    margin-bottom: 3%;
+}
+
+#pamolo-container #single-img-bottom {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 80%;
+}
+
+#pamolo-container #last-img-bottom {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 80%;
+}
+
+#pamolo-container #featured-text p {
+    text-align: center;
+}
+
+#pamolo-container #last-h5 {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: justify;
 }

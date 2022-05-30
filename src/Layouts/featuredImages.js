@@ -1,8 +1,10 @@
 
-function FeaturedImages({ image, brand, description, price}) {
+function FeaturedImages({ image, brand, description, price }) {
     return (
         <div className="featured-component-div">
-            <img id='featuredImg' src={image} alt="" />
+            <div className="featured-img-container">
+                <img id='featuredImg' src={image} alt="" />
+            </div>
             <div id='featured-text'>
                 <h4>{brand}</h4>
                 <p>{description}</p>

@@ -28,7 +28,6 @@ import Vitelli from '../Assets/Images/product-featured/PRODUCT FEATURED - Vitell
 import Vitelli1 from '../Assets/Images/product-featured/PRODUCT FEATURED - Vitelli (Doomboh Leggings Pluto) 420€.jpeg(1).jpeg'
 import Vitelli2 from '../Assets/Images/product-featured/PRODUCT FEATURED - Vitelli (Doomboh Leggings Pluto) 420€.jpeg(2).jpeg'
 import Vitelli3 from '../Assets/Images/product-featured/PRODUCT FEATURED - Vitelli (Doomboh Leggings Pluto) 420€.jpeg.jpeg'
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper';
 import { useState, useLayoutEffect } from 'react';
@@ -284,14 +283,14 @@ function BlogPage() {
             <div className='container' id="descriptionsContainer">
                 <div id="bottomContainer" className='row '>
                     <div className='col px-0 py-0'>
-                        <img src={bottomImg1} alt="" id="bottomContainerImg" onClick={()=>route2('PamoloPage')}/>
+                        <img src={bottomImg2} alt="" id="bottomContainerImg" onClick={()=>route2('PamoloPage')}/>
                         <div id="bottomContainerText1">
                             <p>Description</p>
                             <p> Written by Name</p>
                         </div>
                     </div>
                     <div className='col px-0 py-0'>
-                        <img src={bottomImg2} alt="" id="bottomContainerImg" onClick={()=>route2('VitelliPage')}/>
+                        <img src={bottomImg1} alt="" id="bottomContainerImg" onClick={()=>route2('VitelliPage')}/>
                         <div id="bottomContainerText2">
                             <p>Description</p>
                             <p> Written by Name</p>

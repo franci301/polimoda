@@ -10,7 +10,6 @@ import 'swiper/css/autoplay';
 function BlogShop({ obj }) {
 
     const [size, setSize] = useState(window.innerWidth);
-    const [numSlides, setNumSlides] = useState(4);
     // sets the size of the screen to a variable
     useLayoutEffect(() => {
         function updateSize() {
@@ -20,24 +19,51 @@ function BlogShop({ obj }) {
         updateSize();
         return () => window.removeEventListener('resize', updateSize);
     }, []);
-
-
     return (
         <>
             <div className="d-flex flex-row">
                 <Swiper
+                    id='featured-swiper'
                     modules={[Navigation, Autoplay]}
                     spaceBetween={50}
-                    slidesPerView={4}
-                    navigation={{ clickable: true }}>
-                    {obj.length !== 0 ?
-                        (obj.map((img, index) => (
+                    slidesPerView={1}
+                    navigation={{ clickable: true }}
+                >
+                    {size <= 1000 ? (
+                        <>
                             <SwiperSlide>
-                                <div key={index}>
-                                    <FeaturedImages image={obj[0][index]} brand={obj[1]} description={obj[2][index]} price={obj[3][index]} />
+                                <div id='featuredImgContainer' className='d-flex flex-row justify-content-center'>
+                                    <FeaturedImages image={obj[0][0]} brand={obj[1][0]} description={obj[2][0]} price={obj[3][0]} />
                                 </div>
                             </SwiperSlide>
-                        ))): (<></>)}
+                            <SwiperSlide>
+                                <div id='featuredImgContainer' className='d-flex flex-row justify-content-center'>
+                                    <FeaturedImages image={obj[0][1]} brand={obj[1][0]} description={obj[2][1]} price={obj[3][1]} />
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div id='featuredImgContainer' className='d-flex flex-row justify-content-center'>
+                                    <FeaturedImages image={obj[0][2]} brand={obj[1][0]} description={obj[2][2]} price={obj[3][2]} />
+                                </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <div id='featuredImgContainer' className='d-flex flex-row justify-content-center'>
+                                    <FeaturedImages image={obj[0][3]} brand={obj[1][0]} description={obj[2][3]} price={obj[3][2]} />
+                                </div>
+                            </SwiperSlide>
+                        </>
+                    ) : (
+                        <>
+                            <SwiperSlide>
+                                <div id='featuredImgContainer' className='d-flex flex-row justify-content-center'>
+                                    <FeaturedImages image={obj[0][0]} brand={obj[1][0]} description={obj[2][0]} price={obj[3][0]} />
+                                    <FeaturedImages image={obj[0][1]} brand={obj[1][0]} description={obj[2][1]} price={obj[3][1]} />
+                                    <FeaturedImages image={obj[0][3]} brand={obj[1][0]} description={obj[2][3]} price={obj[3][2]} />
+                                    <FeaturedImages image={obj[0][2]} brand={obj[1][0]} description={obj[2][2]} price={obj[3][2]} />
+                                </div>
+                            </SwiperSlide>
+                        </>
+                    )}
                 </Swiper>
             </div>
         </>

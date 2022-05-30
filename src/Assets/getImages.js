@@ -2,14 +2,14 @@
 let arr = [];
 // console.log(fileImport)
 let imgArr = []
-let fileCounter = 0;
+let fileCounter = 33;
 async function UploadImg() {
     const fs = require('fs');
     const dir = './productImages/';
     const subDirs = fs.readdirSync(dir);
     // for (const sub of subDirs) {
     // if (sub.localeCompare('.DS_Store') !== 0) {
-    const innerDir = './productImages/' + '1st half';
+    const innerDir = './productImages/' + '2nd half';
     const half = fs.readdirSync(innerDir);
     for (const group of half) {
         if (group.localeCompare('.DS_Store') !== 0) {
@@ -22,15 +22,15 @@ async function UploadImg() {
                     for (const file of files) {
                         if (file.localeCompare('.DS_Store') !== 0) {
                             addToArr(file, group, gender, filePath);
+                            console.log('import img' + fileCounter + ' from ' + '"' + filePath + '/' + file + '"');
+                            fileCounter += 1;
                         }
                     }
                 }
             }
         }
     }
-    // }
-    // }
-    console.log(arr);
+    // console.log(arr);
 }
 
 UploadImg();
@@ -56,7 +56,7 @@ function addToArr(file, group, gender, filepath, fileCounter) {
 }
 
 // export default UploadImg;
-for (let index = 1; index < fileCounter + 1; index++) {
+for (let index = 32; index < fileCounter + 1; index++) {
     imgArr.push('img' + index)
 }
 // console.log(imgArr)

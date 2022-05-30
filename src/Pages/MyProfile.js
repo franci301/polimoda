@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { useState, useEffect, useLayoutEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper';
+import UploadImages from '../Assets/uploadImages.js';
 import '../Assets/css/profile.css';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -51,10 +52,13 @@ function MyProfile() {
         updateSize();
         return () => window.removeEventListener('resize', updateSize);
     }, []);
-    
+    function upload(){
+        UploadImages();
+    }
 
     return (
         <div>
+            {/* <button onClick={upload}>upload</button> */}
             <ResponsiveNav />
             {size > 768 ? <ProfileNav /> : null}
             <div id='archetypesContainer'>
