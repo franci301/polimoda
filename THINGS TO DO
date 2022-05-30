@@ -5,7 +5,7 @@ PRIMARY OBJECTIVES:
 - [ ] Change room number change background images
 - [ ] Style shop page images
 - [ ] Style pages for large views
-- [ ] Homepage text responsiveness
+- [ ] Homepage text responsiveness & images (theyre too large on smaller views)
 - [ ] Crop bottom 2 images on archetype page
 - [ ] Omit shop page if account is not giro…
 - [ ] Nav bar not centred on large devices
