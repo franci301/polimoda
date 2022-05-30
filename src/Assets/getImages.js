@@ -5,30 +5,31 @@ let imgArr = []
 let fileCounter = 0;
 async function UploadImg() {
     const fs = require('fs');
-    const dir = './Images/product-featured/';
+    const dir = './productImages/';
     const subDirs = fs.readdirSync(dir);
-    for (const sub of subDirs) {
-        if (sub.localeCompare('.DS_Store') !== 0) {
-            console.log(sub)
-                // const innerDir = './Images/' + sub + '/';
-                // const gender = fs.readdirSync(innerDir);
-                //     for (const genders of gender) {
-                //         if (genders.localeCompare('.DS_Store') !== 0) {
-                //             const filePath = innerDir + genders + '/'
-                //             const files = fs.readdirSync(filePath);
-                //             // console.log('START OF FILE PATH' + filePath);
-                //             for (const file of files) {
-                //                 console.log(filePath + file)
-                //                     // fileCounter += 1;
-                //                     // console.log(fileImport.constructor.name)
-                //                     // addToArr(file, sub, genders, filePath + file, fileCounter)
-                //             }
-                //         }
-                //         // console.log('END OF FILE PATH' + filePath);
-                //         // console.log('');
-                //     }
+    // for (const sub of subDirs) {
+    // if (sub.localeCompare('.DS_Store') !== 0) {
+    const innerDir = './productImages/' + '1st half';
+    const half = fs.readdirSync(innerDir);
+    for (const group of half) {
+        if (group.localeCompare('.DS_Store') !== 0) {
+            const gendersPath = innerDir + '/' + group;
+            const genders = fs.readdirSync(gendersPath);
+            for (const gender of genders) {
+                if (gender.localeCompare('.DS_Store') !== 0) {
+                    const filePath = gendersPath + '/' + gender;
+                    const files = fs.readdirSync(filePath);
+                    for (const file of files) {
+                        if (file.localeCompare('.DS_Store') !== 0) {
+                            addToArr(file, group, gender, filePath);
+                        }
+                    }
+                }
+            }
         }
     }
+    // }
+    // }
     console.log(arr);
 }
 
