@@ -1,17 +1,20 @@
+https://arkx-store.com
 
-- [ ] Check filters —> gender —> save —> category —> save == no change?? WHY
-- [ ] Add animations for filter headings
-- [ ] Change url name
-- [ ] Archetypes page text smaller columns so it can be scrollable.
+PRIMARY OBJECTIVES:
+- [ ] Entire test page —> if(window.innerHeight > window.innerWidth){alert(“Please use Landscape!”)}
 - [ ] Change room number change background images
+- [ ] Style shop page images
+- [ ] Style pages for large views
+- [ ] Homepage text responsiveness
+- [ ] Crop bottom 2 images on archetype page
 - [ ] Omit shop page if account is not giro…
 - [ ] Nav bar not centred on large devices
-- [ ] Center text on smaller viewports for blog page
-- [ ] Product page styling for mobile view —> slides to see each picture scroll down to see product descriptions
+- [ ] Product page styling for mobile view —> slides to see each picture scroll down to see product descriptions —> required for only two products but style the product component anyway
+
+SECONDARY OBJECTIVES:
+- [ ] Check filters —> gender —> save —> category —> save == no change?? WHY
+- [ ] Add animations for filter headings
+- [ ] Change url on hover
 - [ ] Make the articles blog page
-- [ ] Featured zoom out of pics more
-- [ ] Remind when I push the new version of the website
 - [ ] Put random images for Wishlist and orders page
-MOBILE VERSION:
-Profile page styling—> 
-Archetypes on slider
+- [ ] Why is the gap so big on the blog page
