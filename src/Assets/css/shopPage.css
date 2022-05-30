@@ -75,6 +75,12 @@ ul {
     width: 100%;
 }
 
+.menu #genderLi,
+.menu #categoryLi {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
 [type=checkbox]:checked+span:before {
     content: '\2714';
 }

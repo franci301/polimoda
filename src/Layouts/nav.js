@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../Assets/css/nav.css';
 import { Link } from 'react-router-dom';
-import logo from '../Assets/images/logo.png';
+import logo from '../Assets/Images/logo.png';
 
 function nav() {
     var showLogout = false;
@@ -41,7 +41,7 @@ function nav() {
                         )}
                     </ul>
                     <ul className="position-absolute navbar-nav start-10">
-                        <li className='nav-item' id='left-nav'><Link style={linkStyle} to='/*'> <img src={logo} alt="" /> </Link></li>
+                        {/* <li className='nav-item' id='left-nav'><Link style={linkStyle} to='/*'> <img src={logo} alt="" /> </Link></li> */}
                     </ul>
                     <ul id='right-nav-div' className="navbar-nav mx-right">
                         {loggedIn === true ? (

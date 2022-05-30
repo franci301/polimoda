@@ -23,18 +23,18 @@ import backgroundImg from '../Assets/Images/caregiver render.jpg';
 import lover from '../Assets/Images/lover render.jpg';
 
 var answerArr = [
-    6, 6, 3,
-    5, 4, 2,
-    1, 1, 4,
-    6, 5, 5,
-    3, 5, 1,
-    1, 4, 1,
-    0, 3, 0,
-    1, 1, 2,
-    4, 1, 0,
-    6, 6, 5,
-    4, 1, 1,
-    5, 4, 1
+    // 6, 6, 3,
+    // 5, 4, 2,
+    // 1, 1, 4,
+    // 6, 5, 5,
+    // 3, 5, 1,
+    // 1, 4, 1,
+    // 0, 3, 0,
+    // 1, 1, 2,
+    // 4, 1, 0,
+    // 6, 6, 5,
+    // 4, 1, 1,
+    // 5, 4, 1
 ];
 
 // sample results they want
@@ -205,7 +205,7 @@ function Test() {
                         {question === 'Archetypes of Power Discovery' ? (
                             <div className='px-5'>
                                 <p>Archetypes of Power Discovery is a Jungian Archetypes based personality test, designed to help you better understand yourself and your identity, as well as your source of power to achieve stylistic power personalization. By spending approximately 7 minutes to complete Archetypes of Power Discovery, you will become aware of your 3 dominant archetypes and a personalized product offering based on all the twelve archetypes, suitable for your personality.</p>
-                                <button type="submit" className='btn btn-dark' onClick={resultsPage}>Explore your inner world</button>
+                                <button type="submit" className='btn btn-dark' onClick={increment}>Explore your inner world</button>
                             </div>
                         ) : (
                             <div>

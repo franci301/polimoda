@@ -56,6 +56,10 @@ function BlogPage() {
         navigate('/ProductPage/*', { state: { imgs: { Vitelli, Vitelli1, Vitelli2, Vitelli3 } } });
     }
 
+    function route2(name){
+        navigate('/'+name+'/*');
+    }
+
     return (
         <div className="homePage">
             {/* <Nav /> */}
@@ -65,7 +69,6 @@ function BlogPage() {
             {/* <img id="topBlogPage" src="https://media.istockphoto.com/videos/crowd-of-people-commuters-walking-at-shibuya-crossing-video-id1167927700?b=1&k=20&m=1167927700&s=640x640&h=Zx7VE1nSoF3Rle4J6tJpsLrNZVexJKf7i9vucwgZjKY=" alt="" /> */}
             <h4>MEET THE ARCHETYPES</h4>
             <Swiper id='arch-swiper'
-                // install Swiper modules
                 modules={[Navigation, Autoplay]}
                 spaceBetween={50}
                 slidesPerView={1}
@@ -281,14 +284,14 @@ function BlogPage() {
             <div className='container' id="descriptionsContainer">
                 <div id="bottomContainer" className='row '>
                     <div className='col px-0 py-0'>
-                        <img src={bottomImg1} alt="" id="bottomContainerImg" />
+                        <img src={bottomImg1} alt="" id="bottomContainerImg" onClick={()=>route2('PamoloPage')}/>
                         <div id="bottomContainerText1">
                             <p>Description</p>
                             <p> Written by Name</p>
                         </div>
                     </div>
                     <div className='col px-0 py-0'>
-                        <img src={bottomImg2} alt="" id="bottomContainerImg" />
+                        <img src={bottomImg2} alt="" id="bottomContainerImg" onClick={()=>route2('VitelliPage')}/>
                         <div id="bottomContainerText2">
                             <p>Description</p>
                             <p> Written by Name</p>
@@ -296,10 +299,9 @@ function BlogPage() {
                     </div>
                 </div>
             </div>
-            <br />
-            <div id='paddingAd'>
+            {/* <div id='paddingAd'> */}
                 <TestAd />
-            </div>
+            {/* </div> */}
             <br />
             <Footer />
         </div>
