@@ -46,18 +46,15 @@ function ResponsiveNav() {
         })
             .catch((error) => { console.log(error) });
     }
+    
+    function home() {
+        window.location.href = '/HomePage/*'
+    }
 
     return (
         <Navbar bg="#453127" expand="md">
             <Container id='navContainer'>
-                <div className=''>
-                    <Navbar.Brand>
-                        <Link to='/*' style={linkStyle}>
-                            {/* <img id='navLogo' src={logo} alt="" /> */}
-                            XXXX
-                        </Link>
-                    </Navbar.Brand>
-                </div>
+                <img id='navLogo' src={logo} alt="" onClick={home} />
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav id='center-nav-main'>
@@ -81,7 +78,7 @@ function ResponsiveNav() {
                             ) : (
                                 <li className='nav-item'> <Link style={linkStyle} to='/LoginPage/*'>LOGIN</Link></li>
                             )}
-                            <li id='cartPadding'>CART (0)</li>
+                            <li className='nav-item' id='cartPadding'>CART (0)</li>
                         </ul>
                     </Nav>
                     {size < 768 && showProfileNav ? (

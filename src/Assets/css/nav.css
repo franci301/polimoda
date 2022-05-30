@@ -11,7 +11,9 @@
 
 @media screen and (max-width: 1000px) {
     #homeNavLogo {
-        width: 30%;
+        width: 16%;
+        float: left;
+        padding-top: 3%;
     }
 }
 
