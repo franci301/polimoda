@@ -148,12 +148,9 @@ nav {
     background-color: var(--yellow);
 }
 
-#navContainer {
-    max-width: 100%;
-}
 
 .navbar {
-    width: 100vw;
+    width: 100%;
 }
 
 .navbar-brand {

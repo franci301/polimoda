@@ -21,26 +21,25 @@ function HomePage() {
             <HomeNav />
             {/* d-flex flex-column 
                 justify-content-between vh-100*/}
-            <div className="container gx-0" id='homeContainer'>
-                <div className="container-fluid">
-                    <div className="row">
-                        <div className="col-12 col-lg" id="leftImg">
-                            <img id="left-home-img" src={testImg} alt="" />
-                            {/* button styling */}
-                            <button id='testButton' onClick={routeTest}>Start Archetypes <br /> of Power Discovery</button>
-                            <p id='testTxt'>Get your personalized product offering upon completing a Jungian Archetypes inspired personality test</p>
+            <div className="container-fluid px-0" id='homeContainer'>
+                <div className="row no-gutters px-0" id="nestedContainer">
+                    <div className="col-12 col-lg px-0" id="leftImg">
+                        <img id="left-home-img" src={testImg} alt="" />
+                        {/* button styling */}
+                        <button id='testButton' onClick={routeTest}>Start Archetypes <br /> of Power Discovery</button>
+                        <p id='testTxt'>Get your personalized product offering upon completing a Jungian Archetypes inspired personality test</p>
+                    </div>
+                    <div className="col-12 col-lg px-0" id="rightImg">
+                        <h6 id='archStories'>Archetypal Stories</h6>
+                        <button id="exploreButton" onClick={routeBlog}>Be your own source of inspiration</button>
+                        <div className="d-flex flex-row gap-3 py-3" id='rightImgContainer'>
+                            <img src={homeBlog} alt="" />
                         </div>
-                        <div className="col-12 col-lg" id="rightImg">
-                            <h6 id='archStories'>Archetypal Stories</h6>
-                            <button id="exploreButton" onClick={routeBlog}>Be your own source of inspiration</button>
-                            <div className="d-flex flex-row gap-3 py-3" id='rightImgContainer'>
-                                <img src={homeBlog} alt="" />
-                            </div>
-                            <p id='archStories'>Feel pursuaded by the archetypal narrative to reach power personalization</p>
-                        </div>
-                    </div> 
-                </div>
+                        <p id='archStories'>Feel pursuaded by the archetypal narrative to reach power personalization</p>
+                    </div>
+                </div> 
             </div>
+            
             {/* <div id='footerTest'> */}
             <Footer />
             {/* </div> */}
