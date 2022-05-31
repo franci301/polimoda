@@ -2,6 +2,8 @@
     padding-top: 1%;
     padding-bottom: 1%;
     color: var(--red);
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .homePage #testAdContainer button {
@@ -90,10 +92,28 @@ h4 {
     bottom: 6%;
 }
 
-@media screen and (max-width:1230px) {
+@media screen and (max-width: 1366px) {
+    /* my monitor screen size */
+    #topBlogPage {
+        width: 86%;
+    }
+    #bottomContainerText {
+        position: absolute;
+        right: -38%;
+        bottom: 1%;
+    }
+    #bottomContainerImg {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:1269px) {
     #archetypes-grid h5 {
         bottom: 8%;
         left: -25%;
+    }
+    #bottomContainerImg {
+        width: 90%;
     }
 }
 
@@ -183,28 +203,6 @@ h4 {
     }
     #featured-text {
         color: red;
-    }
-}
-
-@media screen and (max-width: 1366px) {
-    /* my monitor screen size */
-    #topBlogPage {
-        width: 86%;
-    }
-    #bottomContainerText {
-        position: absolute;
-        right: -38%;
-        bottom: 1%;
-    }
-    #descriptionsContainer {
-        gap: 14%;
-    }
-    #bottomContainer {
-        position: relative;
-        left: -5%;
-    }
-    #bottomContainerImg {
-        width: 150%;
     }
 }
 

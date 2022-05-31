@@ -3,7 +3,7 @@
 @media (min-width:771px) {
     /* screen sizes 1024 to 1366 */
     #center-nav-main {
-        padding-right: 13%;
+        padding-right: 24%;
     }
     #right-nav-main {
         position: absolute;
@@ -12,6 +12,9 @@
     /* #cartPadding {
         padding-left: 13%;
     } */
+    .nav-item {
+        padding-left: 7px;
+    }
     #right-nav-main li {
         clear: both;
         display: inline-block;
@@ -65,14 +68,14 @@
     float: left;
     /* this shit is pissing me off */
 }
-@media (max-width:767px){
+
+@media (max-width:767px) {
     #navLogo {
         max-height: 150px;
         width: 30%;
         float: left;
         /* this shit is pissing me off */
     }
-    
 }
 
 @media (max-width:767px) {
@@ -151,10 +154,6 @@ nav {
 
 .navbar {
     width: 100vw;
-}
-
-.nav-item{
-    padding-left: 7px;
 }
 
 .navbar-brand {

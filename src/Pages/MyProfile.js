@@ -12,8 +12,6 @@ import '../Assets/css/profile.css';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
-
-
 function MyProfile() {
     // const getProps = useLocation();
     // console.log(getProps.state.answerArr);
@@ -52,19 +50,19 @@ function MyProfile() {
         updateSize();
         return () => window.removeEventListener('resize', updateSize);
     }, []);
-    function upload(){
+    function upload() {
         UploadImages();
     }
 
     return (
         <div>
-            {/* <button onClick={upload}>upload</button> */}
+            {/* <button onClick={reUpload}>get</button> */}
             <ResponsiveNav />
             {size > 768 ? <ProfileNav /> : null}
             <div id='archetypesContainer'>
                 {size < 1000 ? (
                     <Swiper
-                    id='profile-swiper'
+                        id='profile-swiper'
                         modules={[Navigation]}
                         spaceBetween={50}
                         slidesPerView={1}
