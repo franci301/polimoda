@@ -12,6 +12,8 @@
 
 /*  below styles are temporary */
 
+
+/* 
 #testContainer img {
     height: 100vh;
     object-fit: cover;
@@ -37,15 +39,6 @@
     width: 100%;
     color: white;
     font-size: 50%;
-}
-
-
-/* style= {
-    {
-        // set a background image
-        backgroundImage: `url(${backgroundImg})`,
-        backgroundSize: 'cover', backgroundRepeat: 'no-repeat',
-    }
 } */
 
 

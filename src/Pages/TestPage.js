@@ -19,9 +19,19 @@ import { db } from "../firebase/firebase-config";
 import { updateDoc, doc } from 'firebase/firestore';
 import getArchetypes from '../firebase/getArchetypes.js';
 import '../Assets/css/testPage.css';
-import backgroundImg from '../Assets/Images/caregiver render.jpg';
-import lover from '../Assets/Images/lover render.jpg';
-
+import duck from '../Assets/Images/duck.jpg';
+import caregiverRender from '../Assets/Images/renders/caregiver render.jpeg';
+import loverRender from '../Assets/Images/renders/lover render.jpeg';
+import explorerRender from '../Assets/Images/renders/explorer with rocks 34.jpeg';
+import innocentRender from '../Assets/Images/renders/innocent 23.jpeg';
+import jesterRender from '../Assets/Images/renders/jester.jpeg';
+import magicianRender from '../Assets/Images/renders/magician finale_.jpeg';
+import outlawRender from '../Assets/Images/renders/outlaw. lucejpg.jpeg';
+import rulerRender from '../Assets/Images/renders/ruler_.jpeg';
+import sageRender from '../Assets/Images/renders/sage.jpeg';
+import heroRender from '../Assets/Images/renders/hero.jpeg';
+import creatorRender from '../Assets/Images/renders/Creator .jpeg';
+import everymanRender from '../Assets/Images/renders/everyman 1.jpeg';
 var answerArr = [
     // 6, 6, 3,
     // 5, 4, 2,
@@ -83,15 +93,21 @@ function Test() {
     const [room, setRoomId] = useState(1);
     const [question, setQuestion] = useState('Archetypes of Power Discovery');
     const [text, setText] = useState('');
+    const [roomCounter,setRoomCounter] = useState(1);
+    const [roomImg,setImg] = useState(caregiverRender);
     const navigate = useNavigate();
     const archetypes = [
         "Innocent", "Explorer", "Sage", "Hero",
         "Outlaw", "Magician", "Jester",
         "Lover", "Everyman", "Caregiver", "Creator", "Ruler"
     ];
+    
     const images = {
         Creator, Explorer, Hero, Innocent, Outlaw, Ruler, Caregiver, Everyman, Jester, Magician, Sage, Lover
     }
+    
+    const roomImgs = [caregiverRender, rulerRender,creatorRender,innocentRender, sageRender,explorerRender, outlawRender, magicianRender,heroRender,everymanRender,jesterRender,loverRender]
+    
     let archetypesToPush = [];
     let archetypesImages = [];
 
@@ -145,17 +161,19 @@ function Test() {
             }
             if (counter % 3 === 0 && counter !== 0) {
                 setRoomId(room + 1)
+                setRoomCounter(roomCounter + 1)
+                setImg(roomImgs[roomCounter])
+                console.log(roomImgs[roomCounter]);
             }
         } else {
             setText("Please select an option");
         }
-
     }
     return (
         <div >
             <ResponsiveNav />
             <div id='testContainer'>
-                <img src={lover} alt="" />
+                <img src={roomImg} alt="" />
                 <div>
                     <h5>Room {room}</h5>
                 </div>

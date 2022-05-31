@@ -70,6 +70,7 @@
 
 #featuredImg {
     height: 40%;
+    width: 40%;
     object-fit: contain;
 }
 
