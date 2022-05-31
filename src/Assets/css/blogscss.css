@@ -28,6 +28,10 @@
 }
 
 #vitelli-blog-shop img {
+    width: 40%;
+}
+
+#pamolo-blog-shop img {
     width: 80%;
 }
 
@@ -186,5 +190,14 @@
     }
     #pamolo-container #title-div h1 {
         font-size: 6vw;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    #pamolo-container #top-img {
+        width: 100%;
+    }
+    #pamolo-container #last-img-bottom {
+        width: 80%;
     }
 }

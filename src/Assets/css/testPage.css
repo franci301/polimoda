@@ -13,11 +13,11 @@
     position: absolute;
     background-color: red;
     z-index: 10000;
-    width: 112px;
+    width: 150px;
     right: 8%;
     top: 25%;
     padding-right: 5%;
-    height: 55%;
+    height: 75%;
 }
 
 #questions-container {
@@ -30,7 +30,7 @@
 
 /* #questions-container {
     left: 31.5%;
-    top: 30%;
+    top: 38%;
     width: 40%;
 } */
 

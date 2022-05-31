@@ -9,8 +9,8 @@
         position: absolute;
         right: 3%;
     }
-    /* #cartPadding {
-        padding-left: 13%;
+    /* #navContainer {
+        margin-left: 0;
     } */
     .nav-item {
         padding-left: 7px;
@@ -147,7 +147,6 @@ nav {
     height: 100%;
     background-color: var(--yellow);
 }
-
 
 .navbar {
     width: 100%;

@@ -88,7 +88,7 @@ function PamoloPage() {
                 </div>
                 <h5 id='last-h5'>CHECK THE ITEMS SELECTED BY ARKX’S EDITORS FROM PALOMO SPAIN, THE FASHION BRAND THAT BLURS THE LINE BETWEEN FEMININITY AND MASCULINITY COMBINING COSTUME HERITAGE WITH SPANISH CRAFTSMANSHIP AND ESSENCE.</h5>
                 <h2 id='shop-vitelli' className='d-flex flex-row justify-content-start'>SHOP PAMOLO SPAIN</h2>
-                <div id='vitelli-blog-shop'>
+                <div id='pamolo-blog-shop'>
                     <BlogShop obj={[[pamolo, pamolo1, pamolo2, pamolo3], ['Pamolo'], ['Red Floral Maxi Kaftan', 'Red Floral Cargo Trousers', 'Blue Psico Romeo Jacket', 'Aitor Blue Shirt'], ['6554€', '454€', '454€', '353€']]} />
                 </div>
             </div>

@@ -13,25 +13,26 @@ import Jester from '../Assets/Images/The Jester.jpg';
 import Magician from '../Assets/Images/The Magician.jpg';
 import Sage from '../Assets/Images/The Sage.jpg';
 import Lover from '../Assets/Images/The Lover.jpg';
-import { useState } from 'react';
+import { useState, useLayoutEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { db } from "../firebase/firebase-config";
 import { updateDoc, doc } from 'firebase/firestore';
 import getArchetypes from '../firebase/getArchetypes.js';
-import '../Assets/css/testPage.css';
 import duck from '../Assets/Images/duck.jpg';
-import caregiverRender from '../Assets/Images/renders/caregiver render.jpeg';
-import loverRender from '../Assets/Images/renders/lover render.jpeg';
-import explorerRender from '../Assets/Images/renders/explorer with rocks 34.jpeg';
-import innocentRender from '../Assets/Images/renders/innocent 23.jpeg';
-import jesterRender from '../Assets/Images/renders/jester.jpeg';
-import magicianRender from '../Assets/Images/renders/magician finale_.jpeg';
-import outlawRender from '../Assets/Images/renders/outlaw. lucejpg.jpeg';
-import rulerRender from '../Assets/Images/renders/ruler_.jpeg';
-import sageRender from '../Assets/Images/renders/sage.jpeg';
-import heroRender from '../Assets/Images/renders/hero.jpeg';
-import creatorRender from '../Assets/Images/renders/Creator .jpeg';
-import everymanRender from '../Assets/Images/renders/everyman 1.jpeg';
+import caregiverRender from '../Assets/Images/renders/caregiver render.jpg';
+import loverRender from '../Assets/Images/renders/lover render.jpg';
+import explorerRender from '../Assets/Images/renders/explorer with rocks.jpg';
+import innocentRender from '../Assets/Images/renders/innocent 23.jpg';
+import jesterRender from '../Assets/Images/renders/jester.jpg';
+import magicianRender from '../Assets/Images/renders/magician finale_.jpg';
+import outlawRender from '../Assets/Images/renders/outlaw. lucejpg.jpg';
+import rulerRender from '../Assets/Images/renders/ruler_.jpg';
+import sageRender from '../Assets/Images/renders/sage.jpg';
+import heroRender from '../Assets/Images/renders/hero.jpg';
+import creatorRender from '../Assets/Images/renders/Creator .jpg';
+import everymanRender from '../Assets/Images/renders/everyman 1.jpg';
+import '../Assets/css/testPage.css';
+
 var answerArr = [
     // 6, 6, 3,
     // 5, 4, 2,
@@ -92,7 +93,7 @@ function Test() {
     const [counter, setCounter] = useState(0);
     const [imgStyles, setStyles] = useState({
         left: '27%',
-        top: '35%',
+        top: '43%',
         width: '40%',
         color: 'white'
     });
@@ -101,21 +102,31 @@ function Test() {
     const [text, setText] = useState('');
     const [roomCounter, setRoomCounter] = useState(1);
     const [roomImg, setImg] = useState(caregiverRender);
+    const [width, setWidth] = useState(window.innerWidth);
+    const [height, setHeight] = useState(window.innerHeight);
     const navigate = useNavigate();
     const archetypes = [
         "Innocent", "Explorer", "Sage", "Hero",
         "Outlaw", "Magician", "Jester",
         "Lover", "Everyman", "Caregiver", "Creator", "Ruler"
     ];
-
     const images = {
         Creator, Explorer, Hero, Innocent, Outlaw, Ruler, Caregiver, Everyman, Jester, Magician, Sage, Lover
     }
-
     const roomImgs = [caregiverRender, rulerRender, creatorRender, innocentRender, sageRender, explorerRender, outlawRender, magicianRender, heroRender, everymanRender, jesterRender, loverRender]
-
     let archetypesToPush = [];
     let archetypesImages = [];
+
+    useLayoutEffect(() => {
+        function updateSize() {
+            setWidth(window.innerWidth);
+            setHeight(window.innerHeight);
+        }
+        window.addEventListener('resize', updateSize);
+        updateSize();
+        return () => window.removeEventListener('resize', updateSize);
+    }, []);
+
 
     async function resultsPage() {
         answerArr.shift();
@@ -179,60 +190,62 @@ function Test() {
 
 
 
+
+    // her resolution for the monitor (13 inches)
     const styleArr = [
         {},
         {
-            left: '32%',
+            left: '32.5%',
+            top: '45%',
+            width: '40%'
+        },
+        {
+            left: '31%',
             top: '40%',
             width: '40%'
         },
         {
-            left: '32%',
-            top: '30%',
-            width: '40%'
-        },
-        {
             left: '30%',
-            top: '36%',
+            top: '45%',
             width: '40%'
         }, {
             left: '32%',
-            top: '36%',
+            top: '45%',
             width: '40%'
         },
         {
             left: '32%',
-            top: '36%',
+            top: '45%',
             width: '40%'
         },
         {
             left: '32%',
-            top: '36%',
+            top: '45%',
             width: '40%'
         },
         {
             left: '32%',
-            top: '36%',
+            top: '45%',
             width: '40%'
         },
         {
             left: '32%',
-            top: '36%',
+            top: '45%',
             width: '40%'
         },
         {
             left: '32%',
-            top: '36%',
+            top: '45%',
             width: '40%'
         },
         {
-            left: '30%',
-            top: '31.5%',
+            left: '31.5%',
+            top: '38%',
             width: '40%'
         },
         {
-            left: '30%',
-            top: '31.5%',
+            left: '31.5%',
+            top: '38%',
             width: '40%'
         }
 
@@ -273,87 +286,102 @@ function Test() {
             marginTop: '35%'
         }
     ]
+    console.log(700 <= height && height < 880, height)
     return (
         <div >
             <ResponsiveNav />
-            <div id='testContainer'>
-                {counter === 0 ? (
-                    <img src={duck} alt="" />
-
-                ) : (
-
-                    <img src={roomImg} alt="" />
-
-                )}
-                <div id='questions-container' style={imgStyles}>
-                    <div id='testCenterDiv'>
-                        {counter === questions.length + 1 ? (
-                            <div>End Of Quiz</div>
-                        ) : (
-                            <h6>{question}</h6>
-                        )}
-                    </div>
-                    <div>
-                        
-                        <div className='d-flex flex-col justify-content-center' id='choiceDiv' style={choiceStyles}>
-                            {question === 'Archetypes of Power Discovery' || counter > questions.length ? (
-                                <div></div>
+            {!(1200 <= width && width < 1420) || !(700 <= height && height <= 880) ? (
+                <>
+                    {width <= 736 && width >= 568 ? (
+                        <>
+                            {width > height ? (
+                                <> SHOW MOBILE OPTIMISED VERION </>
                             ) : (
-                                <div>
-                                    <div id='test'>
-                                        <input type="radio" name="choice" value="0" onChange={(event) => { setValue(0) }} />
-                                        <label>Weakly Identify</label>
+                                <> NOT LANDSCAPE</>)
+                            }</>
+                    ) : (
+                        <>NOT MOBILE VIEW</>
+                    )}
+                </>
+            ) : (
+                <div id='testContainer'>
+                    {counter === 0 ? (
+                        <img src={duck} alt="" />
+
+                    ) : (
+
+                        <img src={roomImg} alt="" />
+
+                    )}
+                    <div id='questions-container' style={imgStyles} >
+                        <div id='testCenterDiv'>
+                            {counter === questions.length + 1 ? (
+                                <div>End Of Quiz</div>
+                            ) : (
+                                <h6>{question}</h6>
+                            )}
+                        </div>
+                        <div>
+                            <div className='d-flex flex-col justify-content-center' id='choiceDiv' style={choiceStyles}>
+                                {question === 'Archetypes of Power Discovery' || counter > questions.length ? (
+                                    <div></div>
+                                ) : (
+                                    <div>
+                                        <div id='test'>
+                                            <input type="radio" name="choice" value="0" onChange={(event) => { setValue(0) }} />
+                                            <label>Weakly Identify</label>
+                                        </div>
+                                        <div id='test'>
+                                            <input type="radio" name="choice" value="0" onChange={(event) => { setValue(1) }} />
+                                            <label>1</label>
+                                        </div>
+                                        <div id='test'>
+                                            <input type="radio" name="choice" value="0" onChange={(event) => { setValue(2) }} />
+                                            <label>2</label>
+                                        </div>
+                                        <div id='test'>
+                                            <input type="radio" name="choice" value="0" onChange={(event) => { setValue(3) }} />
+                                            <label>Neutral</label>
+                                        </div>
+                                        <div id='test'>
+                                            <input type="radio" name="choice" value="0" onChange={(event) => { setValue(4) }} />
+                                            <label>4</label>
+                                        </div>
+                                        <div id='test'>
+                                            <input type="radio" name="choice" value="0" onChange={(event) => { setValue(5) }} />
+                                            <label>5</label>
+                                        </div>
+                                        <div id='test'>
+                                            <input type="radio" name="choice" value="0" onChange={(event) => { setValue(6) }} />
+                                            <label>Strongly Identify</label>
+                                        </div>
                                     </div>
-                                    <div id='test'>
-                                        <input type="radio" name="choice" value="0" onChange={(event) => { setValue(1) }} />
-                                        <label>1</label>
-                                    </div>
-                                    <div id='test'>
-                                        <input type="radio" name="choice" value="0" onChange={(event) => { setValue(2) }} />
-                                        <label>2</label>
-                                    </div>
-                                    <div id='test'>
-                                        <input type="radio" name="choice" value="0" onChange={(event) => { setValue(3) }} />
-                                        <label>Neutral</label>
-                                    </div>
-                                    <div id='test'>
-                                        <input type="radio" name="choice" value="0" onChange={(event) => { setValue(4) }} />
-                                        <label>4</label>
-                                    </div>
-                                    <div id='test'>
-                                        <input type="radio" name="choice" value="0" onChange={(event) => { setValue(5) }} />
-                                        <label>5</label>
-                                    </div>
-                                    <div id='test'>
-                                        <input type="radio" name="choice" value="0" onChange={(event) => { setValue(6) }} />
-                                        <label>Strongly Identify</label>
-                                    </div>
+                                )}
+                            </div>
+
+                            <p className="text-danger">{text}</p>
+                        </div>
+                    </div>
+                    {question === 'Archetypes of Power Discovery' ? (
+                        <div className='px-5'>
+                            <p>Archetypes of Power Discovery is a Jungian Archetypes based personality test, designed to help you better understand yourself and your identity, as well as your source of power to achieve stylistic power personalization. By spending approximately 7 minutes to complete Archetypes of Power Discovery, you will become aware of your 3 dominant archetypes and a personalized product offering based on all the twelve archetypes, suitable for your personality.</p>
+                            <button type="submit" className='btn btn-dark' onClick={increment}>Explore your inner world</button>
+                        </div>
+                    ) : (
+                        <div id='door-parent' onClick={increment}>
+                            {counter > questions.length ? (
+                                // set styles for the button in js
+                                <button className='btn btn-dark' onClick={resultsPage}>Get Results</button>
+                            ) : (
+                                <div id='door' >
+                                    &nbsp;
+                                    {/* <button type="submit" className='btn btn-dark' id='incrementButton' onClick={increment}>Next Question</button> */}
                                 </div>
                             )}
                         </div>
-                            
-                        <p className="text-danger">{text}</p>
-                    </div>
+                    )}
                 </div>
-                {question === 'Archetypes of Power Discovery' ? (
-                                <div className='px-5'>
-                                    <p>Archetypes of Power Discovery is a Jungian Archetypes based personality test, designed to help you better understand yourself and your identity, as well as your source of power to achieve stylistic power personalization. By spending approximately 7 minutes to complete Archetypes of Power Discovery, you will become aware of your 3 dominant archetypes and a personalized product offering based on all the twelve archetypes, suitable for your personality.</p>
-                                    <button type="submit" className='btn btn-dark' onClick={increment}>Explore your inner world</button>
-                                </div>
-                            ) : (
-                                <div id='door-parent' onClick={increment}>
-                                    {counter > questions.length ? (
-                                        // set styles for the button in js
-                                        <button className='btn btn-dark' onClick={resultsPage}>Get Results</button>
-                                    ) : (
-                                        <div id='door' >
-                                            &nbsp;
-                                            {/* <button type="submit" className='btn btn-dark' id='incrementButton' onClick={increment}>Next Question</button> */}
-                                        </div>
-                                    )}
-                                </div>
-                            )}
-            </div>
+            )}
             <Footer />
         </div>
     );

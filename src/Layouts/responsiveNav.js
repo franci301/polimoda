@@ -2,7 +2,7 @@ import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 import { signOut } from 'firebase/auth';
 import { auth } from '../firebase/firebase-config';
-import {useState,useLayoutEffect} from 'react';
+import {useState,useLayoutEffect, useEffect} from 'react';
 import logo from '../Assets/Images/logo.png';
 import ProfileNav from '../Layouts/ProfileNav.js';
 import '../Assets/css/responsiveNav.css'
@@ -12,8 +12,16 @@ function ResponsiveNav() {
     var showProfileNav = false;
     var userLogged = localStorage.getItem('userLogin');
     const locationsArray = ['/MyInformation/*','/MyProfile/*','/Wishlist/*','/MyOrders/*']
-    // const [windowSize, setWindowSize] = useState(window.innerWidth);
     const [size, setSize] = useState(window.innerWidth);
+    const [email,setUser] = useState('');
+    
+    useEffect(() => {
+        const obj = localStorage.getItem('userLogin');
+        if(obj !== null){
+            const email = JSON.parse(obj).user.email;
+            setUser(email);
+        }
+    },[])
     
     if(locationsArray.includes(window.location.pathname)){
         showProfileNav = true;
@@ -39,6 +47,7 @@ function ResponsiveNav() {
         updateSize();
         return () => window.removeEventListener('resize', updateSize);
     }, []);
+
     function logout() {
         signOut(auth).then(() => {
             localStorage.removeItem('userLogin');
@@ -61,8 +70,7 @@ function ResponsiveNav() {
                         <ul className="navbar-nav mx-auto" id='center-ul'>
                             <li className='center-nav-item' ><Link style={linkStyle} to="/*">HOME</Link></li>
                             <li className='center-nav-item' > <Link style={linkStyle} to="/Blog/*">ARCHETYPAL STORIES</Link></li>
-                            {loggedIn === true ? (
-                                // && user==='giorgia'
+                            {loggedIn === true && email ==='giorgianoelle.arcelli@gmail.com' || email === 'gregotti20@gmail.com'? (
                                 <li className='center-nav-item' > <Link style={linkStyle} to='/ShopPage/*'>SHOP</Link></li>
                             ) : (
                                 <></>
