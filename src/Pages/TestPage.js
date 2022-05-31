@@ -90,24 +90,30 @@ function Test() {
 
     const [value, setValue] = useState(0);
     const [counter, setCounter] = useState(0);
-    const [room, setRoomId] = useState(1);
+    const [imgStyles, setStyles] = useState({
+        left: '27%',
+        top: '35%',
+        width: '40%',
+        color: 'white'
+    });
+    const [choiceStyles, setChoiceStyles] = useState({ marginTop: '25%' })
     const [question, setQuestion] = useState('Archetypes of Power Discovery');
     const [text, setText] = useState('');
-    const [roomCounter,setRoomCounter] = useState(1);
-    const [roomImg,setImg] = useState(caregiverRender);
+    const [roomCounter, setRoomCounter] = useState(1);
+    const [roomImg, setImg] = useState(caregiverRender);
     const navigate = useNavigate();
     const archetypes = [
         "Innocent", "Explorer", "Sage", "Hero",
         "Outlaw", "Magician", "Jester",
         "Lover", "Everyman", "Caregiver", "Creator", "Ruler"
     ];
-    
+
     const images = {
         Creator, Explorer, Hero, Innocent, Outlaw, Ruler, Caregiver, Everyman, Jester, Magician, Sage, Lover
     }
-    
-    const roomImgs = [caregiverRender, rulerRender,creatorRender,innocentRender, sageRender,explorerRender, outlawRender, magicianRender,heroRender,everymanRender,jesterRender,loverRender]
-    
+
+    const roomImgs = [caregiverRender, rulerRender, creatorRender, innocentRender, sageRender, explorerRender, outlawRender, magicianRender, heroRender, everymanRender, jesterRender, loverRender]
+
     let archetypesToPush = [];
     let archetypesImages = [];
 
@@ -152,7 +158,7 @@ function Test() {
         if (value !== -1) {
             answerArr.push(value);
             setText('');
-            setValue(-1); // comment out to test quiz without answers
+            // setValue(-1); // comment out to test quiz without answers
             setQuestion(questions[counter]);
             setCounter(counter + 1);
             var radios = document.getElementsByName('choice');
@@ -160,85 +166,193 @@ function Test() {
                 radios[index].checked = false;
             }
             if (counter % 3 === 0 && counter !== 0) {
-                setRoomId(room + 1)
+                // setRoomId(room + 1)
                 setRoomCounter(roomCounter + 1)
                 setImg(roomImgs[roomCounter])
-                console.log(roomImgs[roomCounter]);
+                setStyles(styleArr[roomCounter])
+                setChoiceStyles(choiceStyleArr[roomCounter])
             }
         } else {
             setText("Please select an option");
         }
     }
+
+
+
+    const styleArr = [
+        {},
+        {
+            left: '32%',
+            top: '40%',
+            width: '40%'
+        },
+        {
+            left: '32%',
+            top: '30%',
+            width: '40%'
+        },
+        {
+            left: '30%',
+            top: '36%',
+            width: '40%'
+        }, {
+            left: '32%',
+            top: '36%',
+            width: '40%'
+        },
+        {
+            left: '32%',
+            top: '36%',
+            width: '40%'
+        },
+        {
+            left: '32%',
+            top: '36%',
+            width: '40%'
+        },
+        {
+            left: '32%',
+            top: '36%',
+            width: '40%'
+        },
+        {
+            left: '32%',
+            top: '36%',
+            width: '40%'
+        },
+        {
+            left: '32%',
+            top: '36%',
+            width: '40%'
+        },
+        {
+            left: '30%',
+            top: '31.5%',
+            width: '40%'
+        },
+        {
+            left: '30%',
+            top: '31.5%',
+            width: '40%'
+        }
+
+    ]
+    const choiceStyleArr = [
+        {},
+        {
+            marginTop: '35%'
+        },
+        {
+            marginTop: '35%'
+        },
+        {
+            marginTop: '35%'
+        },
+        {
+            marginTop: '35%'
+        },
+        {
+            marginTop: '35%'
+        },
+        {
+            marginTop: '35%'
+        },
+        {
+            marginTop: '35%'
+        },
+        {
+            marginTop: '35%'
+        },
+        {
+            marginTop: '35%'
+        },
+        {
+            marginTop: '35%'
+        },
+        {
+            marginTop: '35%'
+        }
+    ]
     return (
         <div >
             <ResponsiveNav />
             <div id='testContainer'>
-                <img src={roomImg} alt="" />
-                <div>
-                    <h5>Room {room}</h5>
-                </div>
-                <div id='testCenterDiv'>
-                    {counter === questions.length + 1 ? (
-                        <div>End Of Quiz</div>
-                    ) : (
-                        <h6>{question}</h6>
-                    )}
-                </div>
-                <div>
-                    <div className='d-flex flex-col justify-content-center' id='choiceDiv'>
-                        {question === 'Archetypes of Power Discovery' || counter > questions.length ? (
-                            <div></div>
+                {counter === 0 ? (
+                    <img src={duck} alt="" />
+
+                ) : (
+
+                    <img src={roomImg} alt="" />
+
+                )}
+                <div id='questions-container' style={imgStyles}>
+                    <div id='testCenterDiv'>
+                        {counter === questions.length + 1 ? (
+                            <div>End Of Quiz</div>
                         ) : (
-                            <div>
-                                <div id='test'>
-                                    <input type="radio" name="choice" value="0" onChange={(event) => { setValue(0) }} />
-                                    <label>Weakly Identify</label>
-                                </div>
-                                <div id='test'>
-                                    <input type="radio" name="choice" value="0" onChange={(event) => { setValue(1) }} />
-                                    <label>1</label>
-                                </div>
-                                <div id='test'>
-                                    <input type="radio" name="choice" value="0" onChange={(event) => { setValue(2) }} />
-                                    <label>2</label>
-                                </div>
-                                <div id='test'>
-                                    <input type="radio" name="choice" value="0" onChange={(event) => { setValue(3) }} />
-                                    <label>Neutral</label>
-                                </div>
-                                <div id='test'>
-                                    <input type="radio" name="choice" value="0" onChange={(event) => { setValue(4) }} />
-                                    <label>4</label>
-                                </div>
-                                <div id='test'>
-                                    <input type="radio" name="choice" value="0" onChange={(event) => { setValue(5) }} />
-                                    <label>5</label>
-                                </div>
-                                <div id='test'>
-                                    <input type="radio" name="choice" value="0" onChange={(event) => { setValue(6) }} />
-                                    <label>Strongly Identify</label>
-                                </div>
-                            </div>
-                        )}
-                        {question === 'Archetypes of Power Discovery' ? (
-                            <div className='px-5'>
-                                <p>Archetypes of Power Discovery is a Jungian Archetypes based personality test, designed to help you better understand yourself and your identity, as well as your source of power to achieve stylistic power personalization. By spending approximately 7 minutes to complete Archetypes of Power Discovery, you will become aware of your 3 dominant archetypes and a personalized product offering based on all the twelve archetypes, suitable for your personality.</p>
-                                <button type="submit" className='btn btn-dark' onClick={increment}>Explore your inner world</button>
-                            </div>
-                        ) : (
-                            <div>
-                                {counter > questions.length ? (
-                                    <button className='btn btn-dark' onClick={resultsPage}>Get Results</button>
-                                ) : (
-                                    <div>
-                                        <button type="submit" className='btn btn-dark' id='incrementButton' onClick={increment}>Next Question</button>
-                                    </div>
-                                )}
-                            </div>
+                            <h6>{question}</h6>
                         )}
                     </div>
-                    <p className="text-danger">{text}</p>
+                    <div>
+                        
+                        <div className='d-flex flex-col justify-content-center' id='choiceDiv' style={choiceStyles}>
+                            {question === 'Archetypes of Power Discovery' || counter > questions.length ? (
+                                <div></div>
+                            ) : (
+                                <div>
+                                    <div id='test'>
+                                        <input type="radio" name="choice" value="0" onChange={(event) => { setValue(0) }} />
+                                        <label>Weakly Identify</label>
+                                    </div>
+                                    <div id='test'>
+                                        <input type="radio" name="choice" value="0" onChange={(event) => { setValue(1) }} />
+                                        <label>1</label>
+                                    </div>
+                                    <div id='test'>
+                                        <input type="radio" name="choice" value="0" onChange={(event) => { setValue(2) }} />
+                                        <label>2</label>
+                                    </div>
+                                    <div id='test'>
+                                        <input type="radio" name="choice" value="0" onChange={(event) => { setValue(3) }} />
+                                        <label>Neutral</label>
+                                    </div>
+                                    <div id='test'>
+                                        <input type="radio" name="choice" value="0" onChange={(event) => { setValue(4) }} />
+                                        <label>4</label>
+                                    </div>
+                                    <div id='test'>
+                                        <input type="radio" name="choice" value="0" onChange={(event) => { setValue(5) }} />
+                                        <label>5</label>
+                                    </div>
+                                    <div id='test'>
+                                        <input type="radio" name="choice" value="0" onChange={(event) => { setValue(6) }} />
+                                        <label>Strongly Identify</label>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                            
+                        <p className="text-danger">{text}</p>
+                    </div>
                 </div>
+                {question === 'Archetypes of Power Discovery' ? (
+                                <div className='px-5'>
+                                    <p>Archetypes of Power Discovery is a Jungian Archetypes based personality test, designed to help you better understand yourself and your identity, as well as your source of power to achieve stylistic power personalization. By spending approximately 7 minutes to complete Archetypes of Power Discovery, you will become aware of your 3 dominant archetypes and a personalized product offering based on all the twelve archetypes, suitable for your personality.</p>
+                                    <button type="submit" className='btn btn-dark' onClick={increment}>Explore your inner world</button>
+                                </div>
+                            ) : (
+                                <div id='door-parent' onClick={increment}>
+                                    {counter > questions.length ? (
+                                        // set styles for the button in js
+                                        <button className='btn btn-dark' onClick={resultsPage}>Get Results</button>
+                                    ) : (
+                                        <div id='door' >
+                                            &nbsp;
+                                            {/* <button type="submit" className='btn btn-dark' id='incrementButton' onClick={increment}>Next Question</button> */}
+                                        </div>
+                                    )}
+                                </div>
+                            )}
             </div>
             <Footer />
         </div>

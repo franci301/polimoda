@@ -9,6 +9,42 @@
     min-height: 100vh;
 }
 
+#door-parent {
+    position: absolute;
+    background-color: red;
+    z-index: 10000;
+    width: 112px;
+    right: 8%;
+    top: 25%;
+    padding-right: 5%;
+    height: 55%;
+}
+
+#questions-container {
+    height: 30%;
+    position: absolute;
+    z-index: 1000;
+    color: white;
+}
+
+
+/* #questions-container {
+    left: 31.5%;
+    top: 30%;
+    width: 40%;
+} */
+
+
+/* #questions-container #choiceDiv {
+    margin-top: 35%;
+} */
+
+#questions-container h6 {
+    text-align: justify;
+    text-align-last: center;
+    font-size: 1.2vw;
+}
+
 
 /*  below styles are temporary */
 

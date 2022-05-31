@@ -2,9 +2,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../Assets/css/nav.css';
 import { Link } from 'react-router-dom';
 import logo from '../Assets/Images/logo.png';
+import {useNavigate} from 'react-router-dom';
 
 function HomeNav() {
     var loggedIn;
+    const navigate = useNavigate();
     var userLogged = localStorage.getItem('userLogin');
     if(userLogged){
         loggedIn = true;
@@ -19,12 +21,15 @@ function HomeNav() {
         textDecoration: "none",
         color:'#453127'
     }
+    function route(){
+        navigate('/HomePage/*')
+    }
     return (
         <nav className="navbar navbar-expand navbar sticky-top py-3">
             <div className="container-fluid">
                 <div className="collapse navbar-collapse" id="navbarResponsive">
                     <ul className="navbar-nav mx-auto">
-                        <li className='nav-item' id='left-nav'> <h3><img id='homeNavLogo' src={logo} alt="Logo" /></h3> </li>
+                        <li className='nav-item' id='left-nav'> <h3><img id='homeNavLogo' src={logo} alt="Logo" onClick={route}/></h3> </li>
                     </ul>
                     <ul className="navbar-nav mx-right">
                         {loggedIn === false ? (
