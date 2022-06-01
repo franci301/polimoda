@@ -4,6 +4,7 @@ PRIMARY OBJECTIVES:
 - [ ] Style shop page images
 - [ ] Nav bar not centred on large devices
 - [ ] Product page styling for mobile view —> slides to see each picture scroll down to see product descriptions —> required for only two products but style the product component anyway
+- [ ] On shop page sort by groupName AND archetypal order
 
 SECONDARY OBJECTIVES:
 - [ ] Check filters —> gender —> save —> category —> save == no change?? WHY

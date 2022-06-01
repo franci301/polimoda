@@ -196,9 +196,6 @@ function Test() {
         }
     }
 
-
-
-
     // her resolution for the monitor (13 inches)
     const styleArr = [
         {},
@@ -356,95 +353,105 @@ function Test() {
     { marginTop: '15%', fontSize: '1.6vw' },
     { marginTop: '15%', fontSize: '1.6vw' }
     ]
-    
-    console.log(width, height)
-    console.log(700 <= height && height < 880, height)
+
     return (
         <div >
             <ResponsiveNav />
-
+            <div className='d-flex flex-row justify-content-center'>
+                <p>
+                    Width:
+                    {width}
+                </p>
+                <p>
+                    Height:
+                    {height}
+                </p>
+            </div>
+            <button type="submit" className='btn btn-dark' onClick={resultsPage}>Explore your inner world</button>
+            {/* my phone is 750 x 390 */}
+            {/* Carolas phone is 800 x 331 */}
             {!(1200 <= width && width < 1420) || !(700 <= height && height <= 880) ? (
                 <>
                     {/* check if the device is a mobile */}
                     {(width <= 414 && width >= 319) || (width <= 736 && width >= 568) ? (
                         <>{width > height ? (
                             <><div id='testContainer'>
-                            {counter === 0 ? (
-                                <img src={duck} alt="" />
-        
-                            ) : (
-        
-                                <img src={roomImg} alt="" />
-        
-                            )}
-                            <div id='questions-container' style={imgStylesMobile} >
-                                <div id='testCenterDiv'>
-                                    {counter === questions.length + 1 ? (
-                                        <div>End Of Quiz</div>
-                                    ) : (
-                                        <h6>{question}</h6>
-                                    )}
-                                </div>
-                                <div>
-                                    <div className='d-flex flex-col justify-content-center' id='choiceDiv' style={choiceStylesMobile}>
-                                        {question === 'Archetypes of Power Discovery' || counter > questions.length ? (
-                                            <div></div>
+                                {counter === 0 ? (
+                                    <img src={duck} alt="" />
+
+                                ) : (
+
+                                    <img src={roomImg} alt="" />
+
+                                )}
+                                <div id='questions-container' style={imgStylesMobile} >
+                                    <div id='testCenterDiv'>
+                                        {counter === questions.length + 1 ? (
+                                            <div>End Of Quiz</div>
                                         ) : (
-                                            <div>
-                                                <div id='test'>
-                                                    <input type="radio" name="choice" value="0" onChange={(event) => { setValue(0) }} />
-                                                    <label>Weakly Identify</label>
+                                            <h6>{question}</h6>
+                                        )}
+                                    </div>
+                                    <div>
+                                        <div className='d-flex flex-col justify-content-center' id='choiceDiv' style={choiceStylesMobile}>
+                                            {question === 'Archetypes of Power Discovery' || counter > questions.length ? (
+                                                <div></div>
+                                            ) : (
+                                                <div>
+                                                    <div id='test'>
+                                                        <input type="radio" name="choice" value="0" onChange={(event) => { setValue(0) }} />
+                                                        <label>Weakly Identify</label>
+                                                    </div>
+                                                    <div id='test'>
+                                                        <input type="radio" name="choice" value="0" onChange={(event) => { setValue(1) }} />
+                                                        <label>1</label>
+                                                    </div>
+                                                    <div id='test'>
+                                                        <input type="radio" name="choice" value="0" onChange={(event) => { setValue(2) }} />
+                                                        <label>2</label>
+                                                    </div>
+                                                    <div id='test'>
+                                                        <input type="radio" name="choice" value="0" onChange={(event) => { setValue(3) }} />
+                                                        <label>Neutral</label>
+                                                    </div>
+                                                    <div id='test'>
+                                                        <input type="radio" name="choice" value="0" onChange={(event) => { setValue(4) }} />
+                                                        <label>4</label>
+                                                    </div>
+                                                    <div id='test'>
+                                                        <input type="radio" name="choice" value="0" onChange={(event) => { setValue(5) }} />
+                                                        <label>5</label>
+                                                    </div>
+                                                    <div id='test'>
+                                                        <input type="radio" name="choice" value="0" onChange={(event) => { setValue(6) }} />
+                                                        <label>Strongly Identify</label>
+                                                    </div>
                                                 </div>
-                                                <div id='test'>
-                                                    <input type="radio" name="choice" value="0" onChange={(event) => { setValue(1) }} />
-                                                    <label>1</label>
-                                                </div>
-                                                <div id='test'>
-                                                    <input type="radio" name="choice" value="0" onChange={(event) => { setValue(2) }} />
-                                                    <label>2</label>
-                                                </div>
-                                                <div id='test'>
-                                                    <input type="radio" name="choice" value="0" onChange={(event) => { setValue(3) }} />
-                                                    <label>Neutral</label>
-                                                </div>
-                                                <div id='test'>
-                                                    <input type="radio" name="choice" value="0" onChange={(event) => { setValue(4) }} />
-                                                    <label>4</label>
-                                                </div>
-                                                <div id='test'>
-                                                    <input type="radio" name="choice" value="0" onChange={(event) => { setValue(5) }} />
-                                                    <label>5</label>
-                                                </div>
-                                                <div id='test'>
-                                                    <input type="radio" name="choice" value="0" onChange={(event) => { setValue(6) }} />
-                                                    <label>Strongly Identify</label>
-                                                </div>
+                                            )}
+                                        </div>
+
+                                        <p className="text-danger">{text}</p>
+                                    </div>
+                                </div>
+                                {question === 'Archetypes of Power Discovery' ? (
+                                    <div className='px-5'>
+                                        <p>Archetypes of Power Discovery is a Jungian Archetypes based personality test, designed to help you better understand yourself and your identity, as well as your source of power to achieve stylistic power personalization. By spending approximately 7 minutes to complete Archetypes of Power Discovery, you will become aware of your 3 dominant archetypes and a personalized product offering based on all the twelve archetypes, suitable for your personality.</p>
+                                        <button type="submit" className='btn btn-dark' onClick={resultsPage}>Explore your inner world</button>
+                                    </div>
+                                ) : (
+                                    <div id='door-parent' onClick={increment}>
+                                        {counter > questions.length ? (
+                                            // set styles for the button in js
+                                            <button className='btn btn-dark' onClick={resultsPage}>Get Results</button>
+                                        ) : (
+                                            <div id='door' >
+                                                &nbsp;
+                                                {/* <button type="submit" className='btn btn-dark' id='incrementButton' onClick={increment}>Next Question</button> */}
                                             </div>
                                         )}
                                     </div>
-        
-                                    <p className="text-danger">{text}</p>
-                                </div>
-                            </div>
-                            {question === 'Archetypes of Power Discovery' ? (
-                                <div className='px-5'>
-                                    <p>Archetypes of Power Discovery is a Jungian Archetypes based personality test, designed to help you better understand yourself and your identity, as well as your source of power to achieve stylistic power personalization. By spending approximately 7 minutes to complete Archetypes of Power Discovery, you will become aware of your 3 dominant archetypes and a personalized product offering based on all the twelve archetypes, suitable for your personality.</p>
-                                    <button type="submit" className='btn btn-dark' onClick={increment}>Explore your inner world</button>
-                                </div>
-                            ) : (
-                                <div id='door-parent' onClick={increment}>
-                                    {counter > questions.length ? (
-                                        // set styles for the button in js
-                                        <button className='btn btn-dark' onClick={resultsPage}>Get Results</button>
-                                    ) : (
-                                        <div id='door' >
-                                            &nbsp;
-                                            {/* <button type="submit" className='btn btn-dark' id='incrementButton' onClick={increment}>Next Question</button> */}
-                                        </div>
-                                    )}
-                                </div>
-                            )}
-                        </div></>
+                                )}
+                            </div></>
                         ) : (
                             <>ROTATE DEVICE</>
                         )}</>

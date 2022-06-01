@@ -189,7 +189,7 @@
     margin-top: 5%;
     margin-bottom: 5%;
     text-align: justify;
-    color: var(--red);
+    color: var(--brown);
 }
 
 @media screen and (max-width:414px) {
