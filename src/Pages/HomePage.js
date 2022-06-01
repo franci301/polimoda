@@ -33,7 +33,7 @@ function HomePage() {
                         <h6 id='archStories'>Archetypal Stories</h6>
                         <button id="exploreButton" onClick={routeBlog}>Be your own source of inspiration</button>
                         <div className="d-flex flex-row gap-3 py-3" id='rightImgContainer'>
-                            <img src={homeBlog} alt="" />
+                            <img id='right-home-img' src={homeBlog} alt="" />
                         </div>
                         <p id='archStories'>Feel pursuaded by the archetypal narrative to reach power personalization</p>
                     </div>
