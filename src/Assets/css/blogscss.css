@@ -120,6 +120,7 @@
 
 #pamolo-container #title-div {
     text-align: left;
+    margin-top: 5%;
 }
 
 #pamolo-container #title-div #blog-title {
@@ -155,7 +156,7 @@
 #pamolo-container #double-imgs {
     gap: 5%;
     margin-bottom: 5%;
-    margin-right: 5%;
+    margin-right: 10%;
 }
 
 #pamolo-container #specific-div {
@@ -190,6 +191,16 @@
     }
     #pamolo-container #title-div h1 {
         font-size: 6vw;
+    }
+    #pamolo-container #first-p {
+        margin-right: 5%;
+    }
+    .div-padding {
+        margin-right: 5%;
+    }
+    #last-h5 {
+        font-size: 4vw;
+        margin-right: 5%;
     }
 }
 

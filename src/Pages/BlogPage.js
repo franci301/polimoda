@@ -1,5 +1,6 @@
 import Footer from '../Layouts/footer.js';
 import TestAd from '../Layouts/testAd.js';
+import ResponsiveNav from '../Layouts/responsiveNav.js';
 import ArchComponent from '../Layouts/archComponent.js';
 import FeaturedImages from '../Layouts/featuredImages.js';
 import Creator from '../Assets/Images/The Creator.jpg';
@@ -36,7 +37,7 @@ import '../Assets/css/blogcss.css'
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
-import ResponsiveNav from '../Layouts/responsiveNav.js';
+
 function BlogPage() {
 
     const [size, setSize] = useState(0);
@@ -129,7 +130,7 @@ function BlogPage() {
                             <SwiperSlide>
                                 <div id='featuredImgContainer' className='d-flex flex-row justify-content-center'>
                                     <div>
-                                        <img id='featuredImg' src={Vitelli} alt="" onClick={route} />
+                                        <img src={Vitelli} alt="" onClick={route} className='vitelli-single'/>
                                         <div id='featuredTxt'>
                                             <h4>Vitelli</h4>
                                             <p>Doombag Leggings Pluto</p>
@@ -149,8 +150,8 @@ function BlogPage() {
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <div id='featuredImgContainer' className='d-flex flex-row justify-content-center'>
-                                    <FeaturedImages image={Andrej} brand={'Andrej Gronau'} description={'Exclusive Multicolor Check Lurex Dress'} price={'1080€'} />
+                                <div id='featuredImgContainer' className='d-flex flex-row justify-content-center andrej-single'>
+                                    <FeaturedImages className='' image={Andrej} brand={'Andrej Gronau'} description={'Exclusive Multicolor Check Lurex Dress'} price={'1080€'} />
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>

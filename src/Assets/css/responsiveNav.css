@@ -107,6 +107,9 @@
     #menuTop h2 {
         font-size: 130%;
     }
+    #right-nav-main {
+        align-items: flex-start;
+    }
 }
 
 @media screen and (max-width:378px) {

@@ -181,6 +181,12 @@ h4 {
         width: 100%;
         height: 100%;
     }
+    .vitelli-single {
+        width: 30%;
+    }
+    .andrej-single img {
+        width: 50% !important;
+    }
 }
 
 @media screen and (max-width:375px) {
