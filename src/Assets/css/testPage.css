@@ -12,7 +12,7 @@
 @media screen and (max-width:736px) {
     #door-parent {
         position: absolute;
-        background-color: red;
+        /* background-color: red; */
         z-index: 10000;
         width: 150px;
         right: 3%;
@@ -25,7 +25,7 @@
 @media screen and (min-width:737px) {
     #door-parent {
         position: absolute;
-        background-color: red;
+        /* background-color: red; */
         z-index: 10000;
         width: 150px;
         right: 8%;
@@ -42,20 +42,22 @@
     color: white;
 }
 
-#questions-container {
+
+/* #questions-container {
     left: 27.5%;
     top: 52%;
     width: 40%;
-}
+} */
 
 #questions-container h6 {
     font-size: 1.8vw;
 }
 
-#questions-container #choiceDiv {
+
+/* #questions-container #choiceDiv {
     margin-top: 5%;
     width: 100%;
-}
+} */
 
 #questions-container h6 {
     text-align: justify;
