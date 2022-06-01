@@ -286,15 +286,25 @@ function Test() {
             marginTop: '30%'
         }
     ]
+    
     console.log(width, height)
     console.log(700 <= height && height < 880, height)
     return (
         <div >
             <ResponsiveNav />
-            
+
             {!(1200 <= width && width < 1420) || !(700 <= height && height <= 880) ? (
                 <>
-                    {}
+                    {/* check if the device is a mobile */}
+                    {(width <= 414 && width >= 319) || (width <= 736 && width >= 568) ? (
+                        <>{width > height ? (
+                            <>SHOW MOBILE</>
+                        ) : (
+                            <>ROTATE DEVICE</>
+                        )}</>
+                    ) : (
+                        <>INCOMPATIBLE DEVICE</>
+                    )}
                 </>
             ) : (
                 <div id='testContainer'>
@@ -374,7 +384,7 @@ function Test() {
                         </div>
                     )}
                 </div>
-             )} 
+            )}
             <Footer />
         </div>
     );
