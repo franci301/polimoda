@@ -34,18 +34,18 @@ import everymanRender from '../Assets/Images/renders/everyman 1.jpg';
 import '../Assets/css/testPage.css';
 
 var answerArr = [
-    // 6, 6, 3,
-    // 5, 4, 2,
-    // 1, 1, 4,
-    // 6, 5, 5,
-    // 3, 5, 1,
-    // 1, 4, 1,
-    // 0, 3, 0,
-    // 1, 1, 2,
-    // 4, 1, 0,
-    // 6, 6, 5,
-    // 4, 1, 1,
-    // 5, 4, 1
+    6, 6, 3,
+    5, 4, 2,
+    1, 1, 4,
+    6, 5, 5,
+    3, 5, 1,
+    1, 4, 1,
+    0, 3, 0,
+    1, 1, 2,
+    4, 1, 0,
+    6, 6, 5,
+    4, 1, 1,
+    5, 4, 1
 ];
 
 // sample results they want
@@ -201,7 +201,7 @@ function Test() {
         },
         {
             left: '31%',
-            top: '40%',
+            top: '32%',
             width: '40%'
         },
         {
@@ -253,7 +253,7 @@ function Test() {
     const choiceStyleArr = [
         {},
         {
-            marginTop: '35%'
+            marginTop: '30%'
         },
         {
             marginTop: '35%'
@@ -262,46 +262,39 @@ function Test() {
             marginTop: '35%'
         },
         {
-            marginTop: '35%'
+            marginTop: '30%'
         },
         {
-            marginTop: '35%'
+            marginTop: '30%'
         },
         {
-            marginTop: '35%'
+            marginTop: '30%'
         },
         {
-            marginTop: '35%'
+            marginTop: '30%'
         },
         {
-            marginTop: '35%'
+            marginTop: '30%'
         },
         {
-            marginTop: '35%'
+            marginTop: '30%'
         },
         {
-            marginTop: '35%'
+            marginTop: '30%'
         },
         {
-            marginTop: '35%'
+            marginTop: '30%'
         }
     ]
+    console.log(width, height)
     console.log(700 <= height && height < 880, height)
     return (
         <div >
             <ResponsiveNav />
+            
             {!(1200 <= width && width < 1420) || !(700 <= height && height <= 880) ? (
                 <>
-                    {width <= 736 && width >= 568 ? (
-                        <>
-                            {width > height ? (
-                                <> SHOW MOBILE OPTIMISED VERION </>
-                            ) : (
-                                <> NOT LANDSCAPE</>)
-                            }</>
-                    ) : (
-                        <>NOT MOBILE VIEW</>
-                    )}
+                    {}
                 </>
             ) : (
                 <div id='testContainer'>
@@ -381,7 +374,7 @@ function Test() {
                         </div>
                     )}
                 </div>
-            )}
+             )} 
             <Footer />
         </div>
     );

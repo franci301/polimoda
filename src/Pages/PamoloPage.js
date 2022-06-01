@@ -22,7 +22,7 @@ function PamoloPage() {
                     <h1 id='blog-title'>
                         THE IMPORTANCE OF BEING WHO YOU ARE
                     </h1>
-                    <h1>INTERVIEW WITH ALEJANDRO GÓMEZ PALOMO, THE DESIGNER OF PALOMO SPAIN</h1>
+                    <h1 id='second-title'>INTERVIEW WITH ALEJANDRO GÓMEZ PALOMO, THE DESIGNER OF PALOMO SPAIN</h1>
                 </div>
                 <div className='d-flex flex-column align-items-start' id='author-container'>
                     <p>
@@ -85,9 +85,9 @@ function PamoloPage() {
                     <img src={pamolo6} alt="" id='last-img-bottom' />
                 </div>
                 <h5 id='last-h5'>CHECK THE ITEMS SELECTED BY ARKX’S EDITORS FROM PALOMO SPAIN, THE FASHION BRAND THAT BLURS THE LINE BETWEEN FEMININITY AND MASCULINITY COMBINING COSTUME HERITAGE WITH SPANISH CRAFTSMANSHIP AND ESSENCE.</h5>
-                <h2 id='shop-vitelli' className='d-flex flex-row justify-content-start'>SHOP PAMOLO SPAIN</h2>
+                <h2 id='shop-vitelli' className='d-flex flex-row justify-content-start'>SHOP PALOMO SPAIN</h2>
                 <div id='pamolo-blog-shop'>
-                    <BlogShop obj={[[pamolo, pamolo1, pamolo2, pamolo3], ['Pamolo'], ['Red Floral Maxi Kaftan', 'Red Floral Cargo Trousers', 'Blue Psico Romeo Jacket', 'Aitor Blue Shirt'], ['6554€', '454€', '454€', '353€']]} />
+                    <BlogShop obj={[[pamolo, pamolo1, pamolo2, pamolo3], ['Pamolo Spain'], ['Red Floral Maxi Kaftan', 'Red Floral Cargo Trousers', 'Blue Psico Romeo Jacket', 'Aitor Blue Shirt'], ['6554€', '454€', '454€', '353€']]} />
                 </div>
             </div>
             <Footer />

@@ -42,3 +42,9 @@ footer input {
 footer {
     background-color: var(--yellow);
 }
+
+@media screen and (max-width:383px) {
+    #middle-container {
+        padding-right: 0% !important;
+    }
+}

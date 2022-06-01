@@ -286,15 +286,15 @@ function BlogPage() {
                     <div className='col px-0 py-0'>
                         <img src={bottomImg2} alt="" id="bottomContainerImg" onClick={()=>route2('PamoloPage')}/>
                         <div id="bottomContainerText1">
-                            <p>Description</p>
-                            <p> Written by Name</p>
+                            <p>INTERVIEW WITH ALEJANDRO GÓMEZ PALOMO</p>
+                            <p>ANGELA DI PEDE</p>
                         </div>
                     </div>
                     <div className='col px-0 py-0'>
                         <img src={bottomImg1} alt="" id="bottomContainerImg" onClick={()=>route2('VitelliPage')}/>
                         <div id="bottomContainerText2">
-                            <p>Description</p>
-                            <p> Written by Name</p>
+                            <p>BE A MAGICIAN JUST LIKE VITELLI</p>
+                            <p>ANGELA DI PEDE</p>
                         </div>
                     </div>
                 </div>

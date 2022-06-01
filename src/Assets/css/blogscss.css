@@ -6,6 +6,7 @@
 
 #vitelli-container h1 {
     text-align: left;
+    color: var(--red)
 }
 
 #vitelli-container #main-img-top {
@@ -44,6 +45,7 @@
     margin-top: 5%;
     margin-bottom: 5%;
     font-weight: bold;
+    color: var(--red);
 }
 
 @media screen and (min-width:1401px) {
@@ -123,6 +125,10 @@
     margin-top: 5%;
 }
 
+#pamolo-container #title-div #second-title {
+    color: var(--brown)
+}
+
 #pamolo-container #title-div #blog-title {
     color: var(--red);
     font-weight: bold;
@@ -183,6 +189,7 @@
     margin-top: 5%;
     margin-bottom: 5%;
     text-align: justify;
+    color: var(--red);
 }
 
 @media screen and (max-width:414px) {

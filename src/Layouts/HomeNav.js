@@ -15,7 +15,7 @@ function HomeNav() {
     }
     const linkStyle = {
         textDecoration: "none",
-        color: 'black'
+        color: '#453127'
     };
     const linkStyleLogin ={
         textDecoration: "none",

@@ -32,22 +32,22 @@ function BlogShop({ obj }) {
                     {size <= 1000 ? (
                         <>
                             <SwiperSlide>
-                                <div id='featuredImgContainer' className='d-flex flex-row justify-content-center'>
+                                <div id='featuredImgContainer' className='d-flex flex-row justify-content-center align-items-center'>
                                     <FeaturedImages image={obj[0][0]} brand={obj[1][0]} description={obj[2][0]} price={obj[3][0]} />
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <div id='featuredImgContainer' className='d-flex flex-row justify-content-center'>
+                                <div id='featuredImgContainer' className='d-flex flex-row justify-content-center align-items-center'>
                                     <FeaturedImages image={obj[0][1]} brand={obj[1][0]} description={obj[2][1]} price={obj[3][1]} />
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <div id='featuredImgContainer' className='d-flex flex-row justify-content-center'>
+                                <div id='featuredImgContainer' className='d-flex flex-row justify-content-center align-items-center'>
                                     <FeaturedImages image={obj[0][2]} brand={obj[1][0]} description={obj[2][2]} price={obj[3][2]} />
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <div id='featuredImgContainer' className='d-flex flex-row justify-content-center'>
+                                <div id='featuredImgContainer' className='d-flex flex-row justify-content-center align-items-center'>
                                     <FeaturedImages image={obj[0][3]} brand={obj[1][0]} description={obj[2][3]} price={obj[3][2]} />
                                 </div>
                             </SwiperSlide>
@@ -55,7 +55,7 @@ function BlogShop({ obj }) {
                     ) : (
                         <>
                             <SwiperSlide>
-                                <div id='featuredImgContainer' className='d-flex flex-row justify-content-center'>
+                                <div id='featuredImgContainer' className='d-flex flex-row justify-content-center align-items-center'>
                                     <FeaturedImages image={obj[0][0]} brand={obj[1][0]} description={obj[2][0]} price={obj[3][0]} />
                                     <FeaturedImages image={obj[0][1]} brand={obj[1][0]} description={obj[2][1]} price={obj[3][1]} />
                                     <FeaturedImages image={obj[0][3]} brand={obj[1][0]} description={obj[2][3]} price={obj[3][2]} />

@@ -79,14 +79,14 @@ function ResponsiveNav() {
                         <ul className="navbar-nav" id='right-nav-main'>
                             {loggedIn === true ? (
                                 <div id='profileContainer'>
-                                    <li className='nav-item' onClick={logout} id='logout-li'>LOGOUT</li>
+                                    <li className='nav-item' onClick={logout} id='logout-li' style={{color:'var(--brown)'}}>LOGOUT</li>
 
-                                    <li className='nav-item' id='profile-li'> <Link style={linkStyle} to='/MyProfile/*'>PROFILE</Link></li>
+                                    <li className='nav-item' id='profile-li' > <Link style={linkStyle} to='/MyProfile/*'>PROFILE</Link></li>
                                 </div>
                             ) : (
                                 <li className='nav-item'> <Link style={linkStyle} to='/LoginPage/*'>LOGIN</Link></li>
                             )}
-                            <li className='nav-item' id='cartPadding'>CART (0)</li>
+                            <li className='nav-item' style={{color:'var(--brown)'}} id='cartPadding'>CART (0)</li>
                         </ul>
                     </Nav>
                     {size < 768 && showProfileNav ? (

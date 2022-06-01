@@ -1,11 +1,11 @@
 import '../Assets/css/footer.css';
-
+import logo from '../Assets/Images/logo.png';
 function footer() {
     return (
         <footer className="navbar py-3">
             <div className="container-fluid">
                 <div id='footerLogo'>
-                    <h3>XXXXX</h3>
+                    {/* <img src={logo} alt="" /> */}
                     <h6>SUBSCRIBE TO OUR NEWSLETTER</h6>
                     <input type="text" placeholder='Email'/>
                 </div>
@@ -41,7 +41,7 @@ function footer() {
                         <div className="col">
                             <h5>Connect with us</h5>
                             <div>
-                                <p>Instagram</p>
+                                <p><a style={{color:'var(--brown)'}} href="https://www.instagram.com/arkx_store/?hl=en">Instagram</a></p>
                                 <p>TikTok</p>
                                 <p>Facebook</p>
                             </div>
