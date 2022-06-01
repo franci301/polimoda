@@ -94,16 +94,10 @@ function Test() {
     const [imgStyles, setStyles] = useState({
         left: '27%',
         top: '43%',
-        width: '40%'
+        width: '40%',
+        color: 'white'
     });
     const [choiceStyles, setChoiceStyles] = useState({ marginTop: '25%' })
-    const [imgStylesMobile, setStylesMobile] = useState({
-        left: '27.5%',
-        top: '52%',
-        width: '40%'
-    });
-    const [choiceStylesMobile, setChoiceStylesMobile] = useState({ marginTop: '15%', fontSize: '1.6vw' })
-
     const [question, setQuestion] = useState('Archetypes of Power Discovery');
     const [text, setText] = useState('');
     const [roomCounter, setRoomCounter] = useState(1);
@@ -188,8 +182,6 @@ function Test() {
                 setImg(roomImgs[roomCounter])
                 setStyles(styleArr[roomCounter])
                 setChoiceStyles(choiceStyleArr[roomCounter])
-                setStylesMobile(styleArrMobile[roomCounter])
-                setChoiceStylesMobile(choiceArrMobile[roomCounter])
             }
         } else {
             setText("Please select an option");
@@ -294,75 +286,13 @@ function Test() {
             marginTop: '35%'
         }
     ]
-    const styleArrMobile = [{}, {
-
-        left: '32%',
-        top: '52%',
-        width: '40%'
-
-    },
-    {
-        left: '32%',
-        top: '45%',
-        width: '40%'
-    }, {
-        left: '30%',
-        top: '50%',
-        width: '40%'
-    }, {
-        left: '32%',
-        top: '50%',
-        width: '40%'
-    }, {
-        left: '32%',
-        top: '50%',
-        width: '40%'
-    }, {
-        left: '32%',
-        top: '50%',
-        width: '40%'
-    }, {
-        left: '32%',
-        top: '50%',
-        width: '40%'
-    }, {
-        left: '32%',
-        top: '50%',
-        width: '40%'
-    }, {
-        left: '32%',
-        top: '50%',
-        width: '40%'
-    }, {
-        left: '30%',
-        top: '50%',
-        width: '40%'
-    }, {
-        left: '30%',
-        top: '50%',
-        width: '40%'
-    }
-    ]
-    const choiceArrMobile = [{},
-    { marginTop: '15%', fontSize: '1.6vw' },
-    { marginTop: '15%', fontSize: '1.6vw' },
-    { marginTop: '15%', fontSize: '1.6vw' },
-    { marginTop: '15%', fontSize: '1.6vw' },
-    { marginTop: '15%', fontSize: '1.6vw' },
-    { marginTop: '15%', fontSize: '1.6vw' },
-    { marginTop: '15%', fontSize: '1.6vw' },
-    { marginTop: '15%', fontSize: '1.6vw' },
-    { marginTop: '15%', fontSize: '1.6vw' },
-    { marginTop: '15%', fontSize: '1.6vw' },
-    { marginTop: '15%', fontSize: '1.6vw' }
-    ]
-    console.log(!(1200 <= width && width < 1420), !(700 <= height && height <= 880),width,height)
+    console.log(700 <= height && height < 880, height)
     return (
         <div >
             <ResponsiveNav />
             {!(1200 <= width && width < 1420) || !(700 <= height && height <= 880) ? (
-               <>
-               {width <= 736 && width >= 568 ? (
+                <>
+                    {width <= 736 && width >= 568 ? (
                         <>
                             {width > height ? (
                                 <> SHOW MOBILE OPTIMISED VERION </>
@@ -372,7 +302,7 @@ function Test() {
                     ) : (
                         <>NOT MOBILE VIEW</>
                     )}
-               </>
+                </>
             ) : (
                 <div id='testContainer'>
                     {counter === 0 ? (
