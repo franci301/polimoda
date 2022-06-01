@@ -10,9 +10,15 @@
 }
 
 #left-home-img {
+    object-fit: cover;
     max-width: 100%;
     height: 100vh;
 }
+#right-home-img{
+    object-fit: cover;
+    max-width: 100%;
+}
+
 
 #homeContainer {
     height: 125%;
@@ -46,7 +52,7 @@
     color: var(--purple);
     font-weight: bold;
     font-size: 150%;
-    top: -30%;
+    top: -20%;
 }
 
 #rightImgContainer {
@@ -61,7 +67,7 @@
 #exploreButton {
     position: absolute;
     left: 31%;
-    top: 37%;
+    top: 34%;
     width: 39%;
     padding: 5px;
     font-weight: bold;
@@ -83,7 +89,7 @@
 #testButton {
     position: absolute;
     left: 35%;
-    top: 30%;
+    top: 34%;
     width: 30%;
     z-index: 1000;
     padding: 5px;

@@ -31,12 +31,19 @@ footer input {
     padding-bottom: 2%;
     text-align: left;
 }
-
+#footerLogo{
+    text-align: center;
+}
 #footerLogo h6 {
     color: var(--brown);
     overflow: hidden;
     white-space: nowrap;
     width: 100%;
+}
+#logo{
+    max-height: 40px;
+    object-fit: cover;
+    margin-bottom: 3px;
 }
 
 footer {

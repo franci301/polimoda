@@ -1,11 +1,14 @@
 import '../Assets/css/footer.css';
-
+import logo from '../Assets/Images/logo.png';
+function home() {
+    window.location.href = '/HomePage/*'
+}
 function footer() {
     return (
         <footer className="navbar py-3">
             <div className="container-fluid">
                 <div id='footerLogo'>
-                    <h3>XXXXX</h3>
+                    <img id='logo' src={logo} alt="Logo" onClick={home} />
                     <h6>SUBSCRIBE TO OUR NEWSLETTER</h6>
                     <input type="text" placeholder='Email'/>
                 </div>
