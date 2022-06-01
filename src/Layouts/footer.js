@@ -44,7 +44,7 @@ function footer() {
                         <div className="col">
                             <h5>Connect with us</h5>
                             <div>
-                                <p>Instagram</p>
+                                <p><a style={{color:'var(--brown)'}} href="https://www.instagram.com/arkx_store/?hl=en">Instagram</a></p>
                                 <p>TikTok</p>
                                 <p>Facebook</p>
                             </div>

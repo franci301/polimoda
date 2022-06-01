@@ -1,19 +1,20 @@
 import Footer from '../Layouts/footer.js';
 import TestAd from '../Layouts/testAd.js';
+import ResponsiveNav from '../Layouts/responsiveNav.js';
 import ArchComponent from '../Layouts/archComponent.js';
 import FeaturedImages from '../Layouts/featuredImages.js';
-import Creator from '../Assets/Images/The Creator.jpg';
-import Explorer from '../Assets/Images/The Explorer.jpg';
-import Hero from '../Assets/Images/The Hero.jpg';
-import Innocent from '../Assets/Images/The Innocent.jpg';
-import Outlaw from '../Assets/Images/The Outlaw.jpg';
-import Ruler from '../Assets/Images/The Ruler.jpg';
-import Caregiver from '../Assets/Images/The Caregiver.jpg';
-import Everyman from '../Assets/Images/The Everyman.jpg';
-import Jester from '../Assets/Images/The Jester.jpg';
-import Magician from '../Assets/Images/The Magician.jpg';
-import Sage from '../Assets/Images/The Sage.jpg';
-import Lover from '../Assets/Images/The Lover.jpg';
+import Creator from '../Assets/Images/arch-images/The Creator.jpg';
+import Explorer from '../Assets/Images/arch-images/The Explorer.jpg';
+import Hero from '../Assets/Images/arch-images/The Hero.jpg';
+import Innocent from '../Assets/Images/arch-images/The Innocent.jpg';
+import Outlaw from '../Assets/Images/arch-images/The Outlaw.jpg';
+import Ruler from '../Assets/Images/arch-images/The Ruler.jpg';
+import Caregiver from '../Assets/Images/arch-images/The Caregiver.jpg';
+import Everyman from '../Assets/Images/arch-images/The Everyman.jpg';
+import Jester from '../Assets/Images/arch-images/The Jester.jpg';
+import Magician from '../Assets/Images/arch-images/The Magician.jpg';
+import Sage from '../Assets/Images/arch-images/The Sage.jpg';
+import Lover from '../Assets/Images/arch-images/The Lover.jpg';
 import bottomImg2 from '../Assets/Images/Meet Palomo Spain.png';
 import bottomImg1 from '../Assets/Images/BE A MAGICIAN JUST LIKE VITELLI.jpeg'
 import Arlington from '../Assets/Images/product-featured/PRODUCT FEATURED - 16Arlington (Pendal Feather Top) 1095€.webp'
@@ -36,7 +37,7 @@ import '../Assets/css/blogcss.css'
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
-import ResponsiveNav from '../Layouts/responsiveNav.js';
+
 function BlogPage() {
 
     const [size, setSize] = useState(0);
@@ -129,7 +130,7 @@ function BlogPage() {
                             <SwiperSlide>
                                 <div id='featuredImgContainer' className='d-flex flex-row justify-content-center'>
                                     <div>
-                                        <img id='featuredImg' src={Vitelli} alt="" onClick={route} />
+                                        <img src={Vitelli} alt="" onClick={route} className='vitelli-single'/>
                                         <div id='featuredTxt'>
                                             <h4>Vitelli</h4>
                                             <p>Doombag Leggings Pluto</p>
@@ -149,8 +150,8 @@ function BlogPage() {
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <div id='featuredImgContainer' className='d-flex flex-row justify-content-center'>
-                                    <FeaturedImages image={Andrej} brand={'Andrej Gronau'} description={'Exclusive Multicolor Check Lurex Dress'} price={'1080€'} />
+                                <div id='featuredImgContainer' className='d-flex flex-row justify-content-center andrej-single'>
+                                    <FeaturedImages className='' image={Andrej} brand={'Andrej Gronau'} description={'Exclusive Multicolor Check Lurex Dress'} price={'1080€'} />
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
@@ -285,15 +286,15 @@ function BlogPage() {
                     <div className='col px-0 py-0'>
                         <img src={bottomImg2} alt="" id="bottomContainerImg" onClick={()=>route2('PamoloPage')}/>
                         <div id="bottomContainerText1">
-                            <p>Description</p>
-                            <p> Written by Name</p>
+                            <p>INTERVIEW WITH ALEJANDRO GÓMEZ PALOMO</p>
+                            <p>ANGELA DI PEDE</p>
                         </div>
                     </div>
                     <div className='col px-0 py-0'>
                         <img src={bottomImg1} alt="" id="bottomContainerImg" onClick={()=>route2('VitelliPage')}/>
                         <div id="bottomContainerText2">
-                            <p>Description</p>
-                            <p> Written by Name</p>
+                            <p>BE A MAGICIAN JUST LIKE VITELLI</p>
+                            <p>ANGELA DI PEDE</p>
                         </div>
                     </div>
                 </div>

@@ -13,6 +13,7 @@
     object-fit: cover;
     max-width: 100%;
     height: 100vh;
+    object-fit: cover;
 }
 #right-home-img{
     object-fit: cover;
@@ -27,7 +28,7 @@
     margin-left: 0;
 }
 
-#nestedContainer{
+#nestedContainer {
     width: 100%;
     margin-right: 0;
     margin-left: 0;
@@ -62,6 +63,7 @@
 
 #rightImg img {
     width: 100%;
+    object-fit: cover;
 }
 
 #exploreButton {
@@ -98,6 +100,7 @@
     color: white;
     border: none;
 }
+
 #rightImg p {
     padding-top: 1%;
 }
@@ -106,7 +109,6 @@
     #leftImg {
         margin-right: 2%;
     }
-    
     #rightImg {
         margin-left: 2%;
     }

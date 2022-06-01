@@ -6,6 +6,7 @@
 
 #vitelli-container h1 {
     text-align: left;
+    color: var(--red)
 }
 
 #vitelli-container #main-img-top {
@@ -28,6 +29,10 @@
 }
 
 #vitelli-blog-shop img {
+    width: 40%;
+}
+
+#pamolo-blog-shop img {
     width: 80%;
 }
 
@@ -40,6 +45,7 @@
     margin-top: 5%;
     margin-bottom: 5%;
     font-weight: bold;
+    color: var(--red);
 }
 
 @media screen and (min-width:1401px) {
@@ -116,6 +122,11 @@
 
 #pamolo-container #title-div {
     text-align: left;
+    margin-top: 5%;
+}
+
+#pamolo-container #title-div #second-title {
+    color: var(--brown)
 }
 
 #pamolo-container #title-div #blog-title {
@@ -151,7 +162,7 @@
 #pamolo-container #double-imgs {
     gap: 5%;
     margin-bottom: 5%;
-    margin-right: 5%;
+    margin-right: 10%;
 }
 
 #pamolo-container #specific-div {
@@ -178,6 +189,7 @@
     margin-top: 5%;
     margin-bottom: 5%;
     text-align: justify;
+    color: var(--red);
 }
 
 @media screen and (max-width:414px) {
@@ -186,5 +198,24 @@
     }
     #pamolo-container #title-div h1 {
         font-size: 6vw;
+    }
+    #pamolo-container #first-p {
+        margin-right: 5%;
+    }
+    .div-padding {
+        margin-right: 5%;
+    }
+    #last-h5 {
+        font-size: 4vw;
+        margin-right: 5%;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    #pamolo-container #top-img {
+        width: 100%;
+    }
+    #pamolo-container #last-img-bottom {
+        width: 80%;
     }
 }

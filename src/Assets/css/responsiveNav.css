@@ -9,8 +9,8 @@
         position: absolute;
         right: 3%;
     }
-    /* #cartPadding {
-        padding-left: 13%;
+    /* #navContainer {
+        margin-left: 0;
     } */
     .nav-item {
         padding-left: 7px;
@@ -64,7 +64,7 @@
 
 #navLogo {
     max-height: 150px;
-    width: 16%;
+    width: 10%;
     float: left;
 }
 
@@ -104,6 +104,9 @@
     } */
     #menuTop h2 {
         font-size: 130%;
+    }
+    #right-nav-main {
+        align-items: flex-start;
     }
 }
 
@@ -145,7 +148,6 @@ nav {
     height: 100%;
     background-color: var(--yellow);
 }
-
 
 .navbar {
     width: 100%;

@@ -1,13 +1,10 @@
 https://arkx-store.com
 
 PRIMARY OBJECTIVES:
-- [ ] Entire test page —> if(window.innerHeight > window.innerWidth){alert(“Please use Landscape!”)}
-- [ ] Change room number change background images
 - [ ] Style shop page images
 - [ ] Style pages for large views
-- [ ] Homepage text responsiveness & images (theyre too large on smaller views)
+- [ ] Homepage text responsiveness
 - [ ] Crop bottom 2 images on archetype page
-- [ ] Omit shop page if account is not giro…
 - [ ] Nav bar not centred on large devices
 - [ ] Product page styling for mobile view —> slides to see each picture scroll down to see product descriptions —> required for only two products but style the product component anyway
 

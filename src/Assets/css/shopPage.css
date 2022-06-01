@@ -64,6 +64,19 @@ ul {
     align-items: center;
 }
 
+@media screen and (max-width:1420px) {
+    #filters-div h5 {
+        font-size: 1.2vw !important;
+    }
+}
+
+
+/* @media screen and (min-width:1420px) {
+    #filters-div h5 {
+        font-size: 1vw !important;
+    }
+} */
+
 #categoryUl,
 #genderUl,
 #innerUl {

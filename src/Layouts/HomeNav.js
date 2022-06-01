@@ -7,6 +7,7 @@ function home() {
 }
 function HomeNav() {
     var loggedIn;
+    const navigate = useNavigate();
     var userLogged = localStorage.getItem('userLogin');
     if(userLogged){
         loggedIn = true;
@@ -15,11 +16,14 @@ function HomeNav() {
     }
     const linkStyle = {
         textDecoration: "none",
-        color: 'black'
+        color: '#453127'
     };
     const linkStyleLogin ={
         textDecoration: "none",
         color:'#453127'
+    }
+    function route(){
+        navigate('/HomePage/*')
     }
     return (
         <nav className="navbar navbar-expand navbar sticky-top py-3">
@@ -27,6 +31,7 @@ function HomeNav() {
                 <div className="collapse navbar-collapse" id="navbarResponsive">
                     <ul className="navbar-nav mx-auto">
                         <li className='nav-item' id='left-nav'> <h3><img id='homeNavLogo' src={logo} alt="Logo" onClick={home} /></h3> </li>
+
                     </ul>
                     <ul className="navbar-nav mx-right">
                         {loggedIn === false ? (
