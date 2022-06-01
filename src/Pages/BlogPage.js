@@ -3,15 +3,15 @@ import TestAd from '../Layouts/testAd.js';
 import ResponsiveNav from '../Layouts/responsiveNav.js';
 import ArchComponent from '../Layouts/archComponent.js';
 import FeaturedImages from '../Layouts/featuredImages.js';
-import Creator from '../Assets/Images/arch-images/The Creator.jpg';
-import Explorer from '../Assets/Images/arch-images/The Explorer.jpg';
-import Hero from '../Assets/Images/arch-images/The Hero.jpg';
+import Creator from '../Assets/Images/arch-images/The Creator 1.jpg';
+import Explorer from '../Assets/Images/arch-images/The Explorer 1.jpg';
+import Hero from '../Assets/Images/arch-images/The Hero 1.jpg';
 import Innocent from '../Assets/Images/arch-images/The Innocent.jpg';
 import Outlaw from '../Assets/Images/arch-images/The Outlaw.jpg';
 import Ruler from '../Assets/Images/arch-images/The Ruler.jpg';
 import Caregiver from '../Assets/Images/arch-images/The Caregiver.jpg';
 import Everyman from '../Assets/Images/arch-images/The Everyman.jpg';
-import Jester from '../Assets/Images/arch-images/The Jester.jpg';
+import Jester from '../Assets/Images/arch-images/The Jester 1.jpg';
 import Magician from '../Assets/Images/arch-images/The Magician.jpg';
 import Sage from '../Assets/Images/arch-images/The Sage.jpg';
 import Lover from '../Assets/Images/arch-images/The Lover.jpg';
@@ -57,7 +57,7 @@ function BlogPage() {
     }
 
     function route2(name){
-        navigate('/'+name+'/*');
+        window.location.href = '/'+name+'/*#top'
     }
 
     return (
@@ -73,7 +73,7 @@ function BlogPage() {
                 spaceBetween={50}
                 slidesPerView={1}
                 navigation={{ clickable: true }}
-                autoplay={{ delay: 5000 }}
+                autoplay={{ delay: 8000 }}
             >
                 <SwiperSlide>
                     <div id='archetypes-grid' className='container '>
@@ -112,7 +112,7 @@ function BlogPage() {
                     spaceBetween={50}
                     slidesPerView={1}
                     navigation={{ clickable: true }}
-                // autoplay={{ delay: 6500 }}
+                    // autoplay={{ delay: 9500 }}
                 >
                     {size <= 414 ? (
                         <>
@@ -192,7 +192,7 @@ function BlogPage() {
                                         </div>
                                     </div>
                                     <div>
-                                        <img id='featuredImg' src={Vitelli} alt="" onClick={route} />
+                                        <img id='featuredImg' src={Vitelli} alt="" onClick={route} className='vitelli-double'/>
                                         <div id='featuredTxt'>
                                             <h4>Vitelli</h4>
                                             <p>Doombag Leggings Pluto</p>
@@ -239,7 +239,7 @@ function BlogPage() {
                     autoplay={{ delay: 6500 }}>
                     <SwiperSlide>
                         <div className='d-flex flex-row justify-content-center' id='featuredContainer'>
-                            <div id='featuredImgContainer' className='d-flex flex-row justify-content-center'>
+                            <div id='featuredImgContainer' className='d-flex flex-row justify-content-center triple-div'>
                                 <div id='featuredText'>
                                     <h2>FEATURED</h2>
                                     <p>Shop products from our editorials if you haven't taken the test yet!</p>
@@ -248,7 +248,7 @@ function BlogPage() {
                                     </div>
                                 </div>
                                 <div>
-                                    <img id='featuredImg' src={Vitelli} alt="" onClick={route} />
+                                    <img id='featuredImg' src={Vitelli} alt="" onClick={route} className='vitelli-triple'/>
                                     <div id='featuredTxt'>
                                         <h4>Vitelli</h4>
                                         <p>Doombag Leggings Pluto</p>
@@ -263,7 +263,7 @@ function BlogPage() {
                     <SwiperSlide>
                         <div className='d-flex flex-row justify-content-center' id='featuredContainer'>
                             <div id='featuredImgContainer' className='d-flex flex-row justify-content-center'>
-                                <FeaturedImages image={Andrej} brand={'Andrej Gronau'} description={'Exclusive Multicolor Check Lurex Dress'} price={'1080€'} />
+                                <FeaturedImages image={Andrej} brand={'Andrej Gronau'} description={'Exclusive Multicolor Check Lurex Dress'} price={'1080€'} ids={'andrej-triple'}/>
                                 <FeaturedImages image={BODE} brand={'BODE New York'} description={'Hand-stiched Fleurette Long Sleeves Shirt'} price={'685€'} />
                                 <FeaturedImages image={Charlie} brand={'Charlie Constantinou'} description={'Expandable Quilted Duffel Bag'} price={'800€'} />
                             </div>

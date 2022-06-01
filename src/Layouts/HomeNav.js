@@ -2,12 +2,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../Assets/css/nav.css';
 import { Link } from 'react-router-dom';
 import logo from '../Assets/Images/logo.png';
+
 function home() {
     window.location.href = '/HomePage/*'
 }
 function HomeNav() {
     var loggedIn;
-    const navigate = useNavigate();
     var userLogged = localStorage.getItem('userLogin');
     if(userLogged){
         loggedIn = true;
@@ -21,9 +21,6 @@ function HomeNav() {
     const linkStyleLogin ={
         textDecoration: "none",
         color:'#453127'
-    }
-    function route(){
-        navigate('/HomePage/*')
     }
     return (
         <nav className="navbar navbar-expand navbar sticky-top py-3">

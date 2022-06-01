@@ -93,6 +93,22 @@ h4 {
     bottom: 6%;
 }
 
+.featured-component-div {
+    width: 50%;
+}
+
+.vitelli-triple {
+    width: 60% !important;
+}
+
+.triple-div .featured-component-div {
+    width: 30%;
+}
+
+.andrej-triple {
+    width: 20% !important;
+}
+
 @media screen and (max-width: 1366px) {
     /* my monitor screen size */
     #topBlogPage {
@@ -161,9 +177,6 @@ h4 {
     }
     #featuredText {
         width: 100%;
-    }
-    .featured-component-div {
-        width: 50%;
     }
 }
 

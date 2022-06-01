@@ -44,7 +44,6 @@ function ShopPage() {
                 setItemArr(itemArr => [...itemArr, res[item]]);
                 setItemArr(itemArr => itemArr.sort((a, b) => a.groupName.localeCompare(b.groupName)));
             }
-            // sort the item array by group groupName
         });
     }
 

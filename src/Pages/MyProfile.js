@@ -83,7 +83,7 @@ function MyProfile() {
 
                     </Swiper>
                 ) : (
-                    <div className='d-flex flex-row justify-content-center align-items-center'>
+                    <div className='d-flex flex-row justify-content-center align-items-start'>
                         {listArch != null ? (
                             listArch.map((archetype, index) => (
                                 <div key={index} className='test-results'>
