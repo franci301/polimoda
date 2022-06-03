@@ -20,6 +20,7 @@ import RegisterPage from './Pages/RegisterPage.js';
 import ArchPage from './Layouts/archPage';
 import VitelliPage from './Pages/VitelliPage.js';
 import PamoloPage from './Pages/PamoloPage.js';
+import ScrollToTop from './Layouts/ScrollToTop';
 function App() {
   return (
     <div className="App">
@@ -31,6 +32,7 @@ function App() {
         <meta name="ARKX" content='Emerging Fashion Brands To Match Your Identities' />
       </Helmet>
       <Router>
+        <ScrollToTop>
         <Routes>
           <Route path="/*" element={<HomePage />} />
           <Route path='/Blog/*' element={<BlogPage />} />
@@ -47,6 +49,7 @@ function App() {
           <Route path='/VitelliPage/*' element={<VitelliPage/>} />
           <Route path='/PamoloPage/*' element={<PamoloPage/>} />
         </Routes>
+        </ScrollToTop>
       </Router>
     </div>
   );

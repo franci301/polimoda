@@ -1,5 +1,6 @@
 import Footer from '../Layouts/footer.js';
 import TestAd from '../Layouts/testAd.js';
+import getArchImgs from '../firebase/getArchImgs.js';
 import ResponsiveNav from '../Layouts/responsiveNav.js';
 import ArchComponent from '../Layouts/archComponent.js';
 import FeaturedImages from '../Layouts/featuredImages.js';
@@ -31,16 +32,15 @@ import Vitelli2 from '../Assets/Images/product-featured/PRODUCT FEATURED - Vitel
 import Vitelli3 from '../Assets/Images/product-featured/PRODUCT FEATURED - Vitelli (Doomboh Leggings Pluto) 420€.jpeg.jpeg'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper';
-import { useState, useLayoutEffect } from 'react';
+import { useState, useLayoutEffect, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../Assets/css/blogcss.css'
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
-
 function BlogPage() {
-
     const [size, setSize] = useState(0);
+    const [archArr,setArchArr] = useState([]);
     // sets the size of the screen to a variable
     useLayoutEffect(() => {
         function updateSize() {
@@ -58,8 +58,29 @@ function BlogPage() {
                 imgs: { Vitelli, Vitelli1, Vitelli2, Vitelli3 }, name: 'Vitelli', description: 'Flared felted woven mohair, wool, and silk-blend trousers in multicolor', details: "Through revolutionary fabrics, a cosmic aesthetic, Italian youth culture inspiration and challenging co-labs, Vitelli’s 100% Italian knitwear brand aims to refresh vintage imagery, foster eco-friendly fashion and investigate authentic moments of stile italiano through the filter of the present.", price: '€420', type: 'Multicolor Doomboh Trousers', manufacturingDetails: ['Mid-rise', 'Concealed zip fastening at outseam','Fully lined','20% wool, 20% mohair, 20% polyamide, 20% polyester, 20% silk', ' Made in Italy'], colour:'Pluto'} });
     }
 
+    // const archArr = [Creator,Explorer,Hero,Innocent,Outlaw,Ruler,Caregiver,Everyman,Jester,Magician,Sage,Lover];
+    // async function uploadArch(){
+    //     const imgCollectionRef = collection(db, 'arch-images');
+    //     for (let i = 0; i < archArr.length; i++) {
+    //         await addDoc(imgCollectionRef, {
+    //             imgRef:archArr[i]
+    //         })
+    //     }
+    // }
+
+    useEffect(() => {
+        let tempArch = []
+        getArchImgs().then((res)=>{
+            console.log(res);
+            for (let index = 0; index < res.length; index++) {
+                tempArch.push([res[index].imgRef])
+            }
+            setArchArr(tempArch);
+        })
+    },[])
+
     function route2(name){
-            window.location.href = '/' + name + '/*#top'
+            window.location.href = '/' + name;
         }
 
     return (
@@ -80,28 +101,28 @@ function BlogPage() {
                     <SwiperSlide>
                         <div id='archetypes-grid' className='container '>
                             <div className='row gx-0 gy-0'>
-                                <ArchComponent img={Creator} title="The Creator" />
-                                <ArchComponent img={Magician} title="The Magician" />
-                                <ArchComponent img={Explorer} title="The Explorer" />
+                                <ArchComponent img={archArr[1]} title="The Creator" />
+                                <ArchComponent img={archArr[9]} title="The Magician" />
+                                <ArchComponent img={archArr[2]} title="The Explorer" />
                             </div>
                             <div className='row gx-0 gy-0' id='bottomArch'>
-                                <ArchComponent img={Lover} title="The Lover" />
-                                <ArchComponent img={Hero} title="The Hero" />
-                                <ArchComponent img={Ruler} title="The Ruler" />
+                                <ArchComponent img={archArr[11]} title="The Lover" />
+                                <ArchComponent img={archArr[3]} title="The Hero" />
+                                <ArchComponent img={archArr[8]} title="The Ruler" />
                             </div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
                         <div id='archetypes-grid' className='container '>
                             <div className='row gx-0 gy-0'>
-                                <ArchComponent img={Innocent} title="The Innocent" />
-                                <ArchComponent img={Jester} title="The Jester" />
-                                <ArchComponent img={Outlaw} title="The Outlaw" />
+                                <ArchComponent img={archArr[6]} title="The Innocent" />
+                                <ArchComponent img={archArr[7]} title="The Jester" />
+                                <ArchComponent img={archArr[5]} title="The Outlaw" />
                             </div>
                             <div className='row gx-0 gy-0' id='bottomArch'>
-                                <ArchComponent img={Sage} title="The Sage" />
-                                <ArchComponent img={Caregiver} title="The Caregiver" />
-                                <ArchComponent img={Everyman} title="The Everyman" />
+                                <ArchComponent img={archArr[0]} title="The Sage" />
+                                <ArchComponent img={archArr[4]} title="The Caregiver" />
+                                <ArchComponent img={archArr[10]} title="The Everyman" />
                             </div>
                         </div>
                     </SwiperSlide>
