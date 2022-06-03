@@ -9,10 +9,14 @@
     min-height: 100vh;
 }
 
+#testContainer img {
+    width: 100%;
+}
+
 @media screen and (max-width:736px) {
     #door-parent {
         position: absolute;
-        /* background-color: red; */
+        background-color: red;
         z-index: 10000;
         width: 150px;
         right: 3%;
@@ -25,7 +29,7 @@
 @media screen and (min-width:737px) {
     #door-parent {
         position: absolute;
-        /* background-color: red; */
+        background-color: red;
         z-index: 10000;
         width: 150px;
         right: 8%;

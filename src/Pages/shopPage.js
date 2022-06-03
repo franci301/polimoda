@@ -14,22 +14,27 @@ function ShopPage() {
     const [gender, toggleGender] = useState(false);
     const [itemArr, setItemArr] = useState([]);
     const [filteredItems, setFilteredItems] = useState([]);
-    const [archetypeOrder, setArchOrder] = useState([]);
+    // const [archetypeOrder, setArchOrder] = useState([]);
     const [bool, setBool] = useState(true);
     const totNumFilters = 14;
     const numCatFilters = 11;
     const numGenderFilters = 3;
+    let archetypeOrder = [];
 
     useEffect(() => {
         get();
+        
     }, []);
+    
 
     async function get() {
         await getDetails().then((res) => {
             const access = res._document.data.value.mapValue.fields;
             if (access.archetypeOrder.arrayValue !== null) {
+                for (let index = 0; index < access.archetypeOrder.arrayValue.values.length; index++) {
+                    archetypeOrder.push(access.archetypeOrder.arrayValue.values[index].stringValue); 
+                }
                 getImagesHere();
-                setArchOrder(access.archetypeOrder.arrayValue);
             } else {
                 setBool(false);
             }
@@ -39,11 +44,15 @@ function ShopPage() {
     }
 
     async function getImagesHere() {
+        let tempArr = [];
         await getImages().then((res) => {
             for (const item in res) {
-                setItemArr(itemArr => [...itemArr, res[item]]);
-                setItemArr(itemArr => itemArr.sort((a, b) => a.groupName.localeCompare(b.groupName)));
+                tempArr.push(res[item]);
+                tempArr.sort((a, b) => a.groupName.localeCompare(b.groupName));
             }
+            setItemArr(tempArr.sort(function (a,b){
+                return archetypeOrder.indexOf(a.groupName) - archetypeOrder.indexOf(b.groupName);
+            }))
         });
     }
 
@@ -242,7 +251,7 @@ function ShopPage() {
                             <>
                                 {filteredItems.length === 0 ?
                                     itemArr.map((dict, index) => (
-                                        <ShopProducts key={index} img={dict.stringLoc} name={dict.designerName} type={dict.productType} price={dict.price} />
+                                        <ShopProducts key={index} img={dict.stringLoc} name={dict.groupName} type={dict.productType} price={dict.price} />
                                     )
                                     )
                                     :
