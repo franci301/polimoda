@@ -3,9 +3,9 @@ https://arkx-store.com
 PRIMARY OBJECTIVES:
 - [ ] Style shop page images
 - [ ] Nav bar not centred on large devices
-- [ ] Product page styling for mobile view —> slides to see each picture scroll down to see product descriptions —> required for only two products but style the product component anyway
 - [ ] On shop page sort by groupName AND archetypal order
-
+- [ ] im going to save the arch images on the database and then fetch them and then save to local storage
+- [ ] flip all images
 SECONDARY OBJECTIVES:
 - [ ] Check filters —> gender —> save —> category —> save == no change?? WHY
 - [ ] Add animations for filter headings

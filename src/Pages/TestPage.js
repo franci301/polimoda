@@ -370,6 +370,8 @@ function Test() {
             <button type="submit" className='btn btn-dark' onClick={resultsPage}>Explore your inner world</button>
             {/* my phone is 750 x 390 */}
             {/* Carolas phone is 800 x 331 */}
+            {/* 800 x 361 */}
+            {/* 778 x 364 */}
             {!(1200 <= width && width < 1420) || !(700 <= height && height <= 880) ? (
                 <>
                     {/* check if the device is a mobile */}

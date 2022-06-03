@@ -14,6 +14,10 @@
     padding-top: 5%;
 }
 
+.homePage img {
+    width: 100%;
+}
+
 
 /* #featuredImgContainer {
     width: 55%;
@@ -165,7 +169,7 @@ h4 {
     }
 }
 
-@media screen and (max-width:580px) {
+@media screen and (max-width:700px) {
     #archetypes-grid h5 {
         bottom: 12%;
         left: -19%;
@@ -207,6 +211,11 @@ h4 {
         margin-top: 40%;
         width: 80%;
         margin-left: 3%;
+    }
+    #archetypes-grid h5 {
+        bottom: 12%;
+        left: -20%;
+        font-size: 70%;
     }
 }
 
