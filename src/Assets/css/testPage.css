@@ -13,29 +13,83 @@
     width: 100%;
 }
 
-@media screen and (max-width:736px) {
+@media screen and (max-width:800px) {
     #door-parent {
         position: absolute;
-        background-color: red;
+        /* background-color: red; */
         z-index: 10000;
         width: 150px;
-        right: 3%;
-        top: 25%;
+        left: 3%;
+        top: 45%;
+        padding-right: 5%;
+        height: 90%;
+    }
+    #questions-container #choiceDiv {
+        width: 100%;
+        font-size: 1.8vw;
+    }
+    #start-div p {
+        position: absolute;
+        top: 68%;
+        left: 28%;
+        z-index: 1000;
+        color: white;
+        width: 40%;
+        font-size: 1.5vw;
+    }
+    /* #start-div h2 {
+        position: absolute;
+        top: 42%;
+        left: 28%;
+        z-index: 1000;
+        color: white;
+        width: 40%;
+    } */
+}
+
+@media screen and (min-width:1178px) {
+    #door-parent {
+        position: absolute;
+        /* background-color: red; */
+        z-index: 10000;
+        width: 150px;
+        left: 5%;
+        top: 15%;
         padding-right: 5%;
         height: 75%;
     }
+    #start-room-div p {
+        position: absolute;
+        top: 55%;
+        left: 28%;
+        z-index: 1000;
+        color: white;
+        width: 40%;
+    }
+    #start-room-div h2 {
+        position: absolute;
+        top: 42%;
+        left: 28%;
+        z-index: 1000;
+        color: white;
+        width: 40%;
+    }
+    /* #testCenterDiv h6 {
+        position: absolute;
+        left: 10%;
+        top: 5%;
+    } */
 }
 
-@media screen and (min-width:737px) {
-    #door-parent {
+@media screen and (min-width:1178px) and (max-width:1252px) {
+    #questions-container {
+        height: 30%;
         position: absolute;
-        background-color: red;
-        z-index: 10000;
-        width: 150px;
-        right: 8%;
-        top: 25%;
-        padding-right: 5%;
-        height: 75%;
+        z-index: 1000;
+        color: white;
+        /* left: 30%;
+        top: 65%;
+        width: 40%; */
     }
 }
 
@@ -44,7 +98,36 @@
     position: absolute;
     z-index: 1000;
     color: white;
+    /* left: 30%;
+    top: 65%;
+    width: 40%; */
 }
+
+#questions-container #choiceDiv {
+    margin-top: 5%;
+}
+
+#questions-container #choiceDiv {
+    width: 100%;
+}
+
+
+/* 1397 x 716 */
+
+
+/* 1178 x 775 */
+
+
+/* my phone is 750 x 390 */
+
+
+/* Carolas phone is 800 x 331 */
+
+
+/* 800 x 361 */
+
+
+/* 778 x 364 */
 
 
 /* #questions-container {
@@ -56,12 +139,6 @@
 #questions-container h6 {
     font-size: 1.8vw;
 }
-
-
-/* #questions-container #choiceDiv {
-    margin-top: 5%;
-    width: 100%;
-} */
 
 #questions-container h6 {
     text-align: justify;

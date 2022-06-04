@@ -39,12 +39,14 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
 function BlogPage() {
-    const [size, setSize] = useState(0);
+    const [width, setWidth] = useState(0);
+    const [height, setHeight] = useState(0);
     const [archArr,setArchArr] = useState([]);
     // sets the size of the screen to a variable
     useLayoutEffect(() => {
         function updateSize() {
-            setSize(window.innerWidth);
+            setWidth(window.innerWidth);
+            setHeight(window.innerHeight);
         }
         window.addEventListener('resize', updateSize);
         updateSize();
@@ -128,7 +130,7 @@ function BlogPage() {
                     </SwiperSlide>
                 </Swiper>
                 <br />
-                {size <= 700 ? (
+                {width <= 700 ? (
                     <Swiper
                         id='featured-swiper'
                         modules={[Navigation, Autoplay]}
@@ -137,7 +139,7 @@ function BlogPage() {
                         navigation={{ clickable: true }}
                     // autoplay={{ delay: 9500 }}
                     >
-                        {size <= 414 ? (
+                        {width <= 414 ? (
                             <>
                                 <SwiperSlide>
                                     <div className='d-flex flex-row justify-content-center' id='featuredContainer'>
@@ -303,7 +305,12 @@ function BlogPage() {
                         </SwiperSlide>
                     </Swiper>
                 )}
-
+                <div>
+                    <p>
+                        Width: {width}
+                    </p>
+                    <p>Height: {height}</p>
+                </div>
                 <div className='container' id="descriptionsContainer">
                     <div id="bottomContainer" className='row '>
                         <div className='col px-0 py-0'>

@@ -18,7 +18,6 @@ import { useNavigate } from 'react-router-dom';
 import { db } from "../firebase/firebase-config";
 import { updateDoc, doc } from 'firebase/firestore';
 import getArchetypes from '../firebase/getArchetypes.js';
-import duck from '../Assets/Images/duck.jpg';
 import caregiverRender from '../Assets/Images/renders/caregiver render.jpg';
 import loverRender from '../Assets/Images/renders/lover render.jpg';
 import explorerRender from '../Assets/Images/renders/explorer with rocks.jpg';
@@ -31,6 +30,7 @@ import sageRender from '../Assets/Images/renders/sage.jpg';
 import heroRender from '../Assets/Images/renders/hero.jpg';
 import creatorRender from '../Assets/Images/renders/Creator .jpg';
 import everymanRender from '../Assets/Images/renders/everyman 1.jpg';
+import startRoom from '../Assets/Images/renders/stanza.jpeg';
 import '../Assets/css/testPage.css';
 
 var answerArr = [
@@ -92,15 +92,14 @@ function Test() {
     const [value, setValue] = useState(0);
     const [counter, setCounter] = useState(0);
     const [imgStyles, setStyles] = useState({
-        left: '27%',
-        top: '43%',
+        left: '29%',
+        top: '42%',
         width: '40%',
-        color: 'white'
     });
-    const [choiceStyles, setChoiceStyles] = useState({ marginTop: '25%' })
+    const [choiceStyles, setChoiceStyles] = useState({ marginTop: '5%' })
     const [imgStylesMobile, setStylesMobile] = useState({
-        left: '27.5%',
-        top: '52%',
+        left: '29%',
+        top: '61%',
         width: '40%'
     });
     const [choiceStylesMobile, setChoiceStylesMobile] = useState({ marginTop: '15%', fontSize: '1.6vw' })
@@ -175,19 +174,23 @@ function Test() {
         if (value !== -1) {
             answerArr.push(value);
             setText('');
-            setValue(-1); // comment out to test quiz without answers
+            // setValue(-1); // comment out to test quiz without answers
             setQuestion(questions[counter]);
             setCounter(counter + 1);
             var radios = document.getElementsByName('choice');
             for (let index = 0; index < radios.length; index++) {
                 radios[index].checked = false;
             }
+            if (counter === 0){
+                setStyles(styleArr[0])
+                setStylesMobile(styleArrMobile[0])
+            }
             if (counter % 3 === 0 && counter !== 0) {
                 // setRoomId(room + 1)
                 setRoomCounter(roomCounter + 1)
                 setImg(roomImgs[roomCounter])
                 setStyles(styleArr[roomCounter])
-                setChoiceStyles(choiceStyleArr[roomCounter])
+                // setChoiceStyles(choiceStyleArr[roomCounter])
                 setStylesMobile(styleArrMobile[roomCounter])
                 setChoiceStylesMobile(choiceArrMobile[roomCounter])
             }
@@ -198,145 +201,163 @@ function Test() {
 
     // her resolution for the monitor (13 inches)
     const styleArr = [
-        {},
         {
             left: '32.5%',
             top: '45%',
             width: '40%'
         },
         {
-            left: '31%',
-            top: '32%',
-            width: '40%'
-        },
-        {
-            left: '30%',
-            top: '45%',
-            width: '40%'
-        }, {
-            left: '32%',
+            left: '28%',
             top: '45%',
             width: '40%'
         },
+        // colourfull grid room
         {
-            left: '32%',
-            top: '45%',
+            left: '29%',
+            top: '40%',
             width: '40%'
         },
+        // butterfly room
         {
-            left: '32%',
-            top: '45%',
+            left: '29%',
+            top: '47%',
             width: '40%'
         },
+        // desert/ tree room
         {
-            left: '32%',
-            top: '45%',
+            left: '29%',
+            top: '47%',
             width: '40%'
         },
+        // green panel room
         {
-            left: '32%',
-            top: '45%',
+            left: '29%',
+            top: '47%',
             width: '40%'
         },
+        // barbed wire room
         {
-            left: '32%',
-            top: '45%',
+            left: '29%',
+            top: '47%',
             width: '40%'
         },
+        // blue doorway
         {
-            left: '31.5%',
-            top: '38%',
+            left: '29%',
+            top: '47%',
             width: '40%'
         },
+        // metal room
         {
-            left: '31.5%',
-            top: '38%',
+            left: '29%',
+            top: '47%',
+            width: '40%'
+        },
+        // statues on right room
+        {
+            left: '29%',
+            top: '47%',
+            width: '40%'
+        },
+        // nature room
+        {
+            left: '29%',
+            top: '40%',
+            width: '40%'
+        },
+        // final room
+        {
+            left: '29%',
+            top: '40%',
             width: '40%'
         }
 
     ]
-    const choiceStyleArr = [
-        {},
+    // const choiceStyleArr = [
+    //     {},
+    //     {
+    //         marginTop: '30%'
+    //     },
+    //     {
+    //         marginTop: '35%'
+    //     },
+    //     {
+    //         marginTop: '35%'
+    //     },
+    //     {
+    //         marginTop: '30%'
+    //     },
+    //     {
+    //         marginTop: '30%'
+    //     },
+    //     {
+    //         marginTop: '30%'
+    //     },
+    //     {
+    //         marginTop: '30%'
+    //     },
+    //     {
+    //         marginTop: '30%'
+    //     },
+    //     {
+    //         marginTop: '30%'
+    //     },
+    //     {
+    //         marginTop: '30%'
+    //     },
+    //     {
+    //         marginTop: '30%'
+    //     }
+    // ]
+    const styleArrMobile = [
         {
-            marginTop: '30%'
-        },
-        {
-            marginTop: '35%'
-        },
-        {
-            marginTop: '35%'
-        },
-        {
-            marginTop: '30%'
-        },
-        {
-            marginTop: '30%'
-        },
-        {
-            marginTop: '30%'
-        },
-        {
-            marginTop: '30%'
-        },
-        {
-            marginTop: '30%'
-        },
-        {
-            marginTop: '30%'
-        },
-        {
-            marginTop: '30%'
-        },
-        {
-            marginTop: '30%'
-        }
-    ]
-    const styleArrMobile = [{}, {
-
-        left: '32%',
-        top: '52%',
+            left: '32%',
+            top: '60%',
+            width: '40%'
+    }, {
+        left: '27%',
+        top: '65%',
         width: '40%'
-
     },
     {
-        left: '32%',
-        top: '45%',
+        left: '28%',
+        top: '52%',
         width: '40%'
     }, {
         left: '30%',
+        top: '60%',
+        width: '40%'
+    }, {
+        left: '28%',
+        top: '60%',
+        width: '40%'
+    }, {
+        left: '28%',
+        top: '60%',
+        width: '40%'
+    }, {
+        left: '28%',
+        top: '60%',
+        width: '40%'
+    }, {
+        left: '27%',
+        top: '60%',
+        width: '40%'
+    }, {
+        left: '28%',
+        top: '60%',
+        width: '40%'
+    }, {
+        left: '28%',
+        top: '60%',
+        width: '40%'
+    }, {
+        left: '28%',
         top: '50%',
         width: '40%'
     }, {
-        left: '32%',
+        left: '28%',
         top: '50%',
-        width: '40%'
-    }, {
-        left: '32%',
-        top: '50%',
-        width: '40%'
-    }, {
-        left: '32%',
-        top: '50%',
-        width: '40%'
-    }, {
-        left: '32%',
-        top: '50%',
-        width: '40%'
-    }, {
-        left: '32%',
-        top: '50%',
-        width: '40%'
-    }, {
-        left: '32%',
-        top: '50%',
-        width: '40%'
-    }, {
-        left: '30%',
-        top: '45%',
-        width: '40%'
-    }, {
-        left: '30%',
-        top: '45%',
         width: '40%'
     }
     ]
@@ -357,7 +378,7 @@ function Test() {
     return (
         <div >
             <ResponsiveNav />
-            <div className='d-flex flex-row justify-content-center'>
+            {/* <div className='d-flex flex-row justify-content-center'>
                 <p>
                     Width:
                     {width}
@@ -366,26 +387,24 @@ function Test() {
                     Height:
                     {height}
                 </p>
-            </div>
+            </div> */}
             {/* my phone is 750 x 390 */}
             {/* Carolas phone is 800 x 331 */}
             {/* 800 x 361 */}
             {/* 778 x 364 */}
-            {!(1200 <= width && width < 1420) || !(700 <= height && height <= 880) ? (
+            {!(1178 <= width && width < 1420) || !(700 <= height && height <= 880) ? (
                 <>
                     {/* check if the device is a mobile */}
-                    {(width <= 414 && width >= 319) || (width <= 736 && width >= 568) ? (
+                    {(width <= 390 && width >= 319) || (width <= 800 && width >= 568) ? (
                         <>{width > height ? (
                             <><div id='testContainer'>
                                 {counter === 0 ? (
-                                    <img src={duck} alt="" />
-
+                                    <img src={startRoom} alt="" />
                                 ) : (
-
                                     <img src={roomImg} alt="" />
-
                                 )}
-                                <div id='questions-container' style={imgStylesMobile} >
+
+                                <div id='questions-container' style={imgStylesMobile}>
                                     <div id='testCenterDiv'>
                                         {counter === questions.length + 1 ? (
                                             <div>End Of Quiz</div>
@@ -394,9 +413,10 @@ function Test() {
                                         )}
                                     </div>
                                     <div>
-                                        <div className='d-flex flex-col justify-content-center' id='choiceDiv' style={choiceStylesMobile}>
+                                        {/* style={choiceStylesMobile} */}
+                                        <div className='d-flex flex-col justify-content-center' id='choiceDiv' >
                                             {question === 'Archetypes of Power Discovery' || counter > questions.length ? (
-                                                <div></div>
+                                               null
                                             ) : (
                                                 <div>
                                                     <div id='test'>
@@ -435,9 +455,12 @@ function Test() {
                                     </div>
                                 </div>
                                 {question === 'Archetypes of Power Discovery' ? (
-                                    <div className='px-5'>
-                                        <p>Archetypes of Power Discovery is a Jungian Archetypes based personality test, designed to help you better understand yourself and your identity, as well as your source of power to achieve stylistic power personalization. By spending approximately 7 minutes to complete Archetypes of Power Discovery, you will become aware of your 3 dominant archetypes and a personalized product offering based on all the twelve archetypes, suitable for your personality.</p>
-                                        <button type="submit" className='btn btn-dark' onClick={increment}>Explore your inner world</button>
+                                    <div id='start-div'>
+                                        <p>Archetypes of Power Discovery is a Jungian Archetypes based personality test, designed to help you better understand yourself and your identity, as well as your source of power to achieve stylistic power personalization. By spending approximately 7 minutes to complete Archetypes of Power Discovery, you will become aware of your 3 dominant archetypes and a personalized product offering based on all the twelve archetypes, suitable for your personality. <br /> Click on the doorway to explore your inner world.  </p>
+                                        {/* <button type="submit" className='btn btn-dark' onClick={increment}>Explore your inner world</button> */}
+                                        <div id='door-parent' onClick={increment}>
+                                            &nbsp;
+                                        </div>
                                     </div>
                                 ) : (
                                     <div id='door-parent' onClick={increment}>
@@ -463,14 +486,15 @@ function Test() {
             ) : (
                 <div id='testContainer'>
                     {counter === 0 ? (
-                        <img src={duck} alt="" />
+                        <img src={startRoom} alt="" />
 
                     ) : (
 
                         <img src={roomImg} alt="" />
 
                     )}
-                    <div id='questions-container' style={imgStyles} >
+
+                    <div id='questions-container' style={imgStyles}>
                         <div id='testCenterDiv'>
                             {counter === questions.length + 1 ? (
                                 <div>End Of Quiz</div>
@@ -479,7 +503,8 @@ function Test() {
                             )}
                         </div>
                         <div>
-                            <div className='d-flex flex-col justify-content-center' id='choiceDiv' style={choiceStyles}>
+                            {/* style={choiceStyles} */}
+                            <div className='d-flex flex-col justify-content-center' id='choiceDiv' >
                                 {question === 'Archetypes of Power Discovery' || counter > questions.length ? (
                                     <div></div>
                                 ) : (
@@ -520,9 +545,12 @@ function Test() {
                         </div>
                     </div>
                     {question === 'Archetypes of Power Discovery' ? (
-                        <div className='px-5'>
-                            <p>Archetypes of Power Discovery is a Jungian Archetypes based personality test, designed to help you better understand yourself and your identity, as well as your source of power to achieve stylistic power personalization. By spending approximately 7 minutes to complete Archetypes of Power Discovery, you will become aware of your 3 dominant archetypes and a personalized product offering based on all the twelve archetypes, suitable for your personality.</p>
-                            <button type="submit" className='btn btn-dark' onClick={increment}>Explore your inner world</button>
+                        <div id='start-room-div'>
+                            <p>Archetypes of Power Discovery is a Jungian Archetypes based personality test, designed to help you better understand yourself and your identity, as well as your source of power to achieve stylistic power personalization. By spending approximately 7 minutes to complete Archetypes of Power Discovery, you will become aware of your 3 dominant archetypes and a personalized product offering based on all the twelve archetypes, suitable for your personality.  <br /> Click on the doorway to explore your inner world.</p>
+                            {/* <button type="submit" className='btn btn-dark' onClick={increment}>Explore your inner world</button> */}
+                            <div id='door-parent' onClick={increment}>
+                                &nbsp;
+                            </div>
                         </div>
                     ) : (
                         <div id='door-parent' onClick={increment}>

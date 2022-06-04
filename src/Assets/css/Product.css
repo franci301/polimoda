@@ -31,6 +31,10 @@
     padding-bottom: 4%;
 }
 
+#productAd button {
+    background-color: var(--red);
+}
+
 #textContainerProduct {
     text-align: left;
     margin-left: 5%;
