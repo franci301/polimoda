@@ -1,3 +1,4 @@
+import { useState, useLayoutEffect, useEffect,lazy } from 'react';
 import Footer from '../Layouts/footer.js';
 import TestAd from '../Layouts/testAd.js';
 import getArchImgs from '../firebase/getArchImgs.js';
@@ -26,13 +27,12 @@ import Charlie from '../Assets/Images/product-featured/PRODUCT FEATURED - Charli
 import Kusikoch from '../Assets/Images/product-featured/PRODUCT FEATURED - Kusikoch (Nylon Trouser Red) 490€.webp'
 import Limi from '../Assets/Images/product-featured/PRODUCT FEATURED - Limi Feu (Chiffon B Dress With Vest) 700€.jpg'
 import Uma from '../Assets/Images/product-featured/PRODUCT FEATURED - Uma Wang (Floral Single Breasted Blazer) 1720€.webp'
-import Vitelli from '../Assets/Images/product-featured/PRODUCT FEATURED - Vitelli (Doomboh Leggings Pluto) 420€.jpeg'
-import Vitelli1 from '../Assets/Images/product-featured/PRODUCT FEATURED - Vitelli (Doomboh Leggings Pluto) 420€.jpeg(1).jpeg'
-import Vitelli2 from '../Assets/Images/product-featured/PRODUCT FEATURED - Vitelli (Doomboh Leggings Pluto) 420€.jpeg(2).jpeg'
-import Vitelli3 from '../Assets/Images/product-featured/PRODUCT FEATURED - Vitelli (Doomboh Leggings Pluto) 420€.jpeg.jpeg'
+import img from '../Assets/Images/product-featured/PRODUCT FEATURED - Vitelli (Doomboh Leggings Pluto) 420€.jpeg'
+import img1 from '../Assets/Images/product-featured/PRODUCT FEATURED - Vitelli (Doomboh Leggings Pluto) 420€.jpeg(1).jpeg'
+import img2 from '../Assets/Images/product-featured/PRODUCT FEATURED - Vitelli (Doomboh Leggings Pluto) 420€.jpeg(2).jpeg'
+import img3 from '../Assets/Images/product-featured/PRODUCT FEATURED - Vitelli (Doomboh Leggings Pluto) 420€.jpeg.jpeg'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper';
-import { useState, useLayoutEffect, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../Assets/css/blogcss.css'
 import 'swiper/css';
@@ -52,12 +52,26 @@ function BlogPage() {
         updateSize();
         return () => window.removeEventListener('resize', updateSize);
     }, []);
+    useEffect(() => {
+        let tempArch = []
+        getArchImgs().then((res)=>{
+            for (let index = 0; index < res.length; index++) {
+                tempArch.push([res[index].imgRef])
+            }
+            setArchArr(tempArch);
+        })
+    },[])
+
 
     const navigate = useNavigate();
     function route() {
         navigate('/ProductPage/*', {
             state: {
-                imgs: { Vitelli, Vitelli1, Vitelli2, Vitelli3 }, name: 'Vitelli', description: 'Flared felted woven mohair, wool, and silk-blend trousers in multicolor', details: "Through revolutionary fabrics, a cosmic aesthetic, Italian youth culture inspiration and challenging co-labs, Vitelli’s 100% Italian knitwear brand aims to refresh vintage imagery, foster eco-friendly fashion and investigate authentic moments of stile italiano through the filter of the present.", price: '€420', type: 'Multicolor Doomboh Trousers', manufacturingDetails: ['Mid-rise', 'Concealed zip fastening at outseam','Fully lined','20% wool, 20% mohair, 20% polyamide, 20% polyester, 20% silk', ' Made in Italy'], colour:'Pluto'} });
+                imgs: { img, img1, img2, img3 }, name: 'Vitelli', description: 'Flared felted woven mohair, wool, and silk-blend trousers in multicolor', details: "Through revolutionary fabrics, a cosmic aesthetic, Italian youth culture inspiration and challenging co-labs, Vitelli’s 100% Italian knitwear brand aims to refresh vintage imagery, foster eco-friendly fashion and investigate authentic moments of stile italiano through the filter of the present.", price: '€420', type: 'Multicolor Doomboh Trousers', manufacturingDetails: ['Mid-rise', 'Concealed zip fastening at outseam','Fully lined','20% wool, 20% mohair, 20% polyamide, 20% polyester, 20% silk', ' Made in Italy'], colour:'Pluto'} });
+    }
+
+    function route2(name){
+        window.location.href = '/' + name;
     }
 
     // const archArr = [Creator,Explorer,Hero,Innocent,Outlaw,Ruler,Caregiver,Everyman,Jester,Magician,Sage,Lover];
@@ -69,21 +83,6 @@ function BlogPage() {
     //         })
     //     }
     // }
-
-    useEffect(() => {
-        let tempArch = []
-        getArchImgs().then((res)=>{
-            console.log(res);
-            for (let index = 0; index < res.length; index++) {
-                tempArch.push([res[index].imgRef])
-            }
-            setArchArr(tempArch);
-        })
-    },[])
-
-    function route2(name){
-            window.location.href = '/' + name;
-        }
 
     return (
             <div className="homePage">
@@ -98,7 +97,6 @@ function BlogPage() {
                     spaceBetween={50}
                     slidesPerView={1}
                     navigation={{ clickable: true }}
-                    autoplay={{ delay: 8000 }}
                 >
                     <SwiperSlide>
                         <div id='archetypes-grid' className='container '>
@@ -137,7 +135,6 @@ function BlogPage() {
                         spaceBetween={50}
                         slidesPerView={1}
                         navigation={{ clickable: true }}
-                    // autoplay={{ delay: 9500 }}
                     >
                         {width <= 414 ? (
                             <>
@@ -155,7 +152,7 @@ function BlogPage() {
                                 <SwiperSlide>
                                     <div id='featuredImgContainer' className='d-flex flex-row justify-content-center'>
                                         <div>
-                                            <img src={Vitelli} alt="" onClick={route} className='vitelli-single' />
+                                            <img src={img} alt="" onClick={route} className='vitelli-single' />
                                             <div id='featuredTxt'>
                                                 <h4>Vitelli</h4>
                                                 <p>Doombag Leggings Pluto</p>
@@ -217,7 +214,7 @@ function BlogPage() {
                                             </div>
                                         </div>
                                         <div>
-                                            <img id='featuredImg' src={Vitelli} alt="" onClick={route} className='vitelli-double' />
+                                            <img id='featuredImg' src={img} alt="" onClick={route} className='vitelli-double' />
                                             <div id='featuredTxt'>
                                                 <h4>Vitelli</h4>
                                                 <p>Doombag Leggings Pluto</p>
@@ -273,7 +270,7 @@ function BlogPage() {
                                         </div>
                                     </div>
                                     <div>
-                                        <img id='featuredImg' src={Vitelli} alt="" onClick={route} className='vitelli-triple' />
+                                        <img id='featuredImg' src={img} alt="" onClick={route} className='vitelli-triple' />
                                         <div id='featuredTxt'>
                                             <h4>Vitelli</h4>
                                             <p>Doombag Leggings Pluto</p>

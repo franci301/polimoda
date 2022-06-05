@@ -2,7 +2,7 @@ import ResponsiveNav from '../Layouts/responsiveNav.js';
 import Footer from '../Layouts/footer.js';
 import TestAd from '../Layouts/testAd.js';
 import { useLocation } from 'react-router-dom';
-import { useState, useLayoutEffect } from 'react';
+import { useState,useEffect, useLayoutEffect } from 'react';
 import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import '../Assets/css/Product.css';
@@ -10,10 +10,13 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 function ProductPage() {
     const location = useLocation();
-    const [mainImg, setMainImg] = useState(location.state.imgs.Vitelli);
-    const [sideImgs, setSideImgs] = useState([location.state.imgs.Vitelli1, location.state.imgs.Vitelli2, location.state.imgs.Vitelli3]);
+    const [mainImg, setMainImg] = useState(location.state.imgs.img);
+    const [sideImgs, setSideImgs] = useState([location.state.imgs.img1, location.state.imgs.img2, location.state.imgs.img3]);
+    const [size, setSize] = useState(0);
+    const [className,setClassName] = useState('');
+    const [sideImgClass,setSideImgClass] = useState('');
+    
     let ignore = true;
-
     if (location.state != null) {
         ignore = false;
     }
@@ -26,12 +29,10 @@ function ProductPage() {
                 sideImgs[index] = oldMainImg;
                 break;
             }
-
         }
         setSideImgs([...sideImgs, oldMainImg]);
     }
 
-    const [size, setSize] = useState(0);
     // sets the size of the screen to a variable
     useLayoutEffect(() => {
         function updateSize() {
@@ -42,7 +43,16 @@ function ProductPage() {
         return () => window.removeEventListener('resize', updateSize);
     }, []);
 
-    console.log(size)
+    useEffect(()=>{
+        if(location.state.type === 'Faux Leather Midi Dress'){
+            setClassName('single-faux');
+            setSideImgClass('div side-img-faux');
+        }else{
+            setClassName('single-vitelli');
+            setSideImgClass('div side-img-vitelli');
+        }
+    },[])
+
     return (
         <div>
             <ResponsiveNav />
@@ -52,13 +62,13 @@ function ProductPage() {
                     (
                         <div className="outer container" id='bigContainer'>
                             <div className="container flex-child" id='bigContainer'>
-                                <div className="div side-img">
+                                <div className={sideImgClass}>
                                     <img src={sideImgs[0]} onClick={() => handleSet(sideImgs[0])} />
                                 </div>
-                                <div className="div side-img">
+                                <div className={sideImgClass}>
                                     <img src={sideImgs[1]} onClick={() => handleSet(sideImgs[1])} />
                                 </div>
-                                <div className="div side-img">
+                                <div className={sideImgClass}>
                                     <img src={sideImgs[2]} onClick={() => handleSet(sideImgs[2])} />
                                 </div>
                             </div>
@@ -71,41 +81,38 @@ function ProductPage() {
                                             {mainImg !== undefined ? (
                                                 <img src={mainImg} id='main' />
                                             ) : (
-                                                <img id='main' src={location.state.imgs.Vitelli} />
+                                                <img id='main' src={location.state.imgs.img} />
                                             )}
                                         </>
                                     )}
-
                             </div>
                         </div>
                     ) : (
                         <div>
-                            {/* <BlogShop obj={[[pamolo, pamolo1, pamolo2, pamolo3], ['Pamolo Spain'], ['Red Floral Maxi Kaftan', 'Red Floral Cargo Trousers', 'Blue Psico Romeo Jacket', 'Aitor Blue Shirt'], ['6554€', '454€', '454€', '353€']]} /> */}
                             <Swiper
                                 id='featured-swiper'
                                 modules={[Navigation]}
                                 spaceBetween={50}
                                 slidesPerView={1}
-                                navigation={{ clickable: true }}>
-
+                                navigation={{ clickable:true}}>
                                 <SwiperSlide>
-                                    <div id='featuredImgContainer' className='d-flex flex-row justify-content-center align-items-center'>
-                                        <img src={location.state.imgs.Vitelli} className='single-vitelli'/>
+                                    <div id='productImgContainer' className='d-flex flex-row justify-content-center align-items-center'>
+                                        <img src={location.state.imgs.img} className={className}/>
                                     </div>
                                 </SwiperSlide>
                                 <SwiperSlide>
-                                    <div id='featuredImgContainer' className='d-flex flex-row justify-content-center align-items-center'>
-                                        <img src={location.state.imgs.Vitelli1} className='single-vitelli'/>
+                                    <div id='productImgContainer' className='d-flex flex-row justify-content-center align-items-center'>
+                                        <img src={location.state.imgs.img1} className={className}/>
                                     </div>
                                 </SwiperSlide>
                                 <SwiperSlide>
-                                    <div id='featuredImgContainer' className='d-flex flex-row justify-content-center align-items-center'>
-                                        <img src={location.state.imgs.Vitelli2} className='single-vitelli'/>
+                                    <div id='productImgContainer' className='d-flex flex-row justify-content-center align-items-center'>
+                                        <img src={location.state.imgs.img2} className={className}/>
                                     </div>
                                 </SwiperSlide>
                                 <SwiperSlide>
-                                    <div id='featuredImgContainer' className='d-flex flex-row justify-content-center align-items-center'>
-                                        <img src={location.state.imgs.Vitelli3} className='single-vitelli'/>
+                                    <div id='productImgContainer' className='d-flex flex-row justify-content-center align-items-center'>
+                                        <img src={location.state.imgs.img3} className={className}/>
                                     </div>
                                 </SwiperSlide>
                             </Swiper>

@@ -199,7 +199,7 @@ h4 {
         height: 100%;
     }
     .vitelli-single {
-        width: 30%;
+        width: 40% !important;
     }
     .andrej-single img {
         width: 50% !important;

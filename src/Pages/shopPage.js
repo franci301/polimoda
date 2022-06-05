@@ -43,6 +43,10 @@ function ShopPage() {
         });
     }
 
+
+
+
+
     async function getImagesHere() {
         let tempArr = [];
         await getImages().then((res) => {
@@ -117,7 +121,7 @@ function ShopPage() {
     function toggleFilter() {
         if (!on) {
             var doc = document.getElementById('cols');
-            doc.className = 'row row-cols-4 align-items-start';
+            doc.className = 'row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 row-cols-1 align-items-start';
             let filters = document.getElementById('innerUl');
             filters.style.height = '200px';
             filters.style.opacity = 1;
@@ -126,7 +130,7 @@ function ShopPage() {
             filters.style.transform = 'translateY(0)';
         } else {
             var doc = document.getElementById('cols');
-            doc.className = 'row row-cols-5 align-items-start';
+            doc.className = 'row row-cols-lg-5 row-cols-md-2 row-cols-sm-1 row-cols-1 align-items-start';
             var filters = document.getElementById('innerUl');
             filters.style.height = 0;
             filters.style.opacity = 0;
@@ -190,7 +194,7 @@ function ShopPage() {
             <h2>SHOP YOUR PERSONALIZED SELECTION</h2>
             {/* <button onClick={upload}>upload</button> */}
             <br />
-            <div className='d-flex flex-row px-5 justify-content-end' id='shopPageContainer'>
+            <div className='d-flex flex-row px-lg-5 justify-content-end' id='shopPageContainer'>
                 <ul className="menu" id='outerUl'>
                     <li id='firstLi'>
                         <label className='d-flex flex-row'>
@@ -242,7 +246,7 @@ function ShopPage() {
                     </li>
                 </ul>
                 <div className='container sticky-right'>
-                    <div id='cols' className='row row-cols-5 align-items-start'>
+                    <div id='cols' className='row row-cols-lg-5 row-cols-md-2 row-cols-sm-1 row-cols-1 align-items-start'>
                         {bool === false ? (
                             <div id='testContainerShop'>
                                 <TestAd />
@@ -251,9 +255,8 @@ function ShopPage() {
                             <>
                                 {filteredItems.length === 0 ?
                                     itemArr.map((dict, index) => (
-                                        <ShopProducts key={index} img={dict.stringLoc} name={dict.groupName} type={dict.productType} price={dict.price} />
-                                    )
-                                    )
+                                        <ShopProducts key={index} img={dict.stringLoc} name={dict.designerName} type={dict.productType} price={dict.price} />
+                                    ))
                                     :
                                     filteredItems.map((dict, index) => (
                                         <ShopProducts key={index} img={dict.stringLoc} name={dict.designerName} type={dict.productType} price={dict.price} />

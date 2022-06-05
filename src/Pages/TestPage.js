@@ -181,7 +181,7 @@ function Test() {
             for (let index = 0; index < radios.length; index++) {
                 radios[index].checked = false;
             }
-            if (counter === 0){
+            if (counter === 0) {
                 setStyles(styleArr[0])
                 setStylesMobile(styleArrMobile[0])
             }
@@ -314,52 +314,52 @@ function Test() {
             left: '32%',
             top: '60%',
             width: '40%'
-    }, {
-        left: '27%',
-        top: '65%',
-        width: '40%'
-    },
-    {
-        left: '28%',
-        top: '52%',
-        width: '40%'
-    }, {
-        left: '30%',
-        top: '60%',
-        width: '40%'
-    }, {
-        left: '28%',
-        top: '60%',
-        width: '40%'
-    }, {
-        left: '28%',
-        top: '60%',
-        width: '40%'
-    }, {
-        left: '28%',
-        top: '60%',
-        width: '40%'
-    }, {
-        left: '27%',
-        top: '60%',
-        width: '40%'
-    }, {
-        left: '28%',
-        top: '60%',
-        width: '40%'
-    }, {
-        left: '28%',
-        top: '60%',
-        width: '40%'
-    }, {
-        left: '28%',
-        top: '50%',
-        width: '40%'
-    }, {
-        left: '28%',
-        top: '50%',
-        width: '40%'
-    }
+        }, {
+            left: '27%',
+            top: '65%',
+            width: '40%'
+        },
+        {
+            left: '28%',
+            top: '52%',
+            width: '40%'
+        }, {
+            left: '30%',
+            top: '60%',
+            width: '40%'
+        }, {
+            left: '28%',
+            top: '60%',
+            width: '40%'
+        }, {
+            left: '28%',
+            top: '60%',
+            width: '40%'
+        }, {
+            left: '28%',
+            top: '60%',
+            width: '40%'
+        }, {
+            left: '27%',
+            top: '60%',
+            width: '40%'
+        }, {
+            left: '28%',
+            top: '60%',
+            width: '40%'
+        }, {
+            left: '28%',
+            top: '60%',
+            width: '40%'
+        }, {
+            left: '28%',
+            top: '50%',
+            width: '40%'
+        }, {
+            left: '28%',
+            top: '50%',
+            width: '40%'
+        }
     ]
     const choiceArrMobile = [{},
     { marginTop: '15%', fontSize: '1.6vw' },
@@ -416,7 +416,7 @@ function Test() {
                                         {/* style={choiceStylesMobile} */}
                                         <div className='d-flex flex-col justify-content-center' id='choiceDiv' >
                                             {question === 'Archetypes of Power Discovery' || counter > questions.length ? (
-                                               null
+                                                null
                                             ) : (
                                                 <div>
                                                     <div id='test'>
@@ -450,7 +450,6 @@ function Test() {
                                                 </div>
                                             )}
                                         </div>
-
                                         <p className="text-danger">{text}</p>
                                     </div>
                                 </div>
@@ -477,10 +476,14 @@ function Test() {
                                 )}
                             </div></>
                         ) : (
-                            <>ROTATE DEVICE</>
+                            <div id='testContainer'>
+                            <p>ROTATE DEVICE</p>
+                        </div>
                         )}</>
                     ) : (
-                        <>INCOMPATIBLE DEVICE</>
+                        <div id='testContainer'>
+                            <p>INCOMPATIBLE DEVICE</p>
+                        </div>
                     )}
                 </>
             ) : (

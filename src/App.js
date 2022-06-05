@@ -6,7 +6,7 @@ import {
   Route
 } from 'react-router-dom';
 import { Helmet } from "react-helmet";
-import BlogPage from './Pages/BlogPage.js';
+import BlogPage from './Pages/BlogPage.jsx';
 import HomePage from './Pages/HomePage.js';
 import ProfilePage from './Pages/MyProfile.js';
 import MyOrders from './Pages/MyOrders.js';
