@@ -7,7 +7,6 @@ function home() {
 }
 function HomeNav() {
     var loggedIn;
-    const navigate = useNavigate();
     var userLogged = localStorage.getItem('userLogin');
     if(userLogged){
         loggedIn = true;
@@ -21,9 +20,6 @@ function HomeNav() {
     const linkStyleLogin ={
         textDecoration: "none",
         color:'#453127'
-    }
-    function route(){
-        navigate('/HomePage/*')
     }
     return (
         <nav className="navbar navbar-expand navbar sticky-top py-3">
