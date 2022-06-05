@@ -1,8 +1,7 @@
 import ResponsiveNav from '../Layouts/responsiveNav.js';
 import Footer from '../Layouts/footer.js';
 import BlogShop from '../Layouts/BlogShop.js';
-import duck from '../Assets/Images/duck.jpg'
-import topImg from '../Assets/Images/Meet Palomo Spain.png';
+import topImg from '../Assets/Images/blog-images/Meet Palomo Spain.png';
 import pamolo from '../Assets/Images/blog-images/2nd ARTICLE - Palomo Spain (Red Floral Maxi Kaftan) 6554€.jpeg';
 import pamolo1 from '../Assets/Images/blog-images/2nd ARTICLE - Palomo Spain (Red Floral Cargo Trousers) 454€.jpeg';
 import pamolo2 from '../Assets/Images/blog-images/2nd ARTICLE - Palomo Spain (Blue Psico Romeo Jacket) 454€.jpeg';

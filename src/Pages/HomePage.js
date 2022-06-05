@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import HomeNav from '../Layouts/HomeNav';
 import Footer from '../Layouts/footer';
-import duck from '../Assets/Images/duck.jpg';
 import testImg from '../Assets/Images/Homepage.jpeg';
 import homeBlog from '../Assets/Images/Homepage  Blog2.jpg';
 import '../Assets/css/home.css';

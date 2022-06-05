@@ -17,8 +17,8 @@ import Jester from '../Assets/Images/arch-images/The Jester 1.jpg';
 import Magician from '../Assets/Images/arch-images/The Magician.jpg';
 import Sage from '../Assets/Images/arch-images/The Sage.jpg';
 import Lover from '../Assets/Images/arch-images/The Lover.jpg';
-import bottomImg2 from '../Assets/Images/Meet Palomo Spain.png';
-import bottomImg1 from '../Assets/Images/BE A MAGICIAN JUST LIKE VITELLI.jpeg'
+import bottomImg2 from '../Assets/Images/blog-images/Meet Palomo Spain.png';
+import bottomImg1 from '../Assets/Images/blog-images/BE A MAGICIAN JUST LIKE VITELLI.jpeg'
 import Arlington from '../Assets/Images/product-featured/PRODUCT FEATURED - 16Arlington (Pendal Feather Top) 1095€.webp'
 import AVAVAV from '../Assets/Images/product-featured/PRODUCT FEATURED - AVAVAV (Puff Dress Turquoise Purple Acqua) 500€.webp'
 import Andrej from '../Assets/Images/product-featured/PRODUCT FEATURED - Andrej Gronau (Exclusive Multicolor Check Lurex Dress) 1080€.jpeg'

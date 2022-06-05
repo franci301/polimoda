@@ -5,14 +5,11 @@ import topLeft from '../Assets/Images/blog-images/1st ARTICLE - BE A MAGICIAN JU
 import topRight1 from '../Assets/Images/blog-images/1st ARTICLE - BE A MAGICIAN JUST LIKE VITELLI(1).jpg'
 import topRight2 from '../Assets/Images/blog-images/1st ARTICLE - BE A MAGICIAN JUST LIKE VITELLI(2).jpg'
 import middle from '../Assets/Images/blog-images/1st ARTICLE - BE A MAGICIAN JUST LIKE VITELLI(3).jpg'
-import vitelli1 from '../Assets/Images/blog-images/1st ARTICLE - Vitelli (Exclusive Brown Netted Explode Sweater) 600€.jpeg';
 import vitelli2 from '../Assets/Images/blog-images/1st ARTICLE - Vitelli (Grey _ Red Doomboh Hoodie) 511€.jpeg';
 import vitelli3 from '../Assets/Images/blog-images/1st ARTICLE - Vitelli (Multicolor Cropped Jacket) 330€.webp';
-import vitelli4 from '../Assets/Images/blog-images/1st ARTICLE - Vitelli (Off-White _ Beige Siberian Cat Dress) 1165€.webp';
 import '../Assets/css/blogscss.css';
 import {useState, useLayoutEffect} from 'react';
-import resized1 from '../Assets/Images/1st ARTICLE - Vitelli (Exclusive Brown resized) 600€.jpeg';
-import resized2 from '../Assets/Images/1st ARTICLE - Vitelli (Grey _ Red resized) 511€.jpeg';
+import resized1 from '../Assets/Images/blog-images/1st ARTICLE - Vitelli (Exclusive Brown resized) 600€.jpeg';
 import resized3 from '../Assets/Images/blog-images/resized.webp';
 function VitelliPage() {
     const [size, setSize] = useState(window.innerWidth);
@@ -64,7 +61,6 @@ function VitelliPage() {
                     <img src={middle} alt="" id='main-img' />
                 </div>
                 <h2 id='shop-vitelli' className='d-flex flex-row justify-content-start'>SHOP VITELLI</h2>
-
                 <div id='vitelli-blog-shop'>
                     <BlogShop obj={[[resized1, vitelli2, vitelli3, resized3], ['Vitelli'], ['Exclusive Brown Netted Explode Sweater', 'Grey Red Doomboh Hoodie', 'Multicolor Cropped Jacket', 'Off-White Beige Siberian Cat Dress'], ['600€', '511€', '330€', '1165€']]} />
                 </div>

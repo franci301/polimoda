@@ -1,4 +1,3 @@
-import duck from '../Assets/Images/duck.jpg'
 import FeaturedImages from '../Layouts/featuredImages.js';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useState, useLayoutEffect, useEffect } from 'react';
