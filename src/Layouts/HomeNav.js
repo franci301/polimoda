@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../Assets/css/nav.css';
 import { Link } from 'react-router-dom';
 import logo from '../Assets/Images/logo.png';
+
 function home() {
     window.location.href = '/HomePage/*'
 }

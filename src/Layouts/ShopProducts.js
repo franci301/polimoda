@@ -1,12 +1,15 @@
 import '../Assets/css/shopPage.css';
+import { useNavigate } from 'react-router-dom';
+import img1 from '../Assets/Images/product-featured/PERSONALITY TEST PRODUCT PAGE - Peter Do (Faux Leather Midi Dress) 2115€.webp';
+import img2 from '../Assets/Images/product-featured/PERSONALITY TEST PRODUCT PAGE - Peter Do (Faux Leather Midi Dress) 2115€.webp.webp';
+import img3 from '../Assets/Images/product-featured/PERSONALITY TEST PRODUCT PAGE - Peter Do (Faux Leather Midi Dress) 2115€.webp(1).webp';
 import React, { useState, useEffect, useRef, useLayoutEffect } from 'react'
 import { async } from '@firebase/util';
 
+function ShopProducts({ keys, img, name, type, price }) {
 
-function ShopProducts({keys,img,name,type,price}) {
-
-    const [picY, setY] = useState()
-    const [picX, setX] = useState()
+    const [picY, setY] = useState();
+    const [picX, setX] = useState();
     const [winWidth, setWidth] = useState(window.innerWidth); // check width size of the window
     const handleWindowSizeChange = () => {
         setWidth(window.innerWidth);
@@ -16,10 +19,9 @@ function ShopProducts({keys,img,name,type,price}) {
         width: "80%",
         minHeight: "100%",
         marginBottom: 0,
-        paddingBottom: 0, 
+        paddingBottom: 0,
     });
 
-    
     function longResolve() {
         return new Promise(r => setTimeout(r, 30));
     }
@@ -29,7 +31,7 @@ function ShopProducts({keys,img,name,type,price}) {
         longResolve().then(() => {
             setY(ref.current.clientHeight);
             setX(ref.current.clientWidth);
-            style()
+            style();
         });
         return () => {
             window.removeEventListener('resize', handleWindowSizeChange);
@@ -38,21 +40,45 @@ function ShopProducts({keys,img,name,type,price}) {
     useLayoutEffect(() => {
         setY(ref.current.clientHeight);
         setX(ref.current.clientWidth);
-        style()
+        style();
     }, [winWidth]);
     useLayoutEffect(() => {
-        style()
+        style();
     }, [picX]);
+
     function style() {
-        if (picY <= (picX*1.5)) {
-            setStyle({width: "80%", minHeight: "100%", marginBottom: 0, paddingBottom:(((picX*1.5)-picY).toString()+"px")})
+        if (picY <= (picX * 1.5)) {
+            setStyle({ width: "80%", minHeight: "100%", marginBottom: 0, paddingBottom: (((picX * 1.5) - picY).toString() + "px") })
         } else {
-            setStyle({width: "80%", minHeight: "100%", paddingBottom: 0, marginTop:(((picX*1.5)-picY).toString()+"px")})
+            setStyle({ width: "80%", minHeight: "100%", paddingBottom: 0, marginTop: (((picX * 1.5) - picY).toString() + "px") })
         }
     }
+
+    const navigate = useNavigate();
+
+    function route() {
+        navigate('/ProductPage/*', {
+            state:
+            {
+                imgs: { img, img1, img2, img3 },
+                name: 'PETER DO', description: 'Faux leather with a high-shine finish, it has an A-line silhouette with zipped side pockets',
+                details: "Peter Do articulates a youthful approach to design that is founded on razor sharp tailoring, architectural construction and honest textiles. Through a process of reduction, every detail is tested and refined to adapt to the complexities of women's lives.",
+                price: '€2115', type: 'Faux Leather Midi Dress',
+                manufacturingDetails: ['Mid-rise', 'Concealed zip fastening at outseam', 'Fully lined', '100% polyester, 55% polyurethane, 45% viscose, fully lined (62% viscose, 38% acetate)', ' Made in USA'],
+                colour: 'Black'
+            }
+        })
+    }
+
     return (
         <div key={keys} className='col h-100 py-3' id='singleProduct'>
-            <img ref={ref} id='shopPic' src={img} alt="" style={productStyle}/>
+            <>
+                {type === 'Faux Leather Midi Dress' ? (
+                    <img ref={ref} id='shopPic' src={img} alt="" onClick={route} style={productStyle} />
+                ) : (
+                    <img ref={ref} id='shopPic' src={img} alt="" style={productStyle} />
+                )}
+            </>
             <div>
                 <div>
                     {name}
@@ -61,9 +87,9 @@ function ShopProducts({keys,img,name,type,price}) {
                     {type}
                 </div>
                 <div>
-                    x-value: {picX}<br/>
-                    y-value: {picY}<br/>
-                    shift: {(picX*1.5)-picY}
+                    x-value: {picX}<br />
+                    y-value: {picY}<br />
+                    shift: {(picX * 1.5) - picY}
                 </div>
             </div>
         </div>

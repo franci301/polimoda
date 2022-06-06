@@ -14,22 +14,27 @@ function ShopPage() {
     const [gender, toggleGender] = useState(false);
     const [itemArr, setItemArr] = useState([]);
     const [filteredItems, setFilteredItems] = useState([]);
-    const [archetypeOrder, setArchOrder] = useState([]);
+    // const [archetypeOrder, setArchOrder] = useState([]);
     const [bool, setBool] = useState(true);
     const totNumFilters = 14;
     const numCatFilters = 11;
     const numGenderFilters = 3;
+    let archetypeOrder = [];
 
     useEffect(() => {
         get();
+        
     }, []);
+    
 
     async function get() {
         await getDetails().then((res) => {
             const access = res._document.data.value.mapValue.fields;
             if (access.archetypeOrder.arrayValue !== null) {
+                for (let index = 0; index < access.archetypeOrder.arrayValue.values.length; index++) {
+                    archetypeOrder.push(access.archetypeOrder.arrayValue.values[index].stringValue); 
+                }
                 getImagesHere();
-                setArchOrder(access.archetypeOrder.arrayValue);
             } else {
                 setBool(false);
             }
@@ -38,13 +43,20 @@ function ShopPage() {
         });
     }
 
+
+
+
+
     async function getImagesHere() {
+        let tempArr = [];
         await getImages().then((res) => {
             for (const item in res) {
-                setItemArr(itemArr => [...itemArr, res[item]]);
-                setItemArr(itemArr => itemArr.sort((a, b) => a.groupName.localeCompare(b.groupName)));
+                tempArr.push(res[item]);
+                tempArr.sort((a, b) => a.groupName.localeCompare(b.groupName));
             }
-            // sort the item array by group groupName
+            setItemArr(tempArr.sort(function (a,b){
+                return archetypeOrder.indexOf(a.groupName) - archetypeOrder.indexOf(b.groupName);
+            }))
         });
     }
 
@@ -109,7 +121,7 @@ function ShopPage() {
     function toggleFilter() {
         if (!on) {
             var doc = document.getElementById('cols');
-            doc.className = 'row row-cols-4 align-items-start';
+            doc.className = 'row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 row-cols-1 align-items-start';
             let filters = document.getElementById('innerUl');
             filters.style.height = '200px';
             filters.style.opacity = 1;
@@ -118,7 +130,7 @@ function ShopPage() {
             filters.style.transform = 'translateY(0)';
         } else {
             var doc = document.getElementById('cols');
-            doc.className = 'row row-cols-5 align-items-start';
+            doc.className = 'row row-cols-lg-5 row-cols-md-2 row-cols-sm-1 row-cols-1 align-items-start';
             var filters = document.getElementById('innerUl');
             filters.style.height = 0;
             filters.style.opacity = 0;
@@ -182,7 +194,7 @@ function ShopPage() {
             <h2>SHOP YOUR PERSONALIZED SELECTION</h2>
             {/* <button onClick={upload}>upload</button> */}
             <br />
-            <div className='d-flex flex-row px-5 justify-content-end' id='shopPageContainer'>
+            <div className='d-flex flex-row px-lg-5 justify-content-end' id='shopPageContainer'>
                 <ul className="menu" id='outerUl'>
                     <li id='firstLi'>
                         <label className='d-flex flex-row'>
@@ -234,7 +246,7 @@ function ShopPage() {
                     </li>
                 </ul>
                 <div className='container sticky-right'>
-                    <div id='cols' className='row row-cols-5 align-items-start'>
+                    <div id='cols' className='row row-cols-lg-5 row-cols-md-2 row-cols-sm-1 row-cols-1 align-items-start'>
                         {bool === false ? (
                             <div id='testContainerShop'>
                                 <TestAd />
@@ -244,8 +256,7 @@ function ShopPage() {
                                 {filteredItems.length === 0 ?
                                     itemArr.map((dict, index) => (
                                         <ShopProducts key={index} img={dict.stringLoc} name={dict.designerName} type={dict.productType} price={dict.price} />
-                                    )
-                                    )
+                                    ))
                                     :
                                     filteredItems.map((dict, index) => (
                                         <ShopProducts key={index} img={dict.stringLoc} name={dict.designerName} type={dict.productType} price={dict.price} />

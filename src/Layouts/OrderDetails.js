@@ -1,14 +1,13 @@
-import duck from '../Assets/Images/duck.jpg'
-function OrderDetails() {
+function OrderDetails({img,brand,colour,type,size,price}) {
     return (
         <div className="d-flex inline-flex" id='OrderContainer'>
-            <img src={duck} alt="" id='orderImg' />
+            <img src={img} alt="" id='orderImg' />
             <div id='OrderTxt'>
-                <p>Brand</p>
-                <p>Colour</p>
-                <p>Type</p>
-                <p>Size:S</p>
-                <p>Price</p>
+                <p>{brand}</p>
+                <p>{colour}</p>
+                <p>{type}</p>
+                <p>Size:{size}</p>
+                <p>{price}</p>
             </div>
         </div>
     );

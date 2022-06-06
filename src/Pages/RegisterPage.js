@@ -38,8 +38,6 @@ function RegisterPage() {
                     // add user to local storage
                     localStorage.setItem('userLoginTemp', JSON.stringify(user));
                     const userCollectionRef = doc(db, 'users', user.user.uid);
-                    console.log(userCollectionRef);
-                    console.log(userCollectionRef);
                     await setDoc(userCollectionRef, {
                         name: name, email: email
                     });

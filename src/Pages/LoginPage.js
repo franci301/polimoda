@@ -2,7 +2,8 @@ import HomeNav from '../Layouts/HomeNav';
 import Footer from '../Layouts/footer';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { auth } from '../firebase/firebase-config';
+import { db,auth } from '../firebase/firebase-config';
+import { updateDoc, setDoc, doc } from 'firebase/firestore';
 import { signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
 import { getDetails } from '../firebase/getDetails.js';
 import '../Assets/css/login.css';
@@ -26,11 +27,29 @@ function LoginPage() {
             })
         }
     }
+
+    async function updateFirebase(answers) {
+        console.log(answers[0]);
+        let user = JSON.parse(localStorage.getItem('userLogin'))
+        const userCollectionRef = doc(db, "users", user.user.uid);
+        await updateDoc(userCollectionRef, {
+            archetypesValue: answers[0],
+            archetypeDescription: answers[1],
+            archetypesImage: answers[2],
+            archetypeOrder: answers[3]
+        });
+    }
     async function login() {
         if (email != '' && password != '') {
             signInWithEmailAndPassword(auth, email, password).then((user) => {
                 setText('Login Successful');
                 localStorage.setItem('userLogin', JSON.stringify(user));
+                let storedAnswers = JSON.parse(localStorage.getItem('testResults'))
+                    if (storedAnswers) {
+                        // push answers to firebase
+                        updateFirebase(storedAnswers);
+                        localStorage.removeItem('testResults');
+                    }
                 navigate('/HomePage/*')
             }).catch((error) => {
                 switch (error.code) {
