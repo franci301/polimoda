@@ -171,31 +171,35 @@ function Test() {
     // once the page loads, check to see if the user is logged in.
     // if they are then alert them that re doing the test will overwrite their previous results
     function increment() {
-        if (value !== -1) {
-            answerArr.push(value);
-            setText('');
-            // setValue(-1); // comment out to test quiz without answers
-            setQuestion(questions[counter]);
-            setCounter(counter + 1);
-            var radios = document.getElementsByName('choice');
-            for (let index = 0; index < radios.length; index++) {
-                radios[index].checked = false;
-            }
-            if (counter === 0) {
-                setStyles(styleArr[0])
-                setStylesMobile(styleArrMobile[0])
-            }
-            if (counter % 3 === 0 && counter !== 0) {
-                // setRoomId(room + 1)
-                setRoomCounter(roomCounter + 1)
-                setImg(roomImgs[roomCounter])
-                setStyles(styleArr[roomCounter])
-                // setChoiceStyles(choiceStyleArr[roomCounter])
-                setStylesMobile(styleArrMobile[roomCounter])
-                setChoiceStylesMobile(choiceArrMobile[roomCounter])
-            }
+        if (counter >= questions.length) {
+            resultsPage();
         } else {
-            setText("Please select an option");
+            if (value !== -1) {
+                answerArr.push(value);
+                setText('');
+                // setValue(-1); // comment out to test quiz without answers
+                setQuestion(questions[counter]);
+                setCounter(counter + 1);
+                var radios = document.getElementsByName('choice');
+                for (let index = 0; index < radios.length; index++) {
+                    radios[index].checked = false;
+                }
+                if (counter === 0) {
+                    setStyles(styleArr[0])
+                    setStylesMobile(styleArrMobile[0])
+                }
+                if (counter % 3 === 0 && counter !== 0) {
+                    // setRoomId(room + 1)
+                    setRoomCounter(roomCounter + 1)
+                    setImg(roomImgs[roomCounter])
+                    setStyles(styleArr[roomCounter])
+                    // setChoiceStyles(choiceStyleArr[roomCounter])
+                    setStylesMobile(styleArrMobile[roomCounter])
+                    setChoiceStylesMobile(choiceArrMobile[roomCounter])
+                }
+            } else {
+                setText("Please select an option");
+            }
         }
     }
 
@@ -378,7 +382,7 @@ function Test() {
     return (
         <div >
             <ResponsiveNav />
-            {/* <div className='d-flex flex-row justify-content-center'>
+            <div className='d-flex flex-row justify-content-center'>
                 <p>
                     Width:
                     {width}
@@ -387,15 +391,15 @@ function Test() {
                     Height:
                     {height}
                 </p>
-            </div> */}
+            </div>
             {/* my phone is 750 x 390 */}
             {/* Carolas phone is 800 x 331 */}
             {/* 800 x 361 */}
             {/* 778 x 364 */}
-            {!(1178 <= width && width < 1420) || !(700 <= height && height <= 880) ? (
+            {!(1178 <= width && width <= 1500) || !(700 <= height && height <= 880) ? (
                 <>
                     {/* check if the device is a mobile */}
-                    {(width <= 390 && width >= 319) || (width <= 800 && width >= 568) ? (
+                    {(width <= 300 && width >= 414) || (width <= 800 && width >= 568) ? (
                         <>{width > height ? (
                             <><div id='testContainer'>
                                 {counter === 0 ? (
@@ -421,7 +425,7 @@ function Test() {
                                                 <div>
                                                     <div id='test'>
                                                         <input type="radio" name="choice" value="0" onChange={(event) => { setValue(0) }} />
-                                                        <label>Weakly Identify</label>
+                                                        <label>Dont Identify</label>
                                                     </div>
                                                     <div id='test'>
                                                         <input type="radio" name="choice" value="0" onChange={(event) => { setValue(1) }} />
@@ -455,7 +459,7 @@ function Test() {
                                 </div>
                                 {question === 'Archetypes of Power Discovery' ? (
                                     <div id='start-div'>
-                                        <p>Archetypes of Power Discovery is a Jungian Archetypes based personality test, designed to help you better understand yourself and your identity, as well as your source of power to achieve stylistic power personalization. By spending approximately 7 minutes to complete Archetypes of Power Discovery, you will become aware of your 3 dominant archetypes and a personalized product offering based on all the twelve archetypes, suitable for your personality. <br /> Click on the doorway to explore your inner world.  </p>
+                                        <p>Archetypes of Power Discovery is a Jungian Archetypes based personality test, designed to help you better understand yourself and your identity, as well as your source of power to achieve stylistic power personalization. By spending approximately 5-7 minutes to complete Archetypes of Power Discovery, you will become aware of your 3 dominant archetypes and a personalized product offering based on all the twelve archetypes, suitable for your personality. <br /> Click on the doorway to explore your inner world.  </p>
                                         {/* <button type="submit" className='btn btn-dark' onClick={increment}>Explore your inner world</button> */}
                                         <div id='door-parent' onClick={increment}>
                                             &nbsp;
@@ -463,22 +467,17 @@ function Test() {
                                     </div>
                                 ) : (
                                     <div id='door-parent' onClick={increment}>
-                                        {counter > questions.length ? (
-                                            // set styles for the button in js
-                                            <button className='btn btn-dark' onClick={resultsPage}>Get Results</button>
-                                        ) : (
-                                            <div id='door'>
-                                                &nbsp;
-                                                {/* <button type="submit" className='btn btn-dark' id='incrementButton' onClick={increment}>Next Question</button> */}
-                                            </div>
-                                        )}
+                                        <div id='door'>
+                                            &nbsp;
+                                            {/* <button type="submit" className='btn btn-dark' id='incrementButton' onClick={increment}>Next Question</button> */}
+                                        </div>
                                     </div>
                                 )}
                             </div></>
                         ) : (
                             <div id='testContainer'>
-                            <p>ROTATE DEVICE</p>
-                        </div>
+                                <p>ROTATE DEVICE</p>
+                            </div>
                         )}</>
                     ) : (
                         <div id='testContainer'>
@@ -514,7 +513,7 @@ function Test() {
                                     <div>
                                         <div id='test'>
                                             <input type="radio" name="choice" value="0" onChange={(event) => { setValue(0) }} />
-                                            <label>Weakly Identify</label>
+                                            <label>Dont Identify</label>
                                         </div>
                                         <div id='test'>
                                             <input type="radio" name="choice" value="0" onChange={(event) => { setValue(1) }} />
@@ -549,7 +548,7 @@ function Test() {
                     </div>
                     {question === 'Archetypes of Power Discovery' ? (
                         <div id='start-room-div'>
-                            <p>Archetypes of Power Discovery is a Jungian Archetypes based personality test, designed to help you better understand yourself and your identity, as well as your source of power to achieve stylistic power personalization. By spending approximately 7 minutes to complete Archetypes of Power Discovery, you will become aware of your 3 dominant archetypes and a personalized product offering based on all the twelve archetypes, suitable for your personality.  <br /> Click on the doorway to explore your inner world.</p>
+                            <p>Archetypes of Power Discovery is a Jungian Archetypes based personality test, designed to help you better understand yourself and your identity, as well as your source of power to achieve stylistic power personalization. By spending approximately 5-7 minutes to complete Archetypes of Power Discovery, you will become aware of your 3 dominant archetypes and a personalized product offering based on all the twelve archetypes, suitable for your personality.  <br /> Click on the doorway to explore your inner world.</p>
                             {/* <button type="submit" className='btn btn-dark' onClick={increment}>Explore your inner world</button> */}
                             <div id='door-parent' onClick={increment}>
                                 &nbsp;
@@ -557,15 +556,10 @@ function Test() {
                         </div>
                     ) : (
                         <div id='door-parent' onClick={increment}>
-                            {counter > questions.length ? (
-                                // set styles for the button in js
-                                <button className='btn btn-dark' onClick={resultsPage}>Get Results</button>
-                            ) : (
-                                <div id='door' >
-                                    &nbsp;
-                                    {/* <button type="submit" className='btn btn-dark' id='incrementButton' onClick={increment}>Next Question</button> */}
-                                </div>
-                            )}
+                            <div id='door'>
+                                &nbsp;
+                                {/* <button type="submit" className='btn btn-dark' id='incrementButton' onClick={increment}>Next Question</button> */}
+                            </div>
                         </div>
                     )}
                 </div>

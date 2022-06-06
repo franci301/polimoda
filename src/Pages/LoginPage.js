@@ -50,7 +50,7 @@ function LoginPage() {
                         updateFirebase(storedAnswers);
                         localStorage.removeItem('testResults');
                     }
-                navigate('/HomePage/*')
+                navigate('/MyProfile/*');
             }).catch((error) => {
                 switch (error.code) {
                     case 'auth/invalid-email':

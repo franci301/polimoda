@@ -186,7 +186,7 @@ h4 {
 
 @media screen and (max-width:414px) {
     #featuredText {
-        margin-top: 40%;
+        margin-top: 12%;
         width: 80%;
         margin-left: 5%;
     }
@@ -208,9 +208,9 @@ h4 {
 
 @media screen and (max-width:375px) {
     #featuredText {
-        margin-top: 40%;
+        margin-top: 12%;
         width: 80%;
-        margin-left: 3%;
+        margin-left: 5%;
     }
     #archetypes-grid h5 {
         bottom: 12%;
@@ -221,7 +221,7 @@ h4 {
 
 @media screen and (max-width:320px) {
     #featuredText {
-        margin-top: 40%;
+        margin-top: 12%;
         width: 80%;
         margin-left: 5%;
     }

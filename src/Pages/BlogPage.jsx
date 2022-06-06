@@ -155,7 +155,7 @@ function BlogPage() {
                                             <img src={img} alt="" onClick={route} className='vitelli-single' />
                                             <div id='featuredTxt'>
                                                 <h4>Vitelli</h4>
-                                                <p>Doombag Leggings Pluto</p>
+                                                <p>Doombag Leggings Multicolor</p>
                                                 <p>420€</p>
                                             </div>
                                         </div>
@@ -217,7 +217,7 @@ function BlogPage() {
                                             <img id='featuredImg' src={img} alt="" onClick={route} className='vitelli-double' />
                                             <div id='featuredTxt'>
                                                 <h4>Vitelli</h4>
-                                                <p>Doombag Leggings Pluto</p>
+                                                <p>Doombag Leggings Multicolor</p>
                                                 <p>420€</p>
                                             </div>
                                         </div>
@@ -273,7 +273,7 @@ function BlogPage() {
                                         <img id='featuredImg' src={img} alt="" onClick={route} className='vitelli-triple' />
                                         <div id='featuredTxt'>
                                             <h4>Vitelli</h4>
-                                            <p>Doombag Leggings Pluto</p>
+                                            <p>Doombag Leggings Multicolor</p>
                                             <p>420€</p>
                                         </div>
                                     </div>
