@@ -9,6 +9,7 @@ import TestAd from '../Layouts/testAd.js';
 import '../Assets/css/shopPage.css';
 
 function ShopPage() {
+    const [trigger, setTrigger] = useState(true);
     const [on, toggle] = useState(false);
     const [category, toggleCat] = useState(false);
     const [gender, toggleGender] = useState(false);
@@ -24,14 +25,14 @@ function ShopPage() {
     useEffect(() => {
         get();
     }, []);
-    
+
 
     async function get() {
         await getDetails().then((res) => {
             const access = res._document.data.value.mapValue.fields;
             if (access.archetypeOrder.arrayValue !== null) {
                 for (let index = 0; index < access.archetypeOrder.arrayValue.values.length; index++) {
-                    archetypeOrder.push(access.archetypeOrder.arrayValue.values[index].stringValue); 
+                    archetypeOrder.push(access.archetypeOrder.arrayValue.values[index].stringValue);
                 }
                 getImagesHere();
             } else {
@@ -49,7 +50,7 @@ function ShopPage() {
                 tempArr.push(res[item]);
                 tempArr.sort((a, b) => a.groupName.localeCompare(b.groupName));
             }
-            setItemArr(tempArr.sort(function (a,b){
+            setItemArr(tempArr.sort(function (a, b) {
                 return archetypeOrder.indexOf(a.groupName) - archetypeOrder.indexOf(b.groupName);
             }))
         });
@@ -60,7 +61,6 @@ function ShopPage() {
     }
 
     function updateFilters() {
-
         let genderFilters = []
         for (let index = numCatFilters + 1; index < numCatFilters + numGenderFilters + 1; index++) {
             let currentInput = document.getElementById(`filter${index}`);
@@ -98,10 +98,12 @@ function ShopPage() {
         // compare 2 arrays and remove elements that do not match
         genderFilters.length !== 0 ? (
             setFilteredItems(filteredItems => filteredItems.filter(item => genderFilters.includes(item.gender)))
-        ):(
+        ) : (
             setFilteredItems(filteredItems => filteredItems.filter(item => filters.includes(item.productFilter)))
-            )
+        )
+        setTrigger(!trigger)
         setFilteredItems(filteredItems => filteredItems.sort((a, b) => a.groupName.localeCompare(b.groupName)));
+        console.log("filters set")
     }
 
     function clearFilters() {
@@ -109,12 +111,14 @@ function ShopPage() {
             document.getElementById(`filter${index}`).checked = false;
         }
         setFilteredItems([]);
+        setTrigger(!trigger)
+        console.log("filters cleared")
     }
 
     function toggleFilter() {
         if (!on) {
             var doc = document.getElementById('cols');
-            doc.className = 'row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 row-cols-1 align-items-start';
+            doc.className = 'row row-cols-lg-5 row-cols-md-2 row-cols-sm-1 row-cols-1 align-items-start';
             let filters = document.getElementById('innerUl');
             filters.style.height = '200px';
             filters.style.opacity = 1;
@@ -248,11 +252,11 @@ function ShopPage() {
                             <>
                                 {filteredItems.length === 0 ?
                                     itemArr.map((dict, index) => (
-                                        <ShopProducts key={index} img={dict.stringLoc} name={dict.designerName} type={dict.productType} price={dict.price} />
+                                        <ShopProducts key={index} img={dict.stringLoc} name={dict.designerName} type={dict.productType} price={dict.price} trigger={trigger} />
                                     ))
                                     :
                                     filteredItems.map((dict, index) => (
-                                        <ShopProducts key={index} img={dict.stringLoc} name={dict.designerName} type={dict.productType} price={dict.price} />
+                                        <ShopProducts key={index} img={dict.stringLoc} name={dict.designerName} type={dict.productType} price={dict.price} trigger={trigger} />
                                     ))
                                 }
                             </>

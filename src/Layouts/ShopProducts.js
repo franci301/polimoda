@@ -5,7 +5,7 @@ import img2 from '../Assets/Images/product-featured/PERSONALITY TEST PRODUCT PAG
 import img3 from '../Assets/Images/product-featured/PERSONALITY TEST PRODUCT PAGE - Peter Do (Faux Leather Midi Dress) 2115€.webp(1).webp';
 import React, { useState, useEffect, useRef, useLayoutEffect } from 'react'
 
-function ShopProducts({ keys, img, name, type, price }) {
+function ShopProducts({ keys, img, name, type, price, trigger }) {
 
     const [picY, setY] = useState();
     const [picX, setX] = useState();
@@ -22,7 +22,7 @@ function ShopProducts({ keys, img, name, type, price }) {
     });
 
     function longResolve() {
-        return new Promise(r => setTimeout(r, 30));
+        return new Promise(r => setTimeout(r, 0));
     }
 
     useEffect(() => {
@@ -36,20 +36,27 @@ function ShopProducts({ keys, img, name, type, price }) {
             window.removeEventListener('resize', handleWindowSizeChange);
         };
     }, []);
+    useEffect(() => {
+        longResolve().then(() => {
+            style();
+        });
+    }, [trigger]);
     useLayoutEffect(() => {
         setY(ref.current.clientHeight);
         setX(ref.current.clientWidth);
         style();
     }, [winWidth]);
     useLayoutEffect(() => {
+        setY(ref.current.clientHeight);
         style();
     }, [picX]);
 
     function style() {
-        if (picY <= (picX * 1.5)) {
-            setStyle({ width: "80%", minHeight: "100%", marginBottom: 0, paddingBottom: (((picX * 1.5) - picY).toString() + "px") })
+        console.log(ref.current.clientHeight)
+        if (ref.current.clientHeight <= (ref.current.clientWidth * 1.5) && productStyle.paddingBottom > 0) {
+            setStyle({ width: "80%", minHeight: "100%", marginBottom: 0, paddingBottom: (((ref.current.clientWidth * 1.5) - ref.current.clientHeight).toString() + "px") })
         } else {
-            setStyle({ width: "80%", minHeight: "100%", paddingBottom: 0, marginTop: (((picX * 1.5) - picY).toString() + "px") })
+            setStyle({ width: "80%", minHeight: "100%", paddingBottom: 0, marginTop: (((ref.current.clientWidth * 1.5) - ref.current.clientHeight).toString() + "px") })
         }
     }
 
@@ -73,9 +80,9 @@ function ShopProducts({ keys, img, name, type, price }) {
         <div key={keys} className='col h-100 py-3' id='singleProduct'>
             <>
                 {type === 'Faux Leather Midi Dress' ? (
-                    <img ref={ref} id='shopPic' src={img} alt="" onClick={route} style={productStyle} />
+                    <img ref={ref} id='shopPic' src={img} alt="" onClick={route} style={productStyle} onLoad={style}/>
                 ) : (
-                    <img ref={ref} id='shopPic' src={img} alt="" style={productStyle} />
+                    <img ref={ref} id='shopPic' src={img} alt="" style={productStyle} onLoad={style}/>
                 )}
             </>
             <div>
