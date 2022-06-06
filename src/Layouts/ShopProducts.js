@@ -4,7 +4,6 @@ import img1 from '../Assets/Images/product-featured/PERSONALITY TEST PRODUCT PAG
 import img2 from '../Assets/Images/product-featured/PERSONALITY TEST PRODUCT PAGE - Peter Do (Faux Leather Midi Dress) 2115€.webp.webp';
 import img3 from '../Assets/Images/product-featured/PERSONALITY TEST PRODUCT PAGE - Peter Do (Faux Leather Midi Dress) 2115€.webp(1).webp';
 import React, { useState, useEffect, useRef, useLayoutEffect } from 'react'
-import { async } from '@firebase/util';
 
 function ShopProducts({ keys, img, name, type, price }) {
 

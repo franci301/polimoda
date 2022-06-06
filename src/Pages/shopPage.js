@@ -23,7 +23,6 @@ function ShopPage() {
 
     useEffect(() => {
         get();
-        
     }, []);
     
 
@@ -42,10 +41,6 @@ function ShopPage() {
             setBool(false);
         });
     }
-
-
-
-
 
     async function getImagesHere() {
         let tempArr = [];
@@ -101,13 +96,11 @@ function ShopPage() {
             }
         }
         // compare 2 arrays and remove elements that do not match
-        if (genderFilters.length !== 0) {
-            console.log('gender filters len != 0')
-            setFilteredItems(filteredItems => filteredItems.filter(item => genderFilters.includes(item.gender)));
-        } else {
-            console.log('gender filters len == 0')
-            setFilteredItems(filteredItems => filteredItems.filter(item => filters.includes(item.productFilter)));
-        }
+        genderFilters.length !== 0 ? (
+            setFilteredItems(filteredItems => filteredItems.filter(item => genderFilters.includes(item.gender)))
+        ):(
+            setFilteredItems(filteredItems => filteredItems.filter(item => filters.includes(item.productFilter)))
+            )
         setFilteredItems(filteredItems => filteredItems.sort((a, b) => a.groupName.localeCompare(b.groupName)));
     }
 
