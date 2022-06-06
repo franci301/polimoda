@@ -93,9 +93,7 @@ function ShopProducts({ keys, img, name, type, price, trigger }) {
                     {type}
                 </div>
                 <div>
-                    x-value: {picX}<br />
-                    y-value: {picY}<br />
-                    shift: {(picX * 1.5) - picY}
+                    {price}
                 </div>
             </div>
         </div>
