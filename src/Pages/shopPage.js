@@ -9,6 +9,7 @@ import TestAd from '../Layouts/testAd.js';
 import '../Assets/css/shopPage.css';
 
 function ShopPage() {
+    const [trigger, setTrigger] = useState(true);
     const [on, toggle] = useState(false);
     const [category, toggleCat] = useState(false);
     const [gender, toggleGender] = useState(false);
@@ -23,7 +24,6 @@ function ShopPage() {
 
     useEffect(() => {
         get();
-        
     }, []);
     
 
@@ -43,10 +43,6 @@ function ShopPage() {
         });
     }
 
-
-
-
-
     async function getImagesHere() {
         let tempArr = [];
         await getImages().then((res) => {
@@ -65,7 +61,6 @@ function ShopPage() {
     }
 
     function updateFilters() {
-
         let genderFilters = []
         for (let index = numCatFilters + 1; index < numCatFilters + numGenderFilters + 1; index++) {
             let currentInput = document.getElementById(`filter${index}`);
@@ -108,7 +103,9 @@ function ShopPage() {
             console.log('gender filters len == 0')
             setFilteredItems(filteredItems => filteredItems.filter(item => filters.includes(item.productFilter)));
         }
+        setTrigger(!trigger)
         setFilteredItems(filteredItems => filteredItems.sort((a, b) => a.groupName.localeCompare(b.groupName)));
+        console.log("filters set")
     }
 
     function clearFilters() {
@@ -116,12 +113,14 @@ function ShopPage() {
             document.getElementById(`filter${index}`).checked = false;
         }
         setFilteredItems([]);
+        setTrigger(!trigger)
+        console.log("filters cleared")
     }
 
     function toggleFilter() {
         if (!on) {
             var doc = document.getElementById('cols');
-            doc.className = 'row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 row-cols-1 align-items-start';
+            doc.className = 'row row-cols-lg-5 row-cols-md-2 row-cols-sm-1 row-cols-1 align-items-start';
             let filters = document.getElementById('innerUl');
             filters.style.height = '200px';
             filters.style.opacity = 1;
@@ -255,11 +254,11 @@ function ShopPage() {
                             <>
                                 {filteredItems.length === 0 ?
                                     itemArr.map((dict, index) => (
-                                        <ShopProducts key={index} img={dict.stringLoc} name={dict.designerName} type={dict.productType} price={dict.price} />
+                                        <ShopProducts key={index} img={dict.stringLoc} name={dict.designerName} type={dict.productType} price={dict.price} trigger={trigger} />
                                     ))
                                     :
                                     filteredItems.map((dict, index) => (
-                                        <ShopProducts key={index} img={dict.stringLoc} name={dict.designerName} type={dict.productType} price={dict.price} />
+                                        <ShopProducts key={index} img={dict.stringLoc} name={dict.designerName} type={dict.productType} price={dict.price} trigger={trigger} />
                                     ))
                                 }
                             </>
