@@ -1,17 +1,13 @@
 https://arkx-store.com
 
 PRIMARY OBJECTIVES:
-- [ ] Style shop page images
-- [ ] Style pages for large views
-- [ ] Homepage text responsiveness
-- [ ] Crop bottom 2 images on archetype page
+- [ ] Style shop page images -- potentially done??
+- [ ] Add animations for filter headings
 - [ ] Nav bar not centred on large devices
-- [ ] Product page styling for mobile view —> slides to see each picture scroll down to see product descriptions —> required for only two products but style the product component anyway
 
 SECONDARY OBJECTIVES:
 - [ ] Check filters —> gender —> save —> category —> save == no change?? WHY
-- [ ] Add animations for filter headings
-- [ ] Change url on hover
-- [ ] Make the articles blog page
 - [ ] Put random images for Wishlist and orders page
 - [ ] Why is the gap so big on the blog page
+- [ ] Style pages for large views
+- [ ] remove site from github pages

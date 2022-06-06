@@ -62,6 +62,10 @@
     color: var(--red);
 }
 
+.test-results {
+    width: 100%;
+}
+
 .test-results p {
     margin-left: 5%;
     margin-right: 5%;
@@ -101,7 +105,7 @@ a:hover {
 
 @media screen and (max-width: 3024px) {
     #orderImg {
-        width: 50%;
+        width: 30%;
         height: 80%;
     }
     #myInformationContainer {
