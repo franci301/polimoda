@@ -6,8 +6,6 @@ import img3 from '../Assets/Images/product-featured/PERSONALITY TEST PRODUCT PAG
 import React, { useState, useEffect, useRef, useLayoutEffect } from 'react'
 
 function ShopProducts({ keys, img, name, type, price, trigger }) {
-
-    const [picY, setY] = useState();
     const [picX, setX] = useState();
     const [winWidth, setWidth] = useState(window.innerWidth); // check width size of the window
     const handleWindowSizeChange = () => {
@@ -18,8 +16,14 @@ function ShopProducts({ keys, img, name, type, price, trigger }) {
         width: "80%",
         minHeight: "100%",
         marginBottom: 0,
-        paddingBottom: 0,
     });
+    
+    function style() {
+        console.log(ref.current.clientHeight)
+        if (!(ref.current.clientHeight <= (ref.current.clientWidth * 1.5) && productStyle.paddingBottom > 0)) {
+            setStyle({ width: "80%", minHeight: "100%", paddingBottom: 0, marginTop: (((ref.current.clientWidth * 1.5) - ref.current.clientHeight).toString() + "px") })
+        }
+    }
 
     function longResolve() {
         return new Promise(r => setTimeout(r, 0));
@@ -28,7 +32,6 @@ function ShopProducts({ keys, img, name, type, price, trigger }) {
     useEffect(() => {
         window.addEventListener('resize', handleWindowSizeChange);
         longResolve().then(() => {
-            setY(ref.current.clientHeight);
             setX(ref.current.clientWidth);
             style();
         });
@@ -42,15 +45,14 @@ function ShopProducts({ keys, img, name, type, price, trigger }) {
         });
     }, [trigger]);
     useLayoutEffect(() => {
-        setY(ref.current.clientHeight);
         setX(ref.current.clientWidth);
         style();
     }, [winWidth]);
     useLayoutEffect(() => {
-        setY(ref.current.clientHeight);
         style();
     }, [picX]);
 
+<<<<<<< HEAD
     function style() {
         if (ref.current.clientHeight <= (ref.current.clientWidth * 1.5) && productStyle.paddingBottom > 0) {
             setStyle({ width: "80%", minHeight: "100%", marginBottom: 0, paddingBottom: (((ref.current.clientWidth * 1.5) - ref.current.clientHeight).toString() + "px") })
@@ -59,6 +61,8 @@ function ShopProducts({ keys, img, name, type, price, trigger }) {
         }
     }
 
+=======
+>>>>>>> b566903f118ae34c72a1fe495efacc3a5c2ed604
     const navigate = useNavigate();
 
     function route() {
