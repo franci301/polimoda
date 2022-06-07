@@ -38,10 +38,7 @@ function HomePage() {
                     </div>
                 </div> 
             </div>
-            
-            {/* <div id='footerTest'> */}
             <Footer />
-            {/* </div> */}
         </div>
     );
 }
