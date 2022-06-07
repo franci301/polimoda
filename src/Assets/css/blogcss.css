@@ -72,11 +72,6 @@
     color: var(--red)
 }
 
-#featuredImg {
-    height: 40%;
-    width: 40%;
-    object-fit: contain;
-}
 
 #homePage h2,
 h4 {
@@ -101,17 +96,6 @@ h4 {
     width: 50%;
 }
 
-.vitelli-triple {
-    width: 60% !important;
-}
-
-.triple-div .featured-component-div {
-    width: 30%;
-}
-
-.andrej-triple {
-    width: 20% !important;
-}
 
 @media screen and (max-width: 1366px) {
     /* my monitor screen size */
