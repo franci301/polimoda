@@ -52,7 +52,6 @@ function ShopProducts({ keys, img, name, type, price, trigger }) {
         style();
     }, [picX]);
 
-<<<<<<< HEAD
     function style() {
         if (ref.current.clientHeight <= (ref.current.clientWidth * 1.5) && productStyle.paddingBottom > 0) {
             setStyle({ width: "80%", minHeight: "100%", marginBottom: 0, paddingBottom: (((ref.current.clientWidth * 1.5) - ref.current.clientHeight).toString() + "px") })
@@ -61,8 +60,6 @@ function ShopProducts({ keys, img, name, type, price, trigger }) {
         }
     }
 
-=======
->>>>>>> b566903f118ae34c72a1fe495efacc3a5c2ed604
     const navigate = useNavigate();
 
     function route() {

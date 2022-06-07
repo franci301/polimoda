@@ -153,7 +153,7 @@ function TestComponent({styleToSet}) {
             if (value !== -1) {
                 answerArr.push(value);
                 setText('');
-                // setValue(-1); // comment out to test quiz without answers
+                setValue(-1); // comment out to test quiz without answers
                 setQuestion(questions[counter]);
                 setCounter(counter + 1);
                 var radios = document.getElementsByName('choice');
