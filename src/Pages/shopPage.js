@@ -17,9 +17,9 @@ function ShopPage() {
     const [filteredItems, setFilteredItems] = useState([]);
     // const [archetypeOrder, setArchOrder] = useState([]);
     const [bool, setBool] = useState(true);
-    const totNumFilters = 14;
-    const numCatFilters = 11;
+    const numCatFilters = 10;
     const numGenderFilters = 3;
+    const totNumFilters = numCatFilters+numGenderFilters;
     let archetypeOrder = [];
 
     useEffect(() => {
@@ -75,8 +75,13 @@ function ShopPage() {
                 if (currentInput.checked && !filters.includes(currentInput.className)) {
                     // get the className of the selected checkbox
                     filters.push(currentInput.className);
+                }else if(!currentInput.checked && filters.includes(currentInput.className)) {
+                    // remove the className of the unselected checkbox from the filters array
+                    filters.splice(filters.indexOf(currentInput.className), 1);
+                    console.log(currentInput.className, ' is no longer checked');
                 }
             }
+            console.log(filters,genderFilters);
             filterItems(filters, genderFilters);
         } else {
             setFilteredItems([]);
@@ -88,11 +93,19 @@ function ShopPage() {
         // one issue is when i click menswear and then save and then add a filter nothing changes
         for (let index = 0; index < itemArr.length; index++) {
             if (filters.includes(itemArr[index].productFilter) && !filteredItems.includes(itemArr[index]) && genderFilters.includes(itemArr[index].gender)) {
+                // both filters selected
                 setFilteredItems(filteredItems => [...filteredItems, itemArr[index]]);
+                console.log('here 1')
             } else if (filters.includes(itemArr[index].productFilter) && !filteredItems.includes(itemArr[index]) && genderFilters.length === 0) {
+                // no gender filters and only filters selected
                 setFilteredItems(filteredItems => [...filteredItems, itemArr[index]]);
+                console.log('here 2')
             } else if (filters.length === 0 && genderFilters.includes(itemArr[index].gender) && !filteredItems.includes(itemArr[index])) {
+                // no filters and only gender filters selected
                 setFilteredItems(filteredItems => [...filteredItems, itemArr[index]]);
+                console.log('here 3')
+            }else{
+                console.log('idk why this happens');
             }
         }
         // compare 2 arrays and remove elements that do not match
@@ -103,7 +116,7 @@ function ShopPage() {
         )
         setTrigger(!trigger)
         setFilteredItems(filteredItems => filteredItems.sort((a, b) => a.groupName.localeCompare(b.groupName)));
-        console.log("filters set")
+        console.log(filteredItems);
     }
 
     function clearFilters() {
@@ -213,14 +226,14 @@ function ShopPage() {
                                     <li><label><input type="checkbox" className='Coat' id='filter1' />Coats<span></span></label></li>
                                     <li><label><input type="checkbox" className='Jacket' id='filter2' />Jackets<span></span></label></li>
                                     <li><label><input type="checkbox" className='Sweater' id='filter3' />Sweaters<span></span></label></li>
-                                    <li><label><input type="checkbox" className='T-shirt' id='filter4' />T-shirts<span></span></label></li>
-                                    <li><label><input type="checkbox" className='Shirt & Blouse' id='filter5' />Shirts & Blouses<span></span></label></li>
-                                    <li><label><input type="checkbox" className='Pants' id='filter6' />Pants<span></span></label></li>
-                                    <li><label><input type="checkbox" className='Skirt' id='filter7' />Skirts<span></span></label></li>
-                                    <li><label><input type="checkbox" className='Dress' id='filter8' />Dresses<span></span></label></li>
-                                    <li><label><input type="checkbox" className='Shoes' id='filter9' />Shoes<span></span></label></li>
-                                    <li><label><input type="checkbox" className='Bag' id='filter10' />Bags<span></span></label></li>
-                                    <li><label><input type="checkbox" className='Jewelry' id='filter11' />Jewelry<span></span></label></li>
+                                    {/* <li><label><input type="checkbox" className='T-shirt' id='filter4' />T-shirts<span></span></label></li> */}
+                                    <li><label><input type="checkbox" className='Shirt & Blouse' id='filter4' />Shirts & Blouses<span></span></label></li>
+                                    <li><label><input type="checkbox" className='Pants' id='filter5' />Pants<span></span></label></li>
+                                    <li><label><input type="checkbox" className='Skirt' id='filter6' />Skirts<span></span></label></li>
+                                    <li><label><input type="checkbox" className='Dress' id='filter7' />Dresses<span></span></label></li>
+                                    <li><label><input type="checkbox" className='Shoes' id='filter8' />Shoes<span></span></label></li>
+                                    <li><label><input type="checkbox" className='Bag' id='filter9' />Bags<span></span></label></li>
+                                    <li><label><input type="checkbox" className='Jewelry' id='filter10' />Jewelry<span></span></label></li>
                                 </ul>
                             </li>
                             <li id='genderLi'>
@@ -230,9 +243,9 @@ function ShopPage() {
                                     </h5>
                                 </div>
                                 <ul id='genderUl'>
-                                    <li><label><input type="checkbox" className='Womenswear' id='filter12' />Womenswear<span></span></label></li>
-                                    <li><label><input type="checkbox" className='Menswear' id='filter13' />Menswear<span></span></label></li>
-                                    <li><label><input type="checkbox" className='Gender-neutral' id='filter14' />Gender-Neutral<span></span></label></li>
+                                    <li><label><input type="checkbox" className='Womenswear' id='filter11' />Womenswear<span></span></label></li>
+                                    <li><label><input type="checkbox" className='Menswear' id='filter12' />Menswear<span></span></label></li>
+                                    <li><label><input type="checkbox" className='Gender-neutral' id='filter13' />Gender-Neutral<span></span></label></li>
                                 </ul>
                             </li>
                             <div className='d-flex flex-row justify-content-start' id='filters-div'>
@@ -265,8 +278,17 @@ function ShopPage() {
                 </div>
             </div>
             <Footer />
+            <div class="wrap">
+                <span class="arrow">
+                    <span>
+                    </span>
+                    <span>
+                    </span>
+                </span>
+            </div>
         </div>
     );
 }
+
 
 export default ShopPage;

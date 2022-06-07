@@ -52,7 +52,6 @@ function ShopProducts({ keys, img, name, type, price, trigger }) {
     }, [picX]);
 
     function style() {
-        console.log(ref.current.clientHeight)
         if (ref.current.clientHeight <= (ref.current.clientWidth * 1.5) && productStyle.paddingBottom > 0) {
             setStyle({ width: "80%", minHeight: "100%", marginBottom: 0, paddingBottom: (((ref.current.clientWidth * 1.5) - ref.current.clientHeight).toString() + "px") })
         } else {

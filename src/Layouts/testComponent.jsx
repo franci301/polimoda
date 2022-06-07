@@ -47,7 +47,6 @@ var answerArr = [
 ];
 
 function TestComponent({styleToSet}) {
-    console.log(styleToSet.length);
     const questions = [
         'When I spend some time hanging out with my friends or relatives for a coffee, I often show empathy towards them when listening to their perspectives and feelings.'
         , 'Whenever I decide to go on vacation and travel with some of my friends to places that we have never visited, I am usually perceived as a guide supporting them.'
@@ -91,7 +90,7 @@ function TestComponent({styleToSet}) {
     const [imgStyles, setStyles] = useState(styleToSet[0]);
 
 
-    const [question, setQuestion] = useState('Archetypes of Power Discovery');
+    const [question, setQuestion] = useState('');
     const [text, setText] = useState('');
     const [roomCounter, setRoomCounter] = useState(1);
     const [roomImg, setImg] = useState(caregiverRender);
@@ -111,60 +110,6 @@ function TestComponent({styleToSet}) {
     let archetypesImages = [];
 
     // her resolution for the monitor (13 inches)
-
-    const styleArrMobile1 = [
-        {
-            left: '32%',
-            top: '60%',
-            width: '40%'
-        }, {
-            left: '27%',
-            top: '65%',
-            width: '40%'
-        },
-        {
-            left: '28%',
-            top: '52%',
-            width: '40%'
-        }, {
-            left: '30%',
-            top: '60%',
-            width: '40%'
-        }, {
-            left: '28%',
-            top: '60%',
-            width: '40%'
-        }, {
-            left: '28%',
-            top: '60%',
-            width: '40%'
-        }, {
-            left: '28%',
-            top: '60%',
-            width: '40%'
-        }, {
-            left: '27%',
-            top: '60%',
-            width: '40%'
-        }, {
-            left: '28%',
-            top: '60%',
-            width: '40%'
-        }, {
-            left: '28%',
-            top: '60%',
-            width: '40%'
-        }, {
-            left: '28%',
-            top: '50%',
-            width: '40%'
-        }, {
-            left: '28%',
-            top: '50%',
-            width: '40%'
-        }
-    ]
-
     async function resultsPage() {
         answerArr.shift();
         const archetypesValues = util.showPercentages(answerArr);
@@ -198,7 +143,6 @@ function TestComponent({styleToSet}) {
             navigate('/MyProfile/*')
             // ,{state:{answerArr}}
         }
-
     }
     // once the page loads, check to see if the user is logged in.
     // if they are then alert them that re doing the test will overwrite their previous results
@@ -232,8 +176,10 @@ function TestComponent({styleToSet}) {
     }
 
 
+
+
     return (
-        <><div id='testContainer'>
+        <><div>
             {counter === 0 ? (
                 <img src={startRoom} alt="" />
             ) : (
@@ -249,7 +195,7 @@ function TestComponent({styleToSet}) {
                 </div>
                 <div>
                     <div className='d-flex flex-col justify-content-center' id='choiceDiv' >
-                        {question === 'Archetypes of Power Discovery' || counter > questions.length ? (
+                        {question === '' || counter > questions.length ? (
                             null
                         ) : (
                             <div>
@@ -287,7 +233,7 @@ function TestComponent({styleToSet}) {
                     <p className="text-danger">{text}</p>
                 </div>
             </div>
-            {question === 'Archetypes of Power Discovery' ? (
+            {question === '' ? (
                 <div id='start-div'>
                     <p>Archetypes of Power Discovery is a Jungian Archetypes based personality test, designed to help you better understand yourself and your identity, as well as your source of power to achieve stylistic power personalization. By spending approximately 5-7 minutes to complete Archetypes of Power Discovery, you will become aware of your 3 dominant archetypes and a personalized product offering based on all the twelve archetypes, suitable for your personality. <br /> <br /> Click on the glass door to explore your inner world.  </p>
                     <div id='door-parent' onClick={increment}>
@@ -300,7 +246,7 @@ function TestComponent({styleToSet}) {
                         &nbsp;
                     </div>
                 </div>
-            )}
+            )}        
         </div></>
     )
 }

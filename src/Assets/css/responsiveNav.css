@@ -87,7 +87,11 @@
         margin-top: 10%;
         margin-bottom: 10%;
     }
-    #center-ul li {
+    #right-nav-main {
+        text-align: left;
+    }
+    #center-ul li,
+    #right-nav-main li {
         margin-top: 2%;
         margin-bottom: 2%;
     }
