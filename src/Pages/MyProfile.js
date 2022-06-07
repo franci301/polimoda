@@ -54,6 +54,16 @@ function MyProfile() {
         UploadImages();
     }
 
+    function route() {
+        const obj = localStorage.getItem('userLogin');
+        if (obj !== null) {
+            const email = JSON.parse(obj).user.email;
+            if (email === 'giorgianoelle.arcelli@gmail.com' || email === 'gregotti20@gmail.com') {
+                navigate('/ShopPage/*');
+            }
+        }
+    }
+
     return (
         <div>
             {/* <button onClick={reUpload}>get</button> */}
@@ -97,6 +107,9 @@ function MyProfile() {
                         )}
                     </div>
                 )}
+                <div>
+                    <button className='btn' onClick={route}>SHOP YOUR PERSONALISED PRODUCT SELECTION</button>
+                </div>
             </div>
             <Footer />
         </div>

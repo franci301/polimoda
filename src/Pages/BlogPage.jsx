@@ -207,7 +207,6 @@ function BlogPage() {
                                             </div>
                                         </div>
                                         <FeaturedImages image={img} brand={'Vitelli'} description={'Doombag Leggings Pluto'} price={'420€'} clickable={true}/>
-                                    </div>
                                 </SwiperSlide>
                                 <SwiperSlide>
                                     <div id='featuredImgContainer' className='d-flex flex-row justify-content-center'>

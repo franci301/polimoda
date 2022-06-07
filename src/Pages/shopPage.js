@@ -25,14 +25,14 @@ function ShopPage() {
     useEffect(() => {
         get();
     }, []);
-    
+
 
     async function get() {
         await getDetails().then((res) => {
             const access = res._document.data.value.mapValue.fields;
             if (access.archetypeOrder.arrayValue !== null) {
                 for (let index = 0; index < access.archetypeOrder.arrayValue.values.length; index++) {
-                    archetypeOrder.push(access.archetypeOrder.arrayValue.values[index].stringValue); 
+                    archetypeOrder.push(access.archetypeOrder.arrayValue.values[index].stringValue);
                 }
                 getImagesHere();
             } else {
@@ -50,7 +50,7 @@ function ShopPage() {
                 tempArr.push(res[item]);
                 tempArr.sort((a, b) => a.groupName.localeCompare(b.groupName));
             }
-            setItemArr(tempArr.sort(function (a,b){
+            setItemArr(tempArr.sort(function (a, b) {
                 return archetypeOrder.indexOf(a.groupName) - archetypeOrder.indexOf(b.groupName);
             }))
         });
@@ -96,13 +96,11 @@ function ShopPage() {
             }
         }
         // compare 2 arrays and remove elements that do not match
-        if (genderFilters.length !== 0) {
-            console.log('gender filters len != 0')
-            setFilteredItems(filteredItems => filteredItems.filter(item => genderFilters.includes(item.gender)));
-        } else {
-            console.log('gender filters len == 0')
-            setFilteredItems(filteredItems => filteredItems.filter(item => filters.includes(item.productFilter)));
-        }
+        genderFilters.length !== 0 ? (
+            setFilteredItems(filteredItems => filteredItems.filter(item => genderFilters.includes(item.gender)))
+        ) : (
+            setFilteredItems(filteredItems => filteredItems.filter(item => filters.includes(item.productFilter)))
+        )
         setTrigger(!trigger)
         setFilteredItems(filteredItems => filteredItems.sort((a, b) => a.groupName.localeCompare(b.groupName)));
         console.log("filters set")

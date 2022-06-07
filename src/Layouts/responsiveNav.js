@@ -77,7 +77,7 @@ function ResponsiveNav() {
                             )}
                         </ul>
                         <ul className="navbar-nav" id='right-nav-main'>
-                            {loggedIn === true ? (
+                            {loggedIn === true && email ==='giorgianoelle.arcelli@gmail.com' || email === 'gregotti20@gmail.com' ? (
                                 <div id='profileContainer'>
                                     <li className='nav-item' onClick={logout} id='logout-li' style={{color:'var(--brown)'}}>LOGOUT</li>
 
