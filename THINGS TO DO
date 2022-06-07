@@ -1,14 +1,20 @@
 https://arkx-store.com
 
 PRIMARY OBJECTIVES:
-- [ ] Style shop page images -- potentially done??
 - [ ] Add animations for filter headings
 - [ ] Nav bar not centred on large devices
 - [ ] no item has filter show no items
+- [ ] Make the left home image full Height
+- [X] same as what you did for the shop page for the featured products as well as vitelli and pamolo blogs
+- [X] i have to make the test page for greater views
+- [X] call to action at the bottom of the profile page for the shop pages - only clickable for us
+- [X] style product pages for larger views
+- [X] Remove dropdown button if on the test page
+- [ ] footer logo is cut on different pages??
+- [ ] Explain basics of test page
 
 SECONDARY OBJECTIVES:
 - [ ] Check filters —> gender —> save —> category —> save == no change?? WHY
-- [ ] Put random images for Wishlist and orders page
 - [ ] Why is the gap so big on the blog page
 - [ ] Style pages for large views
 - [ ] remove site from github pages

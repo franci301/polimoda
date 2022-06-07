@@ -47,6 +47,111 @@
     } */
 }
 
+@media screen and (min-width:700px) and (max-width:720px) {
+    #door-parent {
+        position: absolute;
+        /* background-color: red; */
+        z-index: 10000;
+        width: 150px;
+        left: 3%;
+        top: 45%;
+        padding-right: 5%;
+        height: 90%;
+    }
+    #questions-container #choiceDiv {
+        width: 100%;
+        font-size: 1.8vw;
+    }
+    #start-div p {
+        position: absolute;
+        top: 54%;
+        left: 28%;
+        z-index: 1000;
+        color: white;
+        width: 40%;
+        font-size: 1.5vw;
+    }
+}
+
+@media screen and (min-width:750px) and (max-width:780px) {
+    #door-parent {
+        position: absolute;
+        /* background-color: red; */
+        z-index: 10000;
+        width: 150px;
+        left: 3%;
+        top: 45%;
+        padding-right: 5%;
+        height: 90%;
+    }
+    #questions-container #choiceDiv {
+        width: 100%;
+        font-size: 1.8vw;
+    }
+    /* moved 18% */
+    #start-div p {
+        position: absolute;
+        top: 78%;
+        left: 28%;
+        z-index: 1000;
+        color: white;
+        width: 40%;
+        font-size: 1.5vw;
+    }
+}
+
+@media screen and (min-width:800px) and (max-width:820px) and (max-height:370px) {
+    #door-parent {
+        position: absolute;
+        /* background-color: red; */
+        z-index: 10000;
+        width: 150px;
+        left: 3%;
+        top: 45%;
+        padding-right: 5%;
+        height: 90%;
+    }
+    #questions-container #choiceDiv {
+        width: 100%;
+        font-size: 1.8vw;
+    }
+    #start-div p {
+        position: absolute;
+        top: 65%;
+        left: 28%;
+        z-index: 1000;
+        color: white;
+        width: 40%;
+        font-size: 1.5vw;
+    }
+}
+
+@media screen and (min-width:800px) and (max-width:820px) and (max-height:335px) {
+    #door-parent {
+        position: absolute;
+        /* background-color: red; */
+        z-index: 10000;
+        width: 150px;
+        left: 3%;
+        top: 45%;
+        padding-right: 5%;
+        height: 90%;
+    }
+    #questions-container #choiceDiv {
+        width: 100%;
+        font-size: 1.8vw;
+    }
+    #start-div p {
+        position: absolute;
+        top: 68%;
+        left: 28%;
+        z-index: 1000;
+        color: white;
+        width: 40%;
+        font-size: 1.5vw;
+    }
+}
+
 @media screen and (min-width:1178px) {
     #door-parent {
         position: absolute;
@@ -81,15 +186,81 @@
     } */
 }
 
-@media screen and (min-width:1178px) and (max-width:1252px) {
-    #questions-container {
-        height: 30%;
+@media screen and (min-width:1100px) and (max-width:1349px) {
+    #door-parent {
         position: absolute;
+        /* background-color: red; */
+        z-index: 10000;
+        width: 150px;
+        left: 8%;
+        top: 20%;
+        padding-right: 5%;
+        height: 70%;
+    }
+    #questions-container #choiceDiv {
+        width: 100%;
+        font-size: 1.8vw;
+    }
+    #start-div p {
+        position: absolute;
+        top: 39%;
+        left: 28%;
         z-index: 1000;
         color: white;
-        /* left: 30%;
-        top: 65%;
-        width: 40%; */
+        width: 40%;
+        font-size: 1.5vw;
+    }
+}
+
+@media screen and (min-width:1350px) and (max-width:1399px) {
+    #door-parent {
+        position: absolute;
+        /* background-color: red; */
+        z-index: 10000;
+        width: 150px;
+        left: 8%;
+        top: 30%;
+        padding-right: 5%;
+        height: 90%;
+    }
+    #questions-container #choiceDiv {
+        width: 100%;
+        font-size: 1.8vw;
+    }
+    #start-div p {
+        position: absolute;
+        top: 47%;
+        left: 28%;
+        z-index: 1000;
+        color: white;
+        width: 40%;
+        font-size: 1.5vw;
+    }
+}
+
+@media screen and (min-width:1400px) and (max-width:1440px) {
+    #door-parent {
+        position: absolute;
+        /* background-color: red; */
+        z-index: 10000;
+        width: 150px;
+        left: 8%;
+        top: 30%;
+        padding-right: 5%;
+        height: 90%;
+    }
+    #questions-container #choiceDiv {
+        width: 100%;
+        font-size: 1.8vw;
+    }
+    #start-div p {
+        position: absolute;
+        top: 47%;
+        left: 28%;
+        z-index: 1000;
+        color: white;
+        width: 40%;
+        font-size: 1.5vw;
     }
 }
 
@@ -112,22 +283,39 @@
 }
 
 
-/* 1397 x 716 */
+/* 1440 x 716 Done*/
 
 
-/* 1178 x 775 */
+/* 1420 x 778 Done*/
 
 
-/* my phone is 750 x 390 */
+/* 1440 x 789 Done*/
 
 
-/* Carolas phone is 800 x 331 */
+/* 1397 x 716 Done*/
 
 
-/* 800 x 361 */
+/* 1178 x 775 Done*/
 
 
-/* 778 x 364 */
+/* 712 x 414 Done*/
+
+
+/* 707 x 414 Done*/
+
+
+/* my phone is 750 x 390 
+   750 x  562
+*/
+
+
+/* 778 x 364 Done*/
+
+
+/* Carolas phone is 800 x 331 Done*/
+
+
+/* 800 x 361  Done*/
 
 
 /* #questions-container {
