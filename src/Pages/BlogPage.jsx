@@ -151,14 +151,7 @@ function BlogPage() {
                                 </SwiperSlide>
                                 <SwiperSlide>
                                     <div id='featuredImgContainer' className='d-flex flex-row justify-content-center'>
-                                        <div>
-                                            <img src={img} alt="" onClick={route} className='vitelli-single' />
-                                            <div id='featuredTxt'>
-                                                <h4>Vitelli</h4>
-                                                <p>Doombag Leggings Pluto</p>
-                                                <p>420€</p>
-                                            </div>
-                                        </div>
+                                        <FeaturedImages image={img} brand={'Vitelli'} description={'Doombag Leggings Pluto'} price={'420€'} clickable={true}/>
                                     </div>
                                 </SwiperSlide>
                                 <SwiperSlide>
@@ -213,14 +206,7 @@ function BlogPage() {
                                                 See all editorial products
                                             </div>
                                         </div>
-                                        <div>
-                                            <img id='featuredImg' src={img} alt="" onClick={route} className='vitelli-double' />
-                                            <div id='featuredTxt'>
-                                                <h4>Vitelli</h4>
-                                                <p>Doombag Leggings Pluto</p>
-                                                <p>420€</p>
-                                            </div>
-                                        </div>
+                                        <FeaturedImages image={img} brand={'Vitelli'} description={'Doombag Leggings Pluto'} price={'420€'} clickable={true}/>
                                     </div>
                                 </SwiperSlide>
                                 <SwiperSlide>
@@ -269,14 +255,7 @@ function BlogPage() {
                                             See all editorial products
                                         </div>
                                     </div>
-                                    <div>
-                                        <img id='featuredImg' src={img} alt="" onClick={route} className='vitelli-triple' />
-                                        <div id='featuredTxt'>
-                                            <h4>Vitelli</h4>
-                                            <p>Doombag Leggings Pluto</p>
-                                            <p>420€</p>
-                                        </div>
-                                    </div>
+                                    <FeaturedImages image={img} brand={'Vitelli'} description={'Doombag Leggings Pluto'} price={'420€'} clickable={true}/>
                                     <FeaturedImages image={Arlington} brand={'16Arlington'} description={'Pendal Feather Top'} price={'1095€'} />
                                     <FeaturedImages image={AVAVAV} brand={'AVAVAV'} description={'Puff Dress Turquoise Purple Acqua'} price={'500€'} />
                                 </div>
@@ -285,7 +264,7 @@ function BlogPage() {
                         <SwiperSlide>
                             <div className='d-flex flex-row justify-content-center' id='featuredContainer'>
                                 <div id='featuredImgContainer' className='d-flex flex-row justify-content-center'>
-                                    <FeaturedImages image={Andrej} brand={'Andrej Gronau'} description={'Exclusive Multicolor Check Lurex Dress'} price={'1080€'} ids={'andrej-triple'} />
+                                    <FeaturedImages image={Andrej} brand={'Andrej Gronau'} description={'Exclusive Multicolor Check Lurex Dress'} price={'1080€'} />
                                     <FeaturedImages image={BODE} brand={'BODE New York'} description={'Hand-stiched Fleurette Long Sleeves Shirt'} price={'685€'} />
                                     <FeaturedImages image={Charlie} brand={'Charlie Constantinou'} description={'Expandable Quilted Duffel Bag'} price={'800€'} />
                                 </div>
