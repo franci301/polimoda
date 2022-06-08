@@ -98,6 +98,7 @@ ul {
     display: block;
     position: relative;
     width: 15%;
+    min-width: 151px;
 }
 
 .menu ul {
@@ -180,4 +181,20 @@ label.icon {
 #menu:checked+.icon .menu::after {
     top: 0;
     transition: top ease .3s, transform ease .3s .3s;
+}
+
+.arrow-side{
+    transform: rotate(-45deg);
+    width: 10%;
+    padding-bottom :2px;
+    padding-left: 4px;
+    transition: 0.5s;
+}
+.arrow-down{
+    transform: rotate(45deg);
+    width: 10%;
+    padding-bottom :2px;
+    padding-left: 4px;
+    margin-top: -6px;
+    transition: 0.5s;
 }
