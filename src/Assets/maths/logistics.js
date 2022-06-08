@@ -13,6 +13,7 @@ function findCutOff(values) {
             // [index, values[index]] add if you want to add the value of the archetype
         }
     }
+    // console.log(products, 'products');
     return products;
 }
 
@@ -70,7 +71,6 @@ let standings = [
 ]
 
 function getGroupOrder(cutOff) {
-
     let groupOrder = []
     for (let index = 0; index < groups.length; index++) {
         for (let x = 0; x < cutOff.length; x++) {
@@ -100,13 +100,38 @@ function master(answers) {
     // console.log("Percentages Array", percentageArr);
     const maxValues = getMaxValues(percentageArr);
     // console.log("Max Values", maxValues);
-    const productValues = calculatePercentages(percentageArr, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
+    let finalArray = [];
+    finalArray.push(percentageArr[3]);
+    // // innocent is now first
+    finalArray.push(percentageArr[5]);
+    // // explorer is now second
+    finalArray.push(percentageArr[4]);
+    // // sage is now third
+    finalArray.push(percentageArr[8]);
+    // // hero is 4th
+    finalArray.push(percentageArr[6]);
+    // // outlaw if 5th
+    finalArray.push(percentageArr[7]);
+    // // magician is 6th
+    finalArray.push(percentageArr[10]);
+    // // jester is 7th
+    finalArray.push(percentageArr[11]);
+    // // lover is 8th
+    finalArray.push(percentageArr[9]);
+    // // everyman is 9th
+    finalArray.push(percentageArr[0]);
+    // // caregiver is 10th
+    finalArray.push(percentageArr[2]);
+    // // creator is 11th
+    finalArray.push(percentageArr[1]);
+    // ruler is 12 th
+    const productValues = calculatePercentages(finalArray, [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
     // console.log("Products Array", productValues);
     const cutOff = findCutOff(productValues);
     // console.log("Cut Off", cutOff);
     // console.log("Cutoffs Array", cutOff);
     const groups = getGroupOrder(cutOff);
-    // console.log(groups)
+    // console.log(groups, 'group Order');
     const refinedGroups = getRefinedGroups(groups);
     // console.log(refinedGroups) // this will display products from highest to lowest cutoffs
     return refinedGroups;

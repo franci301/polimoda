@@ -14,7 +14,7 @@ PRIMARY OBJECTIVES:
 - [ ] Explain basics of test page
 
 SECONDARY OBJECTIVES:
-- [ ] Check filters —> gender —> save —> category —> save == no change?? WHY
+- [X] Check filters —> gender —> save —> category —> save == no change?? WHY?????????????
 - [ ] Why is the gap so big on the blog page
 - [ ] Style pages for large views
 - [ ] remove site from github pages

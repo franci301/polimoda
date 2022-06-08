@@ -19,8 +19,9 @@ function ShopPage() {
     const [bool, setBool] = useState(true);
     const numCatFilters = 10;
     const numGenderFilters = 3;
-    const totNumFilters = numCatFilters+numGenderFilters;
+    const totNumFilters = numCatFilters + numGenderFilters;
     let archetypeOrder = [];
+    let tempFilters = [];
 
     useEffect(() => {
         get();
@@ -61,6 +62,7 @@ function ShopPage() {
     }
 
     function updateFilters() {
+        setFilteredItems([]);
         let genderFilters = []
         for (let index = numCatFilters + 1; index < numCatFilters + numGenderFilters + 1; index++) {
             let currentInput = document.getElementById(`filter${index}`);
@@ -75,13 +77,13 @@ function ShopPage() {
                 if (currentInput.checked && !filters.includes(currentInput.className)) {
                     // get the className of the selected checkbox
                     filters.push(currentInput.className);
-                }else if(!currentInput.checked && filters.includes(currentInput.className)) {
+                } else if (!currentInput.checked && filters.includes(currentInput.className)) {
                     // remove the className of the unselected checkbox from the filters array
                     filters.splice(filters.indexOf(currentInput.className), 1);
                     console.log(currentInput.className, ' is no longer checked');
                 }
             }
-            console.log(filters,genderFilters);
+            console.log(filters, genderFilters);
             filterItems(filters, genderFilters);
         } else {
             setFilteredItems([]);
@@ -89,34 +91,31 @@ function ShopPage() {
     }
 
     function filterItems(filters, genderFilters) {
+        tempFilters = [];
         // sort by filter and gender
         // one issue is when i click menswear and then save and then add a filter nothing changes
         for (let index = 0; index < itemArr.length; index++) {
-            if (filters.includes(itemArr[index].productFilter) && !filteredItems.includes(itemArr[index]) && genderFilters.includes(itemArr[index].gender)) {
+            if (filters.includes(itemArr[index].productFilter) && !tempFilters.includes(itemArr[index]) && genderFilters.includes(itemArr[index].gender)) {
                 // both filters selected
-                setFilteredItems(filteredItems => [...filteredItems, itemArr[index]]);
-                console.log('here 1')
-            } else if (filters.includes(itemArr[index].productFilter) && !filteredItems.includes(itemArr[index]) && genderFilters.length === 0) {
+                tempFilters.push(itemArr[index])
+            } else if (filters.includes(itemArr[index].productFilter) && !tempFilters.includes(itemArr[index]) && genderFilters.length === 0) {
                 // no gender filters and only filters selected
-                setFilteredItems(filteredItems => [...filteredItems, itemArr[index]]);
-                console.log('here 2')
-            } else if (filters.length === 0 && genderFilters.includes(itemArr[index].gender) && !filteredItems.includes(itemArr[index])) {
+                tempFilters.push(itemArr[index])
+            } else if (filters.length === 0 && genderFilters.includes(itemArr[index].gender) && !tempFilters.includes(itemArr[index])) {
                 // no filters and only gender filters selected
-                setFilteredItems(filteredItems => [...filteredItems, itemArr[index]]);
-                console.log('here 3')
-            }else{
-                console.log('idk why this happens');
+                tempFilters.push(itemArr[index])
             }
         }
         // compare 2 arrays and remove elements that do not match
         genderFilters.length !== 0 ? (
-            setFilteredItems(filteredItems => filteredItems.filter(item => genderFilters.includes(item.gender)))
+            tempFilters.filter(item => genderFilters.includes(item.gender))
         ) : (
-            setFilteredItems(filteredItems => filteredItems.filter(item => filters.includes(item.productFilter)))
+            tempFilters.filter(item => filters.includes(item.productFilter))
         )
+        console.log(tempFilters)
         setTrigger(!trigger)
-        setFilteredItems(filteredItems => filteredItems.sort((a, b) => a.groupName.localeCompare(b.groupName)));
-        console.log(filteredItems);
+        tempFilters.sort((a, b) => a.groupName.localeCompare(b.groupName));
+        setFilteredItems(tempFilters);
     }
 
     function clearFilters() {
@@ -278,14 +277,6 @@ function ShopPage() {
                 </div>
             </div>
             <Footer />
-            <div class="wrap">
-                <span class="arrow">
-                    <span>
-                    </span>
-                    <span>
-                    </span>
-                </span>
-            </div>
         </div>
     );
 }

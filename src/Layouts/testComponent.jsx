@@ -35,15 +35,15 @@ var answerArr = [
     // 6, 6, 3,
     // 5, 4, 2,
     // 1, 1, 4,
+    // 5, 4, 1,
     // 6, 5, 5,
-    // 3, 5, 1,
     // 1, 4, 1,
+    // 4, 1, 1,
+    // 3, 5, 1,
+    // 6, 6, 5,
     // 0, 3, 0,
     // 1, 1, 2,
-    // 4, 1, 0,
-    // 6, 6, 5,
-    // 4, 1, 1,
-    // 5, 4, 1
+    // 4, 1, 0
 ];
 
 function TestComponent({styleToSet}) {
@@ -98,9 +98,9 @@ function TestComponent({styleToSet}) {
     const [height, setHeight] = useState(window.innerHeight);
     const navigate = useNavigate();
     const archetypes = [
-        "Innocent", "Explorer", "Sage", "Hero",
-        "Outlaw", "Magician", "Jester",
-        "Lover", "Everyman", "Caregiver", "Creator", "Ruler"
+        "Caregiver", "Ruler", "Creator", "Innocent",
+        "Sage", "Explorer", "Outlaw",
+        "Magician", "Hero", "Everyman", "Jester", "Lover"
     ];
     const images = {
         Creator, Explorer, Hero, Innocent, Outlaw, Ruler, Caregiver, Everyman, Jester, Magician, Sage, Lover
@@ -111,11 +111,13 @@ function TestComponent({styleToSet}) {
 
     // her resolution for the monitor (13 inches)
     async function resultsPage() {
+        // console.log(answerArr, ' before shift');
         answerArr.shift();
+        // console.log(answerArr, ' after shift');
         const archetypesValues = util.showPercentages(answerArr);
-        console.log(archetypesValues)
+        // console.log(archetypesValues)
         for (let index = 0; index < archetypesValues.length; index++) {
-            let img = images[archetypes[archetypesValues[index][0]]]
+            let img = images[archetypes[archetypesValues[index][0]]];
             let archetype = archetypes[archetypesValues[index][0]];
             archetypesToPush.push(archetype);
             archetypesImages.push(img);
@@ -147,6 +149,7 @@ function TestComponent({styleToSet}) {
     // once the page loads, check to see if the user is logged in.
     // if they are then alert them that re doing the test will overwrite their previous results
     function increment() {
+        // console.log(counter,questions.length)
         if (counter >= questions.length) {
             resultsPage();
         } else {
@@ -174,9 +177,6 @@ function TestComponent({styleToSet}) {
             }
         }
     }
-
-
-
 
     return (
         <><div>

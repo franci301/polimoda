@@ -28,6 +28,8 @@ import '../Assets/css/testPage.css';
 // }
 // }
 
+// 1920 x 994 cody browser width and height
+
 function Test() {
 
     const [width, setWidth] = useState(window.innerWidth);

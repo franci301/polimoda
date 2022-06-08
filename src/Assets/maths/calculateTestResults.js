@@ -28,30 +28,44 @@ function calculateResults(testAnswers) {
     for (let index = 0; index < percentageArr.length; index++) {
         finalArray[index] = (percentageArr[index]);
     }
-    finalArray[0] = percentageArr[percentageArr.length - 1];
-    // innocent is now first
-    finalArray[1] = percentageArr[5];
-    // explorer is not second
-    finalArray[2] = percentageArr[3];
-    // sage is now third
-    finalArray[3] = percentageArr[9];
-    // hero is 4th
-    finalArray[4] = percentageArr[10];
-    // outlaw if 5th
-    finalArray[5] = percentageArr[4];
-    // magician is 6th
-    finalArray[6] = percentageArr[7];
-    // jester is 7th
-    finalArray[7] = percentageArr[8];
-    // lover is 8th
-    finalArray[8] = percentageArr[6];
-    // everyman is 9th
-    finalArray[9] = percentageArr[0];
-    // caregiver is 10th
-    finalArray[10] = percentageArr[2];
-    // creator is 11th
-    finalArray[11] = percentageArr[1];
-    // ruler is 12th
+    // console.log(finalArray);
+    // caregiver is 1st 
+    // ruler is 2nd
+    // Creator is 3rd
+    // Innocent is 4th
+    // Sage is 5th
+    // Explorer is 6th
+    // Outlaw is 7th
+    // Magician is 8th
+    // Hero is 9th
+    // Everyman is 10th
+    // Jester is 11th
+    // Lover is 12th
+
+    // finalArray[0] = percentageArr[percentageArr.length - 1];
+    // // innocent is now first
+    // finalArray[1] = percentageArr[5];
+    // // explorer is not second
+    // finalArray[2] = percentageArr[3];
+    // // sage is now third
+    // finalArray[3] = percentageArr[9];
+    // // hero is 4th
+    // finalArray[4] = percentageArr[10];
+    // // outlaw if 5th
+    // finalArray[5] = percentageArr[4];
+    // // magician is 6th
+    // finalArray[6] = percentageArr[7];
+    // // jester is 7th
+    // finalArray[7] = percentageArr[8];
+    // // lover is 8th
+    // finalArray[8] = percentageArr[6];
+    // // everyman is 9th
+    // finalArray[9] = percentageArr[0];
+    // // caregiver is 10th
+    // finalArray[10] = percentageArr[2];
+    // // creator is 11th
+    // finalArray[11] = percentageArr[1];
+    // ruler is 12 th
     return finalArray; // sort array 
 }
 // const testAnswers = [
