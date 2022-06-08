@@ -1,12 +1,14 @@
 import ResponsiveNav from '../Layouts/responsiveNav.js';
 import Footer from '../Layouts/footer.js';
 import ShopProducts from '../Layouts/ShopProducts.js';
+import AnimatedArrow from '../Layouts/animatedArrow.js';
 import UploadImages from '../Assets/uploadImages.js';
 import { useState, useEffect } from 'react';
 import getImages from '../firebase/getAllItems.js';
 import getDetails from '../firebase/getDetails.js';
 import TestAd from '../Layouts/testAd.js';
 import '../Assets/css/shopPage.css';
+import arrow from '../Assets/Images/arrow.png';
 
 function ShopPage() {
     const [trigger, setTrigger] = useState(true);
@@ -166,6 +168,7 @@ function ShopPage() {
     function toggleInnerFilters(id) {
         if (id === 'categoryUl') {
             let filters = document.getElementById(id);
+            let arrow = document.getElementById(id);
             if (!category) {
                 filters.style.height = '100%';
                 filters.style.opacity = 1;
@@ -218,6 +221,7 @@ function ShopPage() {
                                 <div onClick={() => toggleInnerFilters('categoryUl')}>
                                     <h5>
                                         CATEGORY
+                                        <AnimatedArrow active={category} />
                                     </h5>
                                 </div>
                                 <ul id='categoryUl'>
@@ -239,6 +243,7 @@ function ShopPage() {
                                 <div onClick={() => toggleInnerFilters('genderUl')}>
                                     <h5>
                                         GENDER
+                                        <AnimatedArrow active={gender} />
                                     </h5>
                                 </div>
                                 <ul id='genderUl'>

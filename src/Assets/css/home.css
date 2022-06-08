@@ -23,11 +23,17 @@
 }
 
 #homeContainer {
-    height: 125%;
-    min-height: 100vh;
+    height: 100vh;
     margin-right: 0;
     margin-left: 0;
 }
+
+@media screen and (max-width: 992px) {
+    #homeContainer {
+        height: 193vh;
+    }
+}
+
 
 #nestedContainer {
     width: 100%;
