@@ -116,6 +116,7 @@ a:hover {
     #orderImg {
         width: 30%;
         height: 80%;
+        object-fit: contain;
     }
     #myInformationContainer {
         padding-left: 2%;

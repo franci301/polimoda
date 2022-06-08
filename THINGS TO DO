@@ -1,10 +1,10 @@
 https://arkx-store.com
 
 PRIMARY OBJECTIVES:
-- [ ] Add animations for filter headings
-- [ ] Nav bar not centred on large devices
-- [ ] no item has filter show no items
-- [ ] Make the left home image full Height
+- [X] Add animations for filter headings
+- [X] Nav bar not centred on large devices
+- [X] no item has filter show no items
+- [X] Make the left home image full Height
 - [X] same as what you did for the shop page for the featured products as well as vitelli and pamolo blogs
 - [X] i have to make the test page for greater views
 - [X] call to action at the bottom of the profile page for the shop pages - only clickable for us
@@ -15,6 +15,4 @@ PRIMARY OBJECTIVES:
 
 SECONDARY OBJECTIVES:
 - [X] Check filters —> gender —> save —> category —> save == no change?? WHY?????????????
-- [ ] Why is the gap so big on the blog page
-- [ ] Style pages for large views
 - [ ] remove site from github pages

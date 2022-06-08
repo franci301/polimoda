@@ -98,7 +98,7 @@ ul {
     display: block;
     position: relative;
     width: 15%;
-    min-width: 151px;
+    /* min-width: 151px; */
 }
 
 .menu ul {
@@ -183,18 +183,91 @@ label.icon {
     transition: top ease .3s, transform ease .3s .3s;
 }
 
-.arrow-side{
+.arrow-side {
     transform: rotate(-45deg);
     width: 10%;
-    padding-bottom :2px;
+    padding-bottom: 2px;
     padding-left: 4px;
     transition: 0.5s;
 }
-.arrow-down{
+
+.arrow-down {
     transform: rotate(45deg);
     width: 10%;
-    padding-bottom :2px;
+    padding-bottom: 2px;
     padding-left: 4px;
     margin-top: -6px;
     transition: 0.5s;
+}
+
+@media screen and (min-width:1430px) {
+    .arrow-side {
+        transform: rotate(-45deg);
+        width: 8%;
+        padding-bottom: 2px;
+        padding-left: 4px;
+        transition: 0.5s;
+    }
+    .arrow-down {
+        transform: rotate(45deg);
+        width: 8%;
+        padding-bottom: 2px;
+        padding-left: 4px;
+        margin-top: -6px;
+        transition: 0.5s;
+    }
+}
+
+@media screen and (min-width:1624px) {
+    .arrow-side {
+        transform: rotate(-45deg);
+        width: 6%;
+        padding-bottom: 2px;
+        padding-left: 4px;
+        transition: 0.5s;
+    }
+    .arrow-down {
+        transform: rotate(45deg);
+        width: 6%;
+        padding-bottom: 2px;
+        padding-left: 4px;
+        margin-top: -6px;
+        transition: 0.5s;
+    }
+}
+
+@media screen and (min-width:2000px) {
+    .arrow-side {
+        transform: rotate(-45deg);
+        width: 5%;
+        padding-bottom: 2px;
+        padding-left: 4px;
+        transition: 0.5s;
+    }
+    .arrow-down {
+        transform: rotate(45deg);
+        width: 5%;
+        padding-bottom: 2px;
+        padding-left: 4px;
+        margin-top: -6px;
+        transition: 0.5s;
+    }
+}
+
+@media screen and (min-width:2300px) {
+    .arrow-side {
+        transform: rotate(-45deg);
+        width: 4%;
+        padding-bottom: 2px;
+        padding-left: 4px;
+        transition: 0.5s;
+    }
+    .arrow-down {
+        transform: rotate(45deg);
+        width: 4%;
+        padding-bottom: 2px;
+        padding-left: 4px;
+        margin-top: -6px;
+        transition: 0.5s;
+    }
 }

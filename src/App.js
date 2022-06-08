@@ -7,19 +7,19 @@ import {
 } from 'react-router-dom';
 import { Helmet } from "react-helmet";
 import BlogPage from './Pages/BlogPage.jsx';
-import HomePage from './Pages/HomePage.js';
-import ProfilePage from './Pages/MyProfile.js';
-import MyOrders from './Pages/MyOrders.js';
-import Wishlist from './Pages/Wishlist.js';
-import MyInformation from './Pages/MyInformation.js';
-import ProductPage from './Pages/ProductPage.js';
-import ShopPage from './Pages/shopPage.js';
-import TestPage from './Pages/TestPage.js';
-import LoginPage from './Pages/LoginPage.js';
-import RegisterPage from './Pages/RegisterPage.js';
+import HomePage from './Pages/HomePage.jsx';
+import ProfilePage from './Pages/MyProfile.jsx';
+import MyOrders from './Pages/MyOrders.jsx';
+import Wishlist from './Pages/Wishlist.jsx';
+import MyInformation from './Pages/MyInformation.jsx';
+import ProductPage from './Pages/ProductPage.jsx';
+import ShopPage from './Pages/shopPage.jsx';
+import TestPage from './Pages/TestPage.jsx';
+import LoginPage from './Pages/LoginPage.jsx';
+import RegisterPage from './Pages/RegisterPage.jsx';
 import ArchPage from './Layouts/archPage';
-import VitelliPage from './Pages/VitelliPage.js';
-import PamoloPage from './Pages/PamoloPage.js';
+import VitelliPage from './Pages/VitelliPage.jsx';
+import PamoloPage from './Pages/PamoloPage.jsx';
 import ScrollToTop from './Layouts/ScrollToTop';
 function App() {
   return (

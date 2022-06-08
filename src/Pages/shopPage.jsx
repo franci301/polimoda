@@ -8,7 +8,6 @@ import getImages from '../firebase/getAllItems.js';
 import getDetails from '../firebase/getDetails.js';
 import TestAd from '../Layouts/testAd.js';
 import '../Assets/css/shopPage.css';
-import arrow from '../Assets/Images/arrow.png';
 
 function ShopPage() {
     const [trigger, setTrigger] = useState(true);
@@ -28,7 +27,6 @@ function ShopPage() {
     useEffect(() => {
         get();
     }, []);
-
 
     async function get() {
         await getDetails().then((res) => {
@@ -82,13 +80,15 @@ function ShopPage() {
                 } else if (!currentInput.checked && filters.includes(currentInput.className)) {
                     // remove the className of the unselected checkbox from the filters array
                     filters.splice(filters.indexOf(currentInput.className), 1);
-                    console.log(currentInput.className, ' is no longer checked');
                 }
             }
-            console.log(filters, genderFilters);
             filterItems(filters, genderFilters);
         } else {
-            setFilteredItems([]);
+            if(genderFilters.length >0){
+                filterItems([], genderFilters);
+            }else{
+                setFilteredItems([]);
+            }
         }
     }
 
@@ -114,7 +114,6 @@ function ShopPage() {
         ) : (
             tempFilters.filter(item => filters.includes(item.productFilter))
         )
-        console.log(tempFilters)
         setTrigger(!trigger)
         tempFilters.sort((a, b) => a.groupName.localeCompare(b.groupName));
         setFilteredItems(tempFilters);
@@ -126,7 +125,6 @@ function ShopPage() {
         }
         setFilteredItems([]);
         setTrigger(!trigger)
-        console.log("filters cleared")
     }
 
     function toggleFilter() {
@@ -168,7 +166,6 @@ function ShopPage() {
     function toggleInnerFilters(id) {
         if (id === 'categoryUl') {
             let filters = document.getElementById(id);
-            let arrow = document.getElementById(id);
             if (!category) {
                 filters.style.height = '100%';
                 filters.style.opacity = 1;
