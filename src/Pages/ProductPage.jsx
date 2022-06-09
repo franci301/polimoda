@@ -10,6 +10,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 function ProductPage() {
     const location = useLocation();
+    const name = location.state.name;
     const [mainImg, setMainImg] = useState(location.state.imgs.img);
     const [sideImgs, setSideImgs] = useState([location.state.imgs.img1, location.state.imgs.img2, location.state.imgs.img3]);
     const [size, setSize] = useState(0);
@@ -79,9 +80,9 @@ function ProductPage() {
                                     ) : (
                                         <>
                                             {mainImg !== undefined ? (
-                                                <img src={mainImg} id='main' />
+                                                <img src={mainImg} id='main' className={name} />
                                             ) : (
-                                                <img id='main' src={location.state.imgs.img} />
+                                                <img id='main' src={location.state.imgs.img} className={name} />
                                             )}
                                         </>
                                     )}

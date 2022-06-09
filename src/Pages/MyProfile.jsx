@@ -107,7 +107,7 @@ function MyProfile() {
                         )}
                     </div>
                 )}
-                <div>
+                <div id='profile-button'>
                     <button className='btn' onClick={route}>SHOP YOUR PERSONALISED PRODUCT SELECTION</button>
                 </div>
             </div>

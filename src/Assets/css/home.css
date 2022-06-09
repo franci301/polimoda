@@ -34,7 +34,6 @@
     }
 }
 
-
 #nestedContainer {
     width: 100%;
     margin-right: 0;
@@ -61,6 +60,8 @@
     font-weight: bold;
     font-size: 150%;
     top: -20%;
+    width: 95%;
+    left: 4%;
 }
 
 #rightImgContainer {

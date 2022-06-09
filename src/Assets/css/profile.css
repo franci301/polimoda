@@ -21,6 +21,10 @@
     color: var(--purple);
 }
 
+#profile-button {
+    padding-bottom: 5%;
+}
+
 @media screen and (max-width:1000px) {
     #profile-swiper .swiper-button-next,
     #profile-swiper .swiper-button-prev {

@@ -24,6 +24,10 @@
     }
 }
 
+.mx-right {
+    padding-right: 1%;
+}
+
 
 /* #left-nav {
     width: 10%;
@@ -35,9 +39,7 @@
     background-color: var(--yellow);
 }
 
-#right-nav {
-    padding-right: 10%;
-}
+
 
 #center-nav {
     padding-left: 15%;

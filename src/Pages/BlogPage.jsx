@@ -5,18 +5,6 @@ import getArchImgs from '../firebase/getArchImgs.js';
 import ResponsiveNav from '../Layouts/responsiveNav.js';
 import ArchComponent from '../Layouts/archComponent.js';
 import FeaturedImages from '../Layouts/featuredImages.js';
-import Creator from '../Assets/Images/arch-images/The Creator 1.jpg';
-import Explorer from '../Assets/Images/arch-images/The Explorer 1.jpg';
-import Hero from '../Assets/Images/arch-images/The Hero 1.jpg';
-import Innocent from '../Assets/Images/arch-images/The Innocent.jpg';
-import Outlaw from '../Assets/Images/arch-images/The Outlaw.jpg';
-import Ruler from '../Assets/Images/arch-images/The Ruler.jpg';
-import Caregiver from '../Assets/Images/arch-images/The Caregiver.jpg';
-import Everyman from '../Assets/Images/arch-images/The Everyman.jpg';
-import Jester from '../Assets/Images/arch-images/The Jester 1.jpg';
-import Magician from '../Assets/Images/arch-images/The Magician.jpg';
-import Sage from '../Assets/Images/arch-images/The Sage.jpg';
-import Lover from '../Assets/Images/arch-images/The Lover.jpg';
 import bottomImg2 from '../Assets/Images/blog-images/Meet Palomo Spain.png';
 import bottomImg1 from '../Assets/Images/blog-images/BE A MAGICIAN JUST LIKE VITELLI.jpeg'
 import Arlington from '../Assets/Images/product-featured/PRODUCT FEATURED - 16Arlington (Pendal Feather Top) 1095€.webp'

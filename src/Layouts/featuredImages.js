@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef, useLayoutEffect } from "react";
 import { useNavigate } from "react-router-dom"
-import img from '../Assets/Images/product-featured/PRODUCT FEATURED - Vitelli (Doomboh Leggings Pluto) 420€.jpeg'
+import img from '../Assets/Images/product-featured/PRODUCT FEATURED - Vitelli (Doomboh Leggings Pluto) Original 420€.jpeg'
 import img1 from '../Assets/Images/product-featured/PRODUCT FEATURED - Vitelli (Doomboh Leggings Pluto) 420€.jpeg(1).jpeg'
 import img2 from '../Assets/Images/product-featured/PRODUCT FEATURED - Vitelli (Doomboh Leggings Pluto) 420€.jpeg(2).jpeg'
 import img3 from '../Assets/Images/product-featured/PRODUCT FEATURED - Vitelli (Doomboh Leggings Pluto) 420€.jpeg.jpeg'
@@ -56,7 +56,11 @@ function FeaturedImages({ image, brand, description, price, ids, clickable }) {
     return (
         <div className="featured-component-div">
             <div className="featured-img-container">
-                <img ref={ref} id='featuredImg' src={image} alt="" className={ids} style={productStyle} onLoad={style} onClick={route}/>
+                {clickable?(
+                    <img ref={ref} id='featuredImg' src={image} alt="" className={ids} style={productStyle} onLoad={style} onClick={route}/>
+                ):(
+                    <img ref={ref} id='featuredImg' src={image} alt="" className={ids} style={productStyle} onLoad={style}/>
+                )}
             </div>
             <div id='featured-text'>
                 <h4>{brand}</h4>

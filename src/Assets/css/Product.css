@@ -108,8 +108,16 @@
 }
 
 @media screen and (max-width:2560px) and (min-width:1300px) {
-    .side-img img {
-        width: 22%;
+    #bigContainer {
+        width: 50%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .side-img-vitelli img {
+        width: 35%;
+    }
+    .side-img-faux img {
+        width: 85%;
     }
     #div-r {
         width: 50%;
@@ -117,7 +125,7 @@
     }
     #main {
         height: 200%;
-        width: 100%;
+        width: 80%;
         object-fit: contain;
         object-position: top;
     }
@@ -133,20 +141,26 @@
         margin-right: 0;
     }
     .side-img-vitelli img {
-        width: 35%;
+        width: 65%;
     }
     .side-img-faux img {
-        width: 85%;
+        width: 130%;
     }
     #div-r {
         width: 100%;
         height: 100%;
     }
     #main {
-        height: 40%;
+        height: 100%;
         width: 100%;
         object-fit: contain;
         object-position: top;
+    }
+    .PETER {
+        width: 130% !important;
+    }
+    .Vitelli {
+        width: 70% !important;
     }
     #selection-container {
         width: 40%;
@@ -156,6 +170,15 @@
     }
     #productButtonContainer #button2 {
         margin-left: 6%;
+    }
+    #productSelect {
+        text-align: center;
+        width: 77%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        color: var(--brown);
+        border-width: 2px;
+        border-color: var(--brown);
     }
 }
 
@@ -170,17 +193,23 @@
         width: 35%;
     }
     .side-img-faux img {
-        width: 85%;
+        width: 95%;
     }
     #div-r {
         width: 100%;
         height: 100%;
     }
     #main {
-        height: 80%;
+        height: 100%;
         width: 100%;
         object-fit: contain;
         object-position: top;
+    }
+    .PETER {
+        width: 130% !important;
+    }
+    .Vitelli {
+        width: 100% !important;
     }
     #selection-container {
         width: 40%;
@@ -217,7 +246,7 @@
         width: 30%;
     }
     .single-vitelli {
-        width: 20%;
+        width: 40%;
     }
     .single-faux {
         width: 80%;
