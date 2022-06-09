@@ -22,6 +22,7 @@ function MyProfile() {
     useEffect(() => {
         getDetails().then((res) => {
             let totData = [];
+            console.log(res._document.data.value.mapValue.fields.archetypesValue.arrayValue.values.length)
             for (let index = 0; index < res._document.data.value.mapValue.fields.archetypesValue.arrayValue.values.length; index++) {
                 const list = res._document.data.value.mapValue.fields.archetypesValue.arrayValue.values[index]
                 const description = res._document.data.value.mapValue.fields.archetypeDescription.arrayValue.values[index]

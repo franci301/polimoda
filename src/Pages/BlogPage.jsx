@@ -5,6 +5,18 @@ import getArchImgs from '../firebase/getArchImgs.js';
 import ResponsiveNav from '../Layouts/responsiveNav.js';
 import ArchComponent from '../Layouts/archComponent.js';
 import FeaturedImages from '../Layouts/featuredImages.js';
+import Creator from '../Assets/Images/arch-images/The Creator 1.jpg';
+import Explorer from '../Assets/Images/arch-images/The Explorer 1.jpg';
+import Hero from '../Assets/Images/arch-images/The Hero 1.jpg';
+import Innocent from '../Assets/Images/arch-images/The Innocent.jpg';
+import Outlaw from '../Assets/Images/arch-images/The Outlaw.jpg';
+import Ruler from '../Assets/Images/arch-images/The Ruler.jpg';
+import Caregiver from '../Assets/Images/arch-images/The Caregiver.jpg';
+import Everyman from '../Assets/Images/arch-images/The Everyman.jpg';
+import Jester from '../Assets/Images/arch-images/The Jester 1.jpg';
+import Magician from '../Assets/Images/arch-images/The Magician.jpg';
+import Sage from '../Assets/Images/arch-images/The Sage.jpg';
+import Lover from '../Assets/Images/arch-images/The Lover.jpg';
 import bottomImg2 from '../Assets/Images/blog-images/Meet Palomo Spain.png';
 import bottomImg1 from '../Assets/Images/blog-images/BE A MAGICIAN JUST LIKE VITELLI.jpeg'
 import Arlington from '../Assets/Images/product-featured/PRODUCT FEATURED - 16Arlington (Pendal Feather Top) 1095€.webp'
@@ -91,28 +103,28 @@ function BlogPage() {
                 <SwiperSlide>
                     <div id='archetypes-grid' className='container '>
                         <div className='row gx-0 gy-0'>
-                            <ArchComponent img={archArr[1]} title="The Creator" />
-                            <ArchComponent img={archArr[9]} title="The Magician" />
-                            <ArchComponent img={archArr[2]} title="The Explorer" />
+                            <ArchComponent img={Creator} title="The Creator" />
+                            <ArchComponent img={Magician} title="The Magician" />
+                            <ArchComponent img={Explorer} title="The Explorer" />
                         </div>
                         <div className='row gx-0 gy-0' id='bottomArch'>
-                            <ArchComponent img={archArr[11]} title="The Lover" />
-                            <ArchComponent img={archArr[3]} title="The Hero" />
-                            <ArchComponent img={archArr[8]} title="The Ruler" />
+                            <ArchComponent img={Lover} title="The Lover" />
+                            <ArchComponent img={Hero} title="The Hero" />
+                            <ArchComponent img={Ruler} title="The Ruler" />
                         </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div id='archetypes-grid' className='container '>
                         <div className='row gx-0 gy-0'>
-                            <ArchComponent img={archArr[6]} title="The Innocent" />
-                            <ArchComponent img={archArr[7]} title="The Jester" />
-                            <ArchComponent img={archArr[5]} title="The Outlaw" />
+                            <ArchComponent img={Innocent} title="The Innocent" />
+                            <ArchComponent img={Jester} title="The Jester" />
+                            <ArchComponent img={Outlaw} title="The Outlaw" />
                         </div>
                         <div className='row gx-0 gy-0' id='bottomArch'>
-                            <ArchComponent img={archArr[0]} title="The Sage" />
-                            <ArchComponent img={archArr[4]} title="The Caregiver" />
-                            <ArchComponent img={archArr[10]} title="The Everyman" />
+                            <ArchComponent img={Sage} title="The Sage" />
+                            <ArchComponent img={Caregiver} title="The Caregiver" />
+                            <ArchComponent img={Everyman} title="The Everyman" />
                         </div>
                     </div>
                 </SwiperSlide>

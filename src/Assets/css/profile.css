@@ -23,6 +23,7 @@
 
 #profile-button {
     padding-bottom: 5%;
+    padding-top: 5%;
 }
 
 @media screen and (max-width:1000px) {

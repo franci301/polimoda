@@ -32,18 +32,18 @@ import startRoom from '../Assets/Images/renders/stanza.jpeg';
 import '../Assets/css/testPage.css';
 
 var answerArr = [
-    // 6, 6, 3,
-    // 5, 4, 2,
-    // 1, 1, 4,
-    // 5, 4, 1,
-    // 6, 5, 5,
-    // 1, 4, 1,
-    // 4, 1, 1,
-    // 3, 5, 1,
-    // 6, 6, 5,
-    // 0, 3, 0,
-    // 1, 1, 2,
-    // 4, 1, 0
+    6, 6, 3,
+    5, 4, 2,
+    1, 1, 4,
+    5, 4, 1,
+    6, 5, 5,
+    1, 4, 1,
+    4, 1, 1,
+    3, 5, 1,
+    6, 6, 5,
+    0, 3, 0,
+    1, 1, 2,
+    4, 1, 0
 ];
 
 function TestComponent({styleToSet}) {
@@ -112,7 +112,7 @@ function TestComponent({styleToSet}) {
     // her resolution for the monitor (13 inches)
     async function resultsPage() {
         // console.log(answerArr, ' before shift');
-        answerArr.shift();
+        // answerArr.shift();
         // console.log(answerArr, ' after shift');
         const archetypesValues = util.showPercentages(answerArr);
         // console.log(archetypesValues)
@@ -236,7 +236,7 @@ function TestComponent({styleToSet}) {
             {question === '' ? (
                 <div id='start-div'>
                     <p>Archetypes of Power Discovery is a Jungian Archetypes based personality test, designed to help you better understand yourself and your identity, as well as your source of power to achieve stylistic power personalization. By spending approximately 5-7 minutes to complete Archetypes of Power Discovery, you will become aware of your 3 dominant archetypes and a personalized product offering based on all the twelve archetypes, suitable for your personality. <br /> <br /> Click on the glass door to explore your inner world.  </p>
-                    <div id='door-parent' onClick={increment}>
+                    <div id='door-parent' onClick={resultsPage}>
                         &nbsp;
                     </div>
                 </div>
