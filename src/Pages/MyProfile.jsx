@@ -108,9 +108,14 @@ function MyProfile() {
                         )}
                     </div>
                 )}
-                <div id='profile-button'>
-                    <button className='btn' onClick={route}>SHOP YOUR PERSONALISED PRODUCT SELECTION</button>
-                </div>
+                {listArch == null ? (
+                    <></>
+                ) : (
+
+                    <div id='profile-button'>
+                        <button className='btn' onClick={route}>SHOP YOUR PERSONALISED PRODUCT SELECTION</button>
+                    </div>
+                )}
             </div>
             <Footer />
         </div>

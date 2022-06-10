@@ -25,6 +25,7 @@
     border: 1px solid grey;
     line-height: 200%;
     padding-left: 8%;
+    width: 100%;
 }
 
 #loginContainer #input1 {
