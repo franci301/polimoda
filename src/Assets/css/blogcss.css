@@ -14,7 +14,7 @@
     padding-top: 5%;
 }
 
-.homePage img {
+.homePage img:not(#logo) {
     width: 100%;
 }
 
@@ -72,7 +72,6 @@
     color: var(--red)
 }
 
-
 #homePage h2,
 h4 {
     color: var(--purple);
@@ -95,7 +94,6 @@ h4 {
 .featured-component-div {
     width: 50%;
 }
-
 
 @media screen and (max-width: 1366px) {
     /* my monitor screen size */

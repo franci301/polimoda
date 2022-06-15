@@ -47,6 +47,32 @@
     } */
 }
 
+@media screen and (min-width:660px) and (max-width:670px) {
+    #door-parent {
+        position: absolute;
+        /* background-color: red; */
+        z-index: 10000;
+        width: 120px;
+        left: 3%;
+        top: 30%;
+        padding-right: 5%;
+        height: 80%;
+    }
+    #questions-container #choiceDiv {
+        width: 100%;
+        font-size: 1.8vw;
+    }
+    #start-div p {
+        position: absolute;
+        top: 54%;
+        left: 28%;
+        z-index: 1000;
+        color: white;
+        width: 40%;
+        font-size: 1.5vw;
+    }
+}
+
 @media screen and (min-width:700px) and (max-width:720px) {
     #door-parent {
         position: absolute;
@@ -73,6 +99,58 @@
     }
 }
 
+@media screen and (min-width:721px) and (max-width:740px) {
+    #door-parent {
+        position: absolute;
+        /* background-color: red; */
+        z-index: 10000;
+        width: 120px;
+        left: 3%;
+        top: 55%;
+        padding-right: 5%;
+        height: 100%;
+    }
+    #questions-container #choiceDiv {
+        width: 100%;
+        font-size: 1.8vw;
+    }
+    #start-div p {
+        position: absolute;
+        top: 75%;
+        left: 28%;
+        z-index: 1000;
+        color: white;
+        width: 40%;
+        font-size: 1.5vw;
+    }
+}
+
+@media screen and (min-width:735px) and (max-width:737px) {
+    #door-parent {
+        position: absolute;
+        /* background-color: red; */
+        z-index: 10000;
+        width: 120px;
+        left: 3%;
+        top: 30%;
+        padding-right: 5%;
+        height: 90%;
+    }
+    #questions-container #choiceDiv {
+        width: 100%;
+        font-size: 1.8vw;
+    }
+    #start-div p {
+        position: absolute;
+        top: 55%;
+        left: 28%;
+        z-index: 1000;
+        color: white;
+        width: 40%;
+        font-size: 1.5vw;
+    }
+}
+
 @media screen and (min-width:750px) and (max-width:780px) {
     #door-parent {
         position: absolute;
@@ -80,7 +158,7 @@
         z-index: 10000;
         width: 150px;
         left: 3%;
-        top: 45%;
+        top: 38%;
         padding-right: 5%;
         height: 90%;
     }
@@ -91,7 +169,34 @@
     /* moved 18% */
     #start-div p {
         position: absolute;
-        top: 78%;
+        top: 58%;
+        left: 28%;
+        z-index: 1000;
+        color: white;
+        width: 40%;
+        font-size: 1.5vw;
+    }
+}
+
+@media screen and (min-width:780px) and (max-width:799px) {
+    #door-parent {
+        position: absolute;
+        /* background-color: red; */
+        z-index: 10000;
+        width: 150px;
+        left: 3%;
+        top: 27%;
+        padding-right: 5%;
+        height: 90%;
+    }
+    #questions-container #choiceDiv {
+        width: 100%;
+        font-size: 1.8vw;
+    }
+    /* moved 18% */
+    #start-div p {
+        position: absolute;
+        top: 50%;
         left: 28%;
         z-index: 1000;
         color: white;
@@ -144,6 +249,188 @@
     #start-div p {
         position: absolute;
         top: 68%;
+        left: 28%;
+        z-index: 1000;
+        color: white;
+        width: 40%;
+        font-size: 1.5vw;
+    }
+}
+
+@media screen and (min-width:800px) and (max-width:810px) and (min-height:331px) and (max-height:361px) {
+    #door-parent {
+        position: absolute;
+        /* background-color: red; */
+        z-index: 10000;
+        width: 150px;
+        left: 3%;
+        top: 40%;
+        padding-right: 5%;
+        height: 90%;
+    }
+    #questions-container #choiceDiv {
+        width: 100%;
+        font-size: 1.8vw;
+    }
+    #start-div p {
+        position: absolute;
+        top: 62%;
+        left: 28%;
+        z-index: 1000;
+        color: white;
+        width: 40%;
+        font-size: 1.5vw;
+    }
+}
+
+@media screen and (min-width:810px) and (max-width:813px) and (min-height:370px) and (max-height:375px) {
+    #door-parent {
+        position: absolute;
+        /* background-color: red; */
+        z-index: 10000;
+        width: 150px;
+        left: 3%;
+        top: 40%;
+        padding-right: 5%;
+        height: 90%;
+    }
+    #questions-container #choiceDiv {
+        width: 100%;
+        font-size: 1.8vw;
+    }
+    #start-div p {
+        position: absolute;
+        top: 62%;
+        left: 28%;
+        z-index: 1000;
+        color: white;
+        width: 40%;
+        font-size: 1.5vw;
+    }
+}
+
+@media screen and (min-width:821px) and (max-width:850px) and (max-height:310px) {
+    #door-parent {
+        position: absolute;
+        /* background-color: red; */
+        z-index: 10000;
+        width: 150px;
+        left: 3%;
+        top: 45%;
+        padding-right: 5%;
+        height: 90%;
+    }
+    #questions-container #choiceDiv {
+        width: 100%;
+        font-size: 1.8vw;
+    }
+    #start-div p {
+        position: absolute;
+        top: 68%;
+        left: 28%;
+        z-index: 1000;
+        color: white;
+        width: 40%;
+        font-size: 1.5vw;
+    }
+}
+
+@media screen and (min-width:840px) and (max-width:850px) and (max-height:390px) {
+    #door-parent {
+        position: absolute;
+        /* background-color: red; */
+        z-index: 10000;
+        width: 150px;
+        left: 3%;
+        top: 35%;
+        padding-right: 5%;
+        height: 90%;
+    }
+    #questions-container #choiceDiv {
+        width: 100%;
+        font-size: 1.8vw;
+    }
+    #start-div p {
+        position: absolute;
+        top: 58%;
+        left: 28%;
+        z-index: 1000;
+        color: white;
+        width: 40%;
+        font-size: 1.5vw;
+    }
+}
+
+@media screen and (min-width:890px) and (max-width:896px) and (max-height:331px) {
+    #door-parent {
+        position: absolute;
+        /* background-color: red; */
+        z-index: 10000;
+        width: 150px;
+        left: 3%;
+        top: 70%;
+        padding-right: 5%;
+        height: 100%;
+    }
+    #questions-container #choiceDiv {
+        width: 100%;
+        font-size: 1.8vw;
+    }
+    #start-div p {
+        position: absolute;
+        top: 73%;
+        left: 28%;
+        z-index: 1000;
+        color: white;
+        width: 40%;
+        font-size: 1.5vw;
+    }
+}
+
+@media screen and (min-width:890px) and (max-width:896px) and (max-height:414px) {
+    #door-parent {
+        position: absolute;
+        /* background-color: red; */
+        z-index: 10000;
+        width: 150px;
+        left: 3%;
+        top: 35%;
+        padding-right: 5%;
+        height: 100%;
+    }
+    #questions-container #choiceDiv {
+        width: 100%;
+        font-size: 1.8vw;
+    }
+    #start-div p {
+        position: absolute;
+        top: 55%;
+        left: 28%;
+        z-index: 1000;
+        color: white;
+        width: 40%;
+        font-size: 1.5vw;
+    }
+}
+
+@media screen and (min-width:920px) and (max-width:930px) and (max-height:428px) {
+    #door-parent {
+        position: absolute;
+        /* background-color: red; */
+        z-index: 10000;
+        width: 150px;
+        left: 3%;
+        top: 30%;
+        padding-right: 5%;
+        height: 100%;
+    }
+    #questions-container #choiceDiv {
+        width: 100%;
+        font-size: 1.8vw;
+    }
+    #start-div p {
+        position: absolute;
+        top: 57%;
         left: 28%;
         z-index: 1000;
         color: white;
@@ -256,6 +543,32 @@
     #start-div p {
         position: absolute;
         top: 47%;
+        left: 28%;
+        z-index: 1000;
+        color: white;
+        width: 40%;
+        font-size: 1.5vw;
+    }
+}
+
+@media screen and (min-width:1900px) and (max-width:1940px) and (min-height:1100px) {
+    #door-parent {
+        position: absolute;
+        /* background-color: red; */
+        z-index: 10000;
+        width: 190px;
+        left: 8%;
+        top: 30%;
+        padding-right: 5%;
+        height: 70%;
+    }
+    #questions-container #choiceDiv {
+        width: 100%;
+        font-size: 1.8vw;
+    }
+    #start-div p {
+        position: absolute;
+        top: 40%;
         left: 28%;
         z-index: 1000;
         color: white;

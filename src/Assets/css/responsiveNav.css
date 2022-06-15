@@ -85,14 +85,14 @@
 
 #navLogo {
     max-height: 150px;
-    width: 10%;
+    width: 10% !important;
     float: left;
 }
 
 @media (max-width:767px) {
     #navLogo {
         max-height: 150px;
-        width: 30%;
+        width: 30% !important;
         float: left;
     }
 }

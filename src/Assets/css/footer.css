@@ -54,3 +54,9 @@ footer {
         padding-right: 0% !important;
     }
 }
+
+@media screen and (min-width:1500px) {
+    #logo {
+        /* width: 10% !important; */
+    }
+}

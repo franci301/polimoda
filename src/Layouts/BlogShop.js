@@ -58,7 +58,7 @@ function BlogShop({ obj }) {
                                     <FeaturedImages image={obj[0][0]} brand={obj[1][0]} description={obj[2][0]} price={obj[3][0]} clickable={false}/>
                                     <FeaturedImages image={obj[0][1]} brand={obj[1][0]} description={obj[2][1]} price={obj[3][1]} clickable={false}/>
                                     <FeaturedImages image={obj[0][3]} brand={obj[1][0]} description={obj[2][3]} price={obj[3][2]} clickable={false}/>
-                                    <FeaturedImages image={obj[0][2]} brand={obj[1][0]} description={obj[2][2]} price={obj[3][2]} clickable={false}/>
+                                    <FeaturedImages image={obj[0][2]} brand={obj[1][0]} description={obj[2][2]} price={obj[3][3]} clickable={false}/>
                                 </div>
                             </SwiperSlide>
                         </>

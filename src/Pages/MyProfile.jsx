@@ -67,7 +67,7 @@ function MyProfile() {
 
     return (
         <div>
-            {/* <button onClick={reUpload}>get</button> */}
+            {/* <button onClick={upload}>upload</button> */}
             <ResponsiveNav />
             {size > 768 ? <ProfileNav /> : null}
             <div id='archetypesContainer'>
@@ -91,7 +91,6 @@ function MyProfile() {
                         ) : (
                             <TestAd />
                         )}
-
                     </Swiper>
                 ) : (
                     <div className='d-flex flex-row justify-content-center align-items-start'>
@@ -111,9 +110,8 @@ function MyProfile() {
                 {listArch == null ? (
                     <></>
                 ) : (
-
                     <div id='profile-button'>
-                        <button className='btn' onClick={route}>SHOP YOUR PERSONALISED PRODUCT SELECTION</button>
+                        <button className='btn' onClick={route}>SHOP YOUR PERSONALIZED PRODUCT SELECTION</button>
                     </div>
                 )}
             </div>

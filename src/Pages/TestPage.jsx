@@ -17,6 +17,7 @@ import '../Assets/css/testPage.css';
 // Group3:{
 // 800 x 331
 // 800 x 361
+// 812 x 375 
 // }
 // Group4:{ 
 //     1420 x 778
@@ -26,8 +27,28 @@ import '../Assets/css/testPage.css';
 // Group5:{
 //     1397 x 716
 // }
+// Group6:{
+//     1940x1100
 // }
-
+// Group7:{
+//     724x292
+// }
+// Group8:{
+//     796 x 414
+// }
+// Group9:{
+//     896x313
+// }
+// Group10:{
+//     844x390
+//     895x414
+//     736 x 414
+// }
+// Group11:{
+//     
+// }
+// }
+// 428 x 926
 // 1920 x 994 cody browser width and height
 
 function Test() {
@@ -134,73 +155,73 @@ function Test() {
         // first room start here 52 -> 67
         {
             left: '32.5%',
-            top: '67%',
+            top: '57%',
             width: '40%'
         },
         // 56 --> 70
         {
             left: '27%',
-            top: '70%',
+            top: '60%',
             width: '40%'
         },
         // colourfull grid room
         {
             left: '29%',
-            top: '64%',
+            top: '54%',
             width: '40%'
         },
         // butterfly room
         {
             left: '29%',
-            top: '71%',
+            top: '61%',
             width: '40%'
         },
         // desert/ tree room
         {
             left: '28%',
-            top: '71%',
+            top: '61%',
             width: '40%'
         },
         // green panel room
         {
             left: '28%',
-            top: '71%',
+            top: '61%',
             width: '40%'
         },
         // barbed wire room
         {
             left: '28%',
-            top: '71%',
+            top: '61%',
             width: '40%'
         },
         // blue doorway
         {
             left: '28%',
-            top: '71%',
+            top: '61%',
             width: '40%'
         },
         // metal room
         {
             left: '28%',
-            top: '71%',
+            top: '61%',
             width: '40%'
         },
         // statues on right room
         {
             left: '28%',
-            top: '71%',
+            top: '61%',
             width: '40%'
         },
         // nature room
         {
             left: '28%',
-            top: '65%',
+            top: '55%',
             width: '40%'
         },
         // final room
         {
             left: '28%',
-            top: '65%',
+            top: '55%',
             width: '40%'
         }
 
@@ -215,72 +236,72 @@ function Test() {
         // first room start here
         {
             left: '32.5%',
-            top: '75%',
+            top: '60%',
             width: '40%'
         },
         {
             left: '27%',
-            top: '79%',
+            top: '69%',
             width: '40%'
         },
         // colourfull grid room
         {
             left: '29%',
-            top: '69%',
+            top: '59%',
             width: '40%'
         },
         // butterfly room
         {
             left: '29%',
-            top: '69%',
+            top: '59%',
             width: '40%'
         },
         // desert/ tree room
         {
             left: '28%',
-            top: '69%',
+            top: '59%',
             width: '40%'
         },
         // green panel room
         {
             left: '28%',
-            top: '69%',
+            top: '59%',
             width: '40%'
         },
         // barbed wire room
         {
             left: '28%',
-            top: '69%',
+            top: '59%',
             width: '40%'
         },
         // blue doorway
         {
             left: '28%',
-            top: '69%',
+            top: '59%',
             width: '40%'
         },
         // metal room
         {
             left: '28%',
-            top: '69%',
+            top: '59%',
             width: '40%'
         },
         // statues on right room
         {
             left: '28%',
-            top: '69%',
+            top: '59%',
             width: '40%'
         },
         // nature room
         {
             left: '28%',
-            top: '73%',
+            top: '53%',
             width: '40%'
         },
         // final room
         {
             left: '28%',
-            top: '73%',
+            top: '53%',
             width: '40%'
         }
 
@@ -445,12 +466,411 @@ function Test() {
         }
 
     ]
+    const group6Styles = [
+        // this is the archetypes of power styling
+        {
+            left: '27.5%',
+            top: '60%',
+            width: '40%',
+        },
+        // first room start here -33
+        {
+            left: '32.5%',
+            top: '45%',
+            width: '40%'
+        },
+        {
+            left: '27%',
+            top: '45%',
+            width: '40%'
+        },
+        // colourfull grid room
+        {
+            left: '29%',
+            top: '36%',
+            width: '40%'
+        },
+        // butterfly room - 15
+        {
+            left: '29%',
+            top: '41%',
+            width: '40%'
+        },
+        // desert/ tree room
+        {
+            left: '28%',
+            top: '41%',
+            width: '40%'
+        },
+        // green panel room
+        {
+            left: '28%',
+            top: '41%',
+            width: '40%'
+        },
+        // barbed wire room
+        {
+            left: '28%',
+            top: '41%',
+            width: '40%'
+        },
+        // blue doorway
+        {
+            left: '28%',
+            top: '41%',
+            width: '40%'
+        },
+        // metal room
+        {
+            left: '28%',
+            top: '41%',
+            width: '40%'
+        },
+        // statues on right room
+        {
+            left: '28%',
+            top: '41%',
+            width: '40%'
+        },
+        // nature room
+        {
+            left: '28%',
+            top: '37%',
+            width: '40%'
+        },
+        // final room
+        {
+            left: '28%',
+            top: '37%',
+            width: '40%'
+        }
+
+    ]
+    const group7Styles = [
+        // this is the archetypes of power styling
+        {
+            left: '27.5%',
+            top: '60%',
+            width: '40%',
+        },
+        // first room start here -33
+        {
+            left: '32.5%',
+            top: '75%',
+            width: '40%'
+        },
+        {
+            left: '27%',
+            top: '75%',
+            width: '40%'
+        },
+        // colourfull grid room
+        {
+            left: '29%',
+            top: '66%',
+            width: '40%'
+        },
+        // butterfly room - 15
+        {
+            left: '29%',
+            top: '81%',
+            width: '40%'
+        },
+        // desert/ tree room
+        {
+            left: '28%',
+            top: '81%',
+            width: '40%'
+        },
+        // green panel room
+        {
+            left: '28%',
+            top: '81%',
+            width: '40%'
+        },
+        // barbed wire room
+        {
+            left: '28%',
+            top: '81%',
+            width: '40%'
+        },
+        // blue doorway
+        {
+            left: '28%',
+            top: '81%',
+            width: '40%'
+        },
+        // metal room
+        {
+            left: '28%',
+            top: '81%',
+            width: '40%'
+        },
+        // statues on right room
+        {
+            left: '28%',
+            top: '81%',
+            width: '40%'
+        },
+        // nature room
+        {
+            left: '28%',
+            top: '70%',
+            width: '40%'
+        },
+        // final room
+        {
+            left: '28%',
+            top: '70%',
+            width: '40%'
+        }
+
+    ]
+    const group8Styles = [
+        // this is the archetypes of power styling
+        {
+            left: '27.5%',
+            top: '60%',
+            width: '40%',
+        },
+        // first room start here -33
+        {
+            left: '32.5%',
+            top: '55%',
+            width: '40%'
+        },
+        {
+            left: '27%',
+            top: '55%',
+            width: '40%'
+        },
+        // colourfull grid room
+        {
+            left: '29%',
+            top: '46%',
+            width: '40%'
+        },
+        // butterfly room - 15
+        {
+            left: '29%',
+            top: '61%',
+            width: '40%'
+        },
+        // desert/ tree room
+        {
+            left: '28%',
+            top: '61%',
+            width: '40%'
+        },
+        // green panel room
+        {
+            left: '28%',
+            top: '61%',
+            width: '40%'
+        },
+        // barbed wire room
+        {
+            left: '28%',
+            top: '61%',
+            width: '40%'
+        },
+        // blue doorway
+        {
+            left: '28%',
+            top: '61%',
+            width: '40%'
+        },
+        // metal room
+        {
+            left: '28%',
+            top: '61%',
+            width: '40%'
+        },
+        // statues on right room
+        {
+            left: '28%',
+            top: '61%',
+            width: '40%'
+        },
+        // nature room
+        {
+            left: '28%',
+            top: '50%',
+            width: '40%'
+        },
+        // final room
+        {
+            left: '28%',
+            top: '50%',
+            width: '40%'
+        }
+
+    ]
+    const group9Styles = [
+        // this is the archetypes of power styling
+        {
+            left: '27.5%',
+            top: '60%',
+            width: '40%',
+        },
+        // first room start here -33
+        {
+            left: '32.5%',
+            top: '55%',
+            width: '40%'
+        },
+        {
+            left: '27%',
+            top: '55%',
+            width: '40%'
+        },
+        // colourfull grid room
+        {
+            left: '29%',
+            top: '46%',
+            width: '40%'
+        },
+        // butterfly room - 15
+        {
+            left: '29%',
+            top: '61%',
+            width: '40%'
+        },
+        // desert/ tree room
+        {
+            left: '28%',
+            top: '61%',
+            width: '40%'
+        },
+        // green panel room
+        {
+            left: '28%',
+            top: '61%',
+            width: '40%'
+        },
+        // barbed wire room
+        {
+            left: '28%',
+            top: '61%',
+            width: '40%'
+        },
+        // blue doorway
+        {
+            left: '28%',
+            top: '61%',
+            width: '40%'
+        },
+        // metal room
+        {
+            left: '28%',
+            top: '61%',
+            width: '40%'
+        },
+        // statues on right room
+        {
+            left: '28%',
+            top: '61%',
+            width: '40%'
+        },
+        // nature room
+        {
+            left: '28%',
+            top: '50%',
+            width: '40%'
+        },
+        // final room
+        {
+            left: '28%',
+            top: '50%',
+            width: '40%'
+        }
+
+    ]
+    const group10Styles = [
+        // this is the archetypes of power styling
+        {
+            left: '27.5%',
+            top: '60%',
+            width: '40%',
+        },
+        // first room start here -33
+        {
+            left: '32.5%',
+            top: '55%',
+            width: '40%'
+        },
+        {
+            left: '27%',
+            top: '60%',
+            width: '40%'
+        },
+        // colourfull grid room
+        {
+            left: '29%',
+            top: '46%',
+            width: '40%'
+        },
+        // butterfly room - 15
+        {
+            left: '29%',
+            top: '61%',
+            width: '40%'
+        },
+        // desert/ tree room
+        {
+            left: '28%',
+            top: '61%',
+            width: '40%'
+        },
+        // green panel room
+        {
+            left: '28%',
+            top: '61%',
+            width: '40%'
+        },
+        // barbed wire room
+        {
+            left: '28%',
+            top: '61%',
+            width: '40%'
+        },
+        // blue doorway
+        {
+            left: '28%',
+            top: '61%',
+            width: '40%'
+        },
+        // metal room
+        {
+            left: '28%',
+            top: '61%',
+            width: '40%'
+        },
+        // statues on right room
+        {
+            left: '28%',
+            top: '61%',
+            width: '40%'
+        },
+        // nature room
+        {
+            left: '28%',
+            top: '50%',
+            width: '40%'
+        },
+        // final room
+        {
+            left: '28%',
+            top: '50%',
+            width: '40%'
+        }
+
+    ]
 
     return (
         <div >
             <ResponsiveNav />
-
-            {!(1100 <= width && width <= 1500) || !(700 <= height && height <= 880) ? (
+            {!(1100 <= width && width <= 1940) || !(700 <= height && height <= 1140) ? (
                 <>
                     {(width <= 414 && width >= 400) || (width <= 720 && width >= 700) ? (
                         <>{width > height ? (
@@ -476,19 +896,185 @@ function Test() {
                                 )}</>
                             ) : (
                                 <div id='testContainer' >
-                                    {(width <= 820 && width >= 800) || (width <= 320 && width >= 370) ? (
-                                        <div id='testContainer' >
-                                            <TestComponent styleToSet={group3Styles} />
-                                        </div>
+                                    {(width <= 820 && width >= 800) || (width <= 320 && width >= 375) ? (
+                                        <>
+                                            {width > height ? (
+                                                <div id='testContainer' >
+                                                    <TestComponent styleToSet={group3Styles} />
+                                                </div>
+
+                                            ) : (
+                                                <div id='testContainer'>
+                                                    <p>ROTATE DEVICE</p>
+                                                </div>
+                                            )}
+                                        </>
                                     ) : (
                                         <div id='testContainer'>
-                                            <p>SORRY YOUR DEVICE IS NOT COMPATIBLE -- Please report these number to customer support:Width: {width}Height: {height}</p>
+                                            {width <= 735 && width >= 701 || (width <= 300 && width >= 280) ? (
+                                                <>
+                                                    {width > height ? (
+                                                        <div id='testContainer' >
+                                                            <TestComponent styleToSet={group7Styles} />
+                                                        </div>
+
+                                                    ) : (
+                                                        <div id='testContainer'>
+                                                            <p>ROTATE DEVICE</p>
+                                                        </div>
+                                                    )}
+                                                </>
+                                            ) : (
+                                                <div id='testContainer'>
+                                                    {(width <= 900 && width >= 897) || (width <= 420 && width >= 400) ? (
+                                                        <>
+                                                            {width > height ? (
+                                                                <div id='testContainer' >
+                                                                    <TestComponent styleToSet={group7Styles} />
+                                                                </div>
+                                                            ) : (
+                                                                <div id='testContainer'>
+                                                                    <p>ROTATE DEVICE</p>
+                                                                </div>
+                                                            )}
+                                                        </>
+                                                    ) : (
+                                                        <>
+                                                            {(width >= 820 && width <= 840) || (width <= 315 && width >= 320) ? (
+                                                                <>
+                                                                    {width > height ? (
+                                                                        <div id='testContainer' >
+                                                                            <TestComponent styleToSet={group3Styles} />
+                                                                        </div>
+
+                                                                    ) : (
+                                                                        <div id='testContainer'>
+                                                                            <p>ROTATE DEVICE</p>
+                                                                        </div>
+                                                                    )}
+                                                                </>
+                                                            ) : (
+                                                                <>
+                                                                    {(width >= 780 && width <= 799) || (width <= 420 && width >= 410) ? (
+                                                                        <>
+                                                                            {width > height ? (
+                                                                                <div id='testContainer' >
+                                                                                    <TestComponent styleToSet={group8Styles} />
+                                                                                </div>
+                                                                            ) : (
+                                                                                <div id='testContainer'>
+                                                                                    <p>ROTATE DEVICE</p>
+                                                                                </div>
+                                                                            )}
+                                                                        </>
+                                                                    ) : (<>
+                                                                        {(width === 896) || (width <= 340 && width >= 331) ? (
+                                                                            <>
+                                                                                {width > height ? (
+                                                                                    <div id='testContainer'>
+                                                                                        <TestComponent styleToSet={group9Styles} />
+                                                                                    </div>
+                                                                                ) : (
+                                                                                    <div id='testContainer'>
+                                                                                        <p>ROTATE DEVICE</p>
+                                                                                    </div>
+                                                                                )}
+                                                                            </>
+                                                                        ) : (
+                                                                            <>
+                                                                                {(width >= 920 && width <= 930) || (width <= 435 && width >= 420) ? (
+                                                                                    <>
+                                                                                        {width > height ? (
+                                                                                            <div id='testContainer'>
+                                                                                                <TestComponent styleToSet={group9Styles} />
+                                                                                            </div>
+                                                                                        ) : (
+                                                                                            <div id='testContainer'>
+                                                                                                <p>ROTATE DEVICE</p>
+                                                                                            </div>
+                                                                                        )}
+                                                                                    </>
+                                                                                ) : (
+                                                                                    <>
+                                                                                        {(width >= 840 && width <= 850) || (width <= 400 && width >= 380) ? (
+                                                                                            <>
+                                                                                                {width > height ? (
+                                                                                                    <div id='testContainer'>
+                                                                                                        <TestComponent styleToSet={group10Styles} />
+                                                                                                    </div>
+                                                                                                ) : (
+                                                                                                    <div id='testContainer'>
+                                                                                                        <p>ROTATE DEVICE</p>
+                                                                                                    </div>
+                                                                                                )}
+                                                                                            </>
+                                                                                        ) : (
+                                                                                            <>
+                                                                                                {(width >= 894 && width <= 897) || width === 414 ? (
+                                                                                                    <>
+                                                                                                        {width > height ? (
+                                                                                                            <div id='testContainer'>
+                                                                                                                <TestComponent styleToSet={group10Styles} />
+                                                                                                            </div>
+                                                                                                        ) : (
+                                                                                                            <div id='testContainer'>
+                                                                                                                <p>ROTATE DEVICE</p>
+                                                                                                            </div>
+                                                                                                        )}</>
+                                                                                                ) : (
+                                                                                                    <>
+                                                                                                        {(width === 736 || width === 414) ? (
+                                                                                                            <>
+                                                                                                                {width > height ? (
+                                                                                                                    <div id='testContainer'>
+                                                                                                                        <TestComponent styleToSet={group10Styles} />
+                                                                                                                    </div>
+                                                                                                                ) : (
+                                                                                                                    <div id='testContainer'>
+                                                                                                                        <p>ROTATE DEVICE</p>
+                                                                                                                    </div>
+                                                                                                                )}</>
+                                                                                                        ) : (
+                                                                                                            <>
+                                                                                                            {width === 667 || width === 375?(
+                                                                                                               <>
+                                                                                                               {width > height ? (
+                                                                                                                   <div id='testContainer'>
+                                                                                                                       <TestComponent styleToSet={group10Styles} />
+                                                                                                                   </div>
+                                                                                                               ) : (
+                                                                                                                   <div id='testContainer'>
+                                                                                                                       <p>ROTATE DEVICE</p>
+                                                                                                                   </div>
+                                                                                                               )}</> 
+                                                                                                            ):(
+                                                                                                                <p>nope</p>
+                                                                                                            )}
+                                                                                                            </>
+                                                                                                        )}
+                                                                                                    </>
+                                                                                                )}
+                                                                                            </>
+                                                                                        )}
+                                                                                    </>
+                                                                                )}
+                                                                            </>
+                                                                        )}
+                                                                    </>
+                                                                    )}
+                                                                </>
+                                                            )}
+                                                        </>
+                                                    )}
+                                                </div>
+                                            )}
                                         </div>
                                     )}
                                 </div>
                             )}
                         </div>
-                    )}
+                    )
+                    }
                 </>
             ) : (
                 <div id='testContainer'>
@@ -496,18 +1082,23 @@ function Test() {
                         <TestComponent styleToSet={group4Styles} />
                     ) : (
                         <>
-                            {width<=1349 && width>= 1100 ?(
+                            {width <= 1349 && width >= 1100 ? (
                                 <TestComponent styleToSet={group5Styles} />
-                            ):(
-                                <p>SORRY YOUR DEVICE IS NOT COMPATIBLE -- Please report these number to customer support:Width: {width}Height: {height}</p>
+                            ) : (
+                                <>
+                                    {width <= 1940 && width >= 1900 ? (
+                                        <TestComponent styleToSet={group6Styles} />
+                                    ) : (
+                                        <p>SORRY YOUR DEVICE IS NOT COMPATIBLE -- Please report these number to customer support: Width: {width} Height: {height}</p>
+                                    )}
+                                </>
                             )}
                         </>
-
                     )}
                 </div>
             )}
             <Footer />
-        </div>
+        </div >
     );
 }
 export default Test;

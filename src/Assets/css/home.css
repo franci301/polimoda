@@ -121,3 +121,9 @@
         margin-left: 2%;
     }
 }
+
+@media screen and (max-width:1000px) {
+    #rightImg p {
+        bottom: 30% !important;
+    }
+}

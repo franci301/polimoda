@@ -11,8 +11,8 @@ import Jester from '../Assets/Images/arch-images/The Jester 1.jpg';
 import Magician from '../Assets/Images/arch-images/The Magician.jpg';
 import Sage from '../Assets/Images/arch-images/The Sage.jpg';
 import Lover from '../Assets/Images/arch-images/The Lover.jpg';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { createRoutesFromChildren, useNavigate } from 'react-router-dom';
 import { db } from "../firebase/firebase-config";
 import { updateDoc, doc } from 'firebase/firestore';
 import getArchetypes from '../firebase/getArchetypes.js';
@@ -46,7 +46,7 @@ var answerArr = [
     // 4, 1, 0
 ];
 
-function TestComponent({styleToSet}) {
+function TestComponent({ styleToSet }) {
     const questions = [
         'When I spend some time hanging out with my friends or relatives for a coffee, I often show empathy towards them when listening to their perspectives and feelings.'
         , 'Whenever I decide to go on vacation and travel with some of my friends to places that we have never visited, I am usually perceived as a guide supporting them.'
@@ -86,13 +86,11 @@ function TestComponent({styleToSet}) {
         , "I like feeling desired and attracting people when I go out."]
 
     const [value, setValue] = useState(0);
-    const [counter, setCounter] = useState(0);
     const [imgStyles, setStyles] = useState(styleToSet[0]);
-
-
     const [question, setQuestion] = useState('');
     const [text, setText] = useState('');
     const [roomCounter, setRoomCounter] = useState(1);
+    const [counter, setCounter] = useState(0);
     const [roomImg, setImg] = useState(caregiverRender);
     const [width, setWidth] = useState(window.innerWidth);
     const [height, setHeight] = useState(window.innerHeight);
@@ -156,7 +154,7 @@ function TestComponent({styleToSet}) {
             if (value !== -1) {
                 answerArr.push(value);
                 setText('');
-                setValue(-1); // comment out to test quiz without answers
+                // setValue(-1); // comment out to test quiz without answers
                 setQuestion(questions[counter]);
                 setCounter(counter + 1);
                 var radios = document.getElementsByName('choice');
@@ -164,13 +162,14 @@ function TestComponent({styleToSet}) {
                     radios[index].checked = false;
                 }
                 if (counter === 0) {
-                    setStyles(styleToSet[1])
+                    setStyles(styleToSet[1]);
                 }
                 if (counter % 3 === 0 && counter !== 0) {
                     // setRoomId(room + 1)
-                    setRoomCounter(roomCounter + 1)
-                    setImg(roomImgs[roomCounter])
-                    setStyles(styleToSet[roomCounter+1])
+                    setRoomCounter(roomCounter + 1);
+                    // console.log('changed', roomImgs[roomCounter], counter);
+                    setImg(roomImgs[roomCounter]);
+                    setStyles(styleToSet[roomCounter + 1]);
                 }
             } else {
                 setText("Please select an option");
@@ -246,7 +245,7 @@ function TestComponent({styleToSet}) {
                         &nbsp;
                     </div>
                 </div>
-            )}        
+            )}
         </div></>
     )
 }

@@ -32,15 +32,15 @@ function MyOrders() {
                     <OrderDetails img={img2} brand={'Andrej Gronau'} colour={'Multicolor'} type={'Check Lurex Dress'} size={'L'} price={'1080€'}/>
                 </div>
                 <h4>PREVIOUS ORDERS</h4>
-                <h3 style={{color:'var(--brown)'}}>April 2022</h3>
-                <OrderDescription status={'COMPLETED'}/>
-                <div className="d-flex flex-row">
-                    <OrderDetails img={img3} brand={'16Arlington'} colour={'Pendal'} type={'Feather Top'} size={'M'} price={'1095€'}/>
-                </div>
-                <h3 style={{color:'var(--brown)'}}>December 2021</h3>
+                <h3 style={{color:'var(--brown)'}}>December 2022</h3>
                 <OrderDescription status={'COMPLETED'}/>
                 <div className="d-flex flex-row">
                     <OrderDetails img={img4} brand={'Charlie Constantinou'} colour={'Green'} type={'Expandable Quilted Duffel Bag'} size={'XS'} price={'800€'}/>
+                </div>
+                <h3 style={{color:'var(--brown)'}}>September 2022</h3>
+                <OrderDescription status={'COMPLETED'}/>
+                <div className="d-flex flex-row">
+                    <OrderDetails img={img3} brand={'16Arlington'} colour={'Pendal'} type={'Feather Top'} size={'M'} price={'1095€'}/>
                 </div>
             </div>
             <Footer />

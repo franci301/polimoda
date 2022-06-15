@@ -28,7 +28,7 @@ function App() {
         <meta charSet="utf-8" />
         <title>ARKX | Emerging Fashion Brands To Match Your Identities</title>
         <link rel="canonical" href="https://arkx-store.com" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0 ,viewport-fit=cover " />
         <meta name="ARKX" content='Emerging Fashion Brands To Match Your Identities' />
       </Helmet>
       <Router>

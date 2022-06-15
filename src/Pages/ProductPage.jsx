@@ -158,7 +158,7 @@ function ProductPage() {
                         <br />
                         <div className='d-flex flex-col' id='productButtonContainer'>
                             <button id='button1'>ADD TO CART</button>
-                            <button id='button2'>ADD TO WISHLISH</button>
+                            <button id='button2'>ADD TO WISHLIST</button>
                         </div>
                     </div>
                     <div id='product-manufacturing'>
