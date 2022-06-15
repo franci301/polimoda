@@ -46,7 +46,7 @@ var answerArr = [
     // 4, 1, 0
 ];
 
-function TestComponent({ styleToSet }) {
+function TestComponent({ styleToSet , group}) {
     const questions = [
         'When I spend some time hanging out with my friends or relatives for a coffee, I often show empathy towards them when listening to their perspectives and feelings.'
         , 'Whenever I decide to go on vacation and travel with some of my friends to places that we have never visited, I am usually perceived as a guide supporting them.'
@@ -178,7 +178,8 @@ function TestComponent({ styleToSet }) {
     }
 
     return (
-        <><div>
+        <>
+        <div>
             {counter === 0 ? (
                 <img src={startRoom} alt="" />
             ) : (
@@ -234,7 +235,7 @@ function TestComponent({ styleToSet }) {
             </div>
             {question === '' ? (
                 <div id='start-div'>
-                    <p>Archetypes of Power Discovery is a Jungian Archetypes based personality test, designed to help you better understand yourself and your identity, as well as your source of power to achieve stylistic power personalization. By spending approximately 5-7 minutes to complete Archetypes of Power Discovery, you will become aware of your 3 dominant archetypes and a personalized product offering based on all the twelve archetypes, suitable for your personality. <br /> <br /> Click on the glass door to explore your inner world.  </p>
+                    <p>Archetypes of Power Discovery is a Jungian Archetypes based personality test, designed to help you better understand yourself and your identity, as well as your source of power to achieve stylistic power personalization. By spending approximately 5-7 minutes to complete Archetypes of Power Discovery, you will become aware of your 3 dominant archetypes and a personalized product offering based on all the twelve archetypes, suitable for your personality. <br /> <br /> Scroll down until the yellow bars on the top are no longer visible and click on the glass door to explore your inner world.  </p>
                     <div id='door-parent' onClick={increment}>
                         &nbsp;
                     </div>

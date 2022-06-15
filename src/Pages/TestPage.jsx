@@ -43,9 +43,10 @@ import '../Assets/css/testPage.css';
 //     844x390
 //     895x414
 //     736 x 414
+//     667 x 375
 // }
 // Group11:{
-//     
+//     844 x 307
 // }
 // }
 // 428 x 926
@@ -807,7 +808,7 @@ function Test() {
         // colourfull grid room
         {
             left: '29%',
-            top: '46%',
+            top: '50%',
             width: '40%'
         },
         // butterfly room - 15
@@ -862,6 +863,166 @@ function Test() {
         {
             left: '28%',
             top: '50%',
+            width: '40%'
+        }
+
+    ]
+    const group11Styles = [
+        // this is the archetypes of power styling
+        {
+            left: '27.5%',
+            top: '60%',
+            width: '40%',
+        },
+        // first room start here -33
+        {
+            left: '32.5%',
+            top: '65%',
+            width: '40%'
+        },
+        {
+            left: '27%',
+            top: '75%',
+            width: '40%'
+        },
+        // colourfull grid room
+        {
+            left: '29%',
+            top: '61%',
+            width: '40%'
+        },
+        // butterfly room - 15
+        {
+            left: '29%',
+            top: '71%',
+            width: '40%'
+        },
+        // desert/ tree room
+        {
+            left: '28%',
+            top: '71%',
+            width: '40%'
+        },
+        // green panel room
+        {
+            left: '28%',
+            top: '71%',
+            width: '40%'
+        },
+        // barbed wire room
+        {
+            left: '28%',
+            top: '71%',
+            width: '40%'
+        },
+        // blue doorway
+        {
+            left: '28%',
+            top: '71%',
+            width: '40%'
+        },
+        // metal room
+        {
+            left: '28%',
+            top: '71%',
+            width: '40%'
+        },
+        // statues on right room
+        {
+            left: '28%',
+            top: '71%',
+            width: '40%'
+        },
+        // nature room
+        {
+            left: '28%',
+            top: '70%',
+            width: '40%'
+        },
+        // final room
+        {
+            left: '28%',
+            top: '70%',
+            width: '40%'
+        }
+
+    ]
+    const group12Styles = [
+        // this is the archetypes of power styling
+        {
+            left: '27.5%',
+            top: '60%',
+            width: '40%',
+        },
+        // first room start here -33
+        {
+            left: '32.5%',
+            top: '70%',
+            width: '40%'
+        },
+        {
+            left: '27%',
+            top: '80%',
+            width: '40%'
+        },
+        // colourfull grid room
+        {
+            left: '29%',
+            top: '69%',
+            width: '40%'
+        },
+        // butterfly room - 15
+        {
+            left: '29%',
+            top: '61%',
+            width: '40%'
+        },
+        // desert/ tree room
+        {
+            left: '28%',
+            top: '61%',
+            width: '40%'
+        },
+        // green panel room
+        {
+            left: '28%',
+            top: '61%',
+            width: '40%'
+        },
+        // barbed wire room
+        {
+            left: '28%',
+            top: '61%',
+            width: '40%'
+        },
+        // blue doorway
+        {
+            left: '28%',
+            top: '61%',
+            width: '40%'
+        },
+        // metal room
+        {
+            left: '28%',
+            top: '61%',
+            width: '40%'
+        },
+        // statues on right room
+        {
+            left: '28%',
+            top: '61%',
+            width: '40%'
+        },
+        // nature room
+        {
+            left: '28%',
+            top: '60%',
+            width: '40%'
+        },
+        // final room
+        {
+            left: '28%',
+            top: '60%',
             width: '40%'
         }
 
@@ -970,14 +1131,30 @@ function Test() {
                                                                     ) : (<>
                                                                         {(width === 896) || (width <= 340 && width >= 331) ? (
                                                                             <>
-                                                                                {width > height ? (
-                                                                                    <div id='testContainer'>
-                                                                                        <TestComponent styleToSet={group9Styles} />
-                                                                                    </div>
+                                                                                {width === 414 || height === 414 ? (
+                                                                                    <>
+                                                                                        {width > height ? (
+                                                                                            <div id='testContainer'>
+                                                                                                <TestComponent styleToSet={group12Styles} />
+                                                                                            </div>
+                                                                                        ) : (
+                                                                                            <div id='testContainer'>
+                                                                                                <p>ROTATE DEVICE</p>
+                                                                                            </div>
+                                                                                        )}
+                                                                                    </>
                                                                                 ) : (
-                                                                                    <div id='testContainer'>
-                                                                                        <p>ROTATE DEVICE</p>
-                                                                                    </div>
+                                                                                    <>
+                                                                                        {width > height ? (
+                                                                                            <div id='testContainer'>
+                                                                                                <TestComponent styleToSet={group9Styles} />
+                                                                                            </div>
+                                                                                        ) : (
+                                                                                            <div id='testContainer'>
+                                                                                                <p>ROTATE DEVICE</p>
+                                                                                            </div>
+                                                                                        )}
+                                                                                    </>
                                                                                 )}
                                                                             </>
                                                                         ) : (
@@ -998,14 +1175,30 @@ function Test() {
                                                                                     <>
                                                                                         {(width >= 840 && width <= 850) || (width <= 400 && width >= 380) ? (
                                                                                             <>
-                                                                                                {width > height ? (
-                                                                                                    <div id='testContainer'>
-                                                                                                        <TestComponent styleToSet={group10Styles} />
-                                                                                                    </div>
+                                                                                                {width === 844 && height >= 300 && height <= 315 ? (
+                                                                                                    <>
+                                                                                                        {width > height ? (
+                                                                                                            <div id='testContainer'>
+                                                                                                                <TestComponent styleToSet={group10Styles} />
+                                                                                                            </div>
+                                                                                                        ) : (
+                                                                                                            <div id='testContainer'>
+                                                                                                                <p>ROTATE DEVICE</p>
+                                                                                                            </div>
+                                                                                                        )}
+                                                                                                    </>
                                                                                                 ) : (
-                                                                                                    <div id='testContainer'>
-                                                                                                        <p>ROTATE DEVICE</p>
-                                                                                                    </div>
+                                                                                                    <>
+                                                                                                        {width > height ? (
+                                                                                                            <div id='testContainer'>
+                                                                                                                <TestComponent styleToSet={group11Styles} />
+                                                                                                            </div>
+                                                                                                        ) : (
+                                                                                                            <div id='testContainer'>
+                                                                                                                <p>ROTATE DEVICE</p>
+                                                                                                            </div>
+                                                                                                        )}
+                                                                                                    </>
                                                                                                 )}
                                                                                             </>
                                                                                         ) : (
@@ -1036,20 +1229,34 @@ function Test() {
                                                                                                                 )}</>
                                                                                                         ) : (
                                                                                                             <>
-                                                                                                            {width === 667 || width === 375?(
-                                                                                                               <>
-                                                                                                               {width > height ? (
-                                                                                                                   <div id='testContainer'>
-                                                                                                                       <TestComponent styleToSet={group10Styles} />
-                                                                                                                   </div>
-                                                                                                               ) : (
-                                                                                                                   <div id='testContainer'>
-                                                                                                                       <p>ROTATE DEVICE</p>
-                                                                                                                   </div>
-                                                                                                               )}</> 
-                                                                                                            ):(
-                                                                                                                <p>nope</p>
-                                                                                                            )}
+                                                                                                                {width === 667 || width === 375 ? (
+                                                                                                                    <>
+                                                                                                                        {width > height ? (
+                                                                                                                            <div id='testContainer'>
+                                                                                                                                <TestComponent styleToSet={group10Styles} />
+                                                                                                                            </div>
+                                                                                                                        ) : (
+                                                                                                                            <div id='testContainer'>
+                                                                                                                                <p>ROTATE DEVICE</p>
+                                                                                                                            </div>
+                                                                                                                        )}</>
+                                                                                                                ) : (
+                                                                                                                    <>
+                                                                                                                        {width === 844 || width === 307 ? (
+                                                                                                                            <>
+                                                                                                                                {width > height ? (
+                                                                                                                                    <div id='testContainer'>
+                                                                                                                                        <TestComponent styleToSet={group11Styles} />
+                                                                                                                                    </div>
+                                                                                                                                ) : (
+                                                                                                                                    <div id='testContainer'>
+                                                                                                                                        <p>ROTATE DEVICE</p>
+                                                                                                                                    </div>
+                                                                                                                                )}</>
+                                                                                                                        ) : (
+                                                                                                                            <p>SORRY YOUR DEVICE IS NOT COMPATIBLE -- Please report these number to customer support: Width: {width} Height: {height}</p>
+                                                                                                                        )}</>
+                                                                                                                )}
                                                                                                             </>
                                                                                                         )}
                                                                                                     </>
@@ -1078,7 +1285,7 @@ function Test() {
                 </>
             ) : (
                 <div id='testContainer'>
-                    {(width <= 1440 && width >= 1350) ? (
+                    {(width <= 1440 && width >= 1367) ? (
                         <TestComponent styleToSet={group4Styles} />
                     ) : (
                         <>

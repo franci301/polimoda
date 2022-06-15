@@ -64,7 +64,7 @@
     }
     #start-div p {
         position: absolute;
-        top: 54%;
+        top: 59%;
         left: 28%;
         z-index: 1000;
         color: white;
@@ -352,7 +352,33 @@
     }
     #start-div p {
         position: absolute;
-        top: 58%;
+        top: 65%;
+        left: 28%;
+        z-index: 1000;
+        color: white;
+        width: 40%;
+        font-size: 1.5vw;
+    }
+}
+
+@media screen and (min-width:840px) and (max-width:850px) and (max-height:310px) {
+    #door-parent {
+        position: absolute;
+        /* background-color: red; */
+        z-index: 10000;
+        width: 150px;
+        left: 3%;
+        top: 55%;
+        padding-right: 5%;
+        height: 100%;
+    }
+    #questions-container #choiceDiv {
+        width: 100%;
+        font-size: 1.8vw;
+    }
+    #start-div p {
+        position: absolute;
+        top: 75%;
         left: 28%;
         z-index: 1000;
         color: white;
@@ -405,6 +431,32 @@
     #start-div p {
         position: absolute;
         top: 55%;
+        left: 28%;
+        z-index: 1000;
+        color: white;
+        width: 40%;
+        font-size: 1.5vw;
+    }
+}
+
+@media screen and (min-width:895px) and (max-width:897px) and (max-height:414px) {
+    #door-parent {
+        position: absolute;
+        /* background-color: red; */
+        z-index: 10000;
+        width: 150px;
+        left: 3%;
+        top: 35%;
+        padding-right: 5%;
+        height: 100%;
+    }
+    #questions-container #choiceDiv {
+        width: 100%;
+        font-size: 1.8vw;
+    }
+    #start-div p {
+        position: absolute;
+        top: 65%;
         left: 28%;
         z-index: 1000;
         color: white;

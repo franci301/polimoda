@@ -25,7 +25,6 @@ function FeaturedImages({ image, brand, description, price, ids, clickable }) {
         return new Promise(r => setTimeout(r, 0));
     }
     function style() {
-        console.log(ref.current.clientHeight)
         if (!(ref.current.clientHeight <= (ref.current.clientWidth * 1.5) && productStyle.paddingBottom > 0)) {
             setStyle({ width: "60%", maxHeight: "60%", paddingBottom: 0, objectFit: "cover", marginTop: (((ref.current.clientWidth * 1.5) - ref.current.clientHeight).toString() + "px") })
         }

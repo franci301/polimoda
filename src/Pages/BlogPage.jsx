@@ -282,12 +282,6 @@ function BlogPage() {
                     </SwiperSlide>
                 </Swiper>
             )}
-            <div>
-                <p>
-                    Width: {width}
-                </p>
-                <p>Height: {height}</p>
-            </div>
             <div className='container' id="descriptionsContainer">
                 <div id="bottomContainer" className='row '>
                     <div className='col px-0 py-0'>
