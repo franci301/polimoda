@@ -58,10 +58,10 @@ function MyProfile() {
     function route() {
         const obj = localStorage.getItem('userLogin');
         if (obj !== null) {
-            const email = JSON.parse(obj).user.email;
-            if (email === 'giorgianoelle.arcelli@gmail.com' || email === 'gregotti20@gmail.com') {
+            // const email = JSON.parse(obj).user.email;
+            // if (email === 'giorgianoelle.arcelli@gmail.com' || email === 'gregotti20@gmail.com') {
                 navigate('/ShopPage/*');
-            }
+            // }
         }
     }
 

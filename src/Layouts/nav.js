@@ -34,11 +34,7 @@ function nav() {
                     <ul className="navbar-nav mx-auto" id='centerNav'>
                         <li className='nav-item' id='center-nav'><Link style={linkStyle} to='/*'>Home</Link></li>
                         <li className='nav-item' id='center-nav'><Link style={linkStyle} to='/Blog/*'>Archetypal Stories</Link></li>
-                        {loggedIn === true ? (
                         <li className='nav-item' id='center-nav'><Link style={linkStyle} to='/ShopPage/*'>Shop</Link></li>
-                        ):(
-                        <></>
-                        )}
                     </ul>
                     <ul className="position-absolute navbar-nav start-10">
                         {/* <li className='nav-item' id='left-nav'><Link style={linkStyle} to='/*'> <img src={logo} alt="" /> </Link></li> */}

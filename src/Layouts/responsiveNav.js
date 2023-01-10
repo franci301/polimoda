@@ -71,11 +71,8 @@ function ResponsiveNav() {
                         <ul className="navbar-nav mx-auto" id='center-ul'>
                             <li className='center-nav-item' ><Link style={linkStyle} to="/*">HOME</Link></li>
                             <li className='center-nav-item' > <Link style={linkStyle} to="/Blog/*">ARCHETYPAL STORIES</Link></li>
-                            {loggedIn === true && email ==='giorgianoelle.arcelli@gmail.com' || email === 'gregotti20@gmail.com'? (
                                 <li className='center-nav-item' > <Link style={linkStyle} to='/ShopPage/*'>SHOP</Link></li>
-                            ) : (
-                                <></>
-                            )}
+                          
                         </ul>
                         <ul className="navbar-nav" id='right-nav-main'>
                             {loggedIn === true  ? (
@@ -104,11 +101,11 @@ function ResponsiveNav() {
                         <ul className="navbar-nav mx-auto" id='center-ul'>
                             <li className='center-nav-item' ><Link style={linkStyle} to="/*">HOME</Link></li>
                             <li className='center-nav-item' > <Link style={linkStyle} to="/Blog/*">ARCHETYPAL STORIES</Link></li>
-                            {loggedIn === true && email ==='giorgianoelle.arcelli@gmail.com' || email === 'gregotti20@gmail.com'? (
+                            {/* loggedIn === true && email ==='giorgianoelle.arcelli@gmail.com' || email === 'gregotti20@gmail.com'? ( */}
                                 <li className='center-nav-item' > <Link style={linkStyle} to='/ShopPage/*'>SHOP</Link></li>
-                            ) : (
+                            {/* ) : (
                                 <></>
-                            )}
+                            ) */}
                         </ul>
                         <ul className="navbar-nav" id='right-nav-main'>
                             {loggedIn === true  ? (

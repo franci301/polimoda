@@ -21,7 +21,7 @@ function ShopPage() {
     const numCatFilters = 10;
     const numGenderFilters = 3;
     const totNumFilters = numCatFilters + numGenderFilters;
-    let archetypeOrder = [];
+    let archetypeOrder = ["Hero","Everyman","Ruler","Sage","Innocent","Caregiver","Outlaw"];
     let tempFilters = [];
 
     useEffect(() => {
@@ -30,16 +30,14 @@ function ShopPage() {
 
     async function get() {
         await getDetails().then((res) => {
-            const access = res._document.data.value.mapValue.fields;
-            if (access.archetypeOrder.arrayValue !== null) {
-                for (let index = 0; index < access.archetypeOrder.arrayValue.values.length; index++) {
-                    archetypeOrder.push(access.archetypeOrder.arrayValue.values[index].stringValue);
-                }
-                getImagesHere();
-            } else {
-                setBool(false);
-            }
+            // const access = res._document.data.value.mapValue.fields;
+            // for (let index = 0; index < access.archetypeOrder.arrayValue.values.length; index++) {
+            //     archetypeOrder.push(access.archetypeOrder.arrayValue.values[index].stringValue);
+            // }
+            getImagesHere();
+        
         }).catch((err) => {
+            console.log(err);
             setBool(false);
         });
     }
@@ -258,11 +256,11 @@ function ShopPage() {
                 </ul>
                 <div className='container sticky-right'>
                     <div id='cols' className='row row-cols-lg-5 row-cols-md-2 row-cols-sm-1 row-cols-1 align-items-start'>
-                        {bool === false ? (
+                        {/* {bool === false ? (
                             <div id='testContainerShop'>
                                 <TestAd />
                             </div>
-                        ) : (
+                        ) : ( */}
                             <>
                                 {filteredItems.length === 0 ?
                                     itemArr.map((dict, index) => (
@@ -274,7 +272,7 @@ function ShopPage() {
                                     ))
                                 }
                             </>
-                        )}
+                        
                     </div>
                 </div>
             </div>
